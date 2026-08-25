@@ -1,0 +1,26 @@
+# temp/debug scripts
+analyze_score.py
+compare_scores.py
+gbk_fix.py
+index_fix.py
+rules_rebuild.py
+update_*.py
+fix_*.py
+batch_*.py
+cache_article.py
+test_*.py
+verify_*.py
+
+# temp/debug data
+before_ai.json
+before_gaming.json
+test_translation_output.txt
+
+# runtime data (large, not code relationships)
+data/news_ai.json
+data/news_gaming.json
+data/translations.json
+data/game_hotspots.json
+
+# static assets (not code relationships)
+static/style.css

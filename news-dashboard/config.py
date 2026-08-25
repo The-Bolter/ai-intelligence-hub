@@ -1,0 +1,142 @@
+import os
+
+AI_FEEDS = [
+    {"name": "36氪", "url": "https://36kr.com/feed", "weight": 6, "lang": "zh",
+     "source_name": "36氪", "source_type": "rss", "source_region": "CN", "source_priority": 75},
+    {"name": "量子位", "url": "https://www.qbitai.com/feed", "weight": 6, "lang": "zh",
+     "source_name": "量子位", "source_type": "rss", "source_region": "CN", "source_priority": 78},
+    {"name": "机器之心", "url": "https://www.jiqizhixin.com/rss", "weight": 7, "lang": "zh",
+     "source_name": "机器之心", "source_type": "rss", "source_region": "CN", "source_priority": 80},
+    {"name": "InfoQ 中文", "url": "https://www.infoq.cn/feed", "weight": 6, "lang": "zh",
+     "source_name": "InfoQ 中文", "source_type": "rss", "source_region": "CN", "source_priority": 78},
+    {"name": "智东西", "url": "https://www.zhidx.com/feed", "weight": 6, "lang": "zh",
+     "source_name": "智东西", "source_type": "rss", "source_region": "CN", "source_priority": 75},
+    {"name": "Hacker News", "url": "https://hnrss.org/frontpage?count=20", "weight": 7, "lang": "en",
+     "source_name": "Hacker News", "source_type": "rss", "source_region": "Global", "source_priority": 60},
+    {"name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "weight": 7, "lang": "en",
+     "source_name": "TechCrunch AI", "source_type": "rss", "source_region": "Global", "source_priority": 78},
+    {"name": "MIT Tech Review", "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/", "weight": 6, "lang": "en",
+     "source_name": "MIT Tech Review", "source_type": "rss", "source_region": "Global", "source_priority": 80},
+    {"name": "VentureBeat AI", "url": "https://venturebeat.com/category/ai/feed/", "weight": 6, "lang": "en",
+     "source_name": "VentureBeat AI", "source_type": "rss", "source_region": "Global", "source_priority": 75},
+    {"name": "The Decoder", "url": "https://the-decoder.com/feed/", "weight": 7, "lang": "en",
+     "source_name": "The Decoder", "source_type": "rss", "source_region": "Global", "source_priority": 76},
+    {"name": "Qwen 官方博客", "url": "https://qwenlm.github.io/blog/feed.xml", "weight": 8, "lang": "zh",
+     "source_name": "Qwen 官方博客", "source_type": "rss", "source_region": "CN", "source_priority": 95},
+    {"name": "InternLM 官方博客", "url": "https://internlm.github.io/blog/feed.xml", "weight": 8, "lang": "zh",
+     "source_name": "InternLM 官方博客", "source_type": "rss", "source_region": "CN", "source_priority": 95},
+    {"name": "阿里云开发者社区", "url": "https://developer.aliyun.com/rss", "weight": 8, "lang": "zh",
+     "source_name": "阿里云开发者社区", "source_type": "rss", "source_region": "CN", "source_priority": 90},
+    {"name": "腾讯云开发者社区", "url": "https://cloud.tencent.com/developer/rss", "weight": 8, "lang": "zh",
+     "source_name": "腾讯云开发者社区", "source_type": "rss", "source_region": "CN", "source_priority": 90},
+    {"name": "华为云开发者社区", "url": "https://developer.huaweicloud.com/rss", "weight": 8, "lang": "zh",
+     "source_name": "华为云开发者社区", "source_type": "rss", "source_region": "CN", "source_priority": 90},
+    {"name": "ModelScope 魔搭", "url": "https://modelscope.cn/rss", "weight": 8, "lang": "zh",
+     "source_name": "ModelScope 魔搭", "source_type": "rss", "source_region": "CN", "source_priority": 90},
+    {"name": "OSCHINA 开源中国", "url": "https://www.oschina.net/news/rss", "weight": 6, "lang": "zh",
+     "source_name": "OSCHINA 开源中国", "source_type": "rss", "source_region": "CN", "source_priority": 75},
+]
+GITHUB_SOURCE = {
+    "source_name": "GitHub",
+    "source_type": "github",
+    "source_region": "Global",
+    "source_priority": 85,
+}
+GAMING_FEEDS = [
+    {"name":'IGN',"url":'https://feeds.feedburner.com/ign/all',"weight":8,"lang":'en'},
+    {"name":'PC Gamer',"url":'https://www.pcgamer.com/rss/',"weight":7,"lang":'en'},
+    {"name":'Eurogamer',"url":'https://www.eurogamer.net/feed',"weight":7,"lang":'en'},
+    {"name":'Gematsu',"url":'https://www.gematsu.com/feed',"weight":6,"lang":'en'},
+    {"name":'Nintendo Life',"url":'https://www.nintendolife.com/feed',"weight":7,"lang":'en'},
+    {"name":'机核网',"url":'https://www.gcores.com/rss',"weight":6,"lang":'zh'},
+    {"name":'VG247',"url":'https://www.vg247.com/feed',"weight":6,"lang":'en'},
+    {"name":'GamesIndustry',"url":'https://www.gamesindustry.biz/feed',"weight":6,"lang":'en'},
+]
+FRESHNESS_HALF_LIFE = 24
+FRESHNESS_MAX_HOURS = 72
+AI_HOT_KEYWORDS = [
+    "gpt",
+    "openai",
+    "gemini",
+    "claude",
+    "llama",
+    "deep learning",
+    "transformer",
+    "diffusion",
+    "sora",
+    "o1",
+    "o3",
+    "gpt-5",
+    "reasoning",
+    "nvidia",
+    "h100",
+    "ai chip",
+    "agent",
+    "multi-agent",
+    "rag",
+    "llm",
+    "regulation",
+    "alignment",
+    "safety",
+    "foundation model",
+    "人工智能",
+    "大模型",
+    "深度学习",
+]
+GAMING_HOT_KEYWORDS = [
+    "elden ring",
+    "zelda",
+    "gta",
+    "cyberpunk",
+    "witcher",
+    "nintendo",
+    "playstation",
+    "xbox",
+    "steam",
+    "release date",
+    "trailer",
+    "gameplay",
+    "diablo",
+    "final fantasy",
+    "call of duty",
+    "unreal engine",
+    "unity",
+    "new game",
+    "update",
+    "patch",
+    "expansion",
+    "dlc",
+    "remake",
+    "remaster",
+    "announced",
+    "launch",
+    "exclusive",
+    "game pass",
+    "游戏",
+    "主机",
+    "手游",
+    "独立游戏",
+    "任天堂",
+    "索尼",
+]
+def TD(pairs):
+    return "{" + ", ".join('"' + k + '": "' + v + '"' for k,v in pairs) + "}"
+AI_TECH_TAGS = {"gpt":"GPT", "gpt-4":"GPT-4", "gpt-5":"GPT-5", "claude":"Claude", "gemini":"Gemini", "llama":"LLaMA", "transformer":"Transformer", "diffusion":"Diffusion", "llm":"LLM", "rag":"RAG", "agent":"Agent", "sora":"Sora", "o1":"o1", "o3":"o3", "nvidia":"NVIDIA", "gpu":"GPU", "reasoning":"Reasoning", "deep learning":"Deep Learning", "open source":"Open Source", "foundation model":"Foundation Model"}
+AI_SOLUTION_TAGS = {"paper":"Research", "arxiv":"Preprint", "released":"Release", "launch":"Launch", "announced":"Announce", "beta":"Beta", "funding":"Funding", "partnership":"Partner", "benchmark":"Benchmark", "regulation":"Policy"}
+AI_COMPANY_TAGS = {"openai":"OpenAI", "anthropic":"Anthropic", "google":"Google", "deepmind":"DeepMind", "microsoft":"MS", "meta":"Meta", "nvidia":"NVIDIA", "apple":"Apple", "baidu":"Baidu", "bytedance":"ByteDance", "deepseek":"DeepSeek"}
+GAMING_TECH_TAGS = {"unreal engine":"Unreal", "unity":"Unity", "dlss":"DLSS", "vr":"VR", "indie":"Indie", "aaa":"AAA", "dlc":"DLC", "remake":"Remake", "open world":"Open World", "rpg":"RPG", "fps":"FPS", "expansion":"Expansion", "game pass":"Game Pass"}
+GAMING_COMPANY_TAGS = {"nintendo":"Nintendo", "sony":"Sony", "playstation":"PS", "xbox":"Xbox", "square enix":"Square Enix", "ubisoft":"Ubisoft", "ea":"EA", "activision":"Activision", "blizzard":"Blizzard", "valve":"Valve", "steam":"Steam", "rockstar":"Rockstar", "capcom":"Capcom"}
+AI_ZH_TECH_TAGS = {'人工智能': 'AI', '大模型': 'LLM', '深度学习': 'Deep Learning', '研究': 'Research', '开源': 'Open Source', '算力': 'Compute'}
+AI_ZH_COMPANY_TAGS = {'百度': 'Baidu', '腾讯': 'Tencent', '阿里': 'Alibaba', '字节': 'ByteDance', '华为': 'Huawei'}
+GAMING_ZH_TECH_TAGS = {'游戏': 'Game', '主机': 'Console', '手游': 'Mobile', '电竞': 'eSports', '独立': 'Indie'}
+GAMING_ZH_COMPANY_TAGS = {'任天堂': 'Nintendo', '索尼': 'Sony', '微软': 'Microsoft', '网易': 'NetEase', '米哈': 'miHoYo'}
+ZH_TYPE_MAP = [
+    (['研究', '论文'], '研究进展'),
+    (['发布', '更新'], '产品动态'),
+    (['融资', '合作'], '商业动态'),
+    (['开源', 'GitHub'], '开源项目'),
+]
+DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+AI_DATA_FILE = os.path.join(DATA_DIR, 'news_ai.json')
+GAMING_DATA_FILE = os.path.join(DATA_DIR, 'news_gaming.json')
+REFRESH_INTERVAL_MINUTES = 30

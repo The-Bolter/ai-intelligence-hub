@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>每日热点 — AI · 游戏</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=15" />
+</head>
+<body>
+<header class="app-header">
+    <div class="header-left">
+        <h1 class="app-title">每日热点</h1>
+        <span class="app-subtitle">AI · 游戏</span>
+    </div>
+    <div class="header-center">
+        <span class="date-display" id="dateDisplay"></span>
+    </div>
+    <div class="header-right">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-text" id="statusText">就绪</span>
+        <button class="btn-refresh" id="btnRefresh" title="手动刷新">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            刷新
+        </button>
+    </div>
+</header>
+<nav class="tab-bar">
+    <button class="tab active" data-category="ai">AI 动态</button>
+    <button class="tab" data-category="gaming">游戏动态</button>
+</nav>
+<div class="filter-bar" id="filterBar"></div>
+<main class="content">
+    <div class="gaming-hotspot-section" id="gamingHotspotSection"></div>
+    <div class="search-bar">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" class="search-input" id="searchInput" placeholder="搜索标题、标签、来源..." autocomplete="off" aria-label="搜索新闻" />
+        <button class="search-clear" id="searchClear" aria-label="清除搜索" title="清除搜索">X</button>
+    </div>
+    <div class="news-meta">
+        <span class="news-count" id="newsCount">加载中...</span>
+        <span class="news-updated" id="newsUpdated"></span>
+    </div>
+    <div class="news-list" id="newsList">
+        <div class="loading-spinner">加载中...</div>
+    </div>
+</main>
+<footer class="app-footer">
+    <span>数据来源：RSS 聚合 · 每30分钟自动更新</span>
+    <span>v1.1</span>
+</footer>
+    <script src="{{ url_for('static', filename='script.js') }}?v=16"></script>
+</body>
+</html>
