@@ -1,0 +1,35 @@
+{
+  "schema_version": 2,
+  "timezone": "Asia/Shanghai",
+  "week_start": "2026-08-24",
+  "week_end": "2026-08-30",
+  "generated_at": "2026-08-25T12:00:00+08:00",
+  "events": [
+    {
+      "id": "sample-star-rail-45",
+      "game": "崩坏：星穹铁道",
+      "event_date": "2026-08-26",
+      "event_type": "major_update",
+      "version": "4.5",
+      "headline": "4.5 版本强制更新",
+      "summary": "新版本上线并开放主要版本内容。",
+      "heat_score": 78,
+      "heat_factors": {
+        "update_scale": 25,
+        "event_importance": 16,
+        "official_emphasis": 12,
+        "discussion": 8,
+        "game_attention": 12,
+        "timing": 5
+      },
+      "sources": [
+        {
+          "name": "游戏官网",
+          "url": "https://example.com/official/4-5",
+          "official": true
+        }
+      ],
+      "updated_at": "2026-08-25T12:00:00+08:00"
+    }
+  ]
+}
