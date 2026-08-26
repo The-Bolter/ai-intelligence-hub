@@ -1,0 +1,129 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-08-25T12:00:00+08:00",
+  "selected_channel": null,
+  "guides": {
+    "models": {"name": "模型动态", "description": "模型发布、能力升级、API、价格与评测变化。"},
+    "products": {"name": "产品与应用", "description": "AI 产品上线、功能更新与真实应用案例。"},
+    "agents": {"name": "Agent 与工作流", "description": "智能体、自动化工作流、RAG 与 Agent 开发实践。"},
+    "research": {"name": "研究进展", "description": "论文、方法、数据集、基准与技术突破。"},
+    "industry": {"name": "行业趋势", "description": "公司战略、融资并购、政策监管与市场变化。"},
+    "resources": {"name": "AI 资源", "description": "GitHub 项目、开源模型、框架、工具与教程。"}
+  },
+  "policy": {
+    "limit": 30,
+    "github_ratio_max": 0.2,
+    "channel_ratio_max": 0.3,
+    "source_item_max": 3,
+    "min_channel_coverage": 4,
+    "github_min_score": 70,
+    "github_min_stars": 10000
+  },
+  "stats": {
+    "total_candidates": 6,
+    "home_count": 6,
+    "github_count": 1,
+    "github_ratio": 0.1667,
+    "channel_counts": {
+      "models": 1,
+      "products": 1,
+      "agents": 1,
+      "research": 1,
+      "industry": 1,
+      "resources": 1
+    }
+  },
+  "items": [
+    {
+      "id": "model-1",
+      "title": "示例模型发布",
+      "summary": "模型能力、API 与价格同步更新。",
+      "url": "https://example.com/model-1",
+      "published_at": "2026-08-25T10:00:00+08:00",
+      "source_name": "示例实验室",
+      "source_type": "rss",
+      "content_type": "model_release",
+      "channel": "models",
+      "value_score": 82,
+      "final_score": 91,
+      "home_eligible": true,
+      "is_github": false
+    },
+    {
+      "id": "product-1",
+      "title": "示例 AI 产品功能更新",
+      "summary": "产品新增可直接使用的自动化功能。",
+      "url": "https://example.com/product-1",
+      "published_at": "2026-08-25T09:00:00+08:00",
+      "source_name": "产品官方博客",
+      "source_type": "rss",
+      "content_type": "product_update",
+      "channel": "products",
+      "value_score": 74,
+      "final_score": 84,
+      "home_eligible": true,
+      "is_github": false
+    },
+    {
+      "id": "agent-1",
+      "title": "示例 Agent 工作流",
+      "summary": "新的智能体工作流支持工具调用与任务编排。",
+      "url": "https://example.com/agent-1",
+      "published_at": "2026-08-25T08:00:00+08:00",
+      "source_name": "开发者社区",
+      "source_type": "rss",
+      "content_type": "agent_workflow",
+      "channel": "agents",
+      "value_score": 70,
+      "final_score": 80,
+      "home_eligible": true,
+      "is_github": false
+    },
+    {
+      "id": "research-1",
+      "title": "示例研究基准发布",
+      "summary": "论文公布新的模型评测方法与数据集。",
+      "url": "https://example.com/research-1",
+      "published_at": "2026-08-24T18:00:00+08:00",
+      "source_name": "研究机构",
+      "source_type": "rss",
+      "content_type": "research_breakthrough",
+      "channel": "research",
+      "value_score": 68,
+      "final_score": 77,
+      "home_eligible": true,
+      "is_github": false
+    },
+    {
+      "id": "industry-1",
+      "title": "示例 AI 行业政策变化",
+      "summary": "新的监管政策将影响模型服务提供方。",
+      "url": "https://example.com/industry-1",
+      "published_at": "2026-08-24T16:00:00+08:00",
+      "source_name": "行业媒体",
+      "source_type": "rss",
+      "content_type": "industry_update",
+      "channel": "industry",
+      "value_score": 65,
+      "final_score": 73,
+      "home_eligible": true,
+      "is_github": false
+    },
+    {
+      "id": "resource-1",
+      "title": "example/ai-tool",
+      "summary": "高价值开源 AI 工具示例。",
+      "url": "https://github.com/example/ai-tool",
+      "published_at": "2026-08-20T10:00:00+08:00",
+      "source_name": "GitHub",
+      "source_type": "github",
+      "content_type": "github_project",
+      "channel": "resources",
+      "value_score": 60,
+      "final_score": 72,
+      "home_eligible": true,
+      "is_github": true
+    }
+  ],
+  "channels": {}
+}

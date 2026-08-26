@@ -58,6 +58,38 @@
 - 汇报新增文件、对外函数、输入输出字段和集成方式。
 - 不自行接入 `fetcher.py` 或 `app.py`。
 
+## 2026-08-26 v2 独立模块交付
+
+已实现文件：
+
+- `ai_v2_rules.py`：六栏目说明、分类关键词、首页配额与 GitHub 门槛。
+- `ai_digest_v2.py`：标准化、栏目分类、内容类型、稳定排序、首页编排、分类筛选和 JSON 输出。
+- `tests/test_ai_digest_v2.py`：配额、筛选、稳定性与契约测试。
+- `tests/fixtures/ai_digest_v2_sample.json`：供前端与集成任务参考的小型样例。
+
+公开集成函数：
+
+- `normalize_ai_article(article, policy=None)`：为评分后的 Article 补齐 v2 字段。
+- `compose_home_feed(articles, limit=None, policy=None)`：生成多方向综合首页。
+- `filter_by_channel(articles, channel)`：生成真实分类集合。
+- `build_ai_digest(articles, generated_at=None, limit=None, channel=None, policy=None)`：生成完整 API payload。
+- `write_ai_digest(articles, output_path, **kwargs)`：写入 `ai_digest_v2.json`。
+
+集成建议：
+
+1. `fetch_category("ai")` 和 v1 保存完成后，将评分后的 `items` 传给 `write_ai_digest()`。
+2. 默认输出到 `data/ai_digest_v2.json`。
+3. `/api/v2/ai-digest` 无 `channel` 时返回综合首页；有 `channel` 时返回 payload 中对应分类集合。
+4. 前端必须尊重 `items` 的编排顺序，不再统一按分数重排。
+
+测试命令：
+
+```text
+python -m unittest discover -s tests -v
+```
+
+当前结果：7 项测试全部通过。
+
 ---
 
 ## v1 背景记录
