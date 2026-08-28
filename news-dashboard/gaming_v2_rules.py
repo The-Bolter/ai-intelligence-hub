@@ -7,6 +7,8 @@ official source names/domains here without changing aggregation code.
 
 from __future__ import annotations
 
+import re
+
 
 TIMEZONE_NAME = "Asia/Shanghai"
 
@@ -22,6 +24,8 @@ EVENT_TYPE_LABELS = {
     "test_or_launch": "测试/上线",
     "esports": "电竞赛事",
 }
+
+CANONICAL_EVENT_TYPES = tuple(EVENT_TYPE_LABELS)
 
 # More specific categories must be checked before generic update/event terms.
 EVENT_TYPE_KEYWORDS = {
@@ -56,12 +60,46 @@ EVENT_TYPE_KEYWORDS = {
 
 # Legacy values can be consumed during the migration without changing v1.
 LEGACY_EVENT_TYPE_MAP = {
+    "version_update": "monthly_update",
+    "character_release": "new_character",
+    "activity": "major_event",
+    "season_event": "season_start",
+    "release": "test_or_launch",
     "Season/Event": "season_start",
     "Collaboration": "collaboration",
     "Character/Content": "new_character",
     "Release": "test_or_launch",
     "Version Update": "monthly_update",
 }
+
+
+def canonicalize_event_type(event_type, text=""):
+    """Return one canonical Gaming v2 event type or ``None``.
+
+    Text-specific signals take precedence over broad legacy values such as
+    ``version_update`` so major, monthly, and weekly updates remain distinct.
+    """
+    supplied = str(event_type or "").strip()
+    if supplied in EVENT_TYPE_LABELS:
+        return supplied
+
+    normalized_text = str(text or "").casefold()
+    if re.search(r"\bseason\s+\d+\s+(?:starts?|begins?|launches?)\b", normalized_text):
+        return "season_start"
+    if re.search(r"第?\s*\d+\s*赛季(?:开启|开始|上线)", normalized_text):
+        return "season_start"
+    for canonical_type, keywords in EVENT_TYPE_KEYWORDS.items():
+        if any(keyword.casefold() in normalized_text for keyword in keywords):
+            return canonical_type
+
+    direct = LEGACY_EVENT_TYPE_MAP.get(supplied)
+    if direct:
+        return direct
+    supplied_folded = supplied.casefold()
+    for legacy_type, canonical_type in LEGACY_EVENT_TYPE_MAP.items():
+        if legacy_type.casefold() == supplied_folded:
+            return canonical_type
+    return None
 
 # Explicit fields on an article take precedence.  These lists are the shared
 # fallback for feeds that do not yet emit ``official``/``source_official``.

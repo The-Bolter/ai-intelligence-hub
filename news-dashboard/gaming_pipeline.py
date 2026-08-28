@@ -17,17 +17,38 @@ import json
 import sys
 
 from event_classifier import EventClassifier
+from gaming_event_normalizer import normalize_event
 from game_hotspot import build_article_hotspot
 from game_resolver import GameResolver
 from source_selector import SourceSelector
 
 
+class _LegacyClassifierAdapter:
+    """Expose registry event types only to the existing Aggregator path."""
+
+    def __init__(self, classifier):
+        self.classifier = classifier
+
+    def classify(self, *args, **kwargs):
+        result = self.classifier.classify(*args, **kwargs)
+        legacy_type = result.get("legacy_event_type")
+        if result.get("matched") and legacy_type:
+            result = dict(result)
+            result["event_type"] = legacy_type
+        return result
+
+
 class GamingPipeline:
-    def __init__(self, registry_path=None):
+    def __init__(self, registry_path=None, resolver=None, classifier=None, selector=None):
         self.registry_path = registry_path
-        self.resolver = GameResolver(registry_path)
-        self.classifier = EventClassifier(registry_path, self.resolver)
-        self.selector = SourceSelector(registry_path)
+        self.resolver = resolver if resolver is not None else GameResolver(registry_path)
+        self.classifier = (
+            classifier
+            if classifier is not None
+            else EventClassifier(registry_path, self.resolver)
+        )
+        self.selector = selector if selector is not None else SourceSelector(registry_path)
+        self._legacy_classifier = _LegacyClassifierAdapter(self.classifier)
 
     def process_article(self, title, summary=None) -> dict:
         return build_article_hotspot(
@@ -35,7 +56,7 @@ class GamingPipeline:
             summary,
             self.registry_path,
             resolver=self.resolver,
-            classifier=self.classifier,
+            classifier=self._legacy_classifier,
             selector=self.selector,
         )
 
@@ -60,6 +81,76 @@ class GamingPipeline:
         results.sort(key=lambda item: (-item["hotspot_score"], item["game_name"] or ""))
         return results
 
+    def _normalize_one(self, article, reference_date=None):
+        item = dict(article or {})
+        title = item.get("title") or item.get("headline") or ""
+        summary = item.get("summary") or item.get("content") or ""
+        if not title:
+            return None
+
+        game = self.resolver.resolve(title, summary)
+        if not game.get("matched"):
+            if not item.get("game_id") or not item.get("game_name"):
+                return None
+            game = {
+                "matched": True,
+                "game_id": item["game_id"],
+                "game_name": item["game_name"],
+                "platforms": item.get("platforms") or [],
+                "display_group": item.get("display_group"),
+            }
+
+        classification = self.classifier.classify(
+            title, summary, game_id=game.get("game_id")
+        )
+        if not classification.get("matched"):
+            if not item.get("event_type"):
+                return None
+            classification = {
+                "matched": True,
+                "event_type": item.get("event_type"),
+                "event_name": item.get("event_name") or title,
+            }
+
+        sources = item.get("recommended_sources")
+        if not sources:
+            sources = self.selector.select(
+                game.get("game_id"), classification.get("event_type") or ""
+            ).get("sources", [])
+        event = normalize_event(
+            item,
+            game,
+            classification,
+            recommended_sources=sources,
+            reference_date=reference_date,
+        )
+        if event is None:
+            return None
+        for key in ("game_scale", "game_scale_score", "game_attention"):
+            value = item.get(key, game.get(key))
+            if value not in (None, ""):
+                event[key] = value
+        event["source_articles"] = [item]
+        return event
+
+    def normalize_article(self, article, reference_date=None) -> dict:
+        """Normalize one article into confirmed/pending event collections."""
+        event = self._normalize_one(article, reference_date=reference_date)
+        if event is None:
+            return {"events": [], "pending": []}
+        if event["event_id"] is None:
+            return {"events": [], "pending": [event]}
+        return {"events": [event], "pending": []}
+
+    def normalize_articles(self, articles, reference_date=None) -> dict:
+        """Normalize articles without changing the legacy hotspot methods."""
+        result = {"events": [], "pending": []}
+        for article in articles or []:
+            normalized = self.normalize_article(article, reference_date=reference_date)
+            result["events"].extend(normalized["events"])
+            result["pending"].extend(normalized["pending"])
+        return result
+
 
 def process_article(title, summary=None, registry_path=None) -> dict:
     return GamingPipeline(registry_path).process_article(title, summary)
@@ -67,6 +158,14 @@ def process_article(title, summary=None, registry_path=None) -> dict:
 
 def process_articles(articles, registry_path=None) -> list[dict]:
     return GamingPipeline(registry_path).process_articles(articles)
+
+
+def normalize_article(article, registry_path=None, reference_date=None) -> dict:
+    return GamingPipeline(registry_path).normalize_article(article, reference_date=reference_date)
+
+
+def normalize_articles(articles, registry_path=None, reference_date=None) -> dict:
+    return GamingPipeline(registry_path).normalize_articles(articles, reference_date=reference_date)
 
 
 REQUIRED_KEYS = {

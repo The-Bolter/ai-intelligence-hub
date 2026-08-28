@@ -16,6 +16,7 @@ from typing import Iterable, Mapping, Sequence
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
+from gaming_attention import enrich_event
 from gaming_v2_rules import (
     DEFAULT_GAME_ATTENTION,
     EVENT_IMPORTANCE_SCORE,
@@ -338,9 +339,144 @@ def write_game_weekly_v2(
     return payload
 
 
+def compute_event_phase(event: Mapping, reference_time=None) -> str | None:
+    """Compute upcoming/active/ended from actual event dates."""
+    current = _as_shanghai_datetime(reference_time).date()
+    try:
+        start = date.fromisoformat(str(event.get("start_date") or ""))
+    except ValueError:
+        return None
+    try:
+        end = date.fromisoformat(str(event.get("end_date") or start.isoformat()))
+    except ValueError:
+        end = start
+    if current < start:
+        return "upcoming"
+    if current <= end:
+        return "active"
+    return "ended"
+
+
+def _store_collections(event_store) -> tuple[list[dict], list[dict]]:
+    if hasattr(event_store, "confirmed_events") and hasattr(event_store, "pending_events"):
+        return event_store.confirmed_events(), event_store.pending_events()
+    if isinstance(event_store, Mapping):
+        events = event_store.get("events", [])
+        pending = event_store.get("pending_events", event_store.get("pending", []))
+        if isinstance(events, Mapping):
+            events = events.values()
+        if isinstance(pending, Mapping):
+            pending = pending.values()
+        return [dict(event) for event in events], [dict(event) for event in pending]
+    return [dict(event) for event in event_store or []], []
+
+
+def _intersects_week(event: Mapping, week_start: date, week_end: date) -> bool:
+    try:
+        start = date.fromisoformat(str(event.get("start_date") or ""))
+    except ValueError:
+        return False
+    try:
+        end = date.fromisoformat(str(event.get("end_date") or start.isoformat()))
+    except ValueError:
+        end = start
+    return start <= week_end and end >= week_start
+
+
+def _score_for_sort(event: Mapping) -> float:
+    try:
+        return float(event.get("hotspot_score") or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
+def build_weekly_radar(event_store, reference_time=None) -> dict:
+    """Derive the schema-v3 Weekly Radar from an Event Store snapshot."""
+    generated_at = _as_shanghai_datetime(reference_time)
+    week_start, week_end = natural_week(generated_at)
+    stored_events, pending_events = _store_collections(event_store)
+
+    events = []
+    for stored in stored_events:
+        if not stored.get("event_id") or not _intersects_week(stored, week_start, week_end):
+            continue
+        event = enrich_event(stored, reference_time=generated_at)
+        event["phase"] = compute_event_phase(event, generated_at)
+        events.append(event)
+    events.sort(key=lambda event: (
+        event.get("start_date") or "9999-12-31",
+        -_score_for_sort(event),
+        str(event.get("game_name") or "").casefold(),
+    ))
+
+    indexes = {"mobile": [], "pc": []}
+    for event in events:
+        for platform in event.get("platforms") or []:
+            if platform in indexes and event["event_id"] not in indexes[platform]:
+                indexes[platform].append(event["event_id"])
+
+    return {
+        "schema_version": 3,
+        "view": "weekly_radar",
+        "timezone": TIMEZONE_NAME,
+        "week_start": week_start.isoformat(),
+        "week_end": week_end.isoformat(),
+        "generated_at": generated_at.isoformat(),
+        "events": events,
+        "platform_indexes": indexes,
+        "pending_events": pending_events,
+    }
+
+
+def build_today_new(event_store, reference_time=None, weekly_radar=None) -> dict:
+    """Derive today's newly detected events from the current Weekly Radar."""
+    generated_at = _as_shanghai_datetime(reference_time)
+    today = generated_at.date()
+    weekly = weekly_radar or build_weekly_radar(event_store, generated_at)
+    items = []
+    for event in weekly.get("events", []):
+        detected = event.get("first_detected_at")
+        if not detected:
+            continue
+        try:
+            detected_at = _as_shanghai_datetime(detected)
+        except (TypeError, ValueError):
+            continue
+        if detected_at.date() != today:
+            continue
+        items.append({
+            "event_id": event.get("event_id"),
+            "game_id": event.get("game_id"),
+            "game_name": event.get("game_name"),
+            "display_group": event.get("display_group"),
+            "event_name": event.get("event_name"),
+            "event_type": event.get("event_type"),
+            "start_date": event.get("start_date"),
+            "end_date": event.get("end_date"),
+            "detected_at": detected_at.isoformat(),
+        })
+    items.sort(key=lambda item: (
+        item["detected_at"],
+        item.get("start_date") or "9999-12-31",
+        str(item.get("game_name") or "").casefold(),
+    ))
+    return {
+        "schema_version": 1,
+        "view": "today_new",
+        "timezone": TIMEZONE_NAME,
+        "date": today.isoformat(),
+        "week_start": weekly.get("week_start"),
+        "generated_at": generated_at.isoformat(),
+        "items": items,
+    }
+
+
 __all__ = [
+    "build_today_new",
+    "build_weekly_radar",
     "build_game_weekly_v2",
     "classify_event_type",
+    "compute_event_phase",
     "extract_event_date",
     "filter_events_by_type",
     "natural_week",

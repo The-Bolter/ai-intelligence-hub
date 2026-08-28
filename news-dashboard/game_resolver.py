@@ -29,6 +29,8 @@ _FIELD_ALIASES = {
     "name_en": ("name_en", "英文名称"),
     "aliases": ("aliases", "别名/缩写"),
     "vendor": ("vendor", "厂商/发行商"),
+    "platforms": ("platforms", "平台"),
+    "display_group": ("display_group",),
 }
 
 _ALIAS_SEPARATORS = re.compile(r"[,，、;；/|｜\n]+")
@@ -62,13 +64,37 @@ def _split_aliases(value) -> list[str]:
     return [part.strip() for part in parts if part.strip()]
 
 
+def _parse_platforms(value) -> list[str]:
+    values = value if isinstance(value, list) else _ALIAS_SEPARATORS.split(str(value or ""))
+    text = " ".join(str(item).casefold() for item in values)
+    platforms = []
+    if any(token in text for token in ("mobile", "android", "ios", "手游", "移动端")):
+        platforms.append("mobile")
+    if any(token in text for token in (
+        "pc", "windows", "mac", "linux", "steam", "playstation", "ps4", "ps5",
+        "xbox", "switch", "console", "主机", "端游",
+    )):
+        platforms.append("pc")
+    return platforms
+
+
+def _display_group(value, platforms: list[str]) -> str:
+    explicit = str(value or "").strip().casefold()
+    if explicit in ("mobile", "pc"):
+        return explicit
+    return "mobile" if "mobile" in platforms else "pc"
+
+
 def _build_entry(record: dict) -> dict:
+    platforms = _parse_platforms(_first(record, "platforms"))
     return {
         "game_id": _first(record, "game_id"),
         "name_cn": _first(record, "name_cn"),
         "name_en": _first(record, "name_en"),
         "vendor": _first(record, "vendor"),
         "aliases": _split_aliases(_first(record, "aliases")),
+        "platforms": platforms,
+        "display_group": _display_group(_first(record, "display_group"), platforms),
     }
 
 
@@ -157,6 +183,8 @@ class GameResolver:
             "game_name": entry["name_cn"] or entry["name_en"],
             "match_type": best["match_type"],
             "confidence": best["confidence"],
+            "platforms": list(entry["platforms"]),
+            "display_group": entry["display_group"],
         }
 
     @staticmethod
@@ -167,6 +195,8 @@ class GameResolver:
             "game_name": None,
             "match_type": None,
             "confidence": 0,
+            "platforms": [],
+            "display_group": None,
         }
 
 

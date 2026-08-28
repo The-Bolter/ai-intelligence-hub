@@ -13,6 +13,8 @@ import config
 from fetcher import refresh_all, _load_ai_insights, _get_insight_map, _update_ai_insight
 from translation_service import try_translate_article
 from ai_today_view import build_ai_today_view
+from gaming_event_store import DEFAULT_EVENT_STORE_PATH, GamingEventStore
+from gaming_weekly_v2 import build_today_new, build_weekly_radar
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -21,6 +23,7 @@ app = Flask(__name__)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 GAMING_HOTSPOTS_FILE = os.path.join(os.path.dirname(__file__), "gaming_hotspots.json")
+GAMING_EVENT_STORE_FILE = DEFAULT_EVENT_STORE_PATH
 
 
 # ------------------ 后台自动刷新线程 ------------------
@@ -62,6 +65,10 @@ def _load_gaming_hotspots():
     except (OSError, json.JSONDecodeError):
         logger.warning("Failed to read gaming hotspots file: %s", GAMING_HOTSPOTS_FILE)
         return []
+
+
+def _load_gaming_event_store():
+    return GamingEventStore.load(GAMING_EVENT_STORE_FILE)
 
 
 # ------------------ 路由 ------------------
@@ -219,6 +226,18 @@ def api_gaming_hotspots():
             "recommended_sources": h.get("recommended_sources") or [],
         })
     return jsonify({"items": items})
+
+
+@app.route("/api/gaming/weekly")
+def api_gaming_weekly():
+    return jsonify(build_weekly_radar(_load_gaming_event_store()))
+
+
+@app.route("/api/gaming/today-new")
+def api_gaming_today_new():
+    store = _load_gaming_event_store()
+    weekly = build_weekly_radar(store)
+    return jsonify(build_today_new(store, weekly_radar=weekly))
 
 @app.route("/api/ai-insights")
 def api_ai_insights():

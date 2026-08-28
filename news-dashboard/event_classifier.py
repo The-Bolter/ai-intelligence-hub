@@ -23,6 +23,7 @@ import sys
 from pathlib import Path
 
 from game_resolver import GameResolver
+from gaming_v2_rules import canonicalize_event_type
 
 DEFAULT_REGISTRY = Path(__file__).resolve().parent / "config" / "game_registry.json"
 
@@ -146,13 +147,19 @@ class EventClassifier:
         )
         confidence = 100 if best["game_id"] else 90
         event_name = best["event_name"] or best["event_type"]
+        canonical_event_type = canonicalize_event_type(
+            best["event_type"], " ".join(texts)
+        )
+        if canonical_event_type is None:
+            return self._no_match()
         return {
             "matched": True,
-            "event_type": best["event_type"],
+            "event_type": canonical_event_type,
             "event_name": event_name,
             "importance": best["importance"],
             "matched_rule": event_name or best["pattern_text"],
             "confidence": confidence,
+            "legacy_event_type": best["event_type"],
         }
 
     @staticmethod
@@ -164,12 +171,13 @@ class EventClassifier:
             "importance": None,
             "matched_rule": None,
             "confidence": 0,
+            "legacy_event_type": None,
         }
 
 
 SELF_TESTS = [
-    ("版本前瞻识别", "绝区零2.8版本前瞻特别节目", None, None, {"matched": True, "event_type": "version_update", "event_name": "版本更新"}),
-    ("新角色识别", "原神新角色上线公告", None, None, {"matched": True, "event_type": "character_release"}),
+    ("版本前瞻识别", "绝区零2.8版本前瞻特别节目", None, None, {"matched": True, "event_type": "monthly_update", "event_name": "版本更新"}),
+    ("新角色识别", "原神新角色上线公告", None, None, {"matched": True, "event_type": "new_character"}),
     ("赛事识别", "英雄联盟全球总决赛开启", None, None, {"matched": True, "event_type": "esports"}),
     ("无事件文本", "今天吃什么", None, None, {"matched": False}),
 ]

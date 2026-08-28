@@ -19,15 +19,28 @@ import json
 import sys
 
 from game_source_fetcher import GameSourceFetcher
+from gaming_event_store import DEFAULT_EVENT_STORE_PATH, GamingEventStore
 from gaming_pipeline import GamingPipeline
 from source_selector import SourceSelector
 
 
 class GamingCollector:
-    def __init__(self, selector=None, fetcher=None, pipeline=None, registry_path=None):
+    def __init__(
+        self, selector=None, fetcher=None, pipeline=None, registry_path=None,
+        event_store=None, event_store_path=DEFAULT_EVENT_STORE_PATH,
+    ):
         self.selector = selector if selector is not None else SourceSelector(registry_path)
         self.fetcher = fetcher if fetcher is not None else GameSourceFetcher(self.selector, registry_path)
         self.pipeline = pipeline if pipeline is not None else GamingPipeline(registry_path)
+        self.event_store_path = event_store_path
+        if event_store is not None:
+            self.event_store = event_store
+        else:
+            try:
+                self.event_store = GamingEventStore.load(event_store_path)
+            except (OSError, ValueError, TypeError):
+                # A broken v2 cache cannot stop the legacy collection path.
+                self.event_store = GamingEventStore()
 
     def collect_game_events(self, game_id, event_type=None) -> dict:
         game_id = game_id or ""
@@ -39,26 +52,40 @@ class GamingCollector:
         except Exception:
             fetched = []
 
-        articles = [
-            {
-                "title": item.get("title") or "",
-                "summary": item.get("content") or "",
-                "url": item.get("url") or "",
-            }
-            for item in fetched
-            if item.get("fetch_status") == "success"
-        ]
+        articles = []
+        for fetched_item in fetched:
+            if fetched_item.get("fetch_status") != "success":
+                continue
+            item = dict(fetched_item)
+            item.setdefault("summary", item.get("content") or "")
+            item.setdefault("id", item.get("article_id") or item.get("url") or "")
+            articles.append(item)
 
         try:
             hotspots = self.pipeline.process_articles(articles)
         except Exception:
             hotspots = []
 
+        normalized = {"events": [], "pending": []}
+        store_stats = None
+        try:
+            normalized = self.pipeline.normalize_articles(articles)
+            store_stats = self.event_store.ingest(normalized)
+            if self.event_store_path is not None:
+                self.event_store.save(self.event_store_path)
+        except Exception:
+            # The v2 parallel output must never change the legacy Aggregator result.
+            normalized = {"events": [], "pending": []}
+            store_stats = None
+
         return {
             "game_id": game_id,
             "sources_checked": len(sources),
             "articles_found": len(articles),
             "hotspots": hotspots,
+            "events": normalized["events"],
+            "pending": normalized["pending"],
+            "event_store_stats": store_stats,
         }
 
 
@@ -135,13 +162,21 @@ def run_selftest() -> int:
     selector = _FakeSelector({"GMHY-YS": [rss_source]})
     fetcher = _FakeFetcher({"https://example.com/feed": rss_article})
     pipeline = _RecordingPipeline()
-    collector = GamingCollector(selector=selector, fetcher=fetcher, pipeline=pipeline)
+    collector = GamingCollector(
+        selector=selector, fetcher=fetcher, pipeline=pipeline,
+        event_store=GamingEventStore(), event_store_path=None,
+    )
     result = collector.collect_game_events("GMHY-YS", "version_update")
 
     expected_article = {
         "title": "绝区零2.8版本前瞻特别节目",
-        "summary": "绝区零2.8版本前瞻特别节目将于近期播出。",
         "url": "https://example.com/feed/post/1",
+        "source_name": "测试RSS",
+        "published": "2026-08-09 10:00",
+        "content": "绝区零2.8版本前瞻特别节目将于近期播出。",
+        "fetch_status": "success",
+        "summary": "绝区零2.8版本前瞻特别节目将于近期播出。",
+        "id": "https://example.com/feed/post/1",
     }
     ok = (
         result["sources_checked"] == 1
@@ -195,7 +230,10 @@ def run_selftest() -> int:
             "https://example.com/api": unsupported_result,
         }
     )
-    collector = GamingCollector(selector=selector, fetcher=fetcher, pipeline=_RecordingPipeline())
+    collector = GamingCollector(
+        selector=selector, fetcher=fetcher, pipeline=_RecordingPipeline(),
+        event_store=GamingEventStore(), event_store_path=None,
+    )
     result = collector.collect_game_events("GMHY-ZZ", "version_update")
 
     ok = (
@@ -208,7 +246,10 @@ def run_selftest() -> int:
     print(f"[{'PASS' if ok else 'FAIL'}] 多来源失败隔离: {json.dumps(result, ensure_ascii=False)}")
 
     selector = _FakeSelector({})
-    collector = GamingCollector(selector=selector, fetcher=fetcher, pipeline=_RecordingPipeline())
+    collector = GamingCollector(
+        selector=selector, fetcher=fetcher, pipeline=_RecordingPipeline(),
+        event_store=GamingEventStore(), event_store_path=None,
+    )
     result = collector.collect_game_events("GAME-NOT-EXIST", "version_update")
 
     ok = (

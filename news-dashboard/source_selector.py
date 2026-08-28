@@ -24,7 +24,17 @@ from pathlib import Path
 DEFAULT_REGISTRY = Path(__file__).resolve().parent / "config" / "game_registry.json"
 
 EVENT_PAGE_TYPES = {
+    "major_update": ("公告", "版本", "更新"),
+    "monthly_update": ("公告", "版本", "更新"),
+    "weekly_update": ("公告", "版本", "更新"),
+    "season_start": ("公告", "赛季", "活动"),
+    "new_map": ("公告", "版本", "地图", "内容"),
+    "new_character": ("公告", "版本", "角色", "内容"),
+    "collaboration": ("公告", "联动", "活动"),
+    "major_event": ("公告", "活动"),
+    "test_or_launch": ("公告", "测试", "上线"),
     "version_update": ("公告", "版本"),
+    "character_release": ("公告", "版本", "角色", "内容"),
     "activity": ("活动",),
     "esports": ("赛事",),
 }
