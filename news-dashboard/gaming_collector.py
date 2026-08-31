@@ -17,11 +17,18 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from urllib.parse import urlsplit
 
 from game_source_fetcher import GameSourceFetcher
 from gaming_event_store import DEFAULT_EVENT_STORE_PATH, GamingEventStore
 from gaming_pipeline import GamingPipeline
 from source_selector import SourceSelector
+
+
+_GENERIC_PUBLISHER_HOSTS = {
+    "qq.com", "www.qq.com", "game.qq.com", "163.com", "www.163.com",
+    "warnerbros.com", "www.warnerbros.com", "ea.com", "www.ea.com",
+}
 
 
 class GamingCollector:
@@ -59,6 +66,11 @@ class GamingCollector:
             item = dict(fetched_item)
             item.setdefault("summary", item.get("content") or "")
             item.setdefault("id", item.get("article_id") or item.get("url") or "")
+            item["source_game_id"] = game_id
+            context = self._safe_source_context(item, game_id)
+            item["source_context_safe"] = context is not None
+            if context:
+                item.update(context)
             articles.append(item)
 
         try:
@@ -86,6 +98,29 @@ class GamingCollector:
             "events": normalized["events"],
             "pending": normalized["pending"],
             "event_store_stats": store_stats,
+        }
+
+    def _safe_source_context(self, article, game_id) -> dict | None:
+        """Use configured game identity only for a verified, game-specific article."""
+        if not article.get("source_is_article"):
+            return None
+        host = (urlsplit(article.get("source_url") or article.get("url") or "").hostname or "").casefold()
+        if host in _GENERIC_PUBLISHER_HOSTS:
+            return None
+        entry = next(
+            (item for item in self.pipeline.resolver.games if item.get("game_id") == game_id),
+            None,
+        )
+        if not entry:
+            return None
+        name = entry.get("name_cn") or entry.get("name_en")
+        if not name:
+            return None
+        return {
+            "game_id": game_id,
+            "game_name": name,
+            "platforms": list(entry.get("platforms") or []),
+            "display_group": entry.get("display_group"),
         }
 
 
@@ -177,6 +212,8 @@ def run_selftest() -> int:
         "fetch_status": "success",
         "summary": "绝区零2.8版本前瞻特别节目将于近期播出。",
         "id": "https://example.com/feed/post/1",
+        "source_game_id": "GMHY-YS",
+        "source_context_safe": False,
     }
     ok = (
         result["sources_checked"] == 1

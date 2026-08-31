@@ -18,6 +18,7 @@ import sys
 
 from event_classifier import EventClassifier
 from gaming_event_normalizer import normalize_event
+from gaming_v2_rules import canonicalize_event_type
 from game_hotspot import build_article_hotspot
 from game_resolver import GameResolver
 from source_selector import SourceSelector
@@ -100,17 +101,19 @@ class GamingPipeline:
                 "display_group": item.get("display_group"),
             }
 
-        classification = self.classifier.classify(
-            title, summary, game_id=game.get("game_id")
-        )
-        if not classification.get("matched"):
-            if not item.get("event_type"):
-                return None
+        configured_event_type = canonicalize_event_type(item.get("event_type"), title)
+        if configured_event_type:
             classification = {
                 "matched": True,
-                "event_type": item.get("event_type"),
+                "event_type": configured_event_type,
                 "event_name": item.get("event_name") or title,
             }
+        else:
+            classification = self.classifier.classify(
+                title, summary, game_id=game.get("game_id")
+            )
+            if not classification.get("matched"):
+                return None
 
         sources = item.get("recommended_sources")
         if not sources:

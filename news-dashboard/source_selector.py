@@ -61,6 +61,7 @@ def _to_int_priority(value) -> int:
 
 
 def _build_source(record: dict, order: int) -> dict:
+    explicit_article = _first(record, "is_article", "具体文章")
     return {
         "game_id": _first(record, "game_id"),
         "source_name": _first(record, "source_name") or "",
@@ -68,6 +69,15 @@ def _build_source(record: dict, order: int) -> dict:
         "url": _first(record, "URL", "url") or "",
         "priority": _to_int_priority(_first(record, "source_priority", "priority")),
         "fetch_method": _first(record, "抓取方式", "fetch_method") or "",
+        # A Portfolio source can deliberately point to one verified news detail
+        # page. Preserve that intent so the fetcher does not re-expand it as a
+        # generic news listing.
+        "is_article": str(explicit_article or "").strip().casefold() in {"1", "y", "yes", "true", "是"},
+        "event_type": _first(record, "event_type"),
+        "event_name": _first(record, "event_name"),
+        "start_date": _first(record, "start_date"),
+        "end_date": _first(record, "end_date"),
+        "key_changes": record.get("key_changes") or [],
         "_order": order,
     }
 
@@ -138,6 +148,12 @@ class SourceSelector:
                 "url": source["url"],
                 "priority": source["priority"],
                 "fetch_method": source["fetch_method"],
+                "is_article": source["is_article"],
+                "event_type": source["event_type"],
+                "event_name": source["event_name"],
+                "start_date": source["start_date"],
+                "end_date": source["end_date"],
+                "key_changes": source["key_changes"],
             }
             for source in selected
         ]

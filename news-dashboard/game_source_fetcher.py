@@ -17,6 +17,7 @@ import json
 import re
 import sys
 import time
+from urllib.parse import urljoin, urlsplit
 
 from source_selector import SourceSelector
 
@@ -87,6 +88,7 @@ class GameSourceFetcher:
             url=getattr(entry, "link", "") or "",
             published=self._entry_published(entry),
             content=getattr(entry, "summary", "") or "",
+            is_article=True,
         )
 
     def _fetch_html(self, source) -> dict:
@@ -95,9 +97,38 @@ class GameSourceFetcher:
         response = requests.get(source.get("url") or "", timeout=self.timeout)
         if getattr(response, "status_code", None) != 200:
             return self._result(source, "fail")
-        soup = BeautifulSoup(response.text, "html.parser")
+        soup = BeautifulSoup(self._response_text(response), "html.parser")
+        if source.get("is_article"):
+            title = soup.title.get_text(strip=True) if soup.title else ""
+            content = self._body_text(soup)
+            reason = self._invalid_reason(title, content, source.get("url") or "", is_article=True)
+            if reason:
+                return self._result(source, "invalid_page", invalid_reason=reason)
+            return self._result(
+                source, "success", title=title, content=content,
+                url=source.get("url") or "", is_article=True,
+            )
+        article_url = self._find_article_link(soup, source.get("url") or "")
+        if article_url:
+            article_response = requests.get(article_url, timeout=self.timeout)
+            if getattr(article_response, "status_code", None) != 200:
+                return self._result(source, "fail")
+            soup = BeautifulSoup(self._response_text(article_response), "html.parser")
+            title = soup.title.get_text(strip=True) if soup.title else ""
+            content = self._body_text(soup)
+            reason = self._invalid_reason(title, content, article_url, is_article=True)
+            if reason:
+                return self._result(source, "invalid_page", url=article_url, invalid_reason=reason)
+            return self._result(
+                source, "success", title=title, content=content, url=article_url,
+                is_article=True,
+            )
         title = soup.title.get_text(strip=True) if soup.title else ""
-        return self._result(source, "success", title=title, content=self._body_text(soup))
+        content = self._body_text(soup)
+        reason = self._invalid_reason(title, content, source.get("url") or "", is_article=False)
+        if reason:
+            return self._result(source, "invalid_page", invalid_reason=reason)
+        return self._result(source, "success", title=title, content=content, is_article=False)
 
     def _fetch_api(self, source) -> dict:
         endpoint = source.get("api_endpoint")
@@ -111,8 +142,84 @@ class GameSourceFetcher:
         try:
             content = json.dumps(response.json(), ensure_ascii=False)
         except ValueError:
-            content = response.text
-        return self._result(source, "success", content=content[: self.max_content_length])
+            content = self._response_text(response)
+        reason = self._invalid_reason("", content, endpoint, is_article=True)
+        if reason:
+            return self._result(source, "invalid_page", invalid_reason=reason)
+        return self._result(source, "success", content=content[: self.max_content_length], is_article=True)
+
+    @staticmethod
+    def _response_text(response) -> str:
+        """Decode HTML deterministically, including common Chinese encodings."""
+        raw = getattr(response, "content", None)
+        if not isinstance(raw, (bytes, bytearray)):
+            return str(getattr(response, "text", "") or "")
+        encodings = []
+        for encoding in (
+            getattr(response, "encoding", None),
+            getattr(response, "apparent_encoding", None),
+            "utf-8", "gb18030", "gbk", "gb2312",
+        ):
+            normalized = str(encoding or "").strip()
+            if normalized and normalized.casefold() not in {item.casefold() for item in encodings}:
+                encodings.append(normalized)
+        decoded = []
+        for encoding in encodings:
+            try:
+                text = bytes(raw).decode(encoding)
+            except (LookupError, UnicodeDecodeError):
+                continue
+            # Prefer readable CJK/ASCII text and reject mojibake replacement noise.
+            quality = sum(char.isascii() or "\u4e00" <= char <= "\u9fff" for char in text) - text.count("\ufffd") * 20
+            decoded.append((quality, text))
+        if decoded:
+            return max(decoded, key=lambda value: value[0])[1]
+        return bytes(raw).decode("utf-8", errors="replace")
+
+    def _find_article_link(self, soup, base_url: str) -> str | None:
+        """Choose one same-site, event-oriented article link from a list page."""
+        parsed_base = urlsplit(base_url)
+        positives = ("公告", "新闻", "版本", "更新", "活动", "赛事", "notice", "news", "update", "patch", "event")
+        negatives = ("首页", "home", "footer", "forum", "论坛", "status", "login", "登录", "用户中心")
+        candidates = []
+        for link in soup.find_all("a", href=True):
+            href = str(link.get("href") or "").strip()
+            text = link.get_text(" ", strip=True)
+            absolute = urljoin(base_url, href)
+            parsed = urlsplit(absolute)
+            if not href or href.startswith("#") or parsed.scheme not in ("http", "https"):
+                continue
+            if parsed.hostname != parsed_base.hostname or absolute.rstrip("/") == base_url.rstrip("/"):
+                continue
+            material = f"{text} {parsed.path}".casefold()
+            if any(token in material for token in negatives):
+                continue
+            score = sum(token in material for token in positives)
+            if score:
+                candidates.append((score, len(text), absolute))
+        return max(candidates, default=(0, 0, None))[2]
+
+    @staticmethod
+    def _invalid_reason(title: str, content: str, url: str, is_article: bool) -> str | None:
+        title = str(title or "").strip()
+        content = re.sub(r"\s+", " ", str(content or "")).strip()
+        material = f"{title} {content}".casefold()
+        if any(marker in material for marker in (
+            "loading...", "sina visitor system", "javascript required", "enable javascript",
+            "access denied", "login required", "请先登录",
+        )):
+            return "placeholder_or_access_wall"
+        if not content:
+            return "empty_body"
+        path = urlsplit(url).path.casefold()
+        if any(marker in path for marker in ("/forum", "/forums", "/community", "/status", "/login")):
+            return "forum_status_or_login_page"
+        if not is_article and (path in ("", "/") or any(marker in title.casefold() for marker in ("official website", "官方网站", "官网首页"))):
+            return "homepage_or_navigation"
+        event_terms = ("公告", "新闻", "版本", "更新", "活动", "赛事", "notice", "news", "update", "patch", "event", "beta", "launch")
+        if len(content) < 80 and not any(term in material for term in event_terms):
+            return "too_short_without_event_signal"
+        return None
 
     @staticmethod
     def _entry_published(entry) -> str:
@@ -131,15 +238,31 @@ class GameSourceFetcher:
         return re.sub(r"\s+", " ", text)[: self.max_content_length]
 
     @staticmethod
-    def _result(source, status, title="", url="", published="", content="") -> dict:
+    def _result(
+        source, status, title="", url="", published="", content="", invalid_reason=None,
+        is_article=False,
+    ) -> dict:
         source = source or {}
         return {
             "title": title or "",
             "url": url or source.get("url") or "",
             "source_name": source.get("source_name") or "",
+            "source_type": source.get("source_type") or "",
+            "source_priority": source.get("priority", source.get("source_priority")),
+            "source_url": source.get("url") or source.get("URL") or "",
             "published": published or "",
             "content": content or "",
             "fetch_status": status,
+            "invalid_reason": invalid_reason,
+            "source_is_article": bool(is_article),
+            # Portfolio records may carry verified metadata from the same
+            # concrete official article.  The Collector forwards it unchanged
+            # to the existing deterministic normalizer.
+            "event_type": source.get("event_type"),
+            "event_name": source.get("event_name"),
+            "start_date": source.get("start_date"),
+            "end_date": source.get("end_date"),
+            "key_changes": list(source.get("key_changes") or []),
         }
 
 
@@ -169,7 +292,8 @@ def run_selftest() -> int:
         status_code = 200
         text = (
             "<html><head><title>HTML测试标题</title></head>"
-            "<body><article><p>正文内容一</p><p>正文内容二</p></article></body></html>"
+            "<body><article><p>正文内容一：2.0版本更新公告。</p>"
+            "<p>正文内容二：新英雄将于2026年9月1日上线，活动同步开启。</p></article></body></html>"
         )
 
     class _FakeRequests:

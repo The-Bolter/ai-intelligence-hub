@@ -139,6 +139,25 @@ def _extract_iso_dates(text: str) -> tuple[date | None, date | None] | None:
     return start, None
 
 
+def _extract_day_first_dates(text: str) -> tuple[date | None, date | None] | None:
+    """Parse explicit DD.MM.YYYY dates without confusing them with ISO dates."""
+    matches = list(re.finditer(r"(?<!\d)(\d{1,2})\.(\d{1,2})\.(20\d{2})(?!\d)", text))
+    if not matches:
+        return None
+    first = matches[0]
+    start = _valid_date(first.group(3), first.group(2), first.group(1))
+    if start is None:
+        return None
+    if len(matches) > 1:
+        second = matches[1]
+        between = text[first.end():second.start()]
+        if re.fullmatch(rf"\s*{_RANGE_SEPARATOR}\s*", between, re.IGNORECASE):
+            end = _valid_date(second.group(3), second.group(2), second.group(1))
+            if end is not None and end >= start:
+                return start, end
+    return start, None
+
+
 def _extract_chinese_dates(text: str, reference: date) -> tuple[date | None, date | None] | None:
     range_match = re.search(
         rf"(?:(20\d{{2}})\s*年\s*)?(\d{{1,2}})\s*月\s*(\d{{1,2}})\s*[日号]?"
@@ -200,19 +219,49 @@ def extract_event_dates(article: Mapping, reference_date=None) -> tuple[date | N
     if explicit_start is not None:
         return explicit_start, explicit_end if explicit_end and explicit_end >= explicit_start else None
 
-    text = " ".join(
+    direct_text = " ".join(
         str(article.get(key) or "")
-        for key in ("title", "headline", "summary", "content", "event_name", "date_range")
+        for key in ("title", "headline", "event_name", "date_range")
     )
+    body_text = " ".join(str(article.get(key) or "") for key in ("summary", "content"))
+    segments = [direct_text]
+    if article.get("source_is_article", True):
+        segments.extend(_event_bound_date_segments(body_text))
     for extractor in (
         lambda value: _extract_iso_dates(value),
+        lambda value: _extract_day_first_dates(value),
         lambda value: _extract_chinese_dates(value, reference),
         lambda value: _extract_english_dates(value, reference),
     ):
-        result = extractor(text)
-        if result and result[0] is not None:
-            return result
+        for text in segments:
+            result = extractor(text)
+            if result and result[0] is not None:
+                return result
     return None, None
+
+
+def _event_bound_date_segments(text: str) -> list[str]:
+    """Keep body dates only when they occur close to an operational signal."""
+    if not text:
+        return []
+    date_pattern = (
+        r"20\d{2}[-/.]\d{1,2}[-/.]\d{1,2}|\d{1,2}\.\d{1,2}\.20\d{2}|"
+        r"\d{1,2}\s*月\s*\d{1,2}\s*[日号]?|"
+        rf"(?:{_MONTH_PATTERN})\.?\s+\d{{1,2}}(?:st|nd|rd|th)?"
+    )
+    event_pattern = (
+        r"公告|新闻|版本|更新|活动|赛事|赛季|新角色|新英雄|新地图|测试|公测|上线|发布|周年|"
+        r"notice|news|update|patch|event|season|hero|character|map|beta|launch|"
+        r"tournament|championship"
+    )
+    segments = []
+    for match in re.finditer(date_pattern, text, re.IGNORECASE):
+        start = max(0, match.start() - 120)
+        end = min(len(text), match.end() + 120)
+        segment = text[start:end]
+        if re.search(event_pattern, segment, re.IGNORECASE):
+            segments.append(segment)
+    return segments
 
 
 def extract_key_changes(article: Mapping) -> list[str]:

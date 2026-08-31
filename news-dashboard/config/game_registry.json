@@ -1547,6 +1547,18 @@
       "热度等级": "S",
       "别名/缩写": "GTA6/洛圣都2",
       "备注": "Rockstar下一代,待发"
+    },
+    {
+      "game_id": "GACT-COD",
+      "游戏名称": "使命召唤",
+      "英文名称": "Call of Duty",
+      "厂商/发行商": "Activision",
+      "游戏类型": "FPS",
+      "平台": "PC/Console/Mobile",
+      "地区": "Global",
+      "热度等级": "S",
+      "别名/缩写": "COD/Call of Duty",
+      "备注": "官方博客来源"
     }
   ],
   "sources": [
@@ -3545,26 +3557,20 @@
     {
       "game_id": "GDB-WN",
       "游戏名称": "无限暖暖",
-      "source_name": "官方网站",
+      "source_name": "Infinity Nikki V2.9 更新公告",
       "source_type": "官网",
-      "URL": "https://infinitynikki.163.com/",
+      "URL": "https://infinitynikki.infoldgames.com/en/news/583",
       "source_priority": "100",
       "是否支持自动抓取": "Y",
       "抓取方式": "HTML",
-      "更新频率": "每周",
-      "备注": "叠纸暖暖系列"
-    },
-    {
-      "game_id": "GDB-WN",
-      "游戏名称": "无限暖暖",
-      "source_name": "官方微博",
-      "source_type": "官方社媒",
-      "URL": "https://weibo.com/u/7930000000",
-      "source_priority": "80",
-      "是否支持自动抓取": "Y",
-      "抓取方式": "HTML",
-      "更新频率": "每周",
-      "备注": "无限暖暖官微"
+      "更新频率": "Portfolio MVP",
+      "备注": "官方 V2.9 具体公告，事件周期已按正文核验",
+      "具体文章": "Y",
+      "event_type": "major_event",
+      "event_name": "V2.9 限时共鸣活动",
+      "start_date": "2026-08-27",
+      "end_date": "2026-09-23",
+      "key_changes": ["新活动"]
     },
     {
       "game_id": "GDB-LY",
@@ -4061,26 +4067,19 @@
     {
       "game_id": "GSTEAM-R6",
       "游戏名称": "彩虹六号：围攻",
-      "source_name": "Steam商店页",
-      "source_type": "Steam",
-      "URL": "https://store.steampowered.com/app/359550/",
-      "source_priority": "95",
-      "是否支持自动抓取": "Y",
-      "抓取方式": "Steam API",
-      "更新频率": "每周",
-      "备注": "育碧长青"
-    },
-    {
-      "game_id": "GSTEAM-R6",
-      "游戏名称": "彩虹六号：围攻",
-      "source_name": "Ubisoft官网",
+      "source_name": "R6 Year 11 Season 3 官方季报",
       "source_type": "官网",
-      "URL": "https://www.ubisoft.com/en-us/game/rainbow-six/siege",
-      "source_priority": "90",
+      "URL": "https://www.ubisoft.com/en-us/game/rainbow-six/siege/news-updates/seasons",
+      "source_priority": "100",
       "是否支持自动抓取": "Y",
       "抓取方式": "HTML",
-      "更新频率": "每周",
-      "备注": "育碧官方"
+      "更新频率": "Portfolio MVP",
+      "备注": "官方 Season 3 详情，移除官网首页与商店页",
+      "具体文章": "Y",
+      "event_type": "season_start",
+      "event_name": "Operation Split Fire",
+      "start_date": "2026-09-01",
+      "key_changes": ["新角色", "新地图", "新玩法"]
     },
     {
       "game_id": "GSTEAM-BF6",
@@ -4133,26 +4132,56 @@
     {
       "game_id": "GSTEAM-WT",
       "游戏名称": "War Thunder",
-      "source_name": "官方网站",
+      "source_name": "Space Program 活动公告",
       "source_type": "官网",
-      "URL": "https://warthunder.com/en/news",
-      "source_priority": "95",
+      "URL": "https://warthunder.com/en/news/10190-event-get-the-f-16xl-in-the-space-program-event-en",
+      "source_priority": "100",
       "是否支持自动抓取": "Y",
       "抓取方式": "HTML",
-      "更新频率": "每周",
-      "备注": "Gaijin官方"
+      "更新频率": "Portfolio MVP",
+      "备注": "官方具体活动公告",
+      "具体文章": "Y",
+      "event_type": "major_event",
+      "event_name": "Space Program 活动",
+      "start_date": "2026-09-03",
+      "end_date": "2026-09-21",
+      "key_changes": ["活动载具"]
     },
     {
       "game_id": "GSTEAM-WT",
       "游戏名称": "War Thunder",
-      "source_name": "Steam商店页",
-      "source_type": "Steam",
-      "URL": "https://store.steampowered.com/app/236390/",
+      "source_name": "Pages of History 九月活动公告",
+      "source_type": "官网",
+      "URL": "https://warthunder.com/en/news/10183-event-pages-of-history-september-night-witch-en",
+      "source_priority": "95",
+      "是否支持自动抓取": "Y",
+      "抓取方式": "HTML",
+      "更新频率": "Portfolio MVP",
+      "备注": "官方具体九月活动公告",
+      "具体文章": "Y",
+      "event_type": "major_event",
+      "event_name": "Pages of History（九月）",
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-30",
+      "key_changes": ["新活动"]
+    },
+    {
+      "game_id": "GSTEAM-WT",
+      "游戏名称": "War Thunder",
+      "source_name": "Military Survival Kit 活动公告",
+      "source_type": "官网",
+      "URL": "https://warthunder.com/en/news/10186-special-the-military-survival-kit-en",
       "source_priority": "90",
       "是否支持自动抓取": "Y",
-      "抓取方式": "Steam API",
-      "更新频率": "每周",
-      "备注": "Gaijin官方"
+      "抓取方式": "HTML",
+      "更新频率": "Portfolio MVP",
+      "备注": "官方具体限时活动公告",
+      "具体文章": "Y",
+      "event_type": "major_event",
+      "event_name": "Military Survival Kit 限时活动",
+      "start_date": "2026-08-27",
+      "end_date": "2026-09-25",
+      "key_changes": ["新活动"]
     },
     {
       "game_id": "GSTEAM-SUB2",
@@ -4309,6 +4338,24 @@
       "抓取方式": "HTML",
       "更新频率": "版本更新时",
       "备注": "Rockstar下一代旗舰"
+    },
+    {
+      "game_id": "GACT-COD",
+      "游戏名称": "使命召唤",
+      "source_name": "Activision MW4 Open Beta 官方支持公告",
+      "source_type": "官网",
+      "URL": "https://support.activision.com/no/modern-warfare-4/articles/modern-warfare-4-open-beta",
+      "source_priority": "100",
+      "是否支持自动抓取": "Y",
+      "抓取方式": "HTML",
+      "更新频率": "Portfolio MVP",
+      "备注": "官方 Open Beta FAQ，当前博客在运行环境不可用",
+      "具体文章": "Y",
+      "event_type": "test_or_launch",
+      "event_name": "Modern Warfare 4 Open Beta",
+      "start_date": "2026-08-28",
+      "end_date": "2026-09-01",
+      "key_changes": ["Beta测试", "新地图", "新玩法"]
     }
   ],
   "event_rules": [
@@ -7459,6 +7506,17 @@
       "抓取难度": "中",
       "渲染方式": "JS渲染",
       "备注": "待发售"
+    },
+    {
+      "game_id": "GACT-COD",
+      "游戏名称": "使命召唤",
+      "页面类型": "公告列表",
+      "页面名称": "官方博客",
+      "URL": "https://www.callofduty.com/blog",
+      "页面结构说明": "确定性文章链接筛选",
+      "抓取难度": "中",
+      "渲染方式": "HTML",
+      "备注": "官方运营公告"
     }
   ]
 }

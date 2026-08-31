@@ -40,6 +40,25 @@ _RULE_FIELDS = {
 _IMPORTANCE_RANK = {"高": 3, "中": 2, "低": 1}
 _AND_LOGIC = {"AND", "且", "并且", "全部"}
 
+_EXPLICIT_V2_FALLBACKS = (
+    (
+        "new_character", "新角色", "character_release",
+        re.compile(r"\bnew\s+(?:hero|character|agent)\b|新英雄|新角色", re.IGNORECASE),
+    ),
+    (
+        "major_event", "大型活动", "activity",
+        re.compile(r"\banniversary\b|周年庆", re.IGNORECASE),
+    ),
+    (
+        "esports", "赛事", "esports",
+        re.compile(
+            r"\b(?:esports|tournament|championship|world\s+finals|grand\s+finals)\b|"
+            r"全球总决赛|总决赛|冠军赛|锦标赛|(?:联赛|赛事).{0,8}(?:开赛|开始|举行|赛程)",
+            re.IGNORECASE,
+        ),
+    ),
+)
+
 
 def _first(record: dict, key: str):
     for candidate in _RULE_FIELDS[key]:
@@ -135,7 +154,7 @@ class EventClassifier:
 
         group = game_matches or global_matches
         if not group:
-            return self._no_match()
+            return self._explicit_fallback(texts)
 
         best = min(
             group,
@@ -161,6 +180,22 @@ class EventClassifier:
             "confidence": confidence,
             "legacy_event_type": best["event_type"],
         }
+
+    @staticmethod
+    def _explicit_fallback(texts: list[str]) -> dict:
+        text = " ".join(texts)
+        for event_type, event_name, legacy_event_type, pattern in _EXPLICIT_V2_FALLBACKS:
+            if pattern.search(text):
+                return {
+                    "matched": True,
+                    "event_type": event_type,
+                    "event_name": event_name,
+                    "importance": "中",
+                    "matched_rule": "explicit_v2_fallback",
+                    "confidence": 80,
+                    "legacy_event_type": legacy_event_type,
+                }
+        return EventClassifier._no_match()
 
     @staticmethod
     def _no_match() -> dict:

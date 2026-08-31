@@ -250,3 +250,24 @@ def test_event_classifier_outputs_only_canonical_type():
 def test_legacy_pipeline_output_is_unchanged():
     result = _pipeline().process_article("测试游戏2.0版本更新", "版本内容")
     assert result["event_type"] == "version_update"
+
+
+def test_explicit_portfolio_event_type_beats_navigation_noise():
+    class _NoisyClassifier:
+        def classify(self, *args, **kwargs):
+            return {"matched": True, "event_type": "esports", "event_name": "赛事"}
+
+    pipeline = GamingPipeline(
+        resolver=_FakeResolver(),
+        classifier=_NoisyClassifier(),
+        selector=_FakeSelector(),
+    )
+    result = pipeline.normalize_article({
+        "title": "[Event] Official activity",
+        "summary": "Navigation includes Esports but this is an activity.",
+        "event_type": "major_event",
+        "event_name": "Official activity",
+        "start_date": "2026-09-03",
+        "key_changes": ["新活动"],
+    })
+    assert result["events"][0]["event_type"] == "major_event"
