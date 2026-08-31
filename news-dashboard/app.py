@@ -12,6 +12,7 @@ from flask import Flask, jsonify, make_response, render_template, request, abort
 import config
 from fetcher import refresh_all, _load_ai_insights, _get_insight_map, _update_ai_insight
 from translation_service import try_translate_article
+from ai_today_view import build_ai_today_view
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -80,6 +81,15 @@ def api_news():
     if data is None:
         return jsonify({"error": "No data yet. Trigger a refresh first."}), 503
     return jsonify(data)
+
+
+@app.route("/api/ai/today")
+def api_ai_today():
+    """Return a read-only, derived AI Today View from the cached AI feed."""
+    data = _load_news("ai")
+    if data is None:
+        return jsonify({"error": "No data yet. Trigger a refresh first."}), 503
+    return jsonify(build_ai_today_view(data.get("items", [])))
 
 
 @app.route("/api/refresh", methods=["POST"])
