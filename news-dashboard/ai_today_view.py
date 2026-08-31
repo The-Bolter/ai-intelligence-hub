@@ -10,6 +10,9 @@ from __future__ import annotations
 
 from copy import deepcopy
 from datetime import date, datetime, timedelta, timezone
+import json
+import re
+from pathlib import Path
 from typing import Any, Iterable, Mapping
 
 
@@ -18,6 +21,35 @@ TODAY_LIMIT = 5
 RADAR_LIMIT = 5
 BACKFILL_HOURS = 48
 RADAR_MAX_IDLE_DAYS = 90
+BACKFILL_PENALTY = 12.0
+MAX_CATEGORY_ITEMS = 2
+MAX_CONTENT_TYPE_ITEMS = 3
+
+_COMMUNITY_SOURCE_MARKERS = ("hacker news", "reddit", "community", "论坛", "社区")
+_WEAK_PRODUCT_MARKERS = (
+    "free tier", "free plan", "pricing", "price change", "discount", "promotion",
+    "marketing", "attract more customers", "吸引用户", "免费层", "价格变化", "营销推广",
+    "小功能", "minor update", "bug fix",
+)
+_WEAK_COMMENTARY_MARKERS = (
+    "rumor", "speculation", "speculative", "controversy", "commentary", "opinion",
+    "可能", "猜测", "争议", "传闻", "据称",
+)
+_STRONG_MODEL_MARKERS = (
+    "launch", "launched", "release", "released", "unveil", "available", "weights",
+    "reasoning", "benchmark", "state-of-the-art", "发布", "上线", "正式", "模型",
+)
+_STRONG_PRODUCT_MARKERS = (
+    "version", "v2", "2.0", "major", "launch", "launched", "introduces", "rebuild",
+    "general availability", "core capability", "大版本", "核心能力", "重要功能", "上线",
+)
+_STRONG_TREND_MARKERS = (
+    "adoption", "industrial", "industry", "market", "funding", "regulation", "benchmark",
+    "产业", "工业", "行业", "市场", "融资", "监管", "格局", "路线", "采用",
+)
+_STRONG_HIGH_VALUE_MARKERS = _STRONG_MODEL_MARKERS + _STRONG_PRODUCT_MARKERS + _STRONG_TREND_MARKERS + (
+    "study", "research", "breakthrough", "novel", "first", "sota", "研究", "突破", "首个",
+)
 
 _CONTENT_WEIGHT = {"updates": 20.0, "trend": 12.0, "resources": -15.0}
 _CATEGORY_WEIGHT = {
@@ -30,6 +62,20 @@ _CATEGORY_WEIGHT = {
     "community_hotspot": 5.0,
 }
 _QUALITY_WEIGHT = {"high": 10.0, "medium": 6.0, "low": 2.0}
+_GENERIC_IMPACTS = {
+    "该动态为行业领域提供了新视角",
+    "该动态为领域提供了新视角",
+    "该动态反映了行业领域的最新发展方向，值得关注",
+}
+_GENERIC_IMPACT_PATTERNS = (
+    r"^该动态为.+领域提供了新视角$",
+    r"^该动态反映了.+领域的最新发展方向，值得关注$",
+    r"^该研究可能对.+技术路线产生重要影响$",
+    r"^这一商业动向反映了.+行业格局变化$",
+    r"^这一趋势将影响.+行业未来发展$",
+    r"^该开源项目将推动.+技术普及与生态发展$",
+)
+_CORE_PLACEHOLDER_MARKERS = ("点击查看原文", "查看原文", "click to read", "read more")
 
 
 def _parse_datetime(value: Any) -> datetime | None:
@@ -94,7 +140,10 @@ def _freshness_score(article: Mapping[str, Any], now: datetime) -> float:
     published = _published(article)
     if published is None:
         return 0.0
-    hours = max(0.0, (now - published).total_seconds() / 3600.0)
+    # Future timestamps are treated as occurring now; they never receive more
+    # freshness than an article published at the current instant.
+    effective_published = min(published, now)
+    hours = max(0.0, (now - effective_published).total_seconds() / 3600.0)
     return max(0.0, 30.0 * (1.0 - min(hours, BACKFILL_HOURS) / BACKFILL_HOURS))
 
 
@@ -124,53 +173,270 @@ def _published_sort_key(article: Mapping[str, Any]) -> tuple[float, float, float
 
 
 def _priority_sort_key(article: Mapping[str, Any], now: datetime) -> tuple[float, float, str]:
-    return (_today_priority_score(article, now), _freshness_score(article, now), _article_key(article))
+    category = str(article.get("category") or "").lower()
+    editorial = {"breakthrough": 5, "model_update": 4, "product_update": 3, "company": 2}.get(category, 1)
+    return (editorial, _today_priority_score(article, now), _article_key(article))
 
 
 def _clone(article: Mapping[str, Any]) -> dict[str, Any]:
     return deepcopy(dict(article))
 
 
-def _non_github_by_type(articles: Iterable[Mapping[str, Any]], content_type: str) -> list[dict[str, Any]]:
+def _load_translation_cache() -> dict[str, dict[str, Any]]:
+    """Read the existing cache without translating or persisting anything."""
+    path = Path(__file__).resolve().parent / "data" / "translations.json"
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _structured_fields(article: Mapping[str, Any], translation: Mapping[str, Any]) -> tuple[str, str]:
+    raw = str(article.get("chinese_summary") or "")
+    core = str(translation.get("core_info") or translation.get("summary_cn") or "").strip()
+    if not core:
+        core = str(article.get("core_info") or "").strip()
+    impact = str(translation.get("industry_impact") or translation.get("impact") or "").strip()
+    if not impact:
+        impact = str(article.get("industry_impact") or "").strip()
+    for segment in raw.split(" | "):
+        if segment.startswith("核心信息:") and not core:
+            core = segment.split(":", 1)[1].strip()
+        if segment.startswith("行业影响:") and not impact:
+            impact = segment.split(":", 1)[1].strip()
+    if any(marker in core.lower() for marker in _CORE_PLACEHOLDER_MARKERS):
+        core = ""
+    if re.match(r"^\d+\s+(?:of\b|这一版)", core, flags=re.IGNORECASE):
+        core = ""
+    if not core:
+        core = _first_summary_sentence(str(article.get("summary") or "").strip())
+    if impact in _GENERIC_IMPACTS or any(re.match(pattern, impact) for pattern in _GENERIC_IMPACT_PATTERNS):
+        impact = ""
+    return core, impact
+
+
+def _first_summary_sentence(summary: str) -> str:
+    if not summary:
+        return ""
+    if any(marker in summary.lower() for marker in _CORE_PLACEHOLDER_MARKERS):
+        return ""
+    parts = re.split(r"(?<=[。！？!?])\s*|(?<=[.!?])\s+(?=[A-Z\u4e00-\u9fff])", summary)
+    return next((part.strip() for part in parts if len(part.strip()) >= 12), summary[:220].strip())
+
+
+def _decorate_article(article: Mapping[str, Any], translations: Mapping[str, Mapping[str, Any]]) -> dict[str, Any]:
+    item = _clone(article)
+    translation = translations.get(_article_key(article), {}) or {}
+    title_cn = str(translation.get("title_cn") or "").strip()
+    summary_cn = str(translation.get("summary_cn") or "").strip()
+    core, impact = _structured_fields(article, translation)
+    if not title_cn and any("\u4e00" <= c <= "\u9fff" for c in str(article.get("title") or "")):
+        title_cn = str(article.get("title") or "")
+    if not summary_cn:
+        summary_cn = str(article.get("chinese_summary") or "").strip()
+    item["title_cn"] = title_cn
+    item["summary_cn"] = summary_cn
+    item["core_info"] = core
+    item["industry_impact"] = impact
+    item["card_summary"] = _card_summary(article, core, impact)
+    if item["card_summary"]:
+        summary_cn = item["card_summary"]
+    item["summary_cn"] = summary_cn
+    item["translation_source"] = "cache" if translation.get("summary_cn") or translation.get("title_cn") else (
+        "article.chinese_summary" if article.get("chinese_summary") else "original"
+    )
+    return item
+
+
+def _card_summary(article: Mapping[str, Any], core: str, impact: str) -> str:
+    types = article.get("summary_type") or []
+    if isinstance(types, str):
+        types = [types]
+    label = " / ".join(str(t) for t in types if t) or "综合资讯"
+    parts = [f"[{label}]"]
+    if core:
+        parts.append(f"核心信息: {core[:220]}")
+    if impact:
+        parts.append(f"行业影响: {impact[:180]}")
+    return " | ".join(parts)
+
+
+def _non_github_by_type(articles: Iterable[Mapping[str, Any]], content_type: str, translations: Mapping[str, Mapping[str, Any]]) -> list[dict[str, Any]]:
     selected = [a for a in articles if not _is_github(a) and str(a.get("content_type") or "").lower() == content_type]
-    return [_clone(a) for a in sorted(selected, key=_published_sort_key, reverse=True)]
+    return [_decorate_article(a, translations) for a in sorted(selected, key=_published_sort_key, reverse=True)]
 
 
-def _select_today_priority(articles: list[Mapping[str, Any]], now: datetime) -> list[dict[str, Any]]:
+def _normalized_text(article: Mapping[str, Any]) -> str:
+    return " ".join(str(article.get(field) or "") for field in ("title", "summary")).lower()
+
+
+def _source_is_community(article: Mapping[str, Any]) -> bool:
+    source = _source_name(article).lower()
+    return any(marker in source for marker in _COMMUNITY_SOURCE_MARKERS)
+
+
+def _has_marker(article: Mapping[str, Any], markers: tuple[str, ...]) -> bool:
+    text = _normalized_text(article)
+    return any(marker in text for marker in markers)
+
+
+def _has_product_signal(article: Mapping[str, Any]) -> bool:
+    if _has_marker(article, _STRONG_PRODUCT_MARKERS):
+        return True
+    text = _normalized_text(article)
+    has_version = bool(re.search(r"\b(?:v)?\d+\.\d+(?:\.\d+)?\b", text))
+    has_change = any(marker in text for marker in ("release", "released", "update", "publish", "发布", "更新", "重写"))
+    return has_version and has_change
+
+
+def _quality_is_sufficient(article: Mapping[str, Any]) -> bool:
+    quality = str(article.get("source_quality") or "").lower()
+    return quality in {"high", "medium"} or _quality_score(article) >= 6
+
+
+def _today_priority_eligible(article: Mapping[str, Any]) -> bool:
+    """Editorial admission gate; ordinary lists continue to expose all items."""
+    if _is_github(article):
+        return False
+    content_type = str(article.get("content_type") or "").lower()
+    category = str(article.get("category") or "").lower()
+    value = _score_number(article, "value_score")
+    quality_ok = _quality_is_sufficient(article)
+    text = _normalized_text(article)
+
+    if _source_is_community(article) and not (
+        value >= 60 and _has_marker(article, _STRONG_HIGH_VALUE_MARKERS)
+    ):
+        return False
+
+    if category == "breakthrough":
+        return value >= 35 and quality_ok
+    if category == "model_update":
+        return value >= 45 and quality_ok and not _has_marker(article, _WEAK_COMMENTARY_MARKERS) and (
+            _has_marker(article, _STRONG_MODEL_MARKERS) or value >= 60
+        )
+    if category == "product_update":
+        return value >= 45 and quality_ok and not any(marker in text for marker in _WEAK_PRODUCT_MARKERS) and (
+            _has_product_signal(article) or value >= 60
+        )
+    if category == "company":
+        return value >= 50 and quality_ok
+    if content_type == "trend":
+        return value >= 30 and quality_ok and _has_marker(article, _STRONG_TREND_MARKERS)
+    if content_type == "resources":
+        return value >= 60 and quality_ok
+    return False
+
+
+def _today_priority_fallback_eligible(article: Mapping[str, Any]) -> bool:
+    """Relaxed same-day admission used only after strict candidates are exhausted."""
+    if _is_github(article):
+        return False
+    content_type = str(article.get("content_type") or "").lower()
+    category = str(article.get("category") or "").lower()
+    value = _score_number(article, "value_score")
+    quality_ok = _quality_is_sufficient(article)
+    text = _normalized_text(article)
+    if _has_marker(article, _WEAK_COMMENTARY_MARKERS):
+        return False
+    if _source_is_community(article) and not (value >= 50 and _has_marker(article, _STRONG_HIGH_VALUE_MARKERS)):
+        return False
+    if category == "breakthrough":
+        return value >= 28 and (quality_ok or _has_marker(article, _STRONG_HIGH_VALUE_MARKERS))
+    if category == "model_update":
+        return value >= 32 and _has_marker(article, _STRONG_MODEL_MARKERS)
+    if category == "product_update":
+        return value >= 32 and not any(marker in text for marker in _WEAK_PRODUCT_MARKERS) and _has_product_signal(article)
+    if category == "company":
+        return value >= 40 and quality_ok
+    if content_type == "trend":
+        return value >= 22 and _has_marker(article, _STRONG_TREND_MARKERS)
+    if content_type == "resources":
+        return value >= 50
+    return False
+
+
+def _take_priority_candidates(
+    ranked: list[Mapping[str, Any]],
+    chosen: list[dict[str, Any]],
+    used_sources: set[str],
+    now: datetime,
+    translations: Mapping[str, Mapping[str, Any]],
+    *,
+    backfill: bool,
+    max_items: int | None = None,
+    tier: str = "strict",
+) -> None:
+    added = 0
+    for article in ranked:
+        if len(chosen) >= TODAY_LIMIT or (max_items is not None and added >= max_items):
+            return
+        source = _source_name(article)
+        category = str(article.get("category") or "").lower()
+        content_type = str(article.get("content_type") or "").lower()
+        if source in used_sources:
+            continue
+        if sum(str(x.get("category") or "").lower() == category for x in chosen) >= MAX_CATEGORY_ITEMS:
+            continue
+        if sum(str(x.get("content_type") or "").lower() == content_type for x in chosen) >= MAX_CONTENT_TYPE_ITEMS:
+            continue
+        if content_type == "resources" and sum(str(x.get("content_type") or "").lower() == "resources" for x in chosen) >= 1:
+            continue
+        item = _decorate_article(article, translations)
+        score = _today_priority_score(article, now)
+        if backfill:
+            score = round(score - BACKFILL_PENALTY, 3)
+        item["today_priority_score"] = score
+        item["priority_tier"] = tier
+        chosen.append(item)
+        used_sources.add(source)
+        added += 1
+
+
+def _select_from_pool(
+    pool: list[Mapping[str, Any]],
+    now: datetime,
+    chosen: list[dict[str, Any]],
+    used_sources: set[str],
+    translations: Mapping[str, Mapping[str, Any]],
+    *,
+    backfill: bool,
+    max_items: int | None = None,
+    strict: bool = True,
+    tier: str = "strict",
+) -> None:
+    predicate = _today_priority_eligible if strict else _today_priority_fallback_eligible
+    eligible = [a for a in pool if predicate(a)]
+    ranked = sorted(eligible, key=lambda a: _priority_sort_key(a, now), reverse=True)
+    _take_priority_candidates(
+        ranked, chosen, used_sources, now, translations,
+        backfill=backfill, max_items=max_items, tier=tier,
+    )
+
+
+def _select_today_priority(articles: list[Mapping[str, Any]], now: datetime, translations: Mapping[str, Mapping[str, Any]]) -> list[dict[str, Any]]:
     eligible = [a for a in articles if not _is_github(a)]
     today = now.astimezone(SHANGHAI).date()
     today_candidates = [a for a in eligible if (_published(a) and _published(a).astimezone(SHANGHAI).date() == today)]
-    if len(today_candidates) < 3:
-        cutoff = now - timedelta(hours=BACKFILL_HOURS)
-        pool = [a for a in eligible if (_published(a) and _published(a) >= cutoff)]
-    else:
-        pool = today_candidates
-
-    ranked = sorted(pool, key=lambda a: _priority_sort_key(a, now), reverse=True)
     chosen: list[dict[str, Any]] = []
     used_sources: set[str] = set()
 
-    def take_matching(predicate, limit: int) -> None:
-        for article in ranked:
-            if len(chosen) >= TODAY_LIMIT or limit <= 0:
-                return
-            source = _source_name(article)
-            if source in used_sources or not predicate(article):
-                continue
-            if str(article.get("content_type") or "").lower() == "resources" and sum(
-                str(x.get("content_type") or "").lower() == "resources" for x in chosen
-            ) >= 1:
-                continue
-            item = _clone(article)
-            item["today_priority_score"] = _today_priority_score(article, now)
-            chosen.append(item)
-            used_sources.add(source)
-            limit -= 1
-
-    # Meet the requested editorial mix whenever distinct-source candidates exist.
-    take_matching(lambda a: str(a.get("content_type") or "").lower() == "updates", 2)
-    take_matching(lambda a: str(a.get("content_type") or "").lower() == "trend", 1)
-    take_matching(lambda a: True, TODAY_LIMIT - len(chosen))
+    _select_from_pool(today_candidates, now, chosen, used_sources, translations, backfill=False, tier="strict")
+    if len(chosen) < 3:
+        _select_from_pool(
+            today_candidates, now, chosen, used_sources, translations,
+            backfill=False, strict=False, max_items=3 - len(chosen), tier="fallback",
+        )
+    if len(chosen) < 3:
+        cutoff = now - timedelta(hours=BACKFILL_HOURS)
+        fallback = [a for a in eligible if (_published(a) and cutoff <= _published(a) < now)]
+        _select_from_pool(
+            fallback, now, chosen, used_sources, translations,
+            backfill=True, max_items=min(2, 3 - len(chosen)), tier="backfill",
+        )
     return chosen
 
 
@@ -203,12 +469,13 @@ def build_ai_today_view(articles: Iterable[Mapping[str, Any]], now: datetime | N
     """Build the read-only AI Today View from existing article dictionaries."""
     current = _as_now(now)
     article_list = list(articles or [])
+    translations = _load_translation_cache()
     return {
         "date": current.astimezone(SHANGHAI).date().isoformat(),
         "generated_at": current.astimezone(timezone.utc).isoformat(),
-        "today_priority": _select_today_priority(article_list, current),
-        "updates": _non_github_by_type(article_list, "updates"),
-        "trends": _non_github_by_type(article_list, "trend"),
-        "resources": _non_github_by_type(article_list, "resources"),
-        "github_radar": _radar(article_list, current),
+        "today_priority": _select_today_priority(article_list, current, translations),
+        "updates": _non_github_by_type(article_list, "updates", translations),
+        "trends": _non_github_by_type(article_list, "trend", translations),
+        "resources": _non_github_by_type(article_list, "resources", translations),
+        "github_radar": [_decorate_article(a, translations) for a in _radar(article_list, current)],
     }

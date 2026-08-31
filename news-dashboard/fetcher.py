@@ -204,12 +204,12 @@ def _chinese_summary(title, summary, tags, types_):
 
     first_type = types_[0] if types_ else ''
     impact = ''
-    for t_type, t_text in [('产品动态', '该动态反映了{}领域的最新发展方向，值得关注'), ('研究进展', '该研究可能对{}技术路线产生重要影响'), ('商业动态', '这一商业动向反映了{}行业格局变化'), ('行业趋势', '这一趋势将影响{}行业未来发展'), ('开源项目', '该开源项目将推动{}技术普及与生态发展'), ('综合资讯', '该动态为{}领域提供了新视角')]:
+    for t_type, t_text in [('产品动态', '该动态反映了{}领域的最新发展方向，值得关注'), ('研究进展', '该研究可能对{}技术路线产生重要影响'), ('商业动态', '这一商业动向反映了{}行业格局变化'), ('行业趋势', '这一趋势将影响{}行业未来发展'), ('开源项目', '该开源项目将推动{}技术普及与生态发展')]:
         if t_type in first_type:
             impact = t_text.format(domain)
             break
-    if not impact:
-        impact = "该动态为领域提供了新视角".format(domain)
+    # Do not invent a generic impact for unclassified/general articles.
+    # A blank impact is preferable to repeating an unsupported conclusion.
     if impact:
         parts.append("行业影响: " + impact)
 

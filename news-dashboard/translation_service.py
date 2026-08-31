@@ -14,14 +14,12 @@ from datetime import datetime, timezone
 # Actual translation calls still require network access (use escalated permissions).
 os.environ.setdefault("translators_default_region", "EN")
 
-import translators as ts
-
 import rules
 
 logger = logging.getLogger(__name__)
 
 # Default translator backend
-_TRANSLATOR = "bing"
+_TRANSLATOR = os.getenv("TRANSLATION_PROVIDER", "google")
 _TARGET_LANG = "zh"
 _SOURCE_LANG = "auto"
 
@@ -39,6 +37,9 @@ def translate_text(text: str) -> str:
         return ""
 
     try:
+        # Import lazily: translators performs a network region probe at import
+        # time, which must not make the dashboard fail when offline.
+        import translators as ts
         result = ts.translate_text(
             text,
             translator=_TRANSLATOR,
