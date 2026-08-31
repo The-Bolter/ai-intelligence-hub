@@ -1,352 +1,335 @@
 (function(){
 "use strict";
-var currentCat="ai",allItems=[],gamingHotspots=[],isRefreshing=false;
+
+var currentCat="ai",aiData=null,weeklyData=null,todayNewData=null,isLoading=false;
 var importanceFilter="all",categoryFilter="all",contentTypeFilter="all",eventTypeFilter="all",searchQuery="";
+var aiExpanded={updates:false,trends:false,resources:false};
+var AI_OVERVIEW_LIMIT={updates:5,trends:4,resources:4};
 var AI_CONTENT_CN={"updates":"动态","resources":"AI资源","trend":"趋势"};
 var AI_CATEGORY_CN={"company":"企业动态","model_update":"模型更新","product_update":"产品/工具更新","breakthrough":"技术突破","agent":"Agent","model":"模型","tool":"工具","app":"应用","tech_direction":"技术方向","market_change":"市场变化","community_hotspot":"社区热点"};
 var AI_SECONDARY={"updates":["company","model_update","product_update","breakthrough"],"resources":["agent","model","tool","app"],"trend":["tech_direction","market_change","community_hotspot"]};
-var IMP={S:5,A:4,B:3,C:2,D:1};
-var EVENT_CN={"Version Update":"版本更新","Season/Event":"赛季/活动","Character/Content":"角色/内容","Collaboration":"联动","Release":"发布","Community Hotspot":"社区热点","Industry":"行业","General":"资讯"};
-var GAMING_EVENT_CN={"version_update":"版本更新","character_release":"角色上线","activity":"活动","esports":"赛事","season_event":"赛季/活动","character_content":"角色/内容","collaboration":"联动","release":"发布","community_hotspot":"社区热点","industry":"行业","general":"资讯"};
+var GAMING_EVENTS=[
+  ["all","全部"],["major_update","大版本"],["monthly_update","月度更新"],
+  ["weekly_update","周更新"],["season_start","赛季"],["new_map","新地图"],
+  ["new_character","新角色"],["collaboration","联动"],["major_event","大型活动"],
+  ["test_or_launch","测试/上线"],["esports","赛事"]
+];
 var tabs=document.querySelectorAll(".tab");
-var newsList=document.getElementById("newsList");
-var newsCount=document.getElementById("newsCount");
-var newsUpdated=document.getElementById("newsUpdated");
+var filterBar=document.getElementById("filterBar");
+var aiFilterBar=document.getElementById("aiFilterBar");
+var aiDashboard=document.getElementById("aiDashboard");
+var gamingDashboard=document.getElementById("gamingDashboard");
 var btnRefresh=document.getElementById("btnRefresh");
 var statusDot=document.getElementById("statusDot");
 var statusText=document.getElementById("statusText");
 var dateDisplay=document.getElementById("dateDisplay");
 var searchInput=document.getElementById("searchInput");
 var searchClear=document.getElementById("searchClear");
-var translations={};
+var searchTimer=null;
 
-function setStatus(s){
-  statusDot.className="status-dot "+s;
-  statusText.textContent={ready:"就绪",loading:"加载中...",error:"出错"}[s]||s;
+function esc(value){
+  if(value===null||value===undefined)return"";
+  var d=document.createElement("div");
+  d.appendChild(document.createTextNode(String(value)));
+  return d.innerHTML;
+}
+function safeUrl(value){
+  var url=String(value||"").trim();
+  return /^https?:\/\//i.test(url)?esc(url):"#";
+}
+function array(value){return Array.isArray(value)?value:[];}
+function setStatus(state,label){
+  statusDot.className="status-dot "+state;
+  statusText.textContent=label||({ready:"就绪",loading:"加载中...",error:"加载失败"}[state]||state);
+}
+function fetchJson(path){
+  return fetch(path+(path.indexOf("?")===-1?"?":"&")+"_="+Date.now(),{headers:{Accept:"application/json"}})
+    .then(function(response){if(!response.ok)throw new Error("HTTP "+response.status);return response.json();});
 }
 function timeAgo(iso){
-  var s=(Date.now()-new Date(iso).getTime())/1000;
-  if(s<60)return"刚刚";
-  var m=Math.floor(s/60);
-  if(m<60)return m+"分钟前";
-  var h=Math.floor(m/60);
-  if(h<24)return h+"小时前";
-  return Math.floor(h/24)+"天前";
+  if(!iso)return"";
+  var time=new Date(iso).getTime();
+  if(!isFinite(time))return String(iso);
+  var seconds=Math.max(0,(Date.now()-time)/1000);
+  if(seconds<60)return"刚刚";
+  if(seconds<3600)return Math.floor(seconds/60)+"分钟前";
+  if(seconds<86400)return Math.floor(seconds/3600)+"小时前";
+  return Math.floor(seconds/86400)+"天前";
 }
-function esc(t){if(!t)return"";var d=document.createElement("div");d.appendChild(document.createTextNode(t));return d.innerHTML;}
+function dateLabel(value,withTime){
+  if(!value)return"待确认";
+  var raw=String(value);
+  var date=/^\d{4}-\d{2}-\d{2}$/.test(raw)?new Date(raw+"T12:00:00+08:00"):new Date(raw);
+  if(!isFinite(date.getTime()))return raw;
+  var options=withTime?{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}:{month:"numeric",day:"numeric"};
+  return new Intl.DateTimeFormat("zh-CN",options).format(date).replace(/\//g,".");
+}
+function summaryOf(item){return item.chinese_summary||item.summary_cn||item.summary||"暂无摘要";}
+function titleOf(item){return item.title_cn||item.title||item.headline||"未命名";}
+function sourceOf(item){return item.source_name||item.source||"未知来源";}
+function linkOf(item){return item.url||item.link||"";}
+function isGithub(item){return String(item.source_type||"").toLowerCase()==="github"||String(item.source||"").toLowerCase()==="github"||item.is_github===true;}
+function emptyState(message,detail){
+  return '<div class="module-empty"><strong>'+esc(message)+'</strong>'+(detail?'<p>'+esc(detail)+'</p>':'')+'</div>';
+}
+function errorState(message,endpoint){
+  return '<div class="module-empty module-error"><strong>'+esc(message)+'</strong><p>'+esc(endpoint)+' 暂时不可用，请稍后重试。</p></div>';
+}
 
-function matchQuery(it,q){
-  q=(q||"").trim().toLowerCase();
+function matchQuery(item){
+  var q=searchQuery.trim().toLowerCase();
   if(!q)return true;
-  var tn=translations[it.id]||{};
-  var fields=[it.title,it.summary,it.source,it.source_name,tn.title_cn,tn.summary_cn];
-  for(var i=0;i<fields.length;i++){
-    if(fields[i]&&String(fields[i]).toLowerCase().indexOf(q)!==-1)return true;
-  }
-  var tags=it.tags||[];
-  for(var j=0;j<tags.length;j++){
-    var label=typeof tags[j]==="string"?tags[j]:(tags[j].l||tags[j].name||tags[j].text||"");
-    if(String(label).toLowerCase().indexOf(q)!==-1)return true;
-  }
-  return false;
+  var fields=[titleOf(item),summaryOf(item),sourceOf(item),item.category,item.content_type];
+  return fields.some(function(value){return String(value||"").toLowerCase().indexOf(q)!==-1;});
 }
-
-function sortItems(items){
-  return items.sort(function(a,b){
-    var tn_a=translations[a.id],tn_b=translations[b.id];
-    var ta=tn_a&&tn_a.status==='translated'?1:0;
-    var tb=tn_b&&tn_b.status==='translated'?1:0;
-    if(ta!==tb)return tb-ta;
-    var va=a.value_score||0,vb=b.value_score||0;
-    if(va!==vb)return vb-va;
-    var ia=IMP[a.importance]||0,ib=IMP[b.importance]||0;
-    if(ia!==ib)return ib-ia;
-    var ha=a.hotness||0,hb=b.hotness||0;
-    return hb-ha;
+function filterAiItems(items,sectionType){
+  return array(items).filter(function(item){
+    if(contentTypeFilter!=="all"&&contentTypeFilter!==sectionType)return false;
+    if(categoryFilter!=="all"&&item.category!==categoryFilter)return false;
+    if(importanceFilter!=="all"&&item.importance!==importanceFilter)return false;
+    return matchQuery(item);
   });
 }
-
-function filterItems(items){
-  return items.filter(function(it){
-    if(importanceFilter!=="all"&&it.importance!==importanceFilter)return false;
-    if(categoryFilter!=="all"&&it.category!==categoryFilter)return false;
-    if(contentTypeFilter!=="all"&&currentCat==="ai"&&it.content_type!==contentTypeFilter)return false;
-    if(eventTypeFilter!=="all"&&it.event_type!==eventTypeFilter)return false;
-    if(!matchQuery(it,searchQuery))return false;
-    return true;
-  });
+function filterWeeklyEvents(items){
+  return array(items).filter(function(item){return eventTypeFilter==="all"||item.event_type===eventTypeFilter;});
 }
 
-function filterGamingHotspots(){
-  return gamingHotspots.filter(function(h){
-    if(eventTypeFilter!=="all"&&h.event_type!==eventTypeFilter)return false;
-    var q=(searchQuery||"").trim().toLowerCase();
-    if(q&&String(h.game_name||"").toLowerCase().indexOf(q)===-1)return false;
-    return true;
-  });
+function button(kind,value,label,active){
+  return '<button class="fb-btn fb-'+kind+' '+(active?'active':'')+'" type="button" data-f="'+kind+'" data-v="'+esc(value)+'">'+esc(label)+'</button>';
 }
-
-function renderWithFilter(){
-  if(currentCat==="gaming"){
-    renderGamingHotspots(filterGamingHotspots());
-    if(contentTypeFilter==="hotspot"){
-      newsList.innerHTML="";
-      newsCount.textContent="";
-      return;
-    }
-  }
-  renderItems(filterItems(allItems));
-}
-
 function buildFilters(){
-  var fb=document.getElementById("filterBar");
-  if(!fb)return;
-  function btn(fName,v,label,active){
-    return '<button class="fb-btn fb-'+fName+' '+(active?'active':'')+'" data-f="'+fName+'" data-v="'+esc(v)+'">'+esc(label)+'</button>';
-  }
-  var h='';
+  var html="";
   if(currentCat==="ai"){
-    h+='<div class="filter-row"><span class="filter-lbl">重要性:</span>';
-    var imps=["all","S","A","B","C","D"];
-    var impLabels={all:"全部",S:"S",A:"A",B:"B",C:"C",D:"D"};
-    imps.forEach(function(v){h+=btn("imp",v,impLabels[v],importanceFilter===v);});
-    h+='</div><div class="filter-row"><span class="filter-lbl">一级:</span>';
-    var contents=[["all","全部"],["updates","动态"],["resources","AI资源"],["trend","趋势"]];
-    contents.forEach(function(t){h+=btn("type",t[0],t[1],contentTypeFilter===t[0]);});
-    h+='</div>';
+    html+='<div class="filter-row"><span class="filter-lbl">重要性:</span>';
+    ["all","S","A","B","C","D"].forEach(function(value){html+=button("imp",value,value==="all"?"全部":value,importanceFilter===value);});
+    html+='</div><div class="filter-row"><span class="filter-lbl">一级:</span>';
+    [["all","全部"],["updates","动态"],["resources","AI资源"],["trend","趋势"]].forEach(function(item){html+=button("type",item[0],item[1],contentTypeFilter===item[0]);});
+    html+='</div>';
     if(contentTypeFilter!=="all"){
-      h+='<div class="filter-row"><span class="filter-lbl">二级:</span>';
-      h+=btn("cat","all","全部",categoryFilter==="all");
-      (AI_SECONDARY[contentTypeFilter]||[]).forEach(function(v){h+=btn("cat",v,AI_CATEGORY_CN[v]||v,categoryFilter===v);});
-      h+='</div>';
+      html+='<div class="filter-row"><span class="filter-lbl">二级:</span>'+button("cat","all","全部",categoryFilter==="all");
+      array(AI_SECONDARY[contentTypeFilter]).forEach(function(value){html+=button("cat",value,AI_CATEGORY_CN[value]||value,categoryFilter===value);});
+      html+='</div>';
     }
+    html+='<div class="filter-hint">筛选仅作用于最新动态、趋势信号和 AI资源；今日重点保持完整。</div>';
   }else{
-    h+='<div class="filter-row"><span class="filter-lbl">类型:</span>';
-    var types=[["all","全部"],["hotspot","运营热点"]];
-    types.forEach(function(t){h+=btn("type",t[0],t[1],contentTypeFilter===t[0]);});
-    h+='</div><div class="filter-row"><span class="filter-lbl">事件:</span>';
-    var events=[["all","全部"],["version_update","版本更新"],["character_release","角色上线"],["activity","活动"],["esports","赛事"],["collaboration","联动"]];
-    events.forEach(function(t){h+=btn("event",t[0],t[1],eventTypeFilter===t[0]);});
-  }
-  h+='</div>';
-  fb.innerHTML=h;
-}
-
-function renderNewsCard(it){
-  var tn=translations[it.id];
-  var r=it.rank||0;
-  var imp=it.importance||"";
-  var isGitHub=String(it.source||"").toLowerCase()==="github";
-  var ctName=it.content_type?AI_CONTENT_CN[it.content_type]:"";
-  var catName=it.category?AI_CATEGORY_CN[it.category]||it.category:"";
-  var tc=r===1?"top-1":r===2?"top-2":r===3?"top-3":"";
-  var sc="imp-"+imp;
-  var hc=it.hotness>=70?"high":it.hotness>=40?"mid":"low";
-  var html='<div class="news-card '+tc+' '+sc+'">';
-  html+='<div class="news-rank">'+r+'</div>';
-  html+='<div class="news-body">';
-  html+='<div class="news-title"><a href="'+esc(it.link)+'" target="_blank" rel="noopener noreferrer">'+esc(tn&&tn.title_cn?tn.title_cn:it.title)+'</a></div>';
-  if(ctName)html+='<span class="type-tag type-'+esc(it.content_type)+'">'+ctName+'</span>';
-  if(isGitHub)html+='<span class="github-badge">来源 GitHub</span>';
-  if(imp==="S")html+='<span class="imp-badge imp-s-badge">S级</span>';
-  if(imp==="A")html+='<span class="imp-badge imp-a-badge">推荐</span>';
-  if(imp==="S"||imp==="A")html+='<span class="imp-sep"></span>';
-  if(catName&&it.category!=="Other"&&it.category!=="General"){
-    html+='<span class="cat-tag">'+esc(catName)+'</span>';
-  }
-  html+='<div class="imp-text">重要性: <strong>'+imp+'</strong> 评分: <strong>'+(it.value_score||0)+'</strong></div>';
-  if(isGitHub){
-    html+='<div class="github-stats">';
-    html+='<span class="gh-stat"><span class="gh-stat-label">Stars</span><strong>'+esc(it.stars!=null?it.stars:"--")+'</strong></span>';
-    html+='<span class="gh-stat"><span class="gh-stat-label">Forks</span><strong>'+esc(it.forks!=null?it.forks:"--")+'</strong></span>';
-    html+='<span class="gh-stat"><span class="gh-stat-label">Score</span><strong>'+esc(it.github_score!=null?it.github_score:"--")+'</strong></span>';
+    html+='<div class="filter-row"><span class="filter-lbl">事件:</span>';
+    GAMING_EVENTS.forEach(function(item){html+=button("event",item[0],item[1],eventTypeFilter===item[0]);});
     html+='</div>';
   }
-  if(it.tags&&it.tags.length>0){
-    html+='<div class="news-tags">';
-    for(var j=0;j<it.tags.length;j++){
-      html+='<span class="tag tag-'+it.tags[j].t+'">'+esc(it.tags[j].l)+'</span>';
-    }
-    html+='</div>';
-  }
-  if(tn&&tn.summary_cn){html+='<div class="news-chinese-summary">'+esc(tn.summary_cn.slice(0,200))+'</div>';}else if(it.chinese_summary){
-    html+='<div class="news-chinese-summary">'+esc(it.chinese_summary.slice(0,200))+'</div>';
-  }
-  html+='<div class="news-footer">';
-  html+='<span class="news-source">'+esc(it.source)+'</span>';
-  html+='<span class="news-time">'+esc(it.published_ago||"")+'</span>';
-  html+='<div class="hotness-bar-wrap">';
-  html+='<span class="hotness-label">'+it.hotness+'</span>';
-  html+='<div class="hotness-track"><div class="hotness-fill '+hc+'" style="width:'+it.hotness+'%"></div></div>';
-  html+='</div></div></div></div>';
-  return html;
+  (currentCat==="ai"?aiFilterBar:filterBar).innerHTML=html;
 }
 
-function renderItems(items){
-  var html="",count=items.length;
-  var hasFilter=categoryFilter!=="all"||importanceFilter!=="all"||contentTypeFilter!=="all"||eventTypeFilter!=="all"||searchQuery;
-  if(items.length===0){
-    var msg=hasFilter?"没有匹配的文章":"暂无数据";
-    newsList.innerHTML='<div class="empty-state"><h3>'+msg+'</h3></div>';
-    newsCount.textContent=count+"/"+allItems.length+" 条";
-    return;
+function importanceBadge(importance){
+  if(!importance)return"";
+  return '<span class="importance-pill importance-'+esc(String(importance).toLowerCase())+'">'+esc(importance)+' 级</span>';
+}
+function renderPriorityCard(item){
+  return '<article class="priority-card">'+
+    '<div class="priority-meta">'+importanceBadge(item.importance)+'<span>'+esc(sourceOf(item))+'</span><span>'+esc(item.published_ago||timeAgo(item.published_at||item.published))+'</span></div>'+
+    '<h4><a href="'+safeUrl(linkOf(item))+'" target="_blank" rel="noopener noreferrer">'+esc(titleOf(item))+'</a></h4>'+
+    '<p>'+esc(summaryOf(item))+'</p>'+
+  '</article>';
+}
+function renderAiCard(item){
+  var category=AI_CATEGORY_CN[item.category]||item.category||"AI 情报";
+  return '<article class="intel-row">'+
+    '<div class="intel-main"><div class="intel-meta"><span class="cat-tag">'+esc(category)+'</span><span>'+esc(sourceOf(item))+'</span><span>'+esc(item.published_ago||timeAgo(item.published_at||item.published))+'</span></div>'+
+    '<h4><a href="'+safeUrl(linkOf(item))+'" target="_blank" rel="noopener noreferrer">'+esc(titleOf(item))+'</a></h4><p>'+esc(summaryOf(item))+'</p></div>'+importanceBadge(item.importance)+
+  '</article>';
+}
+function githubStat(label,value){return '<span class="gh-stat"><span class="gh-stat-label">'+esc(label)+'</span><strong>'+esc(value===undefined||value===null?"--":value)+'</strong></span>';}
+function renderGithubCard(item){
+  var metadata=item.metadata||{};
+  return '<article class="github-radar-card">'+
+    '<div class="github-radar-meta"><span class="github-badge">GitHub</span>'+importanceBadge(item.importance)+'</div>'+
+    '<h4><a href="'+safeUrl(linkOf(item))+'" target="_blank" rel="noopener noreferrer">'+esc(titleOf(item))+'</a></h4>'+
+    '<p>'+esc(summaryOf(item))+'</p><div class="github-stats">'+
+    githubStat("Stars",item.stars!=null?item.stars:metadata.stars)+githubStat("Forks",item.forks!=null?item.forks:metadata.forks)+githubStat("Score",item.github_score)+
+    '</div></article>';
+}
+function resetAiExpanded(){aiExpanded={updates:false,trends:false,resources:false};}
+function renderAiList(sectionType,targetId,countId,toggleId,items,emptyMessage){
+  var target=document.getElementById(targetId),count=document.getElementById(countId);
+  var toggle=document.getElementById(toggleId),limit=AI_OVERVIEW_LIMIT[sectionType],expanded=aiExpanded[sectionType];
+  var visible=expanded?items:items.slice(0,limit);
+  count.textContent=items.length+" 条";
+  toggle.hidden=items.length<=limit;
+  toggle.textContent=expanded?"收起":"查看更多（共 "+items.length+" 条）";
+  toggle.setAttribute("aria-expanded",expanded?"true":"false");
+  target.innerHTML=visible.length?visible.map(renderAiCard).join(""):emptyState(emptyMessage,"可调整筛选或搜索条件。");
+}
+function renderAi(){
+  if(!aiData)return;
+  var priority=array(aiData.today_priority).filter(function(item){return !isGithub(item);}).slice(0,5),seen={};
+  priority.forEach(function(item){seen[item.id||linkOf(item)||titleOf(item)]=true;});
+  if(priority.length<3){
+    array(aiData.updates).some(function(item){
+      var key=item.id||linkOf(item)||titleOf(item);
+      if(!isGithub(item)&&!seen[key]){priority.push(item);seen[key]=true;}
+      return priority.length>=3;
+    });
   }
-  var totalStr=hasFilter?count+"/"+allItems.length+" 条":"共 "+count+" 条";
-  newsCount.textContent=totalStr;
-  html=items.map(renderNewsCard).join("");
-  newsList.innerHTML=html;
+  document.getElementById("aiPriority").innerHTML=priority.length?priority.map(renderPriorityCard).join(""):emptyState("今日暂无重点情报");
+  renderAiList("updates","aiUpdates","updatesCount","updatesToggle",filterAiItems(aiData.updates,"updates"),"暂无匹配的最新动态");
+  renderAiList("trends","aiTrends","trendsCount","trendsToggle",filterAiItems(aiData.trends,"trend"),"暂无匹配的趋势信号");
+  renderAiList("resources","aiResources","resourcesCount","resourcesToggle",filterAiItems(aiData.resources,"resources"),"暂无匹配的 AI资源");
+  var radar=array(aiData.github_radar).slice(0,5);
+  document.getElementById("githubRadar").innerHTML=radar.length?radar.map(renderGithubCard).join(""):emptyState("今日暂无 GitHub 项目");
+  document.getElementById("aiDate").textContent=aiData.date||"";
+  document.getElementById("aiUpdated").textContent=aiData.generated_at?"数据更新于 "+timeAgo(aiData.generated_at):"";
 }
 
-function loadNews(cat,showLoading){
-  if(showLoading){newsList.innerHTML='<div class="loading-spinner">加载中...</div>';}
-  setStatus("loading");
-  fetch("/api/news?category="+cat+"&_="+Date.now())
-  .then(function(r){
-    if(!r.ok)throw new Error("HTTP "+r.status);
-    return r.json();
-  })
-  .then(function(data){
-    allItems=sortItems(data.items||[]);
-    buildFilters();
-    newsCount.textContent="共 "+allItems.length+" 条";
-    newsUpdated.textContent=data.updated_at?"更新于 "+timeAgo(data.updated_at):"";
-    renderWithFilter();
-    setStatus("ready");
-  })
-  .catch(function(err){
-    console.error("loadNews:",err);
-    newsList.innerHTML='<div class="empty-state"><h3>加载失败</h3><p>'+esc(err.message||"请求异常")+'</p></div>';
-    setStatus("error");
+function weeklyEvents(data){
+  if(Array.isArray(data))return data;
+  return array(data&&data.events).length?data.events:array(data&&data.items).length?data.items:array(data&&data.weekly_events).length?data.weekly_events:array(data&&data.weekly);
+}
+function todayItems(data){
+  if(Array.isArray(data))return data;
+  return array(data&&data.items).length?data.items:array(data&&data.events).length?data.events:array(data&&data.new_items).length?data.new_items:array(data&&data.today_new);
+}
+function groupKey(item){
+  var value=String(item.display_group||"").toLowerCase();
+  if(value==="mobile"||value.indexOf("手游")!==-1)return"mobile";
+  if(value==="pc"||value.indexOf("端游")!==-1||value.indexOf("console")!==-1)return"pc";
+  return"other";
+}
+function groupLabel(key){return key==="mobile"?"手游":key==="pc"?"端游":"其他";}
+function eventTypeLabel(value){
+  for(var i=0;i<GAMING_EVENTS.length;i++)if(GAMING_EVENTS[i][0]===value)return GAMING_EVENTS[i][1];
+  return value||"事件";
+}
+function eventDateRange(item){
+  if(item.date_range)return String(item.date_range);
+  var start=item.start_date||item.event_date||item.date;
+  var end=item.end_date;
+  if(!start)return"日期待确认";
+  if(end&&end!==start)return dateLabel(start,false)+" — "+dateLabel(end,false);
+  return dateLabel(start,false);
+}
+function changesText(value){
+  if(Array.isArray(value))return value.filter(Boolean).join(" · ");
+  if(value&&typeof value==="object")return Object.keys(value).filter(function(key){return value[key];}).map(function(key){return value[key];}).join(" · ");
+  return value||"详情待更新";
+}
+function attentionClass(value){
+  var text=String(value||"").toLowerCase();
+  if(text==="high"||text.indexOf("高")!==-1)return"high";
+  if(text==="medium"||text.indexOf("中")!==-1)return"medium";
+  return"normal";
+}
+function attentionText(value){
+  var text=String(value||"");
+  if(!text)return"常规";
+  if(text.toLowerCase()==="high")return"高";
+  if(text.toLowerCase()==="medium")return"中";
+  if(text.toLowerCase()==="low")return"低";
+  return text;
+}
+function renderWeeklyCard(item){
+  return '<article class="weekly-event-card">'+
+    '<div class="event-date-block"><strong>'+esc(eventDateRange(item))+'</strong><span>'+esc(eventTypeLabel(item.event_type))+'</span></div>'+
+    '<div class="event-copy"><span class="game-name">'+esc(item.game_name||item.game||"未知游戏")+'</span><h4>'+esc(item.event_name||item.headline||"未命名事件")+'</h4><p>'+esc(changesText(item.key_changes||item.summary))+'</p><div class="event-foot">'+
+    '<span class="attention attention-'+attentionClass(item.attention_level)+'">关注度：'+esc(attentionText(item.attention_level))+'</span>'+
+    (item.phase?'<span class="phase-pill">'+esc(item.phase)+'</span>':'')+
+    (item.hotspot_score!=null?'<span class="weak-score">热度 '+esc(item.hotspot_score)+'</span>':'')+
+    '</div></div></article>';
+}
+function renderWeekly(){
+  if(!weeklyData)return;
+  var events=filterWeeklyEvents(weeklyEvents(weeklyData));
+  var groups={mobile:[],pc:[],other:[]};
+  events.forEach(function(item){groups[groupKey(item)].push(item);});
+  var html="";
+  ["mobile","pc","other"].forEach(function(key){
+    if(key==="other"&&!groups[key].length)return;
+    html+='<section class="game-group"><div class="game-group-header"><h3>【'+groupLabel(key)+'】</h3><span>'+groups[key].length+' 条</span></div>';
+    html+=groups[key].length?'<div class="weekly-event-list">'+groups[key].map(renderWeeklyCard).join("")+'</div>':emptyState("本周暂无已确认事件");
+    html+='</section>';
+  });
+  document.getElementById("weeklyBoard").innerHTML=html||emptyState("本周暂无已确认事件");
+  var start=weeklyData.week_start||weeklyData.start_date,end=weeklyData.week_end||weeklyData.end_date;
+  document.getElementById("gamingWeekRange").textContent=start?(dateLabel(start,false)+(end?" — "+dateLabel(end,false):"")):"本周";
+  document.getElementById("gamingUpdated").textContent=weeklyData.generated_at?"数据更新于 "+timeAgo(weeklyData.generated_at):"";
+}
+function findWeeklyMatch(item){
+  var game=String(item.game_name||item.game||"").toLowerCase(),name=String(item.event_name||item.headline||"").toLowerCase();
+  return weeklyEvents(weeklyData).find(function(event){return String(event.game_name||event.game||"").toLowerCase()===game&&String(event.event_name||event.headline||"").toLowerCase()===name;});
+}
+function renderTodayNew(){
+  if(!todayNewData)return;
+  var items=todayItems(todayNewData);
+  document.getElementById("todayNewList").innerHTML=items.length?items.map(function(item){
+    var match=findWeeklyMatch(item)||{},attention=item.attention_level||match.attention_level;
+    return '<article class="today-new-card"><div class="today-new-time">'+esc(dateLabel(item.detected_at,true))+'</div><h4>'+esc(item.game_name||item.game||"未知游戏")+'</h4><p>'+esc(item.event_name||item.headline||"新事件")+'</p><div class="today-new-meta"><span>开始 '+esc(dateLabel(item.start_date||item.event_date,false))+'</span>'+
+      (attention?'<span class="attention attention-'+attentionClass(attention)+'">关注度：'+esc(attentionText(attention))+'</span>':'')+'</div></article>';
+  }).join(""):emptyState("今天暂无新发现","这里会补充当天新识别的周事件。");
+}
+
+function loadAi(){
+  isLoading=true;setStatus("loading","加载 AI 情报...");btnRefresh.classList.add("spinning");
+  document.getElementById("aiPriority").innerHTML='<div class="loading-spinner">加载中...</div>';
+  return fetchJson("/api/ai/today").then(function(data){
+    aiData=data||{};renderAi();setStatus("ready");
+  }).catch(function(){
+    aiData=null;
+    document.getElementById("aiPriority").innerHTML=errorState("今日 AI 情报加载失败","/api/ai/today");
+    ["aiUpdates","aiTrends","aiResources","githubRadar"].forEach(function(id){document.getElementById(id).innerHTML=emptyState("暂无数据");});
+    setStatus("error","AI 接口不可用");
+  }).then(function(){isLoading=false;btnRefresh.classList.remove("spinning");});
+}
+function loadGaming(){
+  isLoading=true;setStatus("loading","加载 Gaming 周报...");btnRefresh.classList.add("spinning");
+  document.getElementById("weeklyBoard").innerHTML='<div class="loading-spinner">加载本周热点...</div>';
+  document.getElementById("todayNewList").innerHTML='<div class="loading-spinner">加载中...</div>';
+  var weeklyRequest=fetchJson("/api/gaming/weekly").then(function(data){weeklyData=data||{};renderWeekly();}).catch(function(error){
+    weeklyData=null;document.getElementById("weeklyBoard").innerHTML=errorState("本周热点加载失败","/api/gaming/weekly");throw error;
+  });
+  var todayRequest=fetchJson("/api/gaming/today-new").then(function(data){todayNewData=data||{};renderTodayNew();}).catch(function(error){
+    todayNewData=null;document.getElementById("todayNewList").innerHTML=errorState("今日新增加载失败","/api/gaming/today-new");throw error;
+  });
+  return Promise.allSettled([weeklyRequest,todayRequest]).then(function(results){
+    var failed=results.some(function(result){return result.status==="rejected";});
+    setStatus(failed?"error":"ready",failed?"部分接口不可用":"就绪");isLoading=false;btnRefresh.classList.remove("spinning");
   });
 }
-
-function loadGamingHotspots(cat){
-  var sec=document.getElementById("gamingHotspotSection");
-  if(!sec)return;
-  if(cat!=="gaming"){gamingHotspots=[];sec.innerHTML="";return;}
-  sec.innerHTML='<div class="hotspot-loading">加载运营热点中...</div>';
-  fetch("/api/gaming/hotspots?_="+Date.now())
-  .then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();})
-  .then(function(d){
-    gamingHotspots=d.items||[];
-    renderGamingHotspots(filterGamingHotspots());
-  })
-  .catch(function(e){
-    console.error("gaming hotspots:",e);
-    sec.innerHTML="";
-  });
-}
-
-function pickBestSource(sources){
-  var list=sources||[];
-  if(!list.length)return null;
-  var best=list[0],bestP=-1;
-  for(var i=0;i<list.length;i++){
-    var s=list[i];
-    var p=typeof s==="object"&&s!==null?(Number(s.priority)||0):0;
-    if(p>bestP){best=s;bestP=p;}
-  }
-  return best;
-}
-
-function renderGamingHotspots(items){
-  var sec=document.getElementById("gamingHotspotSection");
-  if(!sec)return;
-  if(!items.length){sec.innerHTML="";return;}
-  var html='<div class="hotspot-header"><span class="hotspot-title-label">运营热点</span><span class="hotspot-total">'+items.length+' 条</span></div>';
-  html+='<div class="gaming-hotspot-list">';
-  for(var i=0;i<items.length;i++){
-    var it=items[i];
-    var ev=GAMING_EVENT_CN[it.event_type]||EVENT_CN[it.event_type]||it.event_type||"";
-    var imp=it.importance||"";
-    var best=pickBestSource(it.recommended_sources);
-    var srcName=best?(typeof best==="string"?best:(best.source_name||best.name||best.title||"")):"";
-    var srcUrl=best?(typeof best==="string"?best:(best.url||best.link||"")):"";
-    html+='<div class="gaming-hotspot-card">';
-    html+='<div class="gaming-hotspot-name">'+esc(it.game_name||"未知游戏")+'</div>';
-    html+='<div class="gaming-hotspot-meta">';
-    if(ev)html+='<span class="gaming-hotspot-event">'+esc(ev)+'</span>';
-    if(imp)html+='<span class="gaming-hotspot-imp">'+esc(imp)+' 级</span>';
-    html+='<span class="gaming-hotspot-score">热度 '+(it.hotspot_score!=null?it.hotspot_score:"--")+'</span>';
-    html+='</div>';
-    if(srcName&&srcUrl){
-      html+='<div class="gaming-hotspot-sources"><span class="gaming-source-name">'+esc(srcName)+'</span>';
-      html+='<a class="gaming-source-btn" href="'+esc(srcUrl)+'" target="_blank" rel="noopener noreferrer">查看官方来源</a></div>';
-    }
-    html+='</div>';
-  }
-  html+='</div>';
-  sec.innerHTML=html;
-}
-
-function switchTab(cat){
-  currentCat=cat;
-  importanceFilter="all";categoryFilter="all";contentTypeFilter="all";eventTypeFilter="all";searchQuery="";
-  if(searchTimer){clearTimeout(searchTimer);}
-  if(searchInput){searchInput.value="";}
-  if(searchClear){searchClear.classList.remove("visible");}
-  for(var i=0;i<tabs.length;i++){
-    tabs[i].classList.toggle("active",tabs[i].dataset.category===cat);
-  }
-  loadNews(cat,true);
-  loadGamingHotspots(cat);
-}
-
-function refresh(){
-  if(isRefreshing)return;
-  isRefreshing=true;
-  btnRefresh.classList.add("spinning");
-  setStatus("loading");
-  fetch("/api/refresh",{method:"POST"})
-  .then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
-  .then(function(){loadNews(currentCat,false);})
-  .catch(function(err){console.error(err);setStatus("error");})
-  .then(function(){isRefreshing=false;btnRefresh.classList.remove("spinning");});
-}
-
-document.getElementById("filterBar").addEventListener("click",function(e){
-  var btn=e.target;
-  if(!btn.classList.contains("fb-btn"))return;
-  var f=btn.dataset.f, v=btn.dataset.v;
-  if(f==="imp"){importanceFilter=v;}
-  else if(f==="cat"){categoryFilter=v;}
-  else if(f==="type"){if(v!==contentTypeFilter){contentTypeFilter=v;categoryFilter="all";}}
-  else if(f==="event"){eventTypeFilter=v;}
+function renderCurrent(){if(currentCat==="ai")renderAi();else renderWeekly();}
+function switchTab(category){
+  currentCat=category;importanceFilter="all";categoryFilter="all";contentTypeFilter="all";eventTypeFilter="all";searchQuery="";
+  if(searchTimer)clearTimeout(searchTimer);
+  searchInput.value="";searchClear.classList.remove("visible");
+  tabs.forEach(function(tab){tab.classList.toggle("active",tab.dataset.category===category);});
+  aiDashboard.hidden=category!=="ai";gamingDashboard.hidden=category!=="gaming";
+  filterBar.hidden=category!=="gaming";
+  filterBar.classList.toggle("gaming-filters",category==="gaming");
   buildFilters();
-  renderWithFilter();
+  if(category==="ai"){if(aiData)renderAi();else loadAi();}
+  else if(weeklyData||todayNewData){renderWeekly();renderTodayNew();}else loadGaming();
+}
+
+function handleFilterClick(event){
+  var target=event.target.closest(".fb-btn");if(!target)return;
+  var type=target.dataset.f,value=target.dataset.v;
+  if(type==="imp")importanceFilter=value;
+  if(type==="cat")categoryFilter=value;
+  if(type==="type"&&value!==contentTypeFilter){contentTypeFilter=value;categoryFilter="all";}
+  if(type==="event")eventTypeFilter=value;
+  if(currentCat==="ai")resetAiExpanded();
+  buildFilters();renderCurrent();
+}
+filterBar.addEventListener("click",handleFilterClick);
+aiFilterBar.addEventListener("click",handleFilterClick);
+aiDashboard.addEventListener("click",function(event){
+  var target=event.target.closest("[data-ai-expand]");if(!target)return;
+  var section=target.dataset.aiExpand;
+  aiExpanded[section]=!aiExpanded[section];renderAi();
 });
-
-for(var i=0;i<tabs.length;i++){
-  tabs[i].addEventListener("click",function(){switchTab(this.dataset.category);});
-}
-
-dateDisplay.textContent=(function(now){
-  var y=now.getFullYear(),m=String(now.getMonth()+1).padStart(2,"0"),d=String(now.getDate()).padStart(2,"0");
-  return y+"年"+m+"月"+d+"日 星期"+["日","一","二","三","四","五","六"][now.getDay()];
-})(new Date());
-
-function loadTranslations(){fetch("/api/translations?_="+Date.now()).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();}).then(function(d){translations=d||{};if(allItems.length){allItems=sortItems(allItems);renderWithFilter();}}).catch(function(e){console.error("translations:",e);});}
-loadTranslations();
-loadGamingHotspots("ai");
-loadNews("ai",true);
-btnRefresh.addEventListener("click",refresh);
-if(searchInput&&searchClear){
-  var searchTimer=null;
-  searchInput.addEventListener("input",function(){
-    clearTimeout(searchTimer);
-    searchTimer=setTimeout(function(){
-      searchQuery=searchInput.value;
-      searchClear.classList.toggle("visible",searchQuery.length>0);
-      renderWithFilter();
-    },150);
-  });
-  searchClear.addEventListener("click",function(){
-    searchInput.value="";
-    searchQuery="";
-    searchClear.classList.remove("visible");
-    renderWithFilter();
-    searchInput.focus();
-  });
-}
-setInterval(function(){loadNews(currentCat,false);},300000);
+tabs.forEach(function(tab){tab.addEventListener("click",function(){switchTab(tab.dataset.category);});});
+btnRefresh.addEventListener("click",function(){if(isLoading)return;if(currentCat==="ai")loadAi();else loadGaming();});
+searchInput.addEventListener("input",function(){
+  clearTimeout(searchTimer);searchTimer=setTimeout(function(){searchQuery=searchInput.value;resetAiExpanded();searchClear.classList.toggle("visible",searchQuery.length>0);renderAi();},150);
+});
+searchClear.addEventListener("click",function(){searchInput.value="";searchQuery="";resetAiExpanded();searchClear.classList.remove("visible");renderAi();searchInput.focus();});
+dateDisplay.textContent=(function(now){return now.getFullYear()+"年"+String(now.getMonth()+1).padStart(2,"0")+"月"+String(now.getDate()).padStart(2,"0")+"日 星期"+["日","一","二","三","四","五","六"][now.getDay()];})(new Date());
+buildFilters();loadAi();
+setInterval(function(){if(currentCat==="ai")loadAi();else loadGaming();},300000);
 })();
