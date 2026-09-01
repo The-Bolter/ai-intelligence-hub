@@ -148,3 +148,10 @@ def test_store_round_trip_is_stable_when_explicitly_saved():
         expected = store.save(path)
         loaded = GamingEventStore.load(path)
     assert loaded.to_dict() == expected
+
+
+def test_remove_confirmed_removes_only_the_target_event():
+    store = GamingEventStore()
+    store.ingest({"events": [event(), event(event_id="event-2")], "pending": []})
+    assert store.remove_confirmed("event-1") is True
+    assert [item["event_id"] for item in store.confirmed_events()] == ["event-2"]

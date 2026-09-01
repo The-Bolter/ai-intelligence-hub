@@ -92,6 +92,8 @@ def _merge_event(existing: Mapping | None, incoming: Mapping, detected_at) -> di
         if key in {
             "first_detected_at", "last_detected_at", "recommended_sources",
             "key_changes", "source_article_ids", "source_articles", "pending_key",
+            "discovery_signals",
+            "discovery_sources",
         }:
             continue
         if value not in (None, "", []):
@@ -105,6 +107,16 @@ def _merge_event(existing: Mapping | None, incoming: Mapping, detected_at) -> di
     )
     merged["key_changes"] = _merge_unique(
         (existing or {}).get("key_changes"), incoming.get("key_changes")
+    )
+    merged["discovery_signals"] = _merge_unique(
+        (existing or {}).get("discovery_signals"), incoming.get("discovery_signals")
+    )
+    merged["discovery_sources"] = _merge_articles(
+        (existing or {}).get("discovery_sources"), incoming.get("discovery_sources")
+    )
+    merged["discovery_score"] = max(
+        int((existing or {}).get("discovery_score") or 0),
+        int(incoming.get("discovery_score") or 0),
     )
     merged["source_article_ids"] = _merge_unique(
         (existing or {}).get("source_article_ids"), incoming.get("source_article_ids")
@@ -227,6 +239,10 @@ class GamingEventStore:
 
     def confirmed_events(self) -> list[dict]:
         return [dict(event) for event in self._events.values()]
+
+    def remove_confirmed(self, event_id: str) -> bool:
+        """Remove one known-invalid confirmed event without touching pending data."""
+        return self._events.pop(str(event_id), None) is not None
 
     def pending_events(self) -> list[dict]:
         return [dict(event) for event in self._pending.values()]

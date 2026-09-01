@@ -275,6 +275,12 @@ def extract_key_changes(article: Mapping) -> list[str]:
         if text and text not in changes:
             changes.append(text)
 
+    # A discovery confirmation can use a platform detail page whose sidebar
+    # mentions unrelated games.  Its curated, explicitly verified change list
+    # is safer than mining that ambient text.
+    if article.get("force_source_game_id") and changes:
+        return changes
+
     content = " ".join(
         str(article.get(key) or "")
         for key in ("title", "headline", "summary", "content", "event_name")
@@ -421,6 +427,10 @@ def normalize_event(
         "key_changes": extract_key_changes(article),
         "recommended_sources": normalize_recommended_sources(sources),
         "source_article_ids": list(dict.fromkeys(source_article_ids)),
+        "discovery_score": _priority(article.get("discovery_score")),
+        "discovery_signals": list(dict.fromkeys(article.get("discovery_signals") or ([article.get("discovery_signal")] if article.get("discovery_signal") else []))),
+        "discovery_sources": list(article.get("discovery_sources") or []),
+        "verification_level": str(article.get("verification_level") or "official").strip(),
     }
 
 

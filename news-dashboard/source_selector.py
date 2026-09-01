@@ -78,6 +78,12 @@ def _build_source(record: dict, order: int) -> dict:
         "start_date": _first(record, "start_date"),
         "end_date": _first(record, "end_date"),
         "key_changes": record.get("key_changes") or [],
+        # Discovery candidates are intentionally kept separate from pages that
+        # may verify and enter the Event Store.
+        "source_role": str(_first(record, "source_role") or "verification").strip().casefold(),
+        "discovery_signal": _first(record, "discovery_signal"),
+        "discovery_score": _to_int_priority(_first(record, "discovery_score")),
+        "verification_level": _first(record, "verification_level"),
         "_order": order,
     }
 
@@ -124,10 +130,13 @@ class SourceSelector:
             if page["game_id"]:
                 self._pages_by_game.setdefault(page["game_id"], []).append(page)
 
-    def select(self, game_id, event_type) -> dict:
+    def select(self, game_id, event_type, source_role="verification") -> dict:
         game_id = game_id or ""
         event_type = event_type or ""
-        sources = list(self._sources_by_game.get(game_id, []))
+        sources = [
+            source for source in self._sources_by_game.get(game_id, [])
+            if source.get("source_role", "verification") == source_role
+        ]
         if not sources:
             return {"game_id": game_id, "event_type": event_type, "sources": []}
 
@@ -154,10 +163,18 @@ class SourceSelector:
                 "start_date": source["start_date"],
                 "end_date": source["end_date"],
                 "key_changes": source["key_changes"],
+                "source_role": source["source_role"],
+                "discovery_signal": source["discovery_signal"],
+                "discovery_score": source["discovery_score"],
+                "verification_level": source["verification_level"],
             }
             for source in selected
         ]
         return {"game_id": game_id, "event_type": event_type, "sources": output_sources}
+
+    def select_discovery(self, game_id) -> dict:
+        """Return non-confirming discovery sources for one explicitly scoped game."""
+        return self.select(game_id, "", source_role="discovery")
 
 
 def run_selftest(selector: SourceSelector) -> int:

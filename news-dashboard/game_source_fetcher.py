@@ -207,6 +207,7 @@ class GameSourceFetcher:
         if any(marker in material for marker in (
             "loading...", "sina visitor system", "javascript required", "enable javascript",
             "access denied", "login required", "请先登录",
+            "cf_app_waf", "var ac_opt", "requestinfo.useruserid",
         )):
             return "placeholder_or_access_wall"
         if not content:
@@ -263,6 +264,10 @@ class GameSourceFetcher:
             "start_date": source.get("start_date"),
             "end_date": source.get("end_date"),
             "key_changes": list(source.get("key_changes") or []),
+            "source_role": source.get("source_role") or "verification",
+            "discovery_signal": source.get("discovery_signal"),
+            "discovery_score": source.get("discovery_score"),
+            "verification_level": source.get("verification_level"),
         }
 
 

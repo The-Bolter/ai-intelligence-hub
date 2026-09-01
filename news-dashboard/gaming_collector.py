@@ -100,6 +100,64 @@ class GamingCollector:
             "event_store_stats": store_stats,
         }
 
+    def collect_discovered_game_events(self, game_id, discovery_service) -> dict:
+        """Confirm candidates through configured verification sources only.
+
+        Discovery articles never enter ``articles`` or the Event Store.  Their
+        evidence is copied only onto a successfully fetched verification page.
+        """
+        candidates = discovery_service.discover(game_id)
+        selection = self.selector.select(game_id, "")
+        sources = selection.get("sources", [])
+        fetched = self.fetcher.fetch_sources(sources)
+        articles = []
+        for fetched_item in fetched:
+            if fetched_item.get("fetch_status") != "success":
+                continue
+            item = dict(fetched_item)
+            item.setdefault("summary", item.get("content") or "")
+            item.setdefault("id", item.get("article_id") or item.get("url") or "")
+            item["source_game_id"] = game_id
+            context = self._safe_source_context(item, game_id)
+            if context:
+                item.update(context)
+            else:
+                entry = next((entry for entry in self.pipeline.resolver.games if entry.get("game_id") == game_id), None)
+                if entry:
+                    item.update({
+                        "game_id": game_id,
+                        "game_name": entry.get("name_cn") or entry.get("name_en"),
+                        "platforms": list(entry.get("platforms") or []),
+                        "display_group": entry.get("display_group"),
+                    })
+            # Candidate and source metadata must agree before anything can be
+            # normalized. This makes discovery non-confirming by construction.
+            for candidate in candidates:
+                if (item.get("event_type") == candidate.get("possible_event_type")
+                        and item.get("start_date") == candidate.get("possible_start_date")):
+                    item["force_source_game_id"] = True
+                    item["discovery_score"] = candidate.get("discovery_score", 0)
+                    item["discovery_signals"] = candidate.get("discovery_signals", [])
+                    item["discovery_sources"] = [candidate.get("discovery_source", {})]
+                    item["verification_level"] = item.get(
+                        "verification_level"
+                    ) or candidate.get("verification_level", "official")
+                    articles.append(item)
+                    break
+        normalized = self.pipeline.normalize_articles(articles)
+        stats = self.event_store.ingest(normalized) if articles else None
+        if articles and self.event_store_path is not None:
+            self.event_store.save(self.event_store_path)
+        return {
+            "game_id": game_id,
+            "sources_checked": len(sources),
+            "articles_found": len(articles),
+            "events": normalized["events"],
+            "pending": normalized["pending"],
+            "candidates": candidates,
+            "discovery_store_stats": stats,
+        }
+
     def _safe_source_context(self, article, game_id) -> dict | None:
         """Use configured game identity only for a verified, game-specific article."""
         if not article.get("source_is_article"):

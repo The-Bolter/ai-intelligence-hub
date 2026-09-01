@@ -89,7 +89,19 @@ class GamingPipeline:
         if not title:
             return None
 
-        game = self.resolver.resolve(title, summary)
+        # Discovery confirmation may carry a candidate that has already been
+        # tied to one concrete, game-specific verification page.  Only that
+        # narrow path can opt out of unrelated recommendation text on a page.
+        if item.get("force_source_game_id") and item.get("game_id") and item.get("game_name"):
+            game = {
+                "matched": True,
+                "game_id": item["game_id"],
+                "game_name": item["game_name"],
+                "platforms": item.get("platforms") or [],
+                "display_group": item.get("display_group"),
+            }
+        else:
+            game = self.resolver.resolve(title, summary)
         if not game.get("matched"):
             if not item.get("game_id") or not item.get("game_name"):
                 return None
