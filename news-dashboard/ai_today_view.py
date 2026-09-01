@@ -50,6 +50,16 @@ _STRONG_TREND_MARKERS = (
 _STRONG_HIGH_VALUE_MARKERS = _STRONG_MODEL_MARKERS + _STRONG_PRODUCT_MARKERS + _STRONG_TREND_MARKERS + (
     "study", "research", "breakthrough", "novel", "first", "sota", "研究", "突破", "首个",
 )
+_TECH_SIGNAL_MARKERS = (
+    "new model", "model release", "model update", "weights", "reasoning", "multimodal",
+    "context window", "benchmark", "inference", "api", "sdk", "rate limit", "usage limit",
+    "token", "quota", "rollout", "generally available", "public access", "new capability",
+    "feature launch", "agent", "agentic", "mcp", "tool use", "computer use", "browser agent",
+    "coding agent", "open source", "framework", "library", "release", "technical preview",
+    "architecture", "training", "模型发布", "模型升级", "开放权重", "推理能力", "多模态",
+    "上下文", "调用额度", "使用限额", "价格调整", "开放使用", "新功能", "工具调用", "开源",
+    "框架", "技术突破",
+)
 
 _CONTENT_WEIGHT = {"updates": 20.0, "trend": 12.0, "resources": -15.0}
 _CATEGORY_WEIGHT = {
@@ -158,6 +168,16 @@ def _today_priority_score(article: Mapping[str, Any], now: datetime) -> float:
     return round(score, 3)
 
 
+def _tech_signal_score(article: Mapping[str, Any]) -> float:
+    """View-only hard-tech signal score; does not alter persisted scoring."""
+    text = _normalized_text(article)
+    hits = sum(1 for marker in _TECH_SIGNAL_MARKERS if marker in text)
+    category = str(article.get("category") or "").lower()
+    bonus = {"model_update": 12.0, "product_update": 10.0, "breakthrough": 12.0,
+             "agent": 8.0, "model": 8.0, "tool": 6.0, "tech_direction": 6.0}.get(category, 0.0)
+    return round(min(40.0, hits * 6.0 + bonus), 3)
+
+
 def _article_key(article: Mapping[str, Any]) -> str:
     return str(article.get("id") or article.get("link") or article.get("title") or "")
 
@@ -172,10 +192,10 @@ def _published_sort_key(article: Mapping[str, Any]) -> tuple[float, float, float
     )
 
 
-def _priority_sort_key(article: Mapping[str, Any], now: datetime) -> tuple[float, float, str]:
+def _priority_sort_key(article: Mapping[str, Any], now: datetime) -> tuple[float, float, float, str]:
     category = str(article.get("category") or "").lower()
     editorial = {"breakthrough": 5, "model_update": 4, "product_update": 3, "company": 2}.get(category, 1)
-    return (editorial, _today_priority_score(article, now), _article_key(article))
+    return (_tech_signal_score(article), editorial, _today_priority_score(article, now), _article_key(article))
 
 
 def _clone(article: Mapping[str, Any]) -> dict[str, Any]:
@@ -390,6 +410,7 @@ def _take_priority_candidates(
         if backfill:
             score = round(score - BACKFILL_PENALTY, 3)
         item["today_priority_score"] = score
+        item["tech_signal_score"] = _tech_signal_score(article)
         item["priority_tier"] = tier
         chosen.append(item)
         used_sources.add(source)

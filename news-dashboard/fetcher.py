@@ -4,6 +4,7 @@ import os
 import json
 import hashlib
 import logging
+from urllib.parse import urlsplit, urlunsplit
 from datetime import datetime, timezone
 from html import unescape as html_unescape
 
@@ -218,7 +219,28 @@ def _fetch(feed):
     try:
         r = _session.get(feed["url"], timeout=15)
         r.raise_for_status()
-        return feedparser.parse(r.content).entries
+        entries = feedparser.parse(r.content).entries
+        # Official feeds occasionally expose an archive or duplicate URLs.
+        # Apply an opt-in bounded window only to feeds that request it.
+        limit = feed.get("max_entries")
+        if not limit:
+            return entries
+        seen = set()
+        clean = []
+        for entry in entries:
+            link = str(entry.get("link") or entry.get("id") or "").strip()
+            if link:
+                parts = urlsplit(link)
+                key = urlunsplit((parts.scheme, parts.netloc, parts.path.rstrip("/"), "", ""))
+            else:
+                key = str(entry.get("title") or "").strip().lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            clean.append(entry)
+            if len(clean) >= int(limit):
+                break
+        return clean
     except Exception as e:
         logger.warning("Fetch failed: %s - %s", feed["name"], e)
         return []
@@ -602,6 +624,22 @@ def fetch_category(cat):
         if eid not in seen or i["hotness"] > seen[eid]["hotness"]:
             seen[eid] = i
     result = sorted(seen.values(), key=lambda x: x["hotness"], reverse=True)
+    # Guard the final AI collection as well: a provider can return an archive
+    # through multiple feed pages, so per-feed limits alone are insufficient.
+    if cat == "ai":
+        bounded = []
+        counts = {}
+        for item in result:
+            name = item.get("source_name") or item.get("source") or ""
+            limit = next((int(f.get("max_entries")) for f in config.AI_FEEDS
+                          if f.get("source_name") == name and f.get("max_entries")), None)
+            if limit is not None:
+                counts[name] = counts.get(name, 0)
+                if counts[name] >= limit:
+                    continue
+                counts[name] += 1
+            bounded.append(item)
+        result = bounded
 
     # Merge AI status from ai_insights.json (no auto-pending)
     insight_map = _get_insight_map()
