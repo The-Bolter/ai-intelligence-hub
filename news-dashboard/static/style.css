@@ -922,6 +922,11 @@ body {
     display: grid;
     gap: 8px;
 }
+.today-new-empty {
+    padding: 12px 2px 4px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
 .weekly-event-card {
     display: grid;
     grid-template-columns: 120px minmax(0, 1fr);

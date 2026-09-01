@@ -160,15 +160,7 @@ function renderAiList(sectionType,targetId,countId,toggleId,items,emptyMessage){
 }
 function renderAi(){
   if(!aiData)return;
-  var priority=array(aiData.today_priority).filter(function(item){return !isGithub(item);}).slice(0,5),seen={};
-  priority.forEach(function(item){seen[item.id||linkOf(item)||titleOf(item)]=true;});
-  if(priority.length<3){
-    array(aiData.updates).some(function(item){
-      var key=item.id||linkOf(item)||titleOf(item);
-      if(!isGithub(item)&&!seen[key]){priority.push(item);seen[key]=true;}
-      return priority.length>=3;
-    });
-  }
+  var priority=array(aiData.today_priority).filter(function(item){return !isGithub(item);}).slice(0,5);
   document.getElementById("aiPriority").innerHTML=priority.length?priority.map(renderPriorityCard).join(""):emptyState("今日暂无重点情报");
   renderAiList("updates","aiUpdates","updatesCount","updatesToggle",filterAiItems(aiData.updates,"updates"),"暂无匹配的最新动态");
   renderAiList("trends","aiTrends","trendsCount","trendsToggle",filterAiItems(aiData.trends,"trend"),"暂无匹配的趋势信号");
@@ -262,7 +254,7 @@ function renderTodayNew(){
     var match=findWeeklyMatch(item)||{},attention=item.attention_level||match.attention_level;
     return '<article class="today-new-card"><div class="today-new-time">'+esc(dateLabel(item.detected_at,true))+'</div><h4>'+esc(item.game_name||item.game||"未知游戏")+'</h4><p>'+esc(item.event_name||item.headline||"新事件")+'</p><div class="today-new-meta"><span>开始 '+esc(dateLabel(item.start_date||item.event_date,false))+'</span>'+
       (attention?'<span class="attention attention-'+attentionClass(attention)+'">关注度：'+esc(attentionText(attention))+'</span>':'')+'</div></article>';
-  }).join(""):emptyState("今天暂无新发现","这里会补充当天新识别的周事件。");
+  }).join(""):'<div class="today-new-empty">今日暂无新增</div>';
 }
 
 function loadAi(){
