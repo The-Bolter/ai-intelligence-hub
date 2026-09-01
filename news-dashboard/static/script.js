@@ -285,14 +285,20 @@ function loadGaming(){
   });
 }
 function renderCurrent(){if(currentCat==="ai")renderAi();else renderWeekly();}
+function applyTabVisibility(category){
+  var isAi=category==="ai";
+  aiDashboard.hidden=!isAi;
+  gamingDashboard.hidden=isAi;
+  aiFilterBar.hidden=!isAi;
+  filterBar.hidden=isAi;
+  filterBar.classList.toggle("gaming-filters",!isAi);
+}
 function switchTab(category){
   currentCat=category;importanceFilter="all";categoryFilter="all";contentTypeFilter="all";eventTypeFilter="all";searchQuery="";
   if(searchTimer)clearTimeout(searchTimer);
   searchInput.value="";searchClear.classList.remove("visible");
   tabs.forEach(function(tab){tab.classList.toggle("active",tab.dataset.category===category);});
-  aiDashboard.hidden=category!=="ai";gamingDashboard.hidden=category!=="gaming";
-  filterBar.hidden=category!=="gaming";
-  filterBar.classList.toggle("gaming-filters",category==="gaming");
+  applyTabVisibility(category);
   buildFilters();
   if(category==="ai"){if(aiData)renderAi();else loadAi();}
   else if(weeklyData||todayNewData){renderWeekly();renderTodayNew();}else loadGaming();
@@ -322,6 +328,7 @@ searchInput.addEventListener("input",function(){
 });
 searchClear.addEventListener("click",function(){searchInput.value="";searchQuery="";resetAiExpanded();searchClear.classList.remove("visible");renderAi();searchInput.focus();});
 dateDisplay.textContent=(function(now){return now.getFullYear()+"年"+String(now.getMonth()+1).padStart(2,"0")+"月"+String(now.getDate()).padStart(2,"0")+"日 星期"+["日","一","二","三","四","五","六"][now.getDay()];})(new Date());
+applyTabVisibility(currentCat);
 buildFilters();loadAi();
 setInterval(function(){if(currentCat==="ai")loadAi();else loadGaming();},300000);
 })();
