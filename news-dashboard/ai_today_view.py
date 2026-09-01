@@ -178,6 +178,20 @@ def _tech_signal_score(article: Mapping[str, Any]) -> float:
     return round(min(40.0, hits * 6.0 + bonus), 3)
 
 
+def _priority_tier(article: Mapping[str, Any]) -> int:
+    """Product priority tier used only by the Today View selector."""
+    category = str(article.get("category") or "").lower()
+    content_type = str(article.get("content_type") or "").lower()
+    tech = _tech_signal_score(article)
+    if category in {"breakthrough", "model_update"}:
+        return 1
+    if category == "product_update" and tech > 0:
+        return 1
+    if category in {"agent", "model", "tool", "app", "tech_direction"} or content_type == "resources":
+        return 2
+    return 3
+
+
 def _article_key(article: Mapping[str, Any]) -> str:
     return str(article.get("id") or article.get("link") or article.get("title") or "")
 
@@ -445,19 +459,22 @@ def _select_today_priority(articles: list[Mapping[str, Any]], now: datetime, tra
     chosen: list[dict[str, Any]] = []
     used_sources: set[str] = set()
 
-    _select_from_pool(today_candidates, now, chosen, used_sources, translations, backfill=False, tier="strict")
+    # Reserve the front of the list for hard-tech Tier 1 candidates.
+    for tier_no in (1, 2, 3):
+        pool = [a for a in today_candidates if _priority_tier(a) == tier_no]
+        _select_from_pool(pool, now, chosen, used_sources, translations, backfill=False, tier=f"strict_tier_{tier_no}")
     if len(chosen) < 3:
-        _select_from_pool(
-            today_candidates, now, chosen, used_sources, translations,
-            backfill=False, strict=False, max_items=3 - len(chosen), tier="fallback",
-        )
+        for tier_no in (1, 2, 3):
+            pool = [a for a in today_candidates if _priority_tier(a) == tier_no]
+            _select_from_pool(pool, now, chosen, used_sources, translations,
+                              backfill=False, strict=False, max_items=3 - len(chosen), tier="fallback")
     if len(chosen) < 3:
         cutoff = now - timedelta(hours=BACKFILL_HOURS)
         fallback = [a for a in eligible if (_published(a) and cutoff <= _published(a) < now)]
-        _select_from_pool(
-            fallback, now, chosen, used_sources, translations,
-            backfill=True, max_items=min(2, 3 - len(chosen)), tier="backfill",
-        )
+        for tier_no in (1, 2, 3):
+            pool = [a for a in fallback if _priority_tier(a) == tier_no]
+            _select_from_pool(pool, now, chosen, used_sources, translations,
+                              backfill=True, max_items=min(2, 3 - len(chosen)), tier="backfill")
     return chosen
 
 
