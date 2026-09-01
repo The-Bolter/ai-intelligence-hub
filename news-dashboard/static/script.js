@@ -64,7 +64,7 @@ function dateLabel(value,withTime){
   var options=withTime?{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}:{month:"numeric",day:"numeric"};
   return new Intl.DateTimeFormat("zh-CN",options).format(date).replace(/\//g,".");
 }
-function summaryOf(item){return item.chinese_summary||item.summary_cn||item.summary||"暂无摘要";}
+function summaryOf(item){return item.summary_cn||item.chinese_summary||item.summary||"暂无摘要";}
 function titleOf(item){return item.title_cn||item.title||item.headline||"未命名";}
 function sourceOf(item){return item.source_name||item.source||"未知来源";}
 function linkOf(item){return item.url||item.link||"";}

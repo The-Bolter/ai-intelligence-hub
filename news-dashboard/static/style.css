@@ -700,6 +700,9 @@ body {
     color: var(--text-muted);
     font-size: 10px;
 }
+.filter-bar[hidden] {
+    display: none !important;
+}
 .gaming-filters .fb-btn:hover {
     border-color: var(--accent-gaming);
 }

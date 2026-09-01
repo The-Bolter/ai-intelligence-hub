@@ -11,7 +11,7 @@ from flask import Flask, jsonify, make_response, render_template, request, abort
 
 import config
 from fetcher import refresh_all, _load_ai_insights, _get_insight_map, _update_ai_insight
-from translation_service import try_translate_article
+from translation_service import is_chinese_text, try_translate_article
 from ai_today_view import build_ai_today_view
 from gaming_event_store import DEFAULT_EVENT_STORE_PATH, GamingEventStore
 from gaming_weekly_v2 import build_today_new, build_weekly_radar
@@ -24,6 +24,32 @@ app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 GAMING_HOTSPOTS_FILE = os.path.join(os.path.dirname(__file__), "gaming_hotspots.json")
 GAMING_EVENT_STORE_FILE = DEFAULT_EVENT_STORE_PATH
+_AI_FRONT_PAGE_SECTIONS = (("today_priority", None), ("updates", 5), ("trends", 4), ("resources", 4))
+_AI_TRANSLATION_PLACEHOLDERS = ("点击查看原文", "查看原文", "click to read", "read more")
+
+
+def _translate_ai_front_page(view):
+    """Fill only eligible cache misses currently rendered on the AI front page."""
+    seen = set()
+    for section, limit in _AI_FRONT_PAGE_SECTIONS:
+        for article in (view.get(section) or [])[:limit]:
+            article_id = str(article.get("id") or "").strip()
+            summary = str(article.get("summary") or "").strip()
+            existing = str(article.get("summary_cn") or article.get("chinese_summary") or "").strip()
+            title = str(article.get("title") or "").strip()
+            summary_lower = summary.lower()
+            if (
+                not article_id
+                or article_id in seen
+                or not summary
+                or is_chinese_text(summary)
+                or is_chinese_text(existing)
+                or any(marker in summary_lower for marker in _AI_TRANSLATION_PLACEHOLDERS)
+                or title.lower().startswith("show hn")
+            ):
+                continue
+            seen.add(article_id)
+            try_translate_article(article_id=article_id, title=title, summary=summary)
 
 
 # ------------------ 后台自动刷新线程 ------------------
@@ -96,6 +122,8 @@ def api_ai_today():
     data = _load_news("ai")
     if data is None:
         return jsonify({"error": "No data yet. Trigger a refresh first."}), 503
+    view = build_ai_today_view(data.get("items", []))
+    _translate_ai_front_page(view)
     return jsonify(build_ai_today_view(data.get("items", [])))
 
 
