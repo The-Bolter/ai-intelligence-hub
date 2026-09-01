@@ -217,13 +217,59 @@ function attentionText(value){
   if(text.toLowerCase()==="low")return"低";
   return text;
 }
+function sourceList(value){
+  if(Array.isArray(value))return value;
+  return value?[value]:[];
+}
+function sourceUrl(source){
+  if(typeof source==="string")return /^https?:\/\//i.test(source)?source:"";
+  return source&&source.url?String(source.url):"";
+}
+function sourceText(source){
+  if(typeof source==="string")return"";
+  return [source&&source.source_type,source&&source.name,source&&source.label,source&&source.fetch_method].filter(Boolean).join(" ").toLowerCase();
+}
+function isOfficialSource(source){
+  return !!(source&&typeof source==="object"&&source.official===true)||/official|verification|官方|官网/.test(sourceText(source));
+}
+function firstSource(sources,officialOnly){
+  var list=sourceList(sources);
+  for(var i=0;i<list.length;i++){
+    if(sourceUrl(list[i])&&(!officialOnly||isOfficialSource(list[i])))return list[i];
+  }
+  return null;
+}
+function recommendedArticleSource(item){
+  var articles=sourceList(item.source_articles),recommended=sourceList(item.recommended_sources);
+  for(var i=0;i<recommended.length;i++){
+    var recommendedUrl=sourceUrl(recommended[i]);
+    if(!recommendedUrl||!isOfficialSource(recommended[i]))continue;
+    for(var j=0;j<articles.length;j++)if(recommendedUrl===sourceUrl(articles[j]))return recommended[i];
+  }
+  return null;
+}
+function weeklySource(item){
+  var source=recommendedArticleSource(item)||firstSource(item.recommended_sources,true);
+  if(!source)source=firstSource(item.source_articles,true)||firstSource(item.source_articles,false);
+  if(!source)source=firstSource(item.discovery_sources,true)||firstSource(item.discovery_sources,false);
+  if(!source)return null;
+  var verification=String(item.verification_level||"").toLowerCase();
+  var crosscheck=verification==="secondary_crosscheck"||/secondary|crosscheck|交叉/.test(sourceText(source));
+  return {url:sourceUrl(source),label:crosscheck?"交叉验证 ↗":isOfficialSource(source)?"官方公告 ↗":"官方来源 ↗"};
+}
+function isPendingVerification(item){
+  return ["questionable","unverified","pending"].indexOf(String(item.verification_level||"").toLowerCase())!==-1;
+}
 function renderWeeklyCard(item){
+  var source=weeklySource(item);
   return '<article class="weekly-event-card">'+
     '<div class="event-date-block"><strong>'+esc(eventDateRange(item))+'</strong><span>'+esc(eventTypeLabel(item.event_type))+'</span></div>'+
     '<div class="event-copy"><span class="game-name">'+esc(item.game_name||item.game||"未知游戏")+'</span><h4>'+esc(item.event_name||item.headline||"未命名事件")+'</h4><p>'+esc(changesText(item.key_changes||item.summary))+'</p><div class="event-foot">'+
     '<span class="attention attention-'+attentionClass(item.attention_level)+'">关注度：'+esc(attentionText(item.attention_level))+'</span>'+
     (item.phase?'<span class="phase-pill">'+esc(item.phase)+'</span>':'')+
     (item.hotspot_score!=null?'<span class="weak-score">热度 '+esc(item.hotspot_score)+'</span>':'')+
+    (source?'<a class="event-source-link" href="'+safeUrl(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.label)+'</a>':'')+
+    (isPendingVerification(item)?'<span class="verification-pending">待核验</span>':'')+
     '</div></div></article>';
 }
 function renderWeekly(){

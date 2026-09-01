@@ -960,6 +960,20 @@ body {
 .event-foot {
     margin-top: 9px;
 }
+.event-source-link {
+    color: var(--text-secondary);
+    font-size: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.event-source-link:hover {
+    color: #92400e;
+    text-decoration: underline;
+}
+.verification-pending {
+    color: var(--text-muted);
+    font-size: 10px;
+}
 .attention,
 .phase-pill {
     display: inline-flex;
