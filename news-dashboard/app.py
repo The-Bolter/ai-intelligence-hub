@@ -13,6 +13,7 @@ import config
 from fetcher import refresh_all, _load_ai_insights, _get_insight_map, _update_ai_insight
 from translation_service import is_chinese_text, try_translate_article
 from ai_today_view import build_ai_today_view
+from gaming_collector import GamingCollector
 from gaming_event_store import DEFAULT_EVENT_STORE_PATH, GamingEventStore
 from gaming_weekly_v2 import build_today_new, build_weekly_radar
 
@@ -26,6 +27,8 @@ GAMING_HOTSPOTS_FILE = os.path.join(os.path.dirname(__file__), "gaming_hotspots.
 GAMING_EVENT_STORE_FILE = DEFAULT_EVENT_STORE_PATH
 _AI_FRONT_PAGE_SECTIONS = (("today_priority", None), ("updates", 5), ("trends", 4), ("resources", 4))
 _AI_TRANSLATION_PLACEHOLDERS = ("点击查看原文", "查看原文", "click to read", "read more")
+_AUTO_REFRESH_THREAD = None
+_AUTO_REFRESH_START_LOCK = threading.Lock()
 
 
 def _translate_ai_front_page(view):
@@ -54,21 +57,58 @@ def _translate_ai_front_page(view):
 
 # ------------------ 后台自动刷新线程 ------------------
 
+def _refresh_gaming_incremental():
+    """Collect configured sources for games already tracked by the Event Store."""
+    store = _load_gaming_event_store()
+    game_ids = sorted({
+        str(event.get("game_id") or "")
+        for event in store.confirmed_events()
+        if event.get("game_id")
+    })
+    if not game_ids:
+        logger.info("Gaming incremental collection skipped: no tracked games.")
+        return
+    collector = GamingCollector()
+    for game_id in game_ids:
+        try:
+            result = collector.collect_game_events(game_id)
+            logger.info(
+                "Gaming incremental collection complete: %s (%d sources, %d articles)",
+                game_id, result["sources_checked"], result["articles_found"],
+            )
+        except Exception as exc:
+            logger.error("Gaming incremental collection failed for %s: %s", game_id, exc)
+
 def _auto_refresh_loop():
     while True:
         try:
             logger.info("Auto-refreshing all news...")
             refresh_all()
-            logger.info("Auto-refresh complete.")
+            logger.info("AI and legacy feed refresh complete.")
         except Exception as e:
-            logger.error("Auto-refresh failed: %s", e)
+            logger.error("AI and legacy feed refresh failed: %s", e)
+        try:
+            _refresh_gaming_incremental()
+            logger.info("Gaming incremental refresh complete.")
+        except Exception as e:
+            logger.error("Gaming incremental refresh failed: %s", e)
         time.sleep(config.REFRESH_INTERVAL_MINUTES * 60)
 
 
 def start_auto_refresh():
-    t = threading.Thread(target=_auto_refresh_loop, daemon=True)
-    t.start()
-    logger.info("Auto-refresh thread started (interval: %d min)", config.REFRESH_INTERVAL_MINUTES)
+    global _AUTO_REFRESH_THREAD
+    with _AUTO_REFRESH_START_LOCK:
+        if _AUTO_REFRESH_THREAD and _AUTO_REFRESH_THREAD.is_alive():
+            return
+        _AUTO_REFRESH_THREAD = threading.Thread(target=_auto_refresh_loop, daemon=True)
+        _AUTO_REFRESH_THREAD.start()
+        logger.info("Auto-refresh thread started (interval: %d min)", config.REFRESH_INTERVAL_MINUTES)
+
+
+@app.before_request
+def _ensure_auto_refresh_started():
+    """Flask CLI does not execute the module's __main__ startup block."""
+    start_auto_refresh()
 
 
 # ------------------ 数据读取 ------------------
