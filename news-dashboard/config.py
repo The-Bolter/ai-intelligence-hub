@@ -50,6 +50,23 @@ AI_FEEDS = [
     {"name": "Hugging Face Blog", "url": "https://huggingface.co/blog/feed.xml", "weight": 8, "lang": "en",
      "source_name": "Hugging Face 官方", "source_type": "rss", "source_region": "Global", "source_priority": 95, "max_entries": 40},
 ]
+
+# First-party coverage registry (MVP metadata).  HTML entries are intentionally
+# marked unsupported until a stable RSS/Atom/changelog adapter exists.
+AI_FIRST_PARTY_SOURCES = [
+    {"source_name": "Anthropic 官方", "source_type": "official", "region": "Global", "priority": 100,
+     "fetch_method": "html", "url": "https://www.anthropic.com/news", "max_entries": 20, "status": "unstable_html"},
+    {"source_name": "豆包/字节 AI 官方", "source_type": "official", "region": "CN", "priority": 100,
+     "fetch_method": "html", "url": "https://www.doubao.com/chat/", "max_entries": 20, "status": "unstable_html"},
+    {"source_name": "腾讯混元官方", "source_type": "official", "region": "CN", "priority": 100,
+     "fetch_method": "html", "url": "https://hunyuan.tencent.com/", "max_entries": 20, "status": "unstable_html"},
+    {"source_name": "科大讯飞/星火官方", "source_type": "official", "region": "CN", "priority": 100,
+     "fetch_method": "html", "url": "https://www.xfyun.cn/hera/404", "max_entries": 20, "status": "unsupported"},
+    {"source_name": "Android 官方", "source_type": "official", "region": "Global", "priority": 95,
+     "fetch_method": "html", "url": "https://blog.google/products-and-platforms/platforms/android/", "max_entries": 20, "status": "unstable_html"},
+    {"source_name": "Manus 官方", "source_type": "official", "region": "Global", "priority": 95,
+     "fetch_method": "html", "url": "https://manus.im/blog", "max_entries": 20, "status": "unstable_html"},
+]
 GITHUB_SOURCE = {
     "source_name": "GitHub",
     "source_type": "github",
