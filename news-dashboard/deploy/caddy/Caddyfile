@@ -1,0 +1,16 @@
+# Replace YOUR_DOMAIN after DNS points to this VPS. Caddy obtains TLS and
+# redirects HTTP to HTTPS automatically for a public domain.
+YOUR_DOMAIN {
+    encode zstd gzip
+
+    reverse_proxy 127.0.0.1:5678 {
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+        transport http {
+            dial_timeout 10s
+            response_header_timeout 60s
+        }
+    }
+}

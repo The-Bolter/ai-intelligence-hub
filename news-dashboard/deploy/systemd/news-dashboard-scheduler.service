@@ -1,0 +1,18 @@
+[Unit]
+Description=News Dashboard independent refresh scheduler
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=news-dashboard
+Group=news-dashboard
+WorkingDirectory=/opt/news-dashboard
+EnvironmentFile=-/etc/news-dashboard/news-dashboard.env
+ExecStart=/opt/news-dashboard/venv/bin/python scheduler_worker.py
+Restart=always
+RestartSec=10
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+Flask
+requests
+feedparser
+beautifulsoup4
+lxml
+translators
+waitress==3.0.2

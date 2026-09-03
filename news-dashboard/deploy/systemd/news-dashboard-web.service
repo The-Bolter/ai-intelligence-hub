@@ -1,0 +1,17 @@
+[Unit]
+Description=News Dashboard production web API
+After=network.target
+
+[Service]
+Type=simple
+User=news-dashboard
+Group=news-dashboard
+WorkingDirectory=/opt/news-dashboard
+EnvironmentFile=-/etc/news-dashboard/news-dashboard.env
+ExecStart=/opt/news-dashboard/venv/bin/python web_server.py
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target
