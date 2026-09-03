@@ -4,6 +4,7 @@ import os
 import json
 import hashlib
 import logging
+import tempfile
 from urllib.parse import urlsplit, urlunsplit
 from datetime import datetime, timezone
 from html import unescape as html_unescape
@@ -19,6 +20,8 @@ from translation_service import try_translate_article, get_cached_translation
 logging.basicConfig(level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
+_AI_SOURCE_FAILURES = {}
+_AI_SOURCE_COUNTS = {}
 
 _session = requests.Session()
 _session.headers.update({
@@ -605,13 +608,23 @@ def _maybe_translate_article(article):
 
 def fetch_category(cat):
     feeds = config.AI_FEEDS if cat == "ai" else config.GAMING_FEEDS
+    feeds = [feed for feed in feeds if feed.get("status") != "disabled"]
     items = []
+    failures = {}
+    counts = {}
     for feed in feeds:
-        for e in _fetch(feed):
-            d = _to_dict(e, feed, cat)
-            d["hotness"] = _hotness(e, feed, cat)
-            d["source_quality"] = _compute_source_quality(feed, cat)
-            items.append(d)
+        name = feed.get("source_name", feed.get("name", "unknown"))
+        try:
+            entries = _fetch(feed)
+            counts[name] = len(entries)
+            for e in entries:
+                d = _to_dict(e, feed, cat)
+                d["hotness"] = _hotness(e, feed, cat)
+                d["source_quality"] = _compute_source_quality(feed, cat)
+                items.append(d)
+        except Exception as exc:
+            failures[name] = f"{type(exc).__name__}: {exc}"
+            logger.warning("Source isolated: %s - %s", name, failures[name])
     # ---- GitHub AI projects ----
     if cat == "ai":
         from github_fetcher import fetch_github_projects
@@ -681,16 +694,38 @@ def fetch_category(cat):
                 sum(1 for i in result if i["importance"] == "B"))
 
     _run_auto_translate(result, cat)
+    if cat == "ai":
+        _AI_SOURCE_FAILURES.clear(); _AI_SOURCE_FAILURES.update(failures)
+        _AI_SOURCE_COUNTS.clear(); _AI_SOURCE_COUNTS.update(counts)
+        logger.info("AI source health: total=%d success=%d failed=%d", len(feeds), len(feeds)-len(failures), len(failures))
     return result
 def save_news(cat, items):
     fp = config.AI_DATA_FILE if cat == "ai" else config.GAMING_DATA_FILE
-    with open(fp, "w", encoding="utf-8") as f:
-        json.dump({
+    if cat == "ai" and _AI_SOURCE_FAILURES and os.path.exists(fp):
+        try:
+            with open(fp, "r", encoding="utf-8") as old_f:
+                old_items = json.load(old_f).get("items", [])
+            current_ids = {i.get("id") for i in items}
+            items = list(items) + [i for i in old_items if i.get("source_name") in _AI_SOURCE_FAILURES and i.get("id") not in current_ids]
+        except (OSError, ValueError, TypeError):
+            pass
+    payload = {
             "category": cat,
             "updated_at": datetime.now(timezone.utc).isoformat(),
             "total": len(items),
             "items": items,
-        }, f, ensure_ascii=False, indent=2)
+        }
+    directory = os.path.dirname(fp) or "."
+    fd, tmp = tempfile.mkstemp(prefix=".news_", suffix=".json", dir=directory)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, fp)
+    finally:
+        if os.path.exists(tmp):
+            os.unlink(tmp)
 
 
 def refresh_all():
