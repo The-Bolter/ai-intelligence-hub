@@ -16,6 +16,7 @@ from ai_today_view import build_ai_today_view
 from gaming_collector import GamingCollector
 from gaming_event_store import DEFAULT_EVENT_STORE_PATH, GamingEventStore
 from gaming_weekly_v2 import build_today_new, build_weekly_radar
+from runtime_health import read_runtime_health, write_scheduler_health
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -81,6 +82,7 @@ def _refresh_gaming_incremental():
 
 def _auto_refresh_loop():
     while True:
+        write_scheduler_health("running")
         try:
             logger.info("Auto-refreshing all news...")
             refresh_all()
@@ -92,7 +94,10 @@ def _auto_refresh_loop():
             logger.info("Gaming incremental refresh complete.")
         except Exception as e:
             logger.error("Gaming incremental refresh failed: %s", e)
-        time.sleep(config.REFRESH_INTERVAL_MINUTES * 60)
+        write_scheduler_health("idle")
+        for _ in range(config.REFRESH_INTERVAL_MINUTES * 2):
+            write_scheduler_health("idle")
+            time.sleep(30)
 
 
 def start_auto_refresh():
@@ -103,12 +108,6 @@ def start_auto_refresh():
         _AUTO_REFRESH_THREAD = threading.Thread(target=_auto_refresh_loop, daemon=True)
         _AUTO_REFRESH_THREAD.start()
         logger.info("Auto-refresh thread started (interval: %d min)", config.REFRESH_INTERVAL_MINUTES)
-
-
-@app.before_request
-def _ensure_auto_refresh_started():
-    """Flask CLI does not execute the module's __main__ startup block."""
-    start_auto_refresh()
 
 
 # ------------------ 数据读取 ------------------
@@ -306,6 +305,29 @@ def api_gaming_today_new():
     store = _load_gaming_event_store()
     weekly = build_weekly_radar(store)
     return jsonify(build_today_new(store, weekly_radar=weekly))
+
+
+@app.route("/health")
+def health():
+    """Cache-only process health; this endpoint never triggers a refresh."""
+    try:
+        ai_api = _load_news("ai") is not None
+    except (OSError, ValueError, TypeError):
+        ai_api = False
+    try:
+        _load_gaming_event_store()
+        gaming_api = True
+    except (OSError, ValueError, TypeError):
+        gaming_api = False
+    scheduler = read_runtime_health()
+    return jsonify({
+        "status": "ok" if ai_api and gaming_api else "degraded",
+        "ai_api": ai_api,
+        "gaming_api": gaming_api,
+        "scheduler_alive": scheduler.get("alive", False),
+        "last_ai_refresh": scheduler.get("last_ai_refresh"),
+        "last_gaming_refresh": scheduler.get("last_gaming_refresh"),
+    })
 
 @app.route("/api/ai-insights")
 def api_ai_insights():
