@@ -53,6 +53,12 @@ AI_FEEDS = [
      "source_name": "AndroidX 官方", "source_type": "rss", "source_region": "Global", "source_priority": 95, "max_entries": 40, "status": "unstable", "tier": "A"},
     {"name": "xAI SDK Releases", "url": "https://github.com/xai-org/xai-sdk-python/releases.atom", "weight": 8, "lang": "en",
      "source_name": "xAI 官方", "source_type": "github_release", "source_region": "Global", "source_priority": 95, "max_entries": 40, "status": "stable", "tier": "A"},
+    {"name": "Anthropic SDK Releases", "url": "https://github.com/anthropics/anthropic-sdk-python/releases.atom", "weight": 8, "lang": "en",
+     "source_name": "Anthropic 官方", "source_type": "github_release", "source_region": "Global", "source_priority": 100, "max_entries": 40, "status": "stable", "tier": "A", "source_role": "first_party"},
+    {"name": "Microsoft Semantic Kernel Releases", "url": "https://github.com/microsoft/semantic-kernel/releases.atom", "weight": 8, "lang": "en",
+     "source_name": "Microsoft AI 官方", "source_type": "github_release", "source_region": "Global", "source_priority": 100, "max_entries": 40, "status": "stable", "tier": "A", "source_role": "first_party"},
+    {"name": "Meta Llama Releases", "url": "https://github.com/meta-llama/llama-models/releases.atom", "weight": 8, "lang": "en",
+     "source_name": "Meta AI 官方", "source_type": "github_release", "source_region": "Global", "source_priority": 100, "max_entries": 40, "status": "stable", "tier": "A", "source_role": "first_party"},
 ]
 
 # First-party coverage registry (MVP metadata).  HTML entries are intentionally
