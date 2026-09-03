@@ -64,6 +64,18 @@ function dateLabel(value,withTime){
   var options=withTime?{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}:{month:"numeric",day:"numeric"};
   return new Intl.DateTimeFormat("zh-CN",options).format(date).replace(/\//g,".");
 }
+function businessDateLabel(value){
+  var match=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value||""));
+  if(match){
+    var year=Number(match[1]),month=Number(match[2]),day=Number(match[3]);
+    var weekday=["日","一","二","三","四","五","六"][new Date(Date.UTC(year,month-1,day)).getUTCDay()];
+    return year+"年"+String(month).padStart(2,"0")+"月"+String(day).padStart(2,"0")+"日 星期"+weekday;
+  }
+  var parts=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Shanghai",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+  var values={};
+  parts.forEach(function(part){values[part.type]=part.value;});
+  return businessDateLabel(values.year+"-"+values.month+"-"+values.day);
+}
 function summaryOf(item){return item.summary_cn||item.chinese_summary||item.summary||"暂无摘要";}
 function titleOf(item){return item.title_cn||item.title||item.headline||"未命名";}
 function sourceOf(item){return item.source_name||item.source||"未知来源";}
@@ -168,6 +180,7 @@ function renderAi(){
   var radar=array(aiData.github_radar).slice(0,5);
   document.getElementById("githubRadar").innerHTML=radar.length?radar.map(renderGithubCard).join(""):emptyState("今日暂无 GitHub 项目");
   document.getElementById("aiDate").textContent=aiData.date||"";
+  dateDisplay.textContent=businessDateLabel(aiData.date);
   document.getElementById("aiUpdated").textContent=aiData.generated_at?"数据更新于 "+timeAgo(aiData.generated_at):"";
 }
 
@@ -373,7 +386,7 @@ searchInput.addEventListener("input",function(){
   clearTimeout(searchTimer);searchTimer=setTimeout(function(){searchQuery=searchInput.value;resetAiExpanded();searchClear.classList.toggle("visible",searchQuery.length>0);renderAi();},150);
 });
 searchClear.addEventListener("click",function(){searchInput.value="";searchQuery="";resetAiExpanded();searchClear.classList.remove("visible");renderAi();searchInput.focus();});
-dateDisplay.textContent=(function(now){return now.getFullYear()+"年"+String(now.getMonth()+1).padStart(2,"0")+"月"+String(now.getDate()).padStart(2,"0")+"日 星期"+["日","一","二","三","四","五","六"][now.getDay()];})(new Date());
+dateDisplay.textContent=businessDateLabel();
 applyTabVisibility(currentCat);
 buildFilters();loadAi();
 setInterval(function(){if(currentCat==="ai")loadAi();else loadGaming();},300000);
