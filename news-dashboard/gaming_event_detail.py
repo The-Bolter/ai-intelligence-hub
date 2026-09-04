@@ -73,12 +73,20 @@ def _verified(event: Mapping, sources: list[dict]) -> bool:
 
 def _timeline(event: Mapping, sources: list[dict]) -> list[dict]:
     nodes = []
+    sources_by_id = {
+        str(source.get("article_id")): source
+        for source in sources
+        if source.get("article_id") and source.get("url")
+    }
     for source in sources:
         if _day(source.get("published_at")):
             nodes.append({"date": source["published_at"], "type": "published", "text": source.get("source_name") or "文章发布", "source_name": source.get("source_name"), "source_url": source["url"]})
-    for key, kind, text in (("first_detected_at", "detected", "系统首次发现"), ("last_verified_at", "verified", "完成来源验证"), ("start_date", "event", "事件开始"), ("end_date", "event", "事件结束")):
-        if _day(event.get(key)):
-            nodes.append({"date": event[key], "type": kind, "text": text, "source_name": "", "source_url": ""})
+    for evidence in event.get("date_evidence") or []:
+        article_id = str(evidence.get("source_article_id") or "")
+        source = sources_by_id.get(article_id)
+        start_date = evidence.get("start_date")
+        if source and source.get("url") == evidence.get("source_url") and _day(start_date):
+            nodes.append({"date": start_date, "type": "event", "text": "事件开始", "source_name": source.get("source_name"), "source_url": source["url"]})
     unique, result = set(), []
     for node in sorted(nodes, key=lambda item: (str(item["date"]), item["type"], item["source_url"])):
         signature = (str(node["date"]), node["type"], node["source_url"])

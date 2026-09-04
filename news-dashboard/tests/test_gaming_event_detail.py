@@ -17,6 +17,7 @@ def test_verified_detail_orders_sources_and_timeline():
     assert len(detail["sources"]) == 2
     assert detail["status"] == "active"
     assert detail["timeline"] == sorted(detail["timeline"], key=lambda node: str(node["date"]))
+    assert all(node["source_url"] for node in detail["timeline"])
 
 
 def test_partial_without_complete_evidence():
