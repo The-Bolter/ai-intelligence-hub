@@ -244,6 +244,10 @@ class GamingEventStore:
         """Remove one known-invalid confirmed event without touching pending data."""
         return self._events.pop(str(event_id), None) is not None
 
+    def confirmed_event(self, event_id: str) -> dict | None:
+        event = self._events.get(str(event_id))
+        return dict(event) if event else None
+
     def pending_events(self) -> list[dict]:
         return [dict(event) for event in self._pending.values()]
 

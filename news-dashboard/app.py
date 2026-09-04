@@ -15,6 +15,7 @@ from translation_service import is_chinese_text, try_translate_article
 from ai_today_view import build_ai_today_view
 from gaming_collector import GamingCollector
 from gaming_event_store import DEFAULT_EVENT_STORE_PATH, GamingEventStore
+from gaming_event_detail import build_event_detail
 from gaming_weekly_v2 import build_today_new, build_weekly_radar
 from runtime_health import read_runtime_health, write_scheduler_health
 
@@ -328,6 +329,18 @@ def health():
         "last_ai_refresh": scheduler.get("last_ai_refresh"),
         "last_gaming_refresh": scheduler.get("last_gaming_refresh"),
     })
+
+
+@app.route("/api/gaming/events/<event_id>")
+def api_gaming_event_detail(event_id):
+    try:
+        event = _load_gaming_event_store().confirmed_event(event_id)
+    except (OSError, ValueError, json.JSONDecodeError):
+        logger.exception("Unable to load Gaming Event Store for detail API")
+        return jsonify({"error": "event_store_unavailable"}), 500
+    if event is None:
+        return jsonify({"error": "event_not_found"}), 404
+    return jsonify(build_event_detail(event))
 
 @app.route("/api/ai-insights")
 def api_ai_insights():
