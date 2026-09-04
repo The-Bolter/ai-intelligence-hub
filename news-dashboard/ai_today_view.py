@@ -12,6 +12,7 @@ from copy import deepcopy
 from datetime import date, datetime, timedelta, timezone
 import json
 import re
+from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
@@ -20,6 +21,8 @@ SHANGHAI = timezone(timedelta(hours=8))
 TODAY_LIMIT = 5
 RADAR_LIMIT = 5
 BACKFILL_HOURS = 48
+SECTION_WINDOW_HOURS = 48
+SECTION_LIMITS = {"updates": (20, 40), "resources": (5, 12), "trend": (5, 15)}
 RADAR_MAX_IDLE_DAYS = 90
 BACKFILL_PENALTY = 12.0
 MAX_CATEGORY_ITEMS = 2
@@ -298,9 +301,38 @@ def _card_summary(article: Mapping[str, Any], core: str, impact: str) -> str:
     return " | ".join(parts)
 
 
-def _non_github_by_type(articles: Iterable[Mapping[str, Any]], content_type: str, translations: Mapping[str, Mapping[str, Any]]) -> list[dict[str, Any]]:
-    selected = [a for a in articles if not _is_github(a) and str(a.get("content_type") or "").lower() == content_type]
-    return [_decorate_article(a, translations) for a in sorted(selected, key=_published_sort_key, reverse=True)]
+def _non_github_by_type(articles: Iterable[Mapping[str, Any]], content_type: str, translations: Mapping[str, Mapping[str, Any]], now: datetime) -> list[dict[str, Any]]:
+    today = now.astimezone(SHANGHAI).date()
+    cutoff = now - timedelta(hours=SECTION_WINDOW_HOURS)
+    candidates = [
+        a for a in articles
+        if not _is_github(a)
+        and str(a.get("content_type") or "").lower() == content_type
+        and (_published(a) is not None and _published(a) >= cutoff)
+    ]
+    candidates.sort(key=_published_sort_key, reverse=True)
+    today_items = [a for a in candidates if _published(a).astimezone(SHANGHAI).date() == today]
+    min_today, maximum = SECTION_LIMITS.get(content_type, (0, 40))
+    selected = today_items[:maximum]
+    if len(selected) < min_today:
+        for a in candidates:
+            if a in selected:
+                continue
+            age = (now - _published(a)).total_seconds() / 3600
+            if age <= 24 or (age <= SECTION_WINDOW_HOURS and _score_number(a, "value_score") >= 60):
+                selected.append(a)
+            if len(selected) >= maximum:
+                break
+    # Minimal Today-level event dedupe: collapse highly similar titles on the same day.
+    deduped = []
+    for a in selected:
+        title = re.sub(r"[^a-z0-9\u4e00-\u9fff]+", " ", str(a.get("title") or "").lower()).strip()
+        if any(_published(a).astimezone(SHANGHAI).date() == _published(b).astimezone(SHANGHAI).date()
+               and SequenceMatcher(None, title, re.sub(r"[^a-z0-9\u4e00-\u9fff]+", " ", str(b.get("title") or "").lower()).strip()).ratio() >= 0.86
+               for b in deduped):
+            continue
+        deduped.append(a)
+    return [_decorate_article(a, translations) for a in deduped[:maximum]]
 
 
 def _normalized_text(article: Mapping[str, Any]) -> str:
@@ -512,8 +544,8 @@ def build_ai_today_view(articles: Iterable[Mapping[str, Any]], now: datetime | N
         "date": current.astimezone(SHANGHAI).date().isoformat(),
         "generated_at": current.astimezone(timezone.utc).isoformat(),
         "today_priority": _select_today_priority(article_list, current, translations),
-        "updates": _non_github_by_type(article_list, "updates", translations),
-        "trends": _non_github_by_type(article_list, "trend", translations),
-        "resources": _non_github_by_type(article_list, "resources", translations),
+        "updates": _non_github_by_type(article_list, "updates", translations, current),
+        "trends": _non_github_by_type(article_list, "trend", translations, current),
+        "resources": _non_github_by_type(article_list, "resources", translations, current),
         "github_radar": [_decorate_article(a, translations) for a in _radar(article_list, current)],
     }

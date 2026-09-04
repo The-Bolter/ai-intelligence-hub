@@ -1,6 +1,13 @@
 import os
 
 AI_FEEDS = [
+    {"name": "OpenAI Status", "url": "https://status.openai.com/history.rss", "weight": 8, "lang": "en", "source_name": "OpenAI Status 官方", "source_type": "rss", "source_region": "Global", "source_priority": 95, "max_entries": 20, "status": "stable", "tier": "A", "source_role": "first_party"},
+    {"name": "Anthropic Status", "url": "https://status.anthropic.com/history.rss", "weight": 8, "lang": "en", "source_name": "Anthropic Status 官方", "source_type": "rss", "source_region": "Global", "source_priority": 95, "max_entries": 20, "status": "stable", "tier": "A", "source_role": "first_party"},
+    {"name": "NVIDIA Developer Blog", "url": "https://developer.nvidia.com/blog/feed/", "weight": 8, "lang": "en", "source_name": "NVIDIA Developer 官方", "source_type": "rss", "source_region": "Global", "source_priority": 95, "max_entries": 30, "status": "stable", "tier": "A", "source_role": "first_party"},
+    {"name": "APPSO", "url": "https://www.ifanr.com/feed", "weight": 7, "lang": "zh",
+     "source_name": "APPSO", "source_type": "rss", "source_region": "CN", "source_priority": 82, "max_entries": 20, "status": "stable", "tier": "B", "source_role": "discovery"},
+    {"name": "IT之家科技", "url": "https://www.ithome.com/rss/", "weight": 7, "lang": "zh",
+     "source_name": "IT之家科技", "source_type": "rss", "source_region": "CN", "source_priority": 80, "max_entries": 20, "status": "stable", "tier": "B", "source_role": "discovery"},
     {"name": "36氪", "url": "https://36kr.com/feed", "weight": 6, "lang": "zh",
      "source_name": "36氪", "source_type": "rss", "source_region": "CN", "source_priority": 75},
     {"name": "量子位", "url": "https://www.qbitai.com/feed", "weight": 6, "lang": "zh",
