@@ -184,6 +184,35 @@ def build_summary(event: Mapping) -> str:
     return f"{game}{name}于{date_text}进行{detail}。"
 
 
+_IMPACT_LABELS = {
+    "retention": "留存",
+    "acquisition": "拉新",
+    "revenue": "付费转化",
+    "content": "内容排期",
+    "community": "社区沟通",
+    "competitive": "竞技运营",
+}
+
+
+def build_operation_signal(event: Mapping) -> str | None:
+    """Explain existing structured impact evidence without changing event scoring."""
+    impacts = [
+        _IMPACT_LABELS[impact]
+        for impact in event.get("impact_types") or []
+        if impact in _IMPACT_LABELS
+    ]
+    if not impacts:
+        return None
+    verification = str(event.get("verification_level") or "").strip()
+    evidence = {
+        "official": "已由官方来源验证",
+        "secondary_crosscheck": "已由独立二级来源交叉验证",
+        "pending": "仍待核验",
+        "unverified": "仍待核验",
+    }.get(verification, "验证状态待补充")
+    return f"该节点涉及{'、'.join(dict.fromkeys(impacts))}；{evidence}，可纳入本周运营排期与素材观察。"
+
+
 def enrich_event(event: Mapping, reference_time=None) -> dict:
     enriched = dict(event)
     enriched["impact_types"] = derive_impact_types(enriched)
@@ -196,6 +225,6 @@ def enrich_event(event: Mapping, reference_time=None) -> dict:
 
 
 __all__ = [
-    "FACTOR_CAPS", "attention_level", "build_summary", "derive_impact_types",
+    "FACTOR_CAPS", "attention_level", "build_operation_signal", "build_summary", "derive_impact_types",
     "enrich_event", "score_event",
 ]
