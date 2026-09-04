@@ -445,7 +445,13 @@ weeklyBoard.addEventListener("keydown",function(event){
   var card=event.target.closest(".weekly-event-card[data-event-id]");
   if(card&&weeklyBoard.contains(card)){event.preventDefault();openEventDrawer(card.dataset.eventId);}
 });
-eventDrawerClose.addEventListener("click",closeEventDrawer);
+function closeEventDrawerFromControl(event){
+  event.preventDefault();
+  event.stopPropagation();
+  closeEventDrawer();
+}
+eventDrawerClose.addEventListener("pointerdown",closeEventDrawerFromControl);
+eventDrawerClose.addEventListener("click",closeEventDrawerFromControl);
 eventDrawerBackdrop.addEventListener("click",closeEventDrawer);
 document.addEventListener("keydown",function(event){if(event.key==="Escape"&&eventDrawer.classList.contains("is-open"))closeEventDrawer();});
 aiDashboard.addEventListener("click",function(event){
