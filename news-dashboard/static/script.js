@@ -26,6 +26,12 @@ var dateDisplay=document.getElementById("dateDisplay");
 var searchInput=document.getElementById("searchInput");
 var searchClear=document.getElementById("searchClear");
 var searchTimer=null;
+var weeklyBoard=document.getElementById("weeklyBoard");
+var eventDrawer=document.getElementById("eventDrawer");
+var eventDrawerBody=document.getElementById("eventDrawerBody");
+var eventDrawerClose=document.getElementById("eventDrawerClose");
+var eventDrawerBackdrop=document.getElementById("eventDrawerBackdrop");
+var activeEventId="";
 
 function esc(value){
   if(value===null||value===undefined)return"";
@@ -274,8 +280,10 @@ function isPendingVerification(item){
   return ["questionable","unverified","pending"].indexOf(String(item.verification_level||"").toLowerCase())!==-1;
 }
 function renderWeeklyCard(item){
-  var source=weeklySource(item);
-  return '<article class="weekly-event-card">'+
+  var source=weeklySource(item),eventId=String(item.event_id||"").trim();
+  var interactive=eventId?' is-event-clickable':'';
+  var attributes=eventId?' data-event-id="'+esc(eventId)+'" role="button" tabindex="0" aria-label="查看 '+esc(item.game_name||item.game||"游戏")+' 事件详情"':'';
+  return '<article class="weekly-event-card'+interactive+'"'+attributes+'>'+
     '<div class="event-date-block"><strong>'+esc(eventDateRange(item))+'</strong><span>'+esc(eventTypeLabel(item.event_type))+'</span></div>'+
     '<div class="event-copy"><span class="game-name">'+esc(item.game_name||item.game||"未知游戏")+'</span><h4>'+esc(item.event_name||item.headline||"未命名事件")+'</h4><p>'+esc(changesText(item.key_changes||item.summary))+'</p><div class="event-foot">'+
     '<span class="attention attention-'+attentionClass(item.attention_level)+'">关注度：'+esc(attentionText(item.attention_level))+'</span>'+
@@ -284,6 +292,58 @@ function renderWeeklyCard(item){
     (source?'<a class="event-source-link" href="'+safeUrl(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.label)+'</a>':'')+
     (isPendingVerification(item)?'<span class="verification-pending">待核验</span>':'')+
     '</div></div></article>';
+}
+function eventStatusLabel(value){
+  return {upcoming:"即将开始",active:"进行中",ended:"已结束",unknown:"时间待确认"}[String(value||"").toLowerCase()]||"时间待确认";
+}
+function eventDetailDateRange(item){
+  if(!item.start_date)return"时间待确认";
+  if(item.end_date&&item.end_date!==item.start_date)return dateLabel(item.start_date,false)+" — "+dateLabel(item.end_date,false);
+  return dateLabel(item.start_date,false);
+}
+function drawerExternalLink(url,label,className){
+  if(!url)return esc(label);
+  return '<a class="'+(className||"drawer-link")+'" href="'+safeUrl(url)+'" target="_blank" rel="noopener noreferrer">'+esc(label)+'</a>';
+}
+function renderEventDrawer(data){
+  var timeline=array(data.timeline),sources=array(data.sources);
+  var verification=String(data.verification_status||"partial").toLowerCase()==="verified"?"VERIFIED":"PARTIAL";
+  var why=String(data.why_it_matters||"").trim();
+  var timelineHtml=timeline.length?timeline.map(function(item){
+    var source=item.source_name?drawerExternalLink(item.source_url,item.source_name,"timeline-source"):"";
+    return '<li class="event-timeline-item"><time>'+esc(dateLabel(item.date,true))+'</time><div><p>'+esc(item.text||"")+'</p>'+(source?'<span>'+source+'</span>':'')+'</div></li>';
+  }).join(""):'<div class="drawer-empty">暂无足够可验证的事件时间线</div>';
+  var sourcesHtml=sources.length?sources.map(function(item){
+    var meta=[item.source_type,item.published_at?dateLabel(item.published_at,true):""].filter(Boolean).map(esc).join(" · ");
+    return '<li class="evidence-item"><div><strong>'+esc(item.source_name||"未命名来源")+'</strong>'+(meta?'<span>'+meta+'</span>':'')+'</div>'+drawerExternalLink(item.url,"原文 ↗","evidence-link")+'</li>';
+  }).join(""):'<div class="drawer-empty">暂无可展示的验证来源</div>';
+  eventDrawerBody.innerHTML='<div class="event-detail-title"><span class="game-name">'+esc(data.game_name||"未知游戏")+'</span><h2>'+esc(data.title||"未命名事件")+'</h2><span class="verification-badge verification-'+verification.toLowerCase()+'">'+verification+'</span></div>'+
+    '<dl class="event-detail-meta"><div><dt>事件日期</dt><dd>'+esc(eventDetailDateRange(data))+'</dd></div><div><dt>状态</dt><dd>'+esc(eventStatusLabel(data.status))+'</dd></div><div><dt>关注度</dt><dd>'+esc(data.attention_score==null?"--":data.attention_score)+'</dd></div></dl>'+
+    (why?'<section class="drawer-section"><h3>为什么值得关注</h3><p class="why-it-matters">'+esc(why)+'</p></section>':'')+
+    '<section class="drawer-section"><h3>事件时间线</h3><ol class="event-timeline">'+timelineHtml+'</ol></section>'+
+    '<section class="drawer-section"><h3>验证来源</h3><ul class="evidence-list">'+sourcesHtml+'</ul></section>';
+}
+function renderEventDrawerState(message,detail){
+  eventDrawerBody.innerHTML='<div class="drawer-state"><strong>'+esc(message)+'</strong>'+(detail?'<p>'+esc(detail)+'</p>':'')+'</div>';
+}
+function closeEventDrawer(){
+  activeEventId="";
+  eventDrawer.classList.remove("is-open");eventDrawer.setAttribute("aria-hidden","true");
+  eventDrawerBackdrop.hidden=true;
+}
+function openEventDrawer(eventId){
+  if(!eventId)return;
+  activeEventId=eventId;
+  eventDrawer.classList.add("is-open");eventDrawer.setAttribute("aria-hidden","false");
+  eventDrawerBackdrop.hidden=false;
+  renderEventDrawerState("正在加载事件详情...");
+  fetchJson("/api/gaming/events/"+encodeURIComponent(eventId)).then(function(data){
+    if(activeEventId===eventId)renderEventDrawer(data||{});
+  }).catch(function(error){
+    if(activeEventId!==eventId)return;
+    if(error&&error.message==="HTTP 404")renderEventDrawerState("该事件详情暂不可用","事件可能尚未写入可查询的详情库。");
+    else renderEventDrawerState("事件详情加载失败","请稍后重试。");
+  });
 }
 function renderWeekly(){
   if(!weeklyData)return;
@@ -375,6 +435,19 @@ function handleFilterClick(event){
 }
 filterBar.addEventListener("click",handleFilterClick);
 aiFilterBar.addEventListener("click",handleFilterClick);
+weeklyBoard.addEventListener("click",function(event){
+  if(event.target.closest("a,button"))return;
+  var card=event.target.closest(".weekly-event-card[data-event-id]");
+  if(card&&weeklyBoard.contains(card))openEventDrawer(card.dataset.eventId);
+});
+weeklyBoard.addEventListener("keydown",function(event){
+  if(event.key!=="Enter"&&event.key!==" ")return;
+  var card=event.target.closest(".weekly-event-card[data-event-id]");
+  if(card&&weeklyBoard.contains(card)){event.preventDefault();openEventDrawer(card.dataset.eventId);}
+});
+eventDrawerClose.addEventListener("click",closeEventDrawer);
+eventDrawerBackdrop.addEventListener("click",closeEventDrawer);
+document.addEventListener("keydown",function(event){if(event.key==="Escape"&&eventDrawer.classList.contains("is-open"))closeEventDrawer();});
 aiDashboard.addEventListener("click",function(event){
   var target=event.target.closest("[data-ai-expand]");if(!target)return;
   var section=target.dataset.aiExpand;
