@@ -23,6 +23,7 @@ RADAR_LIMIT = 5
 BACKFILL_HOURS = 48
 SECTION_WINDOW_HOURS = 48
 SECTION_LIMITS = {"updates": (20, 40), "resources": (5, 12), "trend": (5, 15)}
+SECTION_HORIZONS = {"updates": 48, "resources": 24 * 7, "trend": 24 * 7}
 RADAR_MAX_IDLE_DAYS = 90
 BACKFILL_PENALTY = 12.0
 MAX_CATEGORY_ITEMS = 2
@@ -303,7 +304,8 @@ def _card_summary(article: Mapping[str, Any], core: str, impact: str) -> str:
 
 def _non_github_by_type(articles: Iterable[Mapping[str, Any]], content_type: str, translations: Mapping[str, Mapping[str, Any]], now: datetime) -> list[dict[str, Any]]:
     today = now.astimezone(SHANGHAI).date()
-    cutoff = now - timedelta(hours=SECTION_WINDOW_HOURS)
+    horizon = SECTION_HORIZONS.get(content_type, SECTION_WINDOW_HOURS)
+    cutoff = now - timedelta(hours=horizon)
     candidates = [
         a for a in articles
         if not _is_github(a)
@@ -319,7 +321,7 @@ def _non_github_by_type(articles: Iterable[Mapping[str, Any]], content_type: str
             if a in selected:
                 continue
             age = (now - _published(a)).total_seconds() / 3600
-            if age <= 24 or (age <= SECTION_WINDOW_HOURS and _score_number(a, "value_score") >= 60):
+            if age <= 24 or (age <= horizon and _score_number(a, "value_score") >= 60):
                 selected.append(a)
             if len(selected) >= maximum:
                 break
