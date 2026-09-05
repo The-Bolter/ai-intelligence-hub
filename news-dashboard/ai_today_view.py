@@ -321,7 +321,8 @@ def _non_github_by_type(articles: Iterable[Mapping[str, Any]], content_type: str
             if a in selected:
                 continue
             age = (now - _published(a)).total_seconds() / 3600
-            if age <= 24 or (age <= horizon and _score_number(a, "value_score") >= 60):
+            min_fallback_score = 30 if content_type == "resources" else 60
+            if age <= 24 or (age <= horizon and _score_number(a, "value_score") >= min_fallback_score):
                 selected.append(a)
             if len(selected) >= maximum:
                 break
