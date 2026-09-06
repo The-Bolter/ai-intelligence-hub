@@ -1,0 +1,23 @@
+{
+  "attention_score": 75,
+  "end_date": null,
+  "event_id": "8af465171d90c689e2779c98",
+  "game_id": "G2K-NBA27",
+  "game_name": "NBA 2K27",
+  "sources": [
+    {
+      "article_id": "https://newsroom.2k.com/news/nbar-2k27-season-1-tips-off-with-early-access-on-august-26",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "NBA 2K 官方 Season 1 新闻",
+      "source_type": "官网",
+      "url": "https://newsroom.2k.com/news/nbar-2k27-season-1-tips-off-with-early-access-on-august-26"
+    }
+  ],
+  "start_date": "2026-09-04",
+  "status": "ended",
+  "timeline": [],
+  "title": "NBA 2K27 全球发售",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及拉新、社区沟通；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}

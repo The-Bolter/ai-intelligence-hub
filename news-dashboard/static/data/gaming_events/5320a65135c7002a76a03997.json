@@ -1,0 +1,23 @@
+{
+  "attention_score": 64,
+  "end_date": null,
+  "event_id": "5320a65135c7002a76a03997",
+  "game_id": "GTENCENT-WXQ",
+  "game_name": "王者万象棋",
+  "sources": [
+    {
+      "article_id": "https://www.3839.com/a/148499.htm?from=hykb",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "好游快爆 王者万象棋上线信息",
+      "source_type": "secondary",
+      "url": "https://www.3839.com/a/148499.htm?from=hykb"
+    }
+  ],
+  "start_date": "2026-09-02",
+  "status": "ended",
+  "timeline": [],
+  "title": "王者万象棋预注册开启",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及拉新、社区沟通、内容排期；已由独立二级来源交叉验证，可纳入本周运营排期与素材观察。"
+}

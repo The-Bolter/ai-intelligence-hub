@@ -1,0 +1,23 @@
+{
+  "attention_score": 55,
+  "end_date": "2026-09-21",
+  "event_id": "7ed0537c3c0680f983a9a811",
+  "game_id": "GSTEAM-WT",
+  "game_name": "War Thunder",
+  "sources": [
+    {
+      "article_id": "https://warthunder.com/en/news/10190-event-get-the-f-16xl-in-the-space-program-event-en",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "Space Program 活动公告",
+      "source_type": "官网",
+      "url": "https://warthunder.com/en/news/10190-event-get-the-f-16xl-in-the-space-program-event-en"
+    }
+  ],
+  "start_date": "2026-09-03",
+  "status": "active",
+  "timeline": [],
+  "title": "Space Program 活动",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及留存、付费转化、社区沟通；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}

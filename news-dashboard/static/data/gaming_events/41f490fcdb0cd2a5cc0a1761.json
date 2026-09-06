@@ -1,0 +1,23 @@
+{
+  "attention_score": 72,
+  "end_date": null,
+  "event_id": "41f490fcdb0cd2a5cc0a1761",
+  "game_id": "GSTEAM-R6",
+  "game_name": "彩虹六号：围攻",
+  "sources": [
+    {
+      "article_id": "https://www.ubisoft.com/en-us/game/rainbow-six/siege/news-updates/seasons",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "R6 Year 11 Season 3 官方季报",
+      "source_type": "官网",
+      "url": "https://www.ubisoft.com/en-us/game/rainbow-six/siege/news-updates/seasons"
+    }
+  ],
+  "start_date": "2026-09-01",
+  "status": "ended",
+  "timeline": [],
+  "title": "Operation Split Fire",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及留存、付费转化、竞技运营、内容排期；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}

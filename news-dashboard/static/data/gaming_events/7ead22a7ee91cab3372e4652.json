@@ -1,0 +1,23 @@
+{
+  "attention_score": 66,
+  "end_date": null,
+  "event_id": "7ead22a7ee91cab3372e4652",
+  "game_id": "GRIO-VAL",
+  "game_name": "无畏契约",
+  "sources": [
+    {
+      "article_id": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-05",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "国际服官网",
+      "source_type": "官网",
+      "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-05"
+    }
+  ],
+  "start_date": "2026-09-01",
+  "status": "ended",
+  "timeline": [],
+  "title": "版本更新",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及社区沟通、竞技运营；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}

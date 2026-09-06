@@ -1,0 +1,23 @@
+{
+  "attention_score": 77,
+  "end_date": null,
+  "event_id": "6eeb23d9baba130acb80d60f",
+  "game_id": "GNET-MH",
+  "game_name": "梦幻西游",
+  "sources": [
+    {
+      "article_id": "https://my.163.com/news/news/20260901/16741_1312824.html",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "官方网站(手游)",
+      "source_type": "官网",
+      "url": "https://my.163.com/news/news/20260901/16741_1312824.html"
+    }
+  ],
+  "start_date": "2026-09-01",
+  "status": "ended",
+  "timeline": [],
+  "title": "版本更新",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及留存、付费转化、内容排期、拉新；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}

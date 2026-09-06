@@ -1,0 +1,23 @@
+{
+  "attention_score": 57,
+  "end_date": "2026-09-25",
+  "event_id": "6100096a771cee8d6560eae0",
+  "game_id": "GSTEAM-WT",
+  "game_name": "War Thunder",
+  "sources": [
+    {
+      "article_id": "https://warthunder.com/en/news/10186-special-the-military-survival-kit-en",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "Military Survival Kit 活动公告",
+      "source_type": "官网",
+      "url": "https://warthunder.com/en/news/10186-special-the-military-survival-kit-en"
+    }
+  ],
+  "start_date": "2026-08-27",
+  "status": "active",
+  "timeline": [],
+  "title": "Military Survival Kit 限时活动",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及留存、付费转化、社区沟通、内容排期；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}

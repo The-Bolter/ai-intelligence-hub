@@ -1,0 +1,23 @@
+{
+  "attention_score": 57,
+  "end_date": "2026-09-23",
+  "event_id": "957a6f25258463d30cd05579",
+  "game_id": "GDB-WN",
+  "game_name": "无限暖暖",
+  "sources": [
+    {
+      "article_id": "https://infinitynikki.infoldgames.com/en/news/583",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "Infinity Nikki V2.9 更新公告",
+      "source_type": "官网",
+      "url": "https://infinitynikki.infoldgames.com/en/news/583"
+    }
+  ],
+  "start_date": "2026-08-27",
+  "status": "active",
+  "timeline": [],
+  "title": "V2.9 限时共鸣活动",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及留存、付费转化、社区沟通、内容排期；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}

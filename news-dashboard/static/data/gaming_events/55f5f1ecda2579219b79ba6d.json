@@ -1,0 +1,23 @@
+{
+  "attention_score": 57,
+  "end_date": "2026-09-30",
+  "event_id": "55f5f1ecda2579219b79ba6d",
+  "game_id": "GSTEAM-WT",
+  "game_name": "War Thunder",
+  "sources": [
+    {
+      "article_id": "https://warthunder.com/en/news/10183-event-pages-of-history-september-night-witch-en",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "Pages of History 九月活动公告",
+      "source_type": "官网",
+      "url": "https://warthunder.com/en/news/10183-event-pages-of-history-september-night-witch-en"
+    }
+  ],
+  "start_date": "2026-09-01",
+  "status": "active",
+  "timeline": [],
+  "title": "Pages of History（九月）",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及留存、付费转化、社区沟通、内容排期；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}

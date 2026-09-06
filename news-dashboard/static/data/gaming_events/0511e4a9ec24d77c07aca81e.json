@@ -1,0 +1,23 @@
+{
+  "attention_score": 83,
+  "end_date": "2026-09-01",
+  "event_id": "0511e4a9ec24d77c07aca81e",
+  "game_id": "GACT-COD",
+  "game_name": "使命召唤",
+  "sources": [
+    {
+      "article_id": "https://support.activision.com/no/modern-warfare-4/articles/modern-warfare-4-open-beta",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "Activision MW4 Open Beta 官方支持公告",
+      "source_type": "官网",
+      "url": "https://support.activision.com/no/modern-warfare-4/articles/modern-warfare-4-open-beta"
+    }
+  ],
+  "start_date": "2026-08-28",
+  "status": "ended",
+  "timeline": [],
+  "title": "Modern Warfare 4 Open Beta",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及拉新、社区沟通、内容排期；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}

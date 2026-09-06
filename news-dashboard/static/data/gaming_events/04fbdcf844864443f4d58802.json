@@ -1,0 +1,23 @@
+{
+  "attention_score": 75,
+  "end_date": null,
+  "event_id": "04fbdcf844864443f4d58802",
+  "game_id": "GCAP-ONIMUSHA",
+  "game_name": "鬼武者：剑之道",
+  "sources": [
+    {
+      "article_id": "https://www.capcom.co.jp/ir/news/html/260702.html",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "CAPCOM 鬼武者官方新闻稿",
+      "source_type": "官网",
+      "url": "https://www.capcom.co.jp/ir/news/html/260702.html"
+    }
+  ],
+  "start_date": "2026-09-04",
+  "status": "ended",
+  "timeline": [],
+  "title": "鬼武者：剑之道发售",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及拉新、社区沟通；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}

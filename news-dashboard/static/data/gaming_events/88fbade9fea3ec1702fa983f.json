@@ -1,0 +1,23 @@
+{
+  "attention_score": 67,
+  "end_date": null,
+  "event_id": "88fbade9fea3ec1702fa983f",
+  "game_id": "GTEC-SJ",
+  "game_name": "三角洲行动",
+  "sources": [
+    {
+      "article_id": "https://m.ali213.net/news/gl2608/1800937.html",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "游侠 三角洲行动旅人上线资讯",
+      "source_type": "secondary",
+      "url": "https://m.ali213.net/news/gl2608/1800937.html"
+    }
+  ],
+  "start_date": "2026-09-04",
+  "status": "ended",
+  "timeline": [],
+  "title": "S11 群星赛季开启",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及留存、付费转化、竞技运营、内容排期；已由独立二级来源交叉验证，可纳入本周运营排期与素材观察。"
+}
