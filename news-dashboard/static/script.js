@@ -2,6 +2,7 @@
 "use strict";
 
 var currentCat="ai",aiData=null,weeklyData=null,todayNewData=null,isLoading=false;
+var STATIC_MODE=typeof window!=="undefined"&&(window.STATIC_MODE===true||window.STATIC_MODE==="true");
 var importanceFilter="all",categoryFilter="all",contentTypeFilter="all",eventTypeFilter="all",searchQuery="";
 var aiExpanded={updates:false,trends:false,resources:false};
 var AI_OVERVIEW_LIMIT={updates:5,trends:4,resources:4};
@@ -48,7 +49,21 @@ function setStatus(state,label){
   statusDot.className="status-dot "+state;
   statusText.textContent=label||({ready:"就绪",loading:"加载中...",error:"加载失败"}[state]||state);
 }
+function staticDataPath(apiPath){
+  if(!STATIC_MODE)return apiPath;
+  var paths={
+    "/api/ai/today":"data/ai_today.json",
+    "/api/gaming/weekly":"data/gaming_weekly.json",
+    "/api/gaming/today-new":"data/gaming_today_new.json"
+  };
+  if(paths[apiPath])return paths[apiPath];
+  if(apiPath.indexOf("/api/gaming/events/")===0){
+    return "data/gaming_events/"+apiPath.slice("/api/gaming/events/".length)+".json";
+  }
+  return apiPath;
+}
 function fetchJson(path){
+  path=staticDataPath(path);
   return fetch(path+(path.indexOf("?")===-1?"?":"&")+"_="+Date.now(),{headers:{Accept:"application/json"}})
     .then(function(response){if(!response.ok)throw new Error("HTTP "+response.status);return response.json();});
 }
