@@ -203,7 +203,7 @@
       "discovery_score": 0,
       "discovery_signals": [],
       "discovery_sources": [],
-      "display_group": "mobile",
+      "display_group": "pc",
       "end_date": "2026-09-01",
       "event_id": "0511e4a9ec24d77c07aca81e",
       "event_name": "Modern Warfare 4 Open Beta",
@@ -226,7 +226,6 @@
       "last_detected_at": "2026-09-03T21:36:25.597916+08:00",
       "phase": "ended",
       "platforms": [
-        "mobile",
         "pc"
       ],
       "recommended_sources": [
@@ -821,7 +820,7 @@
       "verification_level": "official"
     },
     {
-      "attention_level": "中",
+      "attention_level": "中高",
       "discovery_score": 17,
       "discovery_signals": [
         "reliable_media_launch_report"
@@ -835,24 +834,23 @@
         }
       ],
       "display_group": "mobile",
-      "end_date": null,
+      "end_date": "2026-09-10",
       "event_id": "5320a65135c7002a76a03997",
-      "event_name": "王者万象棋预注册开启",
+      "event_name": "王者万象棋预注册",
       "event_type": "test_or_launch",
       "first_detected_at": "2026-09-01T17:37:33.674727+08:00",
       "game_id": "GTENCENT-WXQ",
       "game_name": "王者万象棋",
-      "hotspot_score": 58,
+      "hotspot_score": 63,
       "impact_types": [
         "acquisition",
-        "community",
-        "content"
+        "community"
       ],
       "key_changes": [
-        "新活动"
+        "预注册已开启，玩家可抢注超靓选手号和专属昵称；9月9日开启正式包预下载，9月10日上线开服。"
       ],
       "last_detected_at": "2026-09-01T17:37:33.674727+08:00",
-      "phase": "ended",
+      "phase": "active",
       "platforms": [
         "mobile",
         "pc"
@@ -873,8 +871,8 @@
         "game_scale": 8,
         "milestone_value": 15,
         "official_strength": 0,
-        "operation_impact": 8,
-        "timing": 3
+        "operation_impact": 6,
+        "timing": 10
       },
       "source_article_ids": [
         "https://www.3839.com/a/148499.htm?from=hykb"
@@ -928,7 +926,7 @@
         }
       ],
       "start_date": "2026-09-02",
-      "summary": "王者万象棋王者万象棋预注册开启于9月2日进行，核心变化包括新活动。",
+      "summary": "王者万象棋王者万象棋预注册于9月2日至9月10日进行，核心变化包括预注册已开启，玩家可抢注超靓选手号和专属昵称；9月9日开启正式包预下载，9月10日上线开服。。",
       "verification_level": "secondary_crosscheck"
     },
     {
@@ -1474,7 +1472,7 @@
       "verification_level": "secondary_crosscheck"
     }
   ],
-  "generated_at": "2026-09-06T16:37:59.328725+08:00",
+  "generated_at": "2026-09-06T17:27:21.990162+08:00",
   "pending_events": [
     {
       "display_group": "mobile",
@@ -2328,7 +2326,6 @@
   "platform_indexes": {
     "mobile": [
       "957a6f25258463d30cd05579",
-      "0511e4a9ec24d77c07aca81e",
       "6eeb23d9baba130acb80d60f",
       "5320a65135c7002a76a03997",
       "52780be0cd3c54d12a801693",
