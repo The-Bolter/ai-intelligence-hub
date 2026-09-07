@@ -6536,6 +6536,23 @@
       "备注": "待发售"
     }
   ],
+  "event_overrides": [
+    {
+      "event_id": "5320a65135c7002a76a03997",
+      "reason": "已人工确认：预注册持续至正式预下载前，按活动区间展示",
+      "patch": {
+        "end_date": "2026-09-09"
+      }
+    },
+    {
+      "event_id": "0511e4a9ec24d77c07aca81e",
+      "reason": "已人工确认：Modern Warfare 4 Open Beta 前端分栏为 PC",
+      "patch": {
+        "platforms": ["pc"],
+        "display_group": "pc"
+      }
+    }
+  ],
   "page_mappings": [
     {
       "game_id": "GMHY-YS",

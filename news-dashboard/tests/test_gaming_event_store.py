@@ -155,3 +155,20 @@ def test_remove_confirmed_removes_only_the_target_event():
     store.ingest({"events": [event(), event(event_id="event-2")], "pending": []})
     assert store.remove_confirmed("event-1") is True
     assert [item["event_id"] for item in store.confirmed_events()] == ["event-2"]
+
+
+def test_empty_incremental_ingest_never_clears_existing_confirmed_events():
+    store = GamingEventStore()
+    store.ingest({"events": [event()], "pending": []})
+    store.ingest({"events": [], "pending": []})
+    assert [item["event_id"] for item in store.confirmed_events()] == ["event-1"]
+
+
+def test_configured_overrides_replay_after_load_and_ingest(tmp_path):
+    registry = tmp_path / "registry.json"
+    registry.write_text('''{"event_overrides": [{"event_id": "event-1", "patch": {"end_date": "2026-09-09", "platforms": ["pc"], "display_group": "pc"}}]}''', encoding="utf-8")
+    store = GamingEventStore({"events": [event()]})
+    assert store.apply_config_overrides(registry) == 3
+    item = store.confirmed_event("event-1")
+    assert item["end_date"] == "2026-09-09"
+    assert item["platforms"] == ["pc"] and item["display_group"] == "pc"
