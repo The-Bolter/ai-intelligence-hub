@@ -18,13 +18,13 @@ from zoneinfo import ZoneInfo
 
 from gaming_attention import enrich_event
 from gaming_event_normalizer import normalize_recommended_sources
+from gaming_event_overrides import apply_manual_event_override
 from gaming_v2_rules import TIMEZONE_NAME
 
 
 SHANGHAI = ZoneInfo(TIMEZONE_NAME)
 STORE_SCHEMA_VERSION = 1
 DEFAULT_EVENT_STORE_PATH = Path(__file__).resolve().parent / "data" / "gaming_event_store.json"
-DEFAULT_REGISTRY_PATH = Path(__file__).resolve().parent / "config" / "game_registry.json"
 
 
 def _as_datetime(value=None) -> datetime:
@@ -153,7 +153,7 @@ class GamingEventStore:
         for event in state.get("events", []):
             event_id = event.get("event_id")
             if event_id:
-                self._events[str(event_id)] = dict(event)
+                self._events[str(event_id)] = apply_manual_event_override(event)
         for event in state.get("pending_events", state.get("pending", [])):
             key = event.get("pending_key") or make_pending_key(event)
             pending = dict(event)
@@ -161,30 +161,6 @@ class GamingEventStore:
             pending["event_id"] = None
             self._pending[key] = pending
         self.updated_at = state.get("updated_at")
-        self.apply_config_overrides()
-
-    def apply_config_overrides(self, registry_path=DEFAULT_REGISTRY_PATH) -> int:
-        """Replay explicit, reviewed corrections after every load/ingest.
-
-        Overrides target a stable event id and are deliberately limited to
-        presentation/date corrections.  They never manufacture an event.
-        """
-        try:
-            data = json.loads(Path(registry_path).read_text(encoding="utf-8"))
-        except (OSError, ValueError, TypeError):
-            return 0
-        changed = 0
-        for override in data.get("event_overrides", []):
-            event_id = str(override.get("event_id") or "").strip()
-            patch = override.get("patch") or {}
-            event = self._events.get(event_id)
-            if not event or not isinstance(patch, Mapping):
-                continue
-            for field, value in patch.items():
-                if event.get(field) != value:
-                    event[field] = value
-                    changed += 1
-        return changed
 
     @classmethod
     def load(cls, path=DEFAULT_EVENT_STORE_PATH) -> "GamingEventStore":
@@ -238,9 +214,9 @@ class GamingEventStore:
                 stats["pending_upgraded"] += 1
 
             existing = self._events.get(event_id)
-            self._events[event_id] = enrich_event(
+            self._events[event_id] = apply_manual_event_override(enrich_event(
                 _merge_event(existing, incoming, detected), reference_time=detected
-            )
+            ))
             self._events[event_id]["event_id"] = event_id
             stats["confirmed_updated" if existing else "confirmed_created"] += 1
 
@@ -260,7 +236,6 @@ class GamingEventStore:
             stats["pending_updated" if existing else "pending_created"] += 1
 
         self.updated_at = detected.isoformat()
-        self.apply_config_overrides()
         return stats
 
     def confirmed_events(self) -> list[dict]:

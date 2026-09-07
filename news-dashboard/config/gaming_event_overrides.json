@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "overrides": [
+    {
+      "event_id": "5320a65135c7002a76a03997",
+      "fields": {
+        "event_name": "王者万象棋预注册",
+        "event_stage": "pre_registration",
+        "event_stage_label": "预注册",
+        "start_date": "2026-09-02",
+        "end_date": "2026-09-10",
+        "key_changes": [
+          "预注册已开启，玩家可抢注超靓选手号和专属昵称；9月9日开启正式包预下载，9月10日上线开服。"
+        ],
+        "summary": "预注册已开启，玩家可抢注超靓选手号和专属昵称；9月9日开启正式包预下载，9月10日上线开服。"
+      }
+    },
+    {
+      "event_id": "0511e4a9ec24d77c07aca81e",
+      "fields": {
+        "platforms": ["pc"],
+        "display_group": "pc"
+      }
+    }
+  ]
+}
