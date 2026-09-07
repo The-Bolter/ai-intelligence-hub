@@ -68,10 +68,41 @@ def test_single_day_and_future_events_enter_current_week():
     assert radar["events"][1]["phase"] == "upcoming"
 
 
-def test_cross_week_event_enters_when_interval_intersects():
+def test_cross_week_event_exits_when_the_interval_has_already_ended():
     store = store_with([event("cross-week", "2026-08-20", "2026-08-25")])
     radar = build_weekly_radar(store, REFERENCE)
-    assert [item["event_id"] for item in radar["events"]] == ["cross-week"]
+    assert radar["events"] == []
+
+
+def test_lifecycle_carry_over_and_upcoming_respect_the_new_natural_week():
+    store = store_with([
+        event("active-carry", "2026-09-02", "2026-09-10"),
+        event("ended-last-week", "2026-09-02", "2026-09-06"),
+        event("upcoming", "2026-09-10"),
+        event("history", "2026-08-20", "2026-08-21"),
+    ])
+    radar = build_weekly_radar(store, "2026-09-07T12:00:00+08:00")
+    assert [item["event_id"] for item in radar["events"]] == ["active-carry", "upcoming"]
+    assert radar["events"][0]["phase"] == "active"
+    assert radar["events"][1]["phase"] == "upcoming"
+
+
+def test_wangzhe_wanxiangqi_registration_carries_into_september_seventh_week():
+    store = store_with([
+        event("wanxiangqi", "2026-09-02", "2026-09-10", game_name="王者万象棋", event_name="预注册")
+    ])
+    radar = build_weekly_radar(store, "2026-09-07T12:00:00+08:00")
+    assert [item["event_id"] for item in radar["events"]] == ["wanxiangqi"]
+    assert radar["events"][0]["phase"] == "active"
+
+
+def test_cross_week_open_beta_is_retained_only_while_its_range_is_live():
+    store = store_with([
+        event("open-beta", "2026-09-04", "2026-09-08", event_name="Open Beta"),
+        event("closed-beta", "2026-09-04", "2026-09-06", event_name="Closed Beta"),
+    ])
+    radar = build_weekly_radar(store, "2026-09-07T12:00:00+08:00")
+    assert [item["event_id"] for item in radar["events"]] == ["open-beta"]
 
 
 def test_cross_month_interval_intersects_week():

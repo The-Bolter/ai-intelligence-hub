@@ -383,6 +383,19 @@ def _intersects_week(event: Mapping, week_start: date, week_end: date) -> bool:
     return start <= week_end and end >= week_start
 
 
+def include_weekly(event: Mapping, week_start: date, week_end: date, reference_time=None) -> bool:
+    """Keep the natural-week view, while retaining only live cross-week events.
+
+    An event can carry over from a prior week solely when its explicit end date
+    still overlaps this week.  Single-day and ended records are never retained
+    simply to avoid an empty dashboard.
+    """
+    phase = compute_event_phase(event, reference_time)
+    if phase == "ended":
+        return False
+    return _intersects_week(event, week_start, week_end)
+
+
 def _score_for_sort(event: Mapping) -> float:
     try:
         return float(event.get("hotspot_score") or 0)
@@ -398,7 +411,7 @@ def build_weekly_radar(event_store, reference_time=None) -> dict:
 
     events = []
     for stored in stored_events:
-        if not stored.get("event_id") or not _intersects_week(stored, week_start, week_end):
+        if not stored.get("event_id") or not include_weekly(stored, week_start, week_end, generated_at):
             continue
         event = enrich_event(stored, reference_time=generated_at)
         event["phase"] = compute_event_phase(event, generated_at)
@@ -477,6 +490,7 @@ __all__ = [
     "build_game_weekly_v2",
     "classify_event_type",
     "compute_event_phase",
+    "include_weekly",
     "extract_event_date",
     "filter_events_by_type",
     "natural_week",
