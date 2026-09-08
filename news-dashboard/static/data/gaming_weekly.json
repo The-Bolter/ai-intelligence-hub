@@ -23,7 +23,7 @@
       "key_changes": [
         "新活动"
       ],
-      "last_detected_at": "2026-09-03T21:38:47.121085+08:00",
+      "last_detected_at": "2026-09-08T11:34:05.288295+08:00",
       "phase": "active",
       "platforms": [
         "pc"
@@ -129,7 +129,7 @@
       "key_changes": [
         "新活动"
       ],
-      "last_detected_at": "2026-09-03T21:36:41.264335+08:00",
+      "last_detected_at": "2026-09-08T11:32:20.749226+08:00",
       "phase": "active",
       "platforms": [
         "mobile",
@@ -221,7 +221,7 @@
       "key_changes": [
         "新活动"
       ],
-      "last_detected_at": "2026-09-03T21:38:47.121085+08:00",
+      "last_detected_at": "2026-09-08T11:34:05.288295+08:00",
       "phase": "active",
       "platforms": [
         "pc"
@@ -319,21 +319,22 @@
         }
       ],
       "display_group": "mobile",
-      "end_date": "2026-09-09",
+      "end_date": "2026-09-10",
       "event_id": "5320a65135c7002a76a03997",
-      "event_name": "王者万象棋预注册开启",
+      "event_name": "王者万象棋预注册",
+      "event_stage": "pre_registration",
+      "event_stage_label": "预注册",
       "event_type": "test_or_launch",
       "first_detected_at": "2026-09-01T17:37:33.674727+08:00",
       "game_id": "GTENCENT-WXQ",
       "game_name": "王者万象棋",
-      "hotspot_score": 65,
+      "hotspot_score": 63,
       "impact_types": [
         "acquisition",
-        "community",
-        "content"
+        "community"
       ],
       "key_changes": [
-        "新活动"
+        "预注册已开启，玩家可抢注超靓选手号和专属昵称；9月9日开启正式包预下载，9月10日上线开服。"
       ],
       "last_detected_at": "2026-09-01T17:37:33.674727+08:00",
       "phase": "active",
@@ -357,7 +358,7 @@
         "game_scale": 8,
         "milestone_value": 15,
         "official_strength": 0,
-        "operation_impact": 8,
+        "operation_impact": 6,
         "timing": 10
       },
       "source_article_ids": [
@@ -412,7 +413,7 @@
         }
       ],
       "start_date": "2026-09-02",
-      "summary": "王者万象棋王者万象棋预注册开启于9月2日至9月9日进行，核心变化包括新活动。",
+      "summary": "预注册已开启，玩家可抢注超靓选手号和专属昵称；9月9日开启正式包预下载，9月10日上线开服。",
       "verification_level": "secondary_crosscheck"
     },
     {
@@ -437,7 +438,7 @@
       "key_changes": [
         "活动载具"
       ],
-      "last_detected_at": "2026-09-03T21:38:47.121085+08:00",
+      "last_detected_at": "2026-09-08T11:34:05.288295+08:00",
       "phase": "active",
       "platforms": [
         "pc"
@@ -519,9 +520,145 @@
       "start_date": "2026-09-03",
       "summary": "War ThunderSpace Program 活动于9月3日至9月21日进行，核心变化包括活动载具。",
       "verification_level": "official"
+    },
+    {
+      "attention_level": "中",
+      "discovery_score": 0,
+      "discovery_signals": [],
+      "discovery_sources": [],
+      "display_group": "mobile",
+      "end_date": null,
+      "event_id": "989ab1135356d54369527f11",
+      "event_name": "活动",
+      "event_type": "esports",
+      "first_detected_at": "2026-09-07T12:40:08.222448+08:00",
+      "game_id": "GNET-MH",
+      "game_name": "梦幻西游",
+      "hotspot_score": 55,
+      "impact_types": [
+        "community",
+        "competitive"
+      ],
+      "key_changes": [],
+      "last_detected_at": "2026-09-08T11:32:32.970568+08:00",
+      "phase": "ended",
+      "platforms": [
+        "mobile",
+        "pc"
+      ],
+      "recommended_sources": [
+        {
+          "fetch_method": "HTML",
+          "name": "官方网站(手游)",
+          "official": true,
+          "priority": 100,
+          "source_type": "官网",
+          "url": "https://my.163.com/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "官方网站(电脑版)",
+          "official": true,
+          "priority": 100,
+          "source_type": "官网",
+          "url": "https://xyq.163.com/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "网易大神",
+          "official": true,
+          "priority": 90,
+          "source_type": "官方社区",
+          "url": "https://ds.163.com/"
+        }
+      ],
+      "score_factors": {
+        "content_volume": 3,
+        "event_tier": 13,
+        "game_scale": 8,
+        "milestone_value": 9,
+        "official_strength": 10,
+        "operation_impact": 6,
+        "timing": 6
+      },
+      "source_article_ids": [
+        "https://xyq.163.com/news/20260904/4905_1313126.html",
+        "https://xyq.163.com/news/20260902/4905_1312900.html"
+      ],
+      "source_articles": [
+        {
+          "content": "梦幻西游 首页 / 新闻中心 / 下载专区 / 游戏资料 / 赛事中心 / 品牌专区 / 自助服务 / 玩家互动 / 客服中心 新闻 维护 活动 维护汇总 PC客户端 手机互通版 PC补丁 藏宝阁App 将军令App 玩法说明 游戏特色 试衣间 霓裳宝阁 锦衣站 宠物站 宝物站 祥瑞图鉴 3D秀 壁纸站 武神坛 剑会天下 帮派联赛 超级联赛 萌新杯 群雄逐鹿 全民PK 冠军杯 武神坛明星赛 武神坛巅峰赛 指尖上的梦幻 非遗守护计划 薪火逐梦 国风文化馆 门派神曲 梦幻IP小说 梦幻动画片 同人文化站 梦幻手办站 周边商城 快速充值 消费查询 密码找回 解除密保 账号安全专区 梦幻精灵DS版 回流福利 网易大神 创梦计划 微信 微博 三界论坛 论坛小程序 短视频站 客服专区 [时间服]9月11日开服公告：名扬三界-一叶知秋 领取回流礼包 活动订阅 时间：2026-09-07 字号： 原文地址： 导读： 秋风起时，万物知凉暖。 时间服新服【一叶知秋】，将于 2026年9月11日12：00正式开启！诚邀各位少侠齐聚【一叶知秋】，共赴这场秋日江湖！ 【新服介绍】 秋风起时，万物知凉暖。 三界亦如是 ――热闹散去识真友，风浪过后见真章。一片叶落，便知谁还在身旁，谁值得并肩同行。 秋意渐浓，江湖正好。新服【一叶知秋】将于 2026年9月11日中午12:00开启，愿与知己同行，共赴这场秋日江湖。 【新服预约，免费抽奖获精美周边】 【 一叶知秋 】预约开启，各位玩家成功预约后即可参与免费抽奖。 【礼包助阵，携手同行】 预约【 一叶知秋 】期间，玩家们可前往建邺城（91,61）新服使者处选择并办理一骑绝尘、文武双全、勇冠三军、八斗之才四个不同级别的新服礼包，成功办理后可在开服后于游戏内领取一份对应的新服礼包。 一骑绝尘获赠一级绿色通道特权，享受 “优先排队”和“预约排队”服务； 文武双全获赠二级绿色通道特权，享受 “优先排队”和“预约排队”服务； 勇冠三军获赠三级绿色通道特权，享受 “优先排队”、“预约排队”和“预创建角色”服务； 八斗之才获赠四级绿色通道特权，享受 “优先排队”、“预约排队”和“预创建角色”服务。 【马面相伴，开荒无忧】 礼包激活码： MHXL-9999-9999-9999 激活方式：进入游戏按 “Alt+S”选择“礼包中心-序列号兑换”来获取到相应的福利。 【活动助力，共战天骄】 为了庆祝【 一叶知秋 】开启，为了让各位入驻的玩家拥有美好的开荒体验。 【 一叶知秋 】为大家准备了“新服华服大赛”、“新手比武大会”、“新服擂台单挑赛”、“新手副本”和“新手帮派”等多项专属活动内容，助力大家快速成长，邂逅最真挚的队友，奔赴更广袤的梦幻三界。 霓裳羽衣，华服争艳 霓裳羽衣，幻彩斑斓，潮流华服大赛开始啦。【 一叶知秋 】开服第1天至第90天，每两周一个新主题，选择符合主题的锦衣参赛，每个主题进行评选活动，名列前茅的玩家将获得丰厚奖励！另外，积极参与活动投票也有几率获得物品奖励噢！ 新手比武，一战成名 自从各大门派广收门徒以来，三界之中高手辈出，群雄并起。为奖励尚武之风， “新手比武大会”应运而生，一时间新服群雄豪杰齐聚一堂，形成了三界瞩目的英雄盛会。 详情了解： http://xyq.163.com/introduce/sys/20190820/5031_828899.html 新手帮派，快乐成长 为了让各位玩家无忧成长，快乐梦幻。等级 ≥10级且≤50级的玩家可以去长安城找帮派主管（384，270）申请加入新手帮派。 加入新手帮派后，玩家们可通过新手帮派任务获得经验，储备金以及储备帮贡。储备帮贡在加入正式帮派并获得帮贡时同步转化。当玩家的等级超过 65级，将从新手帮派“毕业”。 另外，新手帮派也能帮助大家更快建设正式帮派，储备帮贡达到 300点以上，加入正式帮派时可以为帮派增加一定的储备金，在储备帮贡达到上限（500）时，会为正式帮派增加最多的储备金。 同时，正式帮派的玩家在帮助新手帮派的玩家完成双人任务时会获得专用资材奖励。帮派资材不足时，可使用专用资材进行相关操作（专用资材仅为个人所有）。 【服务器等级上限】 最后为各位玩家介绍【 一叶知秋 】的服务器等级上限限制。各位可以根据此限制安排自己的“梦幻成长计划”哦： 各位少侠，让我们一起相约在这片崭新的梦幻土地上，留下属于你的印记！ [关于“网易大神”] 网易大神是网易游戏旗下的精英玩家社区。这里汇聚了广大精英玩家、游戏圈红人、行业大咖，集合了网易独家的官方资讯和福利趣闻，旨在为玩家打造一个丰富的游戏兴趣社交圈。玩家可以在网易大神与游戏中的好友实时聊天、多元互动；以游戏会友，结交更多游戏同好，和大神一起发现更多游戏乐趣。 官方网站： https://ds.163.com/game",
+          "discovery_score": 0,
+          "discovery_signal": null,
+          "display_group": "mobile",
+          "end_date": null,
+          "event_name": null,
+          "event_type": null,
+          "fetch_status": "success",
+          "game_id": "GNET-MH",
+          "game_name": "梦幻西游",
+          "id": "https://xyq.163.com/news/20260904/4905_1313126.html",
+          "invalid_reason": null,
+          "key_changes": [],
+          "platforms": [
+            "mobile",
+            "pc"
+          ],
+          "published": "",
+          "source_context_safe": true,
+          "source_game_id": "GNET-MH",
+          "source_is_article": true,
+          "source_name": "官方网站(电脑版)",
+          "source_priority": 100,
+          "source_role": "verification",
+          "source_type": "官网",
+          "source_url": "https://xyq.163.com/",
+          "start_date": null,
+          "summary": "梦幻西游 首页 / 新闻中心 / 下载专区 / 游戏资料 / 赛事中心 / 品牌专区 / 自助服务 / 玩家互动 / 客服中心 新闻 维护 活动 维护汇总 PC客户端 手机互通版 PC补丁 藏宝阁App 将军令App 玩法说明 游戏特色 试衣间 霓裳宝阁 锦衣站 宠物站 宝物站 祥瑞图鉴 3D秀 壁纸站 武神坛 剑会天下 帮派联赛 超级联赛 萌新杯 群雄逐鹿 全民PK 冠军杯 武神坛明星赛 武神坛巅峰赛 指尖上的梦幻 非遗守护计划 薪火逐梦 国风文化馆 门派神曲 梦幻IP小说 梦幻动画片 同人文化站 梦幻手办站 周边商城 快速充值 消费查询 密码找回 解除密保 账号安全专区 梦幻精灵DS版 回流福利 网易大神 创梦计划 微信 微博 三界论坛 论坛小程序 短视频站 客服专区 [时间服]9月11日开服公告：名扬三界-一叶知秋 领取回流礼包 活动订阅 时间：2026-09-07 字号： 原文地址： 导读： 秋风起时，万物知凉暖。 时间服新服【一叶知秋】，将于 2026年9月11日12：00正式开启！诚邀各位少侠齐聚【一叶知秋】，共赴这场秋日江湖！ 【新服介绍】 秋风起时，万物知凉暖。 三界亦如是 ――热闹散去识真友，风浪过后见真章。一片叶落，便知谁还在身旁，谁值得并肩同行。 秋意渐浓，江湖正好。新服【一叶知秋】将于 2026年9月11日中午12:00开启，愿与知己同行，共赴这场秋日江湖。 【新服预约，免费抽奖获精美周边】 【 一叶知秋 】预约开启，各位玩家成功预约后即可参与免费抽奖。 【礼包助阵，携手同行】 预约【 一叶知秋 】期间，玩家们可前往建邺城（91,61）新服使者处选择并办理一骑绝尘、文武双全、勇冠三军、八斗之才四个不同级别的新服礼包，成功办理后可在开服后于游戏内领取一份对应的新服礼包。 一骑绝尘获赠一级绿色通道特权，享受 “优先排队”和“预约排队”服务； 文武双全获赠二级绿色通道特权，享受 “优先排队”和“预约排队”服务； 勇冠三军获赠三级绿色通道特权，享受 “优先排队”、“预约排队”和“预创建角色”服务； 八斗之才获赠四级绿色通道特权，享受 “优先排队”、“预约排队”和“预创建角色”服务。 【马面相伴，开荒无忧】 礼包激活码： MHXL-9999-9999-9999 激活方式：进入游戏按 “Alt+S”选择“礼包中心-序列号兑换”来获取到相应的福利。 【活动助力，共战天骄】 为了庆祝【 一叶知秋 】开启，为了让各位入驻的玩家拥有美好的开荒体验。 【 一叶知秋 】为大家准备了“新服华服大赛”、“新手比武大会”、“新服擂台单挑赛”、“新手副本”和“新手帮派”等多项专属活动内容，助力大家快速成长，邂逅最真挚的队友，奔赴更广袤的梦幻三界。 霓裳羽衣，华服争艳 霓裳羽衣，幻彩斑斓，潮流华服大赛开始啦。【 一叶知秋 】开服第1天至第90天，每两周一个新主题，选择符合主题的锦衣参赛，每个主题进行评选活动，名列前茅的玩家将获得丰厚奖励！另外，积极参与活动投票也有几率获得物品奖励噢！ 新手比武，一战成名 自从各大门派广收门徒以来，三界之中高手辈出，群雄并起。为奖励尚武之风， “新手比武大会”应运而生，一时间新服群雄豪杰齐聚一堂，形成了三界瞩目的英雄盛会。 详情了解： http://xyq.163.com/introduce/sys/20190820/5031_828899.html 新手帮派，快乐成长 为了让各位玩家无忧成长，快乐梦幻。等级 ≥10级且≤50级的玩家可以去长安城找帮派主管（384，270）申请加入新手帮派。 加入新手帮派后，玩家们可通过新手帮派任务获得经验，储备金以及储备帮贡。储备帮贡在加入正式帮派并获得帮贡时同步转化。当玩家的等级超过 65级，将从新手帮派“毕业”。 另外，新手帮派也能帮助大家更快建设正式帮派，储备帮贡达到 300点以上，加入正式帮派时可以为帮派增加一定的储备金，在储备帮贡达到上限（500）时，会为正式帮派增加最多的储备金。 同时，正式帮派的玩家在帮助新手帮派的玩家完成双人任务时会获得专用资材奖励。帮派资材不足时，可使用专用资材进行相关操作（专用资材仅为个人所有）。 【服务器等级上限】 最后为各位玩家介绍【 一叶知秋 】的服务器等级上限限制。各位可以根据此限制安排自己的“梦幻成长计划”哦： 各位少侠，让我们一起相约在这片崭新的梦幻土地上，留下属于你的印记！ [关于“网易大神”] 网易大神是网易游戏旗下的精英玩家社区。这里汇聚了广大精英玩家、游戏圈红人、行业大咖，集合了网易独家的官方资讯和福利趣闻，旨在为玩家打造一个丰富的游戏兴趣社交圈。玩家可以在网易大神与游戏中的好友实时聊天、多元互动；以游戏会友，结交更多游戏同好，和大神一起发现更多游戏乐趣。 官方网站： https://ds.163.com/game",
+          "title": "[时间服]9月11日开服公告：名扬三界-一叶知秋_\n\t\t《梦幻西游》电脑版官方网站 - 网易西游题材扛鼎之作",
+          "url": "https://xyq.163.com/news/20260904/4905_1313126.html",
+          "verification_level": null
+        },
+        {
+          "content": "梦幻西游 首页 / 新闻中心 / 下载专区 / 游戏资料 / 赛事中心 / 品牌专区 / 自助服务 / 玩家互动 / 客服中心 新闻 维护 活动 维护汇总 PC客户端 手机互通版 PC补丁 藏宝阁App 将军令App 玩法说明 游戏特色 试衣间 霓裳宝阁 锦衣站 宠物站 宝物站 祥瑞图鉴 3D秀 壁纸站 武神坛 剑会天下 帮派联赛 超级联赛 萌新杯 群雄逐鹿 全民PK 冠军杯 武神坛明星赛 武神坛巅峰赛 指尖上的梦幻 非遗守护计划 薪火逐梦 国风文化馆 门派神曲 梦幻IP小说 梦幻动画片 同人文化站 梦幻手办站 周边商城 快速充值 消费查询 密码找回 解除密保 账号安全专区 梦幻精灵DS版 回流福利 网易大神 创梦计划 微信 微博 三界论坛 论坛小程序 短视频站 客服专区 [畅玩服]教师节活动攻略：获取炼兽珍经的机会来了！ 领取回流礼包 活动订阅 时间：2026-09-07 字号： 原文地址： 导读： 《梦幻西游》电脑版畅玩服2026年教师节活动将于9月8日12:00至9月15日12:00上线全服。本次活动中，各位少侠可通过“看图说话”玩法获得“看图说话积分”，该积分可兑换“笔、墨、纸、砚”。集齐所有“文房四宝”道具后，可兑换能“提升召唤兽成长属性”的特殊道具“炼兽珍经”。下面，就带大家了解一下吧！ 教师节活动专题： https://xyq.163.com/my/2026/jiaoshi/ 一、2026教师节活动总览 2026年教师节共有看图说话（特色答题）、花开谢师恩（特色玩法）、谁是学霸（趣味玩法）、情敬师长（节日称谓）等四种玩法。 二、答对题目即可获得积分，看图说话玩法攻略 “看图说话”玩法共有3个答题场景（西梁女国、傲来国、朱紫国），每个场景均有4个答题点，知识老人（仅停留10分钟）每个整点会出现在3个场景中随机1个答题点上。各位少侠可点击左上角“教师节”图标打开活动界面，点击“知识老人位置”后即可查询“知识老人”可能出现的位置。 由于傲来国、朱紫国可以定导标旗，在寻找“知识老人”位置时有天然优势，对于追求效率的少侠来说可以提升答题效率。正在组队刷任务的少侠，可以通过“更换队长”策略进行答题。 “等级≥30级”的少侠，可以参与“看图说话”玩法。进入答题后，每次答题会消耗10点体力和1000梦幻币（答错不消耗体力，仅消耗梦幻币）。答对1题可获得1点“看图说话积分”，可以在NPC文房四宝（长安城291,186）处兑换笔、墨、纸、砚。需要注意的是，兑换笔、墨、纸、砚的积分将随着购买情况而上下波动，最低不低于15点。 集齐四种道具后，可在NPC偷偷怪（傲来国130,123）处兑换“炼兽珍经”。召唤兽使用“炼兽珍经”后，可以提高成长率。 有大量“看图说话积分”需求的少侠，可通过“商城→珍品佳肴”购买百岁香（单次可恢复350点体力、活力）和海马（补充50点体力、活力，使用后3小时内体活恢复速度加快，多次使用累加持续时间，时间上限24小时）等道具的方式恢复体力，也可以在房屋内使用“我要休息”来恢复体力。 三、谁是学霸可得宝箱奖励，特殊称谓值得拥有 “等级≥30级”的少侠，还可以参与“谁是学霸”“花开谢师恩”“情敬师长”等玩法。 其中，“谁是学霸”玩法的参与时间为活动期间每晚19：00至19：30（提前10分钟开始进场）。活动开始后，各位少侠可从太学博士处（长安城225,121）进入会场进行趣味答题竞赛。 进入会场后，各位少侠会被随机分至“学霸阵营（选择题目的正确答案算答对）”或“卧底阵营（选择题目的错误答案算答对）”。每次活动开启期间连续举行三轮比赛，分别考察三个科目（历史、文学和常识）。每轮比赛结束后，系统在场内刷出宝箱，若该轮比赛中累计答对至少15题，可拾取场内的宝箱！每位少侠每轮只能拾取一个宝箱。 三轮答题比赛全部结束后，学霸阵营和卧底阵营中总分排名前3名的少侠，将分别获得称谓奖励“我是学霸”和“我是卧底”。 2026教师节活动结束后（9月15日12:00），将对“谁是学霸排行榜”进行结算，每个服务器总分排名前10的选手，将分别获得称谓奖励（限时30天）。其中，总分排名第1名可获得“杏坛之首”称谓；总分排名2~3名可获得“杏坛翘楚”称谓；总分排名4~10名可获得“杏坛英才”称谓。 除此之外，活动期间佩戴师徒称谓和门派称谓有额外称谓图标显示，每日满100活跃度可领取一朵鲜花，将鲜花送给（给予）师父后可获得奖励（有机会获得摇钱树树苗、魔兽要诀等奖励）。 本次2026教师节活动玩法轻松休闲，不需要高强度战斗就能获取奖励。而且，“炼兽珍经”是培养召唤兽的关键道具，不管是自己用还是售卖给其他玩家，都可以得到颇为不错的收益。各位少侠不妨在活动开启后，登录游戏参与玩法，收获属于你的节日福利哦！ [关于“网易大神”] 网易大神是网易游戏旗下的",
+          "discovery_score": 0,
+          "discovery_signal": null,
+          "display_group": "mobile",
+          "end_date": null,
+          "event_name": null,
+          "event_type": null,
+          "fetch_status": "success",
+          "game_id": "GNET-MH",
+          "game_name": "梦幻西游",
+          "id": "https://xyq.163.com/news/20260902/4905_1312900.html",
+          "invalid_reason": null,
+          "key_changes": [],
+          "platforms": [
+            "mobile",
+            "pc"
+          ],
+          "published": "",
+          "source_context_safe": true,
+          "source_game_id": "GNET-MH",
+          "source_is_article": true,
+          "source_name": "官方网站(电脑版)",
+          "source_priority": 100,
+          "source_role": "verification",
+          "source_type": "官网",
+          "source_url": "https://xyq.163.com/",
+          "start_date": null,
+          "summary": "梦幻西游 首页 / 新闻中心 / 下载专区 / 游戏资料 / 赛事中心 / 品牌专区 / 自助服务 / 玩家互动 / 客服中心 新闻 维护 活动 维护汇总 PC客户端 手机互通版 PC补丁 藏宝阁App 将军令App 玩法说明 游戏特色 试衣间 霓裳宝阁 锦衣站 宠物站 宝物站 祥瑞图鉴 3D秀 壁纸站 武神坛 剑会天下 帮派联赛 超级联赛 萌新杯 群雄逐鹿 全民PK 冠军杯 武神坛明星赛 武神坛巅峰赛 指尖上的梦幻 非遗守护计划 薪火逐梦 国风文化馆 门派神曲 梦幻IP小说 梦幻动画片 同人文化站 梦幻手办站 周边商城 快速充值 消费查询 密码找回 解除密保 账号安全专区 梦幻精灵DS版 回流福利 网易大神 创梦计划 微信 微博 三界论坛 论坛小程序 短视频站 客服专区 [畅玩服]教师节活动攻略：获取炼兽珍经的机会来了！ 领取回流礼包 活动订阅 时间：2026-09-07 字号： 原文地址： 导读： 《梦幻西游》电脑版畅玩服2026年教师节活动将于9月8日12:00至9月15日12:00上线全服。本次活动中，各位少侠可通过“看图说话”玩法获得“看图说话积分”，该积分可兑换“笔、墨、纸、砚”。集齐所有“文房四宝”道具后，可兑换能“提升召唤兽成长属性”的特殊道具“炼兽珍经”。下面，就带大家了解一下吧！ 教师节活动专题： https://xyq.163.com/my/2026/jiaoshi/ 一、2026教师节活动总览 2026年教师节共有看图说话（特色答题）、花开谢师恩（特色玩法）、谁是学霸（趣味玩法）、情敬师长（节日称谓）等四种玩法。 二、答对题目即可获得积分，看图说话玩法攻略 “看图说话”玩法共有3个答题场景（西梁女国、傲来国、朱紫国），每个场景均有4个答题点，知识老人（仅停留10分钟）每个整点会出现在3个场景中随机1个答题点上。各位少侠可点击左上角“教师节”图标打开活动界面，点击“知识老人位置”后即可查询“知识老人”可能出现的位置。 由于傲来国、朱紫国可以定导标旗，在寻找“知识老人”位置时有天然优势，对于追求效率的少侠来说可以提升答题效率。正在组队刷任务的少侠，可以通过“更换队长”策略进行答题。 “等级≥30级”的少侠，可以参与“看图说话”玩法。进入答题后，每次答题会消耗10点体力和1000梦幻币（答错不消耗体力，仅消耗梦幻币）。答对1题可获得1点“看图说话积分”，可以在NPC文房四宝（长安城291,186）处兑换笔、墨、纸、砚。需要注意的是，兑换笔、墨、纸、砚的积分将随着购买情况而上下波动，最低不低于15点。 集齐四种道具后，可在NPC偷偷怪（傲来国130,123）处兑换“炼兽珍经”。召唤兽使用“炼兽珍经”后，可以提高成长率。 有大量“看图说话积分”需求的少侠，可通过“商城→珍品佳肴”购买百岁香（单次可恢复350点体力、活力）和海马（补充50点体力、活力，使用后3小时内体活恢复速度加快，多次使用累加持续时间，时间上限24小时）等道具的方式恢复体力，也可以在房屋内使用“我要休息”来恢复体力。 三、谁是学霸可得宝箱奖励，特殊称谓值得拥有 “等级≥30级”的少侠，还可以参与“谁是学霸”“花开谢师恩”“情敬师长”等玩法。 其中，“谁是学霸”玩法的参与时间为活动期间每晚19：00至19：30（提前10分钟开始进场）。活动开始后，各位少侠可从太学博士处（长安城225,121）进入会场进行趣味答题竞赛。 进入会场后，各位少侠会被随机分至“学霸阵营（选择题目的正确答案算答对）”或“卧底阵营（选择题目的错误答案算答对）”。每次活动开启期间连续举行三轮比赛，分别考察三个科目（历史、文学和常识）。每轮比赛结束后，系统在场内刷出宝箱，若该轮比赛中累计答对至少15题，可拾取场内的宝箱！每位少侠每轮只能拾取一个宝箱。 三轮答题比赛全部结束后，学霸阵营和卧底阵营中总分排名前3名的少侠，将分别获得称谓奖励“我是学霸”和“我是卧底”。 2026教师节活动结束后（9月15日12:00），将对“谁是学霸排行榜”进行结算，每个服务器总分排名前10的选手，将分别获得称谓奖励（限时30天）。其中，总分排名第1名可获得“杏坛之首”称谓；总分排名2~3名可获得“杏坛翘楚”称谓；总分排名4~10名可获得“杏坛英才”称谓。 除此之外，活动期间佩戴师徒称谓和门派称谓有额外称谓图标显示，每日满100活跃度可领取一朵鲜花，将鲜花送给（给予）师父后可获得奖励（有机会获得摇钱树树苗、魔兽要诀等奖励）。 本次2026教师节活动玩法轻松休闲，不需要高强度战斗就能获取奖励。而且，“炼兽珍经”是培养召唤兽的关键道具，不管是自己用还是售卖给其他玩家，都可以得到颇为不错的收益。各位少侠不妨在活动开启后，登录游戏参与玩法，收获属于你的节日福利哦！ [关于“网易大神”] 网易大神是网易游戏旗下的",
+          "title": "[畅玩服]教师节活动攻略：获取炼兽珍经的机会来了！_\n\t\t《梦幻西游》电脑版官方网站 - 网易西游题材扛鼎之作",
+          "url": "https://xyq.163.com/news/20260902/4905_1312900.html",
+          "verification_level": null
+        }
+      ],
+      "start_date": "2026-09-07",
+      "summary": "梦幻西游活动于9月7日进行。",
+      "verification_level": "official"
     }
   ],
-  "generated_at": "2026-09-07T10:30:51.275723+08:00",
+  "generated_at": "2026-09-08T11:38:59.600744+08:00",
   "pending_events": [
     {
       "display_group": "mobile",
@@ -911,7 +1048,7 @@
       "game_id": "GRIO-LOL",
       "game_name": "英雄联盟",
       "key_changes": [],
-      "last_detected_at": "2026-09-03T21:37:29.688732+08:00",
+      "last_detected_at": "2026-09-08T11:32:45.121680+08:00",
       "pending_key": "pending-932137a6cf139e2ce50e84a0",
       "platforms": [
         "pc"
@@ -1011,7 +1148,7 @@
       "game_id": "GSTEAM-HS",
       "game_name": "霍格沃茨之遗",
       "key_changes": [],
-      "last_detected_at": "2026-09-03T21:38:18.223910+08:00",
+      "last_detected_at": "2026-09-08T11:33:30.681642+08:00",
       "pending_key": "pending-968c185546525509c423200e",
       "platforms": [
         "pc"
@@ -1199,6 +1336,72 @@
       "start_date": null
     },
     {
+      "discovery_score": 0,
+      "discovery_signals": [],
+      "discovery_sources": [],
+      "display_group": "pc",
+      "end_date": null,
+      "event_id": null,
+      "event_name": "版本更新",
+      "event_type": "monthly_update",
+      "first_detected_at": "2026-09-07T10:59:54.468316+08:00",
+      "game_id": "GSTEAM-ELD2",
+      "game_name": "艾尔登法环2（传闻）",
+      "key_changes": [],
+      "last_detected_at": "2026-09-08T11:32:45.121680+08:00",
+      "pending_key": "pending-ac790d8f78378333d175131f",
+      "platforms": [],
+      "recommended_sources": [
+        {
+          "fetch_method": "-",
+          "name": "-",
+          "official": false,
+          "priority": 0,
+          "source_type": "-",
+          "url": "待官宣"
+        }
+      ],
+      "source_article_ids": [
+        "https://www.leagueoflegends.com/en-us/news/dev/dev-the-council"
+      ],
+      "source_articles": [
+        {
+          "content": "/dev: The Council How you can shape what’s next for League Classic. Dev Geeves 2026-08-26T15:00:00.000Z Welcome to the first League Classic community poll. Our goal with these polls is to involve you, the community, in the direction that we take League Classic. Questions in these polls cover two broad types: Sentiment, which we use to identify broad areas to investigate and directions for improvements. Binding, which we use to make the call on an approach for an improvement. Voting can be done in “The Council” tab in the League client and is open for seven days, with the first running from August 26 through September 2. Eligible players may answer each question and change their answers until the poll closes. Each point of voting power gives one vote on each question. We’ll publish the results after voting closes in the Patch Notes. This first poll covers questions across a few areas: game length, item revivals, and some map features. You can skip questions if you don’t have an opinion about the topic. Poll 1 Questions How does game length feel? Way too short Too short About right Too long Way too long When is a game too long? 30 minutes 40 minutes 50 minutes 60 minutes No preferred maximum Which of these items do you want us to revive in Classic? Each item that scores higher than 50% is added, including “All 3.” Zz’Rot Portal Cloak and Dagger Moonflair Spellblade All 3 None Should Classic add jungle timers? If options 1 and 2 receive more than 50% combined, the higher of those two options wins. Yes — Add modern jungle timers that are always visible on the minimap Yes — Only when the scoreboard is open No — Keep the current minimap Base gates were added at the start of Season 5 to give the defending team a way to protect its base without relying on more extreme comeback mechanics. Should we keep base gates in the game? Yes No How snowbally do games feel to you now? Significantly too snowbally Slightly too snowbally About right Slightly not snowbally enough Significan",
+          "discovery_score": 0,
+          "discovery_signal": null,
+          "display_group": "pc",
+          "end_date": null,
+          "event_name": null,
+          "event_type": null,
+          "fetch_status": "success",
+          "game_id": "GRIO-LOL",
+          "game_name": "英雄联盟",
+          "id": "https://www.leagueoflegends.com/en-us/news/dev/dev-the-council",
+          "invalid_reason": null,
+          "key_changes": [],
+          "platforms": [
+            "pc"
+          ],
+          "published": "",
+          "source_context_safe": true,
+          "source_game_id": "GRIO-LOL",
+          "source_is_article": true,
+          "source_name": "国际服官网",
+          "source_priority": 95,
+          "source_role": "verification",
+          "source_type": "官网",
+          "source_url": "https://www.leagueoflegends.com/en-us/",
+          "start_date": null,
+          "summary": "/dev: The Council How you can shape what’s next for League Classic. Dev Geeves 2026-08-26T15:00:00.000Z Welcome to the first League Classic community poll. Our goal with these polls is to involve you, the community, in the direction that we take League Classic. Questions in these polls cover two broad types: Sentiment, which we use to identify broad areas to investigate and directions for improvements. Binding, which we use to make the call on an approach for an improvement. Voting can be done in “The Council” tab in the League client and is open for seven days, with the first running from August 26 through September 2. Eligible players may answer each question and change their answers until the poll closes. Each point of voting power gives one vote on each question. We’ll publish the results after voting closes in the Patch Notes. This first poll covers questions across a few areas: game length, item revivals, and some map features. You can skip questions if you don’t have an opinion about the topic. Poll 1 Questions How does game length feel? Way too short Too short About right Too long Way too long When is a game too long? 30 minutes 40 minutes 50 minutes 60 minutes No preferred maximum Which of these items do you want us to revive in Classic? Each item that scores higher than 50% is added, including “All 3.” Zz’Rot Portal Cloak and Dagger Moonflair Spellblade All 3 None Should Classic add jungle timers? If options 1 and 2 receive more than 50% combined, the higher of those two options wins. Yes — Add modern jungle timers that are always visible on the minimap Yes — Only when the scoreboard is open No — Keep the current minimap Base gates were added at the start of Season 5 to give the defending team a way to protect its base without relying on more extreme comeback mechanics. Should we keep base gates in the game? Yes No How snowbally do games feel to you now? Significantly too snowbally Slightly too snowbally About right Slightly not snowbally enough Significan",
+          "title": "/dev: The Council",
+          "url": "https://www.leagueoflegends.com/en-us/news/dev/dev-the-council",
+          "verification_level": null
+        }
+      ],
+      "start_date": null,
+      "verification_level": "official"
+    },
+    {
       "display_group": "pc",
       "end_date": null,
       "event_id": null,
@@ -1375,14 +1578,16 @@
   "platform_indexes": {
     "mobile": [
       "957a6f25258463d30cd05579",
-      "5320a65135c7002a76a03997"
+      "5320a65135c7002a76a03997",
+      "989ab1135356d54369527f11"
     ],
     "pc": [
       "6100096a771cee8d6560eae0",
       "957a6f25258463d30cd05579",
       "55f5f1ecda2579219b79ba6d",
       "5320a65135c7002a76a03997",
-      "7ed0537c3c0680f983a9a811"
+      "7ed0537c3c0680f983a9a811",
+      "989ab1135356d54369527f11"
     ]
   },
   "schema_version": 3,

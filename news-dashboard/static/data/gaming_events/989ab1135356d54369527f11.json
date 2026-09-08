@@ -1,0 +1,31 @@
+{
+  "attention_score": 55,
+  "end_date": null,
+  "event_id": "989ab1135356d54369527f11",
+  "game_id": "GNET-MH",
+  "game_name": "梦幻西游",
+  "sources": [
+    {
+      "article_id": "https://xyq.163.com/news/20260902/4905_1312900.html",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "官方网站(电脑版)",
+      "source_type": "官网",
+      "url": "https://xyq.163.com/news/20260902/4905_1312900.html"
+    },
+    {
+      "article_id": "https://xyq.163.com/news/20260904/4905_1313126.html",
+      "is_primary": false,
+      "published_at": null,
+      "source_name": "官方网站(电脑版)",
+      "source_type": "官网",
+      "url": "https://xyq.163.com/news/20260904/4905_1313126.html"
+    }
+  ],
+  "start_date": "2026-09-07",
+  "status": "ended",
+  "timeline": [],
+  "title": "活动",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及社区沟通、竞技运营；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}
