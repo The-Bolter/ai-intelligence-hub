@@ -23,7 +23,7 @@
       "key_changes": [
         "新活动"
       ],
-      "last_detected_at": "2026-09-08T11:34:05.288295+08:00",
+      "last_detected_at": "2026-09-09T10:43:38.235036+08:00",
       "phase": "active",
       "platforms": [
         "pc"
@@ -129,7 +129,7 @@
       "key_changes": [
         "新活动"
       ],
-      "last_detected_at": "2026-09-08T11:32:20.749226+08:00",
+      "last_detected_at": "2026-09-09T10:41:06.842038+08:00",
       "phase": "active",
       "platforms": [
         "mobile",
@@ -221,7 +221,7 @@
       "key_changes": [
         "新活动"
       ],
-      "last_detected_at": "2026-09-08T11:34:05.288295+08:00",
+      "last_detected_at": "2026-09-09T10:43:38.235036+08:00",
       "phase": "active",
       "platforms": [
         "pc"
@@ -438,7 +438,7 @@
       "key_changes": [
         "活动载具"
       ],
-      "last_detected_at": "2026-09-08T11:34:05.288295+08:00",
+      "last_detected_at": "2026-09-09T10:43:38.235036+08:00",
       "phase": "active",
       "platforms": [
         "pc"
@@ -540,7 +540,7 @@
         "competitive"
       ],
       "key_changes": [],
-      "last_detected_at": "2026-09-08T11:32:32.970568+08:00",
+      "last_detected_at": "2026-09-09T10:41:21.949880+08:00",
       "phase": "ended",
       "platforms": [
         "mobile",
@@ -656,9 +656,225 @@
       "start_date": "2026-09-07",
       "summary": "梦幻西游活动于9月7日进行。",
       "verification_level": "official"
+    },
+    {
+      "attention_level": "中高",
+      "discovery_score": 0,
+      "discovery_signals": [],
+      "discovery_sources": [],
+      "display_group": "mobile",
+      "end_date": null,
+      "event_id": "ab4742e2eed35d0463bcce60",
+      "event_name": "版本更新",
+      "event_type": "esports",
+      "first_detected_at": "2026-09-08T22:19:28.933030+08:00",
+      "game_id": "GNET-MH",
+      "game_name": "梦幻西游",
+      "hotspot_score": 60,
+      "impact_types": [
+        "community",
+        "competitive",
+        "content"
+      ],
+      "key_changes": [
+        "新活动"
+      ],
+      "last_detected_at": "2026-09-09T10:41:21.949880+08:00",
+      "phase": "ended",
+      "platforms": [
+        "mobile",
+        "pc"
+      ],
+      "recommended_sources": [
+        {
+          "fetch_method": "HTML",
+          "name": "官方网站(手游)",
+          "official": true,
+          "priority": 100,
+          "source_type": "官网",
+          "url": "https://my.163.com/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "官方网站(电脑版)",
+          "official": true,
+          "priority": 100,
+          "source_type": "官网",
+          "url": "https://xyq.163.com/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "网易大神",
+          "official": true,
+          "priority": 90,
+          "source_type": "官方社区",
+          "url": "https://ds.163.com/"
+        }
+      ],
+      "score_factors": {
+        "content_volume": 6,
+        "event_tier": 13,
+        "game_scale": 8,
+        "milestone_value": 9,
+        "official_strength": 10,
+        "operation_impact": 8,
+        "timing": 6
+      },
+      "source_article_ids": [
+        "https://my.163.com/news/news/20260908/16741_1313365.html"
+      ],
+      "source_articles": [
+        {
+          "content": "登录抽超级泡泡！ 《梦幻西游》手游 人人都玩，无处不在 官网首页 新闻资讯 游戏介绍 赛事中心 玩法资料 同人影音 玩家互动 客服专区 礼包中心 充值中心 藏宝阁 官方新闻 维护公告 最新活动 品牌 门派 角色 召唤灵 伙伴 特技 外观 地图 巅峰联赛 武神坛之战 武神坛时空服 X9联赛 X9联赛时空服 全民PK赛 逐鹿三界 赛事公告 游戏资料 游戏攻略 梦幻风尚 线下活动 同人作品 精美壁纸 2025玩家设计大赛 同人社区 同人周边 IP有声剧 网易大神 官方微信 官方微博 官方企微 官方抖音 官方小红书 角色查询 账号找回 清空手机号 清空安全锁 转服查询 渠道服专区 赛事违规举报 App Store下载 安卓下载 备用及海外 开关 App Store下载 安卓版下载 主地址 海外及备用 《梦幻西游：时空》下载 客服电话：95163888 全民PK主题服: 全军出击 新服 新服一览 赛事中心 进行中 武神坛 比赛时间：每月第三、四周周六11:00至周日21:00 查看详情 已结束 X9联赛 查看详情 报名中 全民PK争霸赛 报名时间：6月10日-7月25日 查看详情 已结束 武神坛巅峰赛 决赛：6月9日-6月15日 查看详情 已结束 逐鹿三界 积分赛：1月6日-1月27日 查看详情 热门推荐 充值推荐 福利中心 新手专题 藏宝阁 奇经八脉 转服查询 资料站 门派介绍 召唤灵站 客服专区 活动专题 跟大神一起玩 关于“网易大神” 网易大神是网易游戏旗下的精英玩家社区。这里汇聚了广大精英玩家、游戏圈红人、行业大咖，集合了网易独家的官方资讯和福利趣闻，旨在为玩家打造一个丰富的游戏兴趣社交圈。玩家可以在网易大神与游戏中的好友实时聊天、多元互动；以游戏会友，结交更多游戏同好，和大神一起发现更多游戏乐趣。 官方网站： https://ds.163.com 官方微信：wyds_163 扫一扫下载 关注微信 微信 《梦幻西游》官方唯一同名手游来了，梦幻原创团队倾力打造，回合制MMORPG手游巅峰之作。 《梦幻西游》官方唯一同名手游来了，梦幻原创团队倾力打造，回合制MMORPG手游巅峰之作。 《梦幻西游》手游官网-人人都玩，无处不在 新闻 维护 正式服 轻享服 活动 正式服 轻享服 新服 攻略 搜索 2026年09月09日维护公告：巅峰赛S13预选赛火热开赛 作者： 2026-09-08 字号： 原文地址： 亲爱的玩家朋友： 为保证服务器的运行稳定和服务质量，《梦幻西游》手游及电脑端版本（《梦幻西游：时空》） 正式服 所有服务器将于 2026年9月9日 停机，进行维护工作。预计维护时间为 8:00～9:00 。如果在预定时间内无法完成维护内容，开服时间将顺延。维护期间给您带来的不便，敬请谅解，网易游戏感谢所有玩家的支持和配合。 最新内容 以下内容在 全部 服务器放出（客户端版本 1.581.0 ） 巅峰赛预选赛 巅峰之战，风云再起！精锐、勇武、神威组巅峰联赛S13报名已落下帷幕，前8支顶尖服战队将直接晋级常规赛，9-16名战队进入预选赛将于 9月11日（周五） 起开始为期五天的激烈角逐，各组别争夺最后4个进入常规赛的晋级名额，究竟谁能突出重围参与 500万巨额奖金 和 冠军纯金奖牌 争夺，让我们拭目以待！ 1. 直升常规赛战队 精锐组 ：再续前缘、2020、时空之隙、大美神州、2023、一吻天荒、情有独钟、四海欢腾； 勇武组 ：瑶池圣地、天下无双、倾国倾城、双面伊人、情有独钟、贝壳女孩、虎虎生威、盛世长歌； 神威组 ：时空之隙、双生梦、2018、紫禁之巅、山清水秀、似水流年、彩云追月、桂花醉； 2. 参加预选赛战队（各组晋级四支战队） 精锐组 ：华山论剑、甜蜜蜜、2022、纵横天下、浩瀚星河、三界乐园、心意相通、生日快乐、久伴（时空服直邀资格）； 勇武组 ：2019、红玫瑰、万象新生、浩瀚星河、锦绣山河、风样自由、一见钟情、盛世丰年、#18（时空服直邀资格）; 神威组 ：天下无双、东海湾、永结同心、凌云殿、万象新生、紫气东来、逍遥游、开辟鸿蒙； 3. 预选赛赛制 预选赛分为积分赛和晋级赛两个阶段，每组别 共4支战队晋级 ，积分赛为单局循环积分赛， 前2名 直接晋级常规赛阶段， 3-6名 参与一轮三局两胜晋级赛，胜利者将晋级常规赛阶段。为满足战队战术需要，在预选赛比赛期间， 每日23:00-23:59 可进行门派转换。 4. 预选赛时间 积分赛： 9月11日（周五）至9月13日（周日）12:00――22:00 晋级赛： 9月14日（周一）至9月15日（周二）12:00――21:00 5. 观赛奖励 预选赛比赛期间，游戏内的梦幻直播赛事官方直播间将对本届赛事进行全程直播，直播期间将投放大量观赛好礼，参与互动就有机会抽取 高级魔兽要诀、高级藏宝图",
+          "discovery_score": 0,
+          "discovery_signal": null,
+          "display_group": "mobile",
+          "end_date": null,
+          "event_name": null,
+          "event_type": null,
+          "fetch_status": "success",
+          "game_id": "GNET-MH",
+          "game_name": "梦幻西游",
+          "id": "https://my.163.com/news/news/20260908/16741_1313365.html",
+          "invalid_reason": null,
+          "key_changes": [],
+          "platforms": [
+            "mobile",
+            "pc"
+          ],
+          "published": "",
+          "source_context_safe": true,
+          "source_game_id": "GNET-MH",
+          "source_is_article": true,
+          "source_name": "官方网站(手游)",
+          "source_priority": 100,
+          "source_role": "verification",
+          "source_type": "官网",
+          "source_url": "https://my.163.com/",
+          "start_date": null,
+          "summary": "登录抽超级泡泡！ 《梦幻西游》手游 人人都玩，无处不在 官网首页 新闻资讯 游戏介绍 赛事中心 玩法资料 同人影音 玩家互动 客服专区 礼包中心 充值中心 藏宝阁 官方新闻 维护公告 最新活动 品牌 门派 角色 召唤灵 伙伴 特技 外观 地图 巅峰联赛 武神坛之战 武神坛时空服 X9联赛 X9联赛时空服 全民PK赛 逐鹿三界 赛事公告 游戏资料 游戏攻略 梦幻风尚 线下活动 同人作品 精美壁纸 2025玩家设计大赛 同人社区 同人周边 IP有声剧 网易大神 官方微信 官方微博 官方企微 官方抖音 官方小红书 角色查询 账号找回 清空手机号 清空安全锁 转服查询 渠道服专区 赛事违规举报 App Store下载 安卓下载 备用及海外 开关 App Store下载 安卓版下载 主地址 海外及备用 《梦幻西游：时空》下载 客服电话：95163888 全民PK主题服: 全军出击 新服 新服一览 赛事中心 进行中 武神坛 比赛时间：每月第三、四周周六11:00至周日21:00 查看详情 已结束 X9联赛 查看详情 报名中 全民PK争霸赛 报名时间：6月10日-7月25日 查看详情 已结束 武神坛巅峰赛 决赛：6月9日-6月15日 查看详情 已结束 逐鹿三界 积分赛：1月6日-1月27日 查看详情 热门推荐 充值推荐 福利中心 新手专题 藏宝阁 奇经八脉 转服查询 资料站 门派介绍 召唤灵站 客服专区 活动专题 跟大神一起玩 关于“网易大神” 网易大神是网易游戏旗下的精英玩家社区。这里汇聚了广大精英玩家、游戏圈红人、行业大咖，集合了网易独家的官方资讯和福利趣闻，旨在为玩家打造一个丰富的游戏兴趣社交圈。玩家可以在网易大神与游戏中的好友实时聊天、多元互动；以游戏会友，结交更多游戏同好，和大神一起发现更多游戏乐趣。 官方网站： https://ds.163.com 官方微信：wyds_163 扫一扫下载 关注微信 微信 《梦幻西游》官方唯一同名手游来了，梦幻原创团队倾力打造，回合制MMORPG手游巅峰之作。 《梦幻西游》官方唯一同名手游来了，梦幻原创团队倾力打造，回合制MMORPG手游巅峰之作。 《梦幻西游》手游官网-人人都玩，无处不在 新闻 维护 正式服 轻享服 活动 正式服 轻享服 新服 攻略 搜索 2026年09月09日维护公告：巅峰赛S13预选赛火热开赛 作者： 2026-09-08 字号： 原文地址： 亲爱的玩家朋友： 为保证服务器的运行稳定和服务质量，《梦幻西游》手游及电脑端版本（《梦幻西游：时空》） 正式服 所有服务器将于 2026年9月9日 停机，进行维护工作。预计维护时间为 8:00～9:00 。如果在预定时间内无法完成维护内容，开服时间将顺延。维护期间给您带来的不便，敬请谅解，网易游戏感谢所有玩家的支持和配合。 最新内容 以下内容在 全部 服务器放出（客户端版本 1.581.0 ） 巅峰赛预选赛 巅峰之战，风云再起！精锐、勇武、神威组巅峰联赛S13报名已落下帷幕，前8支顶尖服战队将直接晋级常规赛，9-16名战队进入预选赛将于 9月11日（周五） 起开始为期五天的激烈角逐，各组别争夺最后4个进入常规赛的晋级名额，究竟谁能突出重围参与 500万巨额奖金 和 冠军纯金奖牌 争夺，让我们拭目以待！ 1. 直升常规赛战队 精锐组 ：再续前缘、2020、时空之隙、大美神州、2023、一吻天荒、情有独钟、四海欢腾； 勇武组 ：瑶池圣地、天下无双、倾国倾城、双面伊人、情有独钟、贝壳女孩、虎虎生威、盛世长歌； 神威组 ：时空之隙、双生梦、2018、紫禁之巅、山清水秀、似水流年、彩云追月、桂花醉； 2. 参加预选赛战队（各组晋级四支战队） 精锐组 ：华山论剑、甜蜜蜜、2022、纵横天下、浩瀚星河、三界乐园、心意相通、生日快乐、久伴（时空服直邀资格）； 勇武组 ：2019、红玫瑰、万象新生、浩瀚星河、锦绣山河、风样自由、一见钟情、盛世丰年、#18（时空服直邀资格）; 神威组 ：天下无双、东海湾、永结同心、凌云殿、万象新生、紫气东来、逍遥游、开辟鸿蒙； 3. 预选赛赛制 预选赛分为积分赛和晋级赛两个阶段，每组别 共4支战队晋级 ，积分赛为单局循环积分赛， 前2名 直接晋级常规赛阶段， 3-6名 参与一轮三局两胜晋级赛，胜利者将晋级常规赛阶段。为满足战队战术需要，在预选赛比赛期间， 每日23:00-23:59 可进行门派转换。 4. 预选赛时间 积分赛： 9月11日（周五）至9月13日（周日）12:00――22:00 晋级赛： 9月14日（周一）至9月15日（周二）12:00――21:00 5. 观赛奖励 预选赛比赛期间，游戏内的梦幻直播赛事官方直播间将对本届赛事进行全程直播，直播期间将投放大量观赛好礼，参与互动就有机会抽取 高级魔兽要诀、高级藏宝图",
+          "title": "《梦幻西游》手游2026年09月09日维护公告：巅峰赛S13预选赛火热开赛_\n\t\t\t《梦幻西游》手游官网-人人都玩，无处不在",
+          "url": "https://my.163.com/news/news/20260908/16741_1313365.html",
+          "verification_level": null
+        }
+      ],
+      "start_date": "2026-09-08",
+      "summary": "梦幻西游版本更新于9月8日进行，核心变化包括新活动。",
+      "verification_level": "official"
+    },
+    {
+      "attention_level": "中",
+      "discovery_score": 0,
+      "discovery_signals": [],
+      "discovery_sources": [],
+      "display_group": "pc",
+      "end_date": null,
+      "event_id": "96282e2cb07095f287d870f6",
+      "event_name": "赛事",
+      "event_type": "esports",
+      "first_detected_at": "2026-09-08T23:33:49.818847+08:00",
+      "game_id": "GRIO-VAL",
+      "game_name": "无畏契约",
+      "hotspot_score": 59,
+      "impact_types": [
+        "community",
+        "competitive",
+        "content"
+      ],
+      "key_changes": [
+        "新地图"
+      ],
+      "last_detected_at": "2026-09-09T10:42:07.392530+08:00",
+      "phase": "ended",
+      "platforms": [
+        "pc"
+      ],
+      "recommended_sources": [
+        {
+          "fetch_method": "HTML",
+          "name": "官方网站(国服)",
+          "official": true,
+          "priority": 100,
+          "source_type": "官网",
+          "url": "https://val.qq.com/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "国际服官网",
+          "official": false,
+          "priority": 95,
+          "source_type": "官网",
+          "url": "https://playvalorant.com/en-us/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "VCT赛事官网",
+          "official": false,
+          "priority": 85,
+          "source_type": "赛事",
+          "url": "https://valorantesports.com/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "官方微博",
+          "official": true,
+          "priority": 80,
+          "source_type": "官方社媒",
+          "url": "https://weibo.com/u/7490805298"
+        }
+      ],
+      "score_factors": {
+        "content_volume": 6,
+        "event_tier": 13,
+        "game_scale": 8,
+        "milestone_value": 9,
+        "official_strength": 9,
+        "operation_impact": 8,
+        "timing": 6
+      },
+      "source_article_ids": [
+        "https://playvalorant.com/en-us/news/"
+      ],
+      "source_articles": [
+        {
+          "content": "News Esports 2026-09-08T15:00:00.000Z Get Ready for VCT 2027 Open Qualifiers We’re thrilled to announce the initial details about the 2027 VCT Kickoff Open Qualifiers! Esports 2026-09-05T13:00:00.000Z GCC Finals Fan Fest Announcement Fan Fest comes to São Paulo during the final three days of the Game Changers Championship 2026! Esports 2026-09-01T21:00:00.000Z VCT Americas Stage 2 Finals: São Paulo - Event Guide Four teams. One historic event. And Champions Shanghai on the horizon. Game Updates 2026-09-01T13:00:00.000Z VALORANT Patch Notes 13.05 Pick’Ems for Champs soon, penalties for stream sniping and instalock tools, and future changes to the Agent Gear system. Esports 2026-08-26T15:00:00.000Z Champions Shanghai: Live Audience and Ticket Sale Information for Groups and Early Playoffs! We’re thrilled to announce that tickets for the first stages of VALORANT Champions Shanghai will be available starting September 2nd at 11:00AM (CST) Esports 2026-08-21T20:00:00.000Z VERIZON VALORANT Game Changers NA Stage 2 Main Event and LAN Finals: Everything You Need to Know Stage 2 Main Event begins on September 1st with a September 17th Grand Finals on LAN Game Updates 2026-08-18T13:00:00.000Z VALORANT Patch Notes 13.04 New map rotation and bug fixes for Agents and melee skins Game Updates 2026-08-17T13:00:00.000Z PLAY YOUR HAND // Aeris Skin Reveal Trailer - VALORANT Draw out your power using a flourish of captivating card magic with the new Aeris skins. Game Updates 2026-07-28T13:00:00.000Z VALORANT Patch Notes 13.02 Phoenix ult change, new maps added to Retakes, and loads of bug fixes. Game Updates 2026-07-27T13:00:00.000Z NEO FRONTIER Skin Reveal Trailer Neo Frontier returns. Introducing the Vandal, Shorty, and Lasso Melee. Esports 2026-07-22T21:00:00.000Z Game Changers Americas LCQ 2026 returns to Brazil! Discover the initial details of the tournament that will decide the final spot for the Game Changers World Championship. Game Updates 2026-07-14T13:00:00.000Z VALORANT P",
+          "discovery_score": 0,
+          "discovery_signal": null,
+          "display_group": "pc",
+          "end_date": null,
+          "event_name": null,
+          "event_type": null,
+          "fetch_status": "success",
+          "game_id": "GRIO-VAL",
+          "game_name": "无畏契约",
+          "id": "https://playvalorant.com/en-us/news/",
+          "invalid_reason": null,
+          "key_changes": [],
+          "platforms": [
+            "pc"
+          ],
+          "published": "",
+          "source_context_safe": true,
+          "source_game_id": "GRIO-VAL",
+          "source_is_article": true,
+          "source_name": "国际服官网",
+          "source_priority": 95,
+          "source_role": "verification",
+          "source_type": "官网",
+          "source_url": "https://playvalorant.com/en-us/",
+          "start_date": null,
+          "summary": "News Esports 2026-09-08T15:00:00.000Z Get Ready for VCT 2027 Open Qualifiers We’re thrilled to announce the initial details about the 2027 VCT Kickoff Open Qualifiers! Esports 2026-09-05T13:00:00.000Z GCC Finals Fan Fest Announcement Fan Fest comes to São Paulo during the final three days of the Game Changers Championship 2026! Esports 2026-09-01T21:00:00.000Z VCT Americas Stage 2 Finals: São Paulo - Event Guide Four teams. One historic event. And Champions Shanghai on the horizon. Game Updates 2026-09-01T13:00:00.000Z VALORANT Patch Notes 13.05 Pick’Ems for Champs soon, penalties for stream sniping and instalock tools, and future changes to the Agent Gear system. Esports 2026-08-26T15:00:00.000Z Champions Shanghai: Live Audience and Ticket Sale Information for Groups and Early Playoffs! We’re thrilled to announce that tickets for the first stages of VALORANT Champions Shanghai will be available starting September 2nd at 11:00AM (CST) Esports 2026-08-21T20:00:00.000Z VERIZON VALORANT Game Changers NA Stage 2 Main Event and LAN Finals: Everything You Need to Know Stage 2 Main Event begins on September 1st with a September 17th Grand Finals on LAN Game Updates 2026-08-18T13:00:00.000Z VALORANT Patch Notes 13.04 New map rotation and bug fixes for Agents and melee skins Game Updates 2026-08-17T13:00:00.000Z PLAY YOUR HAND // Aeris Skin Reveal Trailer - VALORANT Draw out your power using a flourish of captivating card magic with the new Aeris skins. Game Updates 2026-07-28T13:00:00.000Z VALORANT Patch Notes 13.02 Phoenix ult change, new maps added to Retakes, and loads of bug fixes. Game Updates 2026-07-27T13:00:00.000Z NEO FRONTIER Skin Reveal Trailer Neo Frontier returns. Introducing the Vandal, Shorty, and Lasso Melee. Esports 2026-07-22T21:00:00.000Z Game Changers Americas LCQ 2026 returns to Brazil! Discover the initial details of the tournament that will decide the final spot for the Game Changers World Championship. Game Updates 2026-07-14T13:00:00.000Z VALORANT P",
+          "title": "News",
+          "url": "https://playvalorant.com/en-us/news/",
+          "verification_level": null
+        }
+      ],
+      "start_date": "2026-09-08",
+      "summary": "无畏契约赛事于9月8日进行，核心变化包括新地图。",
+      "verification_level": "official"
     }
   ],
-  "generated_at": "2026-09-08T11:38:59.600744+08:00",
+  "generated_at": "2026-09-09T10:45:01.745664+08:00",
   "pending_events": [
     {
       "display_group": "mobile",
@@ -1042,13 +1258,105 @@
       "display_group": "pc",
       "end_date": null,
       "event_id": null,
+      "event_name": "VALORANT Esports | VCT Americas Stage 2 Finals: São Paulo - Event Guide",
+      "event_type": "esports",
+      "first_detected_at": "2026-09-08T16:24:39.553684+08:00",
+      "game_id": "GRIO-VAL",
+      "game_name": "无畏契约",
+      "key_changes": [],
+      "last_detected_at": "2026-09-08T16:24:39.553684+08:00",
+      "pending_key": "pending-8191944bc3a788f8605ae0f8",
+      "platforms": [
+        "pc"
+      ],
+      "recommended_sources": [
+        {
+          "fetch_method": "HTML",
+          "name": "官方网站(国服)",
+          "official": true,
+          "priority": 100,
+          "source_type": "官网",
+          "url": "https://val.qq.com/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "国际服官网",
+          "official": false,
+          "priority": 95,
+          "source_type": "官网",
+          "url": "https://playvalorant.com/en-us/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "VCT赛事官网",
+          "official": false,
+          "priority": 85,
+          "source_type": "赛事",
+          "url": "https://valorantesports.com/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "官方微博",
+          "official": true,
+          "priority": 80,
+          "source_type": "官方社媒",
+          "url": "https://weibo.com/u/7490805298"
+        }
+      ],
+      "source_article_ids": [
+        "https://valorantesports.com/news/vct-americas-stage-2-finals-so-paulo-event-guide"
+      ],
+      "source_articles": [
+        {
+          "content": "© 2026 Riot Games. All Rights Reserved. Privacy Notice Terms of Service Accessibility Cookie Preferences",
+          "discovery_score": 0,
+          "discovery_signal": null,
+          "display_group": "pc",
+          "end_date": null,
+          "event_name": null,
+          "event_type": null,
+          "fetch_status": "success",
+          "game_id": "GRIO-VAL",
+          "game_name": "无畏契约",
+          "id": "https://valorantesports.com/news/vct-americas-stage-2-finals-so-paulo-event-guide",
+          "invalid_reason": null,
+          "key_changes": [],
+          "platforms": [
+            "pc"
+          ],
+          "published": "",
+          "source_context_safe": true,
+          "source_game_id": "GRIO-VAL",
+          "source_is_article": true,
+          "source_name": "VCT赛事官网",
+          "source_priority": 85,
+          "source_role": "verification",
+          "source_type": "赛事",
+          "source_url": "https://valorantesports.com/",
+          "start_date": null,
+          "summary": "© 2026 Riot Games. All Rights Reserved. Privacy Notice Terms of Service Accessibility Cookie Preferences",
+          "title": "VALORANT Esports | VCT Americas Stage 2 Finals: São Paulo - Event Guide",
+          "url": "https://valorantesports.com/news/vct-americas-stage-2-finals-so-paulo-event-guide",
+          "verification_level": null
+        }
+      ],
+      "start_date": null,
+      "verification_level": "official"
+    },
+    {
+      "discovery_score": 0,
+      "discovery_signals": [],
+      "discovery_sources": [],
+      "display_group": "pc",
+      "end_date": null,
+      "event_id": null,
       "event_name": "赛事 - 英雄联盟赛事官网 - 腾讯游戏",
       "event_type": "esports",
       "first_detected_at": "2026-09-02T18:13:53.401959+08:00",
       "game_id": "GRIO-LOL",
       "game_name": "英雄联盟",
       "key_changes": [],
-      "last_detected_at": "2026-09-08T11:32:45.121680+08:00",
+      "last_detected_at": "2026-09-09T10:41:45.771768+08:00",
       "pending_key": "pending-932137a6cf139e2ce50e84a0",
       "platforms": [
         "pc"
@@ -1148,7 +1456,7 @@
       "game_id": "GSTEAM-HS",
       "game_name": "霍格沃茨之遗",
       "key_changes": [],
-      "last_detected_at": "2026-09-08T11:33:30.681642+08:00",
+      "last_detected_at": "2026-09-09T10:42:53.266630+08:00",
       "pending_key": "pending-968c185546525509c423200e",
       "platforms": [
         "pc"
@@ -1348,7 +1656,7 @@
       "game_id": "GSTEAM-ELD2",
       "game_name": "艾尔登法环2（传闻）",
       "key_changes": [],
-      "last_detected_at": "2026-09-08T11:32:45.121680+08:00",
+      "last_detected_at": "2026-09-08T22:56:51.531401+08:00",
       "pending_key": "pending-ac790d8f78378333d175131f",
       "platforms": [],
       "recommended_sources": [
@@ -1573,13 +1881,106 @@
         }
       ],
       "start_date": null
+    },
+    {
+      "discovery_score": 0,
+      "discovery_signals": [],
+      "discovery_sources": [],
+      "display_group": "pc",
+      "end_date": null,
+      "event_id": null,
+      "event_name": "VALORANT Esports | Champions Shanghai: Live Audience and Ticket Sale Information for Groups and Early Playoffs!",
+      "event_type": "esports",
+      "first_detected_at": "2026-09-08T22:57:16.493956+08:00",
+      "game_id": "GRIO-VAL",
+      "game_name": "无畏契约",
+      "key_changes": [],
+      "last_detected_at": "2026-09-09T10:42:07.392530+08:00",
+      "pending_key": "pending-ef8921a59ac09b16ee3ac248",
+      "platforms": [
+        "pc"
+      ],
+      "recommended_sources": [
+        {
+          "fetch_method": "HTML",
+          "name": "官方网站(国服)",
+          "official": true,
+          "priority": 100,
+          "source_type": "官网",
+          "url": "https://val.qq.com/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "国际服官网",
+          "official": false,
+          "priority": 95,
+          "source_type": "官网",
+          "url": "https://playvalorant.com/en-us/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "VCT赛事官网",
+          "official": false,
+          "priority": 85,
+          "source_type": "赛事",
+          "url": "https://valorantesports.com/"
+        },
+        {
+          "fetch_method": "HTML",
+          "name": "官方微博",
+          "official": true,
+          "priority": 80,
+          "source_type": "官方社媒",
+          "url": "https://weibo.com/u/7490805298"
+        }
+      ],
+      "source_article_ids": [
+        "https://valorantesports.com/news/champions-shanghai-live-audience-and-ticket-sale-information-for-groups-and-early-playoffs-"
+      ],
+      "source_articles": [
+        {
+          "content": "© 2026 Riot Games. All Rights Reserved. Privacy Notice Terms of Service Accessibility Cookie Preferences",
+          "discovery_score": 0,
+          "discovery_signal": null,
+          "display_group": "pc",
+          "end_date": null,
+          "event_name": null,
+          "event_type": null,
+          "fetch_status": "success",
+          "game_id": "GRIO-VAL",
+          "game_name": "无畏契约",
+          "id": "https://valorantesports.com/news/champions-shanghai-live-audience-and-ticket-sale-information-for-groups-and-early-playoffs-",
+          "invalid_reason": null,
+          "key_changes": [],
+          "platforms": [
+            "pc"
+          ],
+          "published": "",
+          "source_context_safe": true,
+          "source_game_id": "GRIO-VAL",
+          "source_is_article": true,
+          "source_name": "VCT赛事官网",
+          "source_priority": 85,
+          "source_role": "verification",
+          "source_type": "赛事",
+          "source_url": "https://valorantesports.com/",
+          "start_date": null,
+          "summary": "© 2026 Riot Games. All Rights Reserved. Privacy Notice Terms of Service Accessibility Cookie Preferences",
+          "title": "VALORANT Esports | Champions Shanghai: Live Audience and Ticket Sale Information for Groups and Early Playoffs!",
+          "url": "https://valorantesports.com/news/champions-shanghai-live-audience-and-ticket-sale-information-for-groups-and-early-playoffs-",
+          "verification_level": null
+        }
+      ],
+      "start_date": null,
+      "verification_level": "official"
     }
   ],
   "platform_indexes": {
     "mobile": [
       "957a6f25258463d30cd05579",
       "5320a65135c7002a76a03997",
-      "989ab1135356d54369527f11"
+      "989ab1135356d54369527f11",
+      "ab4742e2eed35d0463bcce60"
     ],
     "pc": [
       "6100096a771cee8d6560eae0",
@@ -1587,7 +1988,9 @@
       "55f5f1ecda2579219b79ba6d",
       "5320a65135c7002a76a03997",
       "7ed0537c3c0680f983a9a811",
-      "989ab1135356d54369527f11"
+      "989ab1135356d54369527f11",
+      "ab4742e2eed35d0463bcce60",
+      "96282e2cb07095f287d870f6"
     ]
   },
   "schema_version": 3,

@@ -1,0 +1,23 @@
+{
+  "attention_score": 60,
+  "end_date": null,
+  "event_id": "ab4742e2eed35d0463bcce60",
+  "game_id": "GNET-MH",
+  "game_name": "梦幻西游",
+  "sources": [
+    {
+      "article_id": "https://my.163.com/news/news/20260908/16741_1313365.html",
+      "is_primary": true,
+      "published_at": null,
+      "source_name": "官方网站(手游)",
+      "source_type": "官网",
+      "url": "https://my.163.com/news/news/20260908/16741_1313365.html"
+    }
+  ],
+  "start_date": "2026-09-08",
+  "status": "ended",
+  "timeline": [],
+  "title": "版本更新",
+  "verification_status": "partial",
+  "why_it_matters": "该节点涉及社区沟通、竞技运营、内容排期；已由官方来源验证，可纳入本周运营排期与素材观察。"
+}
