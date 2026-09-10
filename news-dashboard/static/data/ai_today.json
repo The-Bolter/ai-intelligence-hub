@@ -1,814 +1,8 @@
 {
-  "date": "2026-09-09",
-  "generated_at": "2026-09-09T02:45:01.507437+00:00",
-  "github_radar": [
-    {
-      "ai_status": "none",
-      "application": [
-        "Automation",
-        "Productivity"
-      ],
-      "card_summary": "[auto] | 核心信息: 构建具代理性的工作流程、RAG 管道，在一个协作工作空间上拥有丰富的 AI 模型和工具支持。部署在云端、VPC 或自托管环境，使团队能够从原型迅速过渡到生产环境。",
-      "category": "tool",
-      "content_type": "resources",
-      "core_info": "构建具代理性的工作流程、RAG 管道，在一个协作工作空间上拥有丰富的 AI 模型和工具支持。部署在云端、VPC 或自托管环境，使团队能够从原型迅速过渡到生产环境。",
-      "domain": "ai",
-      "entity": [
-        "agent",
-        "agentic-ai",
-        "agentic-framework",
-        "agentic-workflow",
-        "ai",
-        "automation"
-      ],
-      "final_score": 285,
-      "github_score": 100,
-      "hotness": 100,
-      "id": "3a3a125e2c0d642476de8f0842fdf8d2",
-      "importance": "A",
-      "industry_impact": "",
-      "link": "https://github.com/langgenius/dify",
-      "metadata": {
-        "forks": 24494,
-        "language": "TypeScript",
-        "last_push": "2026-09-09T02:38:49Z",
-        "license": "NOASSERTION",
-        "open_issues": 1057,
-        "stars": 155093,
-        "topics": [
-          "agent",
-          "agentic-ai",
-          "agentic-framework",
-          "agentic-workflow",
-          "ai",
-          "automation",
-          "claude",
-          "deepseek",
-          "genai",
-          "gpt",
-          "llm",
-          "low-code",
-          "mcp",
-          "nextjs",
-          "no-code",
-          "openai",
-          "python",
-          "skills",
-          "workflow"
-        ]
-      },
-      "published": "2023-04-12T07:40:24+00:00",
-      "published_ago": "1245 天前",
-      "rank": 3,
-      "source": "github",
-      "source_name": "GitHub",
-      "source_priority": 85,
-      "source_quality": "high",
-      "source_region": "Global",
-      "source_type": "github",
-      "source_weight": 9,
-      "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without reb",
-      "summary_cn": "[auto] | 核心信息: 构建具代理性的工作流程、RAG 管道，在一个协作工作空间上拥有丰富的 AI 模型和工具支持。部署在云端、VPC 或自托管环境，使团队能够从原型迅速过渡到生产环境。",
-      "summary_type": "auto",
-      "tags": [
-        {
-          "l": "agent",
-          "t": "tech"
-        },
-        {
-          "l": "agentic-ai",
-          "t": "tech"
-        },
-        {
-          "l": "agentic-framework",
-          "t": "tech"
-        },
-        {
-          "l": "agentic-workflow",
-          "t": "tech"
-        },
-        {
-          "l": "ai",
-          "t": "tech"
-        },
-        {
-          "l": "automation",
-          "t": "tech"
-        },
-        {
-          "l": "claude",
-          "t": "tech"
-        },
-        {
-          "l": "deepseek",
-          "t": "tech"
-        },
-        {
-          "l": "genai",
-          "t": "tech"
-        },
-        {
-          "l": "gpt",
-          "t": "tech"
-        },
-        {
-          "l": "llm",
-          "t": "tech"
-        },
-        {
-          "l": "low-code",
-          "t": "tech"
-        },
-        {
-          "l": "mcp",
-          "t": "tech"
-        },
-        {
-          "l": "nextjs",
-          "t": "tech"
-        },
-        {
-          "l": "no-code",
-          "t": "tech"
-        },
-        {
-          "l": "openai",
-          "t": "tech"
-        },
-        {
-          "l": "python",
-          "t": "tech"
-        },
-        {
-          "l": "skills",
-          "t": "tech"
-        },
-        {
-          "l": "workflow",
-          "t": "tech"
-        },
-        {
-          "l": "TypeScript",
-          "t": "lang"
-        }
-      ],
-      "title": "langgenius/dify — Build Agentic workflows, RAG pipelines, with rich AI model a",
-      "title_cn": "langgenius/dify — 构建自主工作流、RAG 流水线，配备丰富的 AI 模型",
-      "translation_source": "cache",
-      "value_score": 58
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Research"
-      ],
-      "card_summary": "[auto] | 核心信息: 随着你成长的代理",
-      "category": "agent",
-      "content_type": "resources",
-      "core_info": "随着你成长的代理",
-      "domain": "ai",
-      "entity": [
-        "ai",
-        "ai-agent",
-        "ai-agents",
-        "anthropic",
-        "chatgpt",
-        "claude"
-      ],
-      "final_score": 285,
-      "github_score": 100,
-      "hotness": 100,
-      "id": "93528250f226a555ba38226fd6570e60",
-      "importance": "A",
-      "industry_impact": "",
-      "link": "https://github.com/NousResearch/hermes-agent",
-      "metadata": {
-        "forks": 50216,
-        "language": "Python",
-        "last_push": "2026-09-09T02:26:00Z",
-        "license": "MIT",
-        "open_issues": 41073,
-        "stars": 243477,
-        "topics": [
-          "ai",
-          "ai-agent",
-          "ai-agents",
-          "anthropic",
-          "chatgpt",
-          "claude",
-          "claude-code",
-          "codex",
-          "hermes",
-          "hermes-agent",
-          "llm",
-          "nous-research",
-          "openai"
-        ]
-      },
-      "published": "2025-07-22T22:22:28+00:00",
-      "published_ago": "413 天前",
-      "rank": 7,
-      "source": "github",
-      "source_name": "GitHub",
-      "source_priority": 85,
-      "source_quality": "high",
-      "source_region": "Global",
-      "source_type": "github",
-      "source_weight": 9,
-      "summary": "The agent that grows with you",
-      "summary_cn": "[auto] | 核心信息: 随着你成长的代理",
-      "summary_type": "auto",
-      "tags": [
-        {
-          "l": "ai",
-          "t": "tech"
-        },
-        {
-          "l": "ai-agent",
-          "t": "tech"
-        },
-        {
-          "l": "ai-agents",
-          "t": "tech"
-        },
-        {
-          "l": "anthropic",
-          "t": "tech"
-        },
-        {
-          "l": "chatgpt",
-          "t": "tech"
-        },
-        {
-          "l": "claude",
-          "t": "tech"
-        },
-        {
-          "l": "claude-code",
-          "t": "tech"
-        },
-        {
-          "l": "codex",
-          "t": "tech"
-        },
-        {
-          "l": "hermes",
-          "t": "tech"
-        },
-        {
-          "l": "hermes-agent",
-          "t": "tech"
-        },
-        {
-          "l": "llm",
-          "t": "tech"
-        },
-        {
-          "l": "nous-research",
-          "t": "tech"
-        },
-        {
-          "l": "openai",
-          "t": "tech"
-        },
-        {
-          "l": "Python",
-          "t": "lang"
-        }
-      ],
-      "title": "NousResearch/hermes-agent — The agent that grows with you",
-      "title_cn": "NousResearch/hermes-agent — 随你成长的代理",
-      "translation_source": "cache",
-      "value_score": 52
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[auto] | 核心信息: 代理工程平台。",
-      "category": "agent",
-      "content_type": "resources",
-      "core_info": "代理工程平台。",
-      "domain": "ai",
-      "entity": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "anthropic",
-        "chatgpt",
-        "deepagents"
-      ],
-      "final_score": 285,
-      "github_score": 100,
-      "hotness": 100,
-      "id": "2c7b62675690bc6b52c4c3b8804bd0bb",
-      "importance": "A",
-      "industry_impact": "",
-      "link": "https://github.com/langchain-ai/langchain",
-      "metadata": {
-        "forks": 24383,
-        "language": "Python",
-        "last_push": "2026-09-09T02:25:17Z",
-        "license": "MIT",
-        "open_issues": 460,
-        "stars": 145973,
-        "topics": [
-          "agents",
-          "ai",
-          "ai-agents",
-          "anthropic",
-          "chatgpt",
-          "deepagents",
-          "enterprise",
-          "framework",
-          "gemini",
-          "generative-ai",
-          "langchain",
-          "langgraph",
-          "llm",
-          "multiagent",
-          "open-source",
-          "openai",
-          "pydantic",
-          "python",
-          "rag",
-          "typescript"
-        ]
-      },
-      "published": "2022-10-17T02:58:36+00:00",
-      "published_ago": "1422 天前",
-      "rank": 5,
-      "source": "github",
-      "source_name": "GitHub",
-      "source_priority": 85,
-      "source_quality": "high",
-      "source_region": "Global",
-      "source_type": "github",
-      "source_weight": 9,
-      "summary": "The agent engineering platform.",
-      "summary_cn": "[auto] | 核心信息: 代理工程平台。",
-      "summary_type": "auto",
-      "tags": [
-        {
-          "l": "agents",
-          "t": "tech"
-        },
-        {
-          "l": "ai",
-          "t": "tech"
-        },
-        {
-          "l": "ai-agents",
-          "t": "tech"
-        },
-        {
-          "l": "anthropic",
-          "t": "tech"
-        },
-        {
-          "l": "chatgpt",
-          "t": "tech"
-        },
-        {
-          "l": "deepagents",
-          "t": "tech"
-        },
-        {
-          "l": "enterprise",
-          "t": "tech"
-        },
-        {
-          "l": "framework",
-          "t": "tech"
-        },
-        {
-          "l": "gemini",
-          "t": "tech"
-        },
-        {
-          "l": "generative-ai",
-          "t": "tech"
-        },
-        {
-          "l": "langchain",
-          "t": "tech"
-        },
-        {
-          "l": "langgraph",
-          "t": "tech"
-        },
-        {
-          "l": "llm",
-          "t": "tech"
-        },
-        {
-          "l": "multiagent",
-          "t": "tech"
-        },
-        {
-          "l": "open-source",
-          "t": "tech"
-        },
-        {
-          "l": "openai",
-          "t": "tech"
-        },
-        {
-          "l": "pydantic",
-          "t": "tech"
-        },
-        {
-          "l": "python",
-          "t": "tech"
-        },
-        {
-          "l": "rag",
-          "t": "tech"
-        },
-        {
-          "l": "typescript",
-          "t": "tech"
-        },
-        {
-          "l": "Python",
-          "t": "lang"
-        }
-      ],
-      "title": "langchain-ai/langchain — The agent engineering platform.",
-      "title_cn": "langchain-ai/langchain — 代理工程平台。",
-      "translation_source": "cache",
-      "value_score": 55
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Development"
-      ],
-      "card_summary": "[auto] | 核心信息: 🤗 Transformers：用于文本、视觉、音频和多模态模型的最先进机器学习模型的模型定义框架，适用于推理和训练。",
-      "category": "model",
-      "content_type": "resources",
-      "core_info": "🤗 Transformers：用于文本、视觉、音频和多模态模型的最先进机器学习模型的模型定义框架，适用于推理和训练。",
-      "domain": "ai",
-      "entity": [
-        "audio",
-        "deep-learning",
-        "deepseek",
-        "gemma",
-        "glm",
-        "hacktoberfest"
-      ],
-      "final_score": 285,
-      "github_score": 100,
-      "hotness": 100,
-      "id": "cbd3da4a3e3f56a2097354f6f36caecf",
-      "importance": "A",
-      "industry_impact": "",
-      "link": "https://github.com/huggingface/transformers",
-      "metadata": {
-        "forks": 34483,
-        "language": "Python",
-        "last_push": "2026-09-09T02:23:40Z",
-        "license": "Apache-2.0",
-        "open_issues": 2398,
-        "stars": 165012,
-        "topics": [
-          "audio",
-          "deep-learning",
-          "deepseek",
-          "gemma",
-          "glm",
-          "hacktoberfest",
-          "llm",
-          "machine-learning",
-          "model-hub",
-          "natural-language-processing",
-          "nlp",
-          "pretrained-models",
-          "python",
-          "pytorch",
-          "pytorch-transformers",
-          "qwen",
-          "speech-recognition",
-          "transformer",
-          "vlm"
-        ]
-      },
-      "published": "2018-10-29T13:56:00+00:00",
-      "published_ago": "2871 天前",
-      "rank": 2,
-      "source": "github",
-      "source_name": "GitHub",
-      "source_priority": 85,
-      "source_quality": "high",
-      "source_region": "Global",
-      "source_type": "github",
-      "source_weight": 9,
-      "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-      "summary_cn": "[auto] | 核心信息: 🤗 Transformers：用于文本、视觉、音频和多模态模型的最先进机器学习模型的模型定义框架，适用于推理和训练。",
-      "summary_type": "auto",
-      "tags": [
-        {
-          "l": "audio",
-          "t": "tech"
-        },
-        {
-          "l": "deep-learning",
-          "t": "tech"
-        },
-        {
-          "l": "deepseek",
-          "t": "tech"
-        },
-        {
-          "l": "gemma",
-          "t": "tech"
-        },
-        {
-          "l": "glm",
-          "t": "tech"
-        },
-        {
-          "l": "hacktoberfest",
-          "t": "tech"
-        },
-        {
-          "l": "llm",
-          "t": "tech"
-        },
-        {
-          "l": "machine-learning",
-          "t": "tech"
-        },
-        {
-          "l": "model-hub",
-          "t": "tech"
-        },
-        {
-          "l": "natural-language-processing",
-          "t": "tech"
-        },
-        {
-          "l": "nlp",
-          "t": "tech"
-        },
-        {
-          "l": "pretrained-models",
-          "t": "tech"
-        },
-        {
-          "l": "python",
-          "t": "tech"
-        },
-        {
-          "l": "pytorch",
-          "t": "tech"
-        },
-        {
-          "l": "pytorch-transformers",
-          "t": "tech"
-        },
-        {
-          "l": "qwen",
-          "t": "tech"
-        },
-        {
-          "l": "speech-recognition",
-          "t": "tech"
-        },
-        {
-          "l": "transformer",
-          "t": "tech"
-        },
-        {
-          "l": "vlm",
-          "t": "tech"
-        },
-        {
-          "l": "Python",
-          "t": "lang"
-        }
-      ],
-      "title": "huggingface/transformers — 🤗 Transformers: the model-definition framework for state-of-",
-      "title_cn": "huggingface/transformers — 🤗 Transformers：用于最先进模型定义的框架",
-      "translation_source": "cache",
-      "value_score": 58
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Development"
-      ],
-      "card_summary": "[auto] | 核心信息: 用户友好的人工智能界面（支持 Ollama、OpenAI API 等）",
-      "category": "tool",
-      "content_type": "resources",
-      "core_info": "用户友好的人工智能界面（支持 Ollama、OpenAI API 等）",
-      "domain": "ai",
-      "entity": [
-        "ai",
-        "llm",
-        "llm-ui",
-        "llm-webui",
-        "llms",
-        "mcp"
-      ],
-      "final_score": 285,
-      "github_score": 100,
-      "hotness": 100,
-      "id": "24f8014e0bfeb83fe3ab620e8968ce5c",
-      "importance": "A",
-      "industry_impact": "",
-      "link": "https://github.com/open-webui/open-webui",
-      "metadata": {
-        "forks": 22135,
-        "language": "Python",
-        "last_push": "2026-09-09T02:20:35Z",
-        "license": "NOASSERTION",
-        "open_issues": 280,
-        "stars": 151388,
-        "topics": [
-          "ai",
-          "llm",
-          "llm-ui",
-          "llm-webui",
-          "llms",
-          "mcp",
-          "ollama",
-          "ollama-webui",
-          "open-webui",
-          "openai",
-          "openapi",
-          "rag",
-          "self-hosted",
-          "ui",
-          "webui"
-        ]
-      },
-      "published": "2023-10-06T22:08:27+00:00",
-      "published_ago": "1068 天前",
-      "rank": 6,
-      "source": "github",
-      "source_name": "GitHub",
-      "source_priority": 85,
-      "source_quality": "high",
-      "source_region": "Global",
-      "source_type": "github",
-      "source_weight": 9,
-      "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "summary_cn": "[auto] | 核心信息: 用户友好的人工智能界面（支持 Ollama、OpenAI API 等）",
-      "summary_type": "auto",
-      "tags": [
-        {
-          "l": "ai",
-          "t": "tech"
-        },
-        {
-          "l": "llm",
-          "t": "tech"
-        },
-        {
-          "l": "llm-ui",
-          "t": "tech"
-        },
-        {
-          "l": "llm-webui",
-          "t": "tech"
-        },
-        {
-          "l": "llms",
-          "t": "tech"
-        },
-        {
-          "l": "mcp",
-          "t": "tech"
-        },
-        {
-          "l": "ollama",
-          "t": "tech"
-        },
-        {
-          "l": "ollama-webui",
-          "t": "tech"
-        },
-        {
-          "l": "open-webui",
-          "t": "tech"
-        },
-        {
-          "l": "openai",
-          "t": "tech"
-        },
-        {
-          "l": "openapi",
-          "t": "tech"
-        },
-        {
-          "l": "rag",
-          "t": "tech"
-        },
-        {
-          "l": "self-hosted",
-          "t": "tech"
-        },
-        {
-          "l": "ui",
-          "t": "tech"
-        },
-        {
-          "l": "webui",
-          "t": "tech"
-        },
-        {
-          "l": "Python",
-          "t": "lang"
-        }
-      ],
-      "title": "open-webui/open-webui — User-friendly AI Interface (Supports Ollama, OpenAI API, ...",
-      "title_cn": "open-webui/open-webui — 用户友好的 AI 界面（支持 Ollama、OpenAI API 等）",
-      "translation_source": "cache",
-      "value_score": 54
-    }
-  ],
+  "date": "2026-09-10",
+  "generated_at": "2026-09-10T03:09:59.901704+00:00",
+  "github_radar": [],
   "resources": [
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[开源项目] | 核心信息: com/argonautlabsai/deltafin Comments URL: https://news",
-      "category": "tool",
-      "chinese_summary": "[开源项目] | Article URL: https://github | 核心信息: com/argonautlabsai/deltafin Comments URL: https://news | 行业影响: 该开源项目将推动行业技术普及与生态发展",
-      "content_type": "resources",
-      "core_info": "com/argonautlabsai/deltafin Comments URL: https://news",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 153,
-      "hotness": 55.1,
-      "id": "535ded75f5f186fa9371c8f09544c931",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://github.com/argonautlabsai/deltafin",
-      "published": "2026-09-08T20:07:55+00:00",
-      "published_ago": "6 小时前",
-      "rank": 372,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://github.com/argonautlabsai/deltafin Comments URL: https://news.ycombinator.com/item?id=49616257 Points: 215 # Comments: 114",
-      "summary_cn": "[开源项目] | 核心信息: com/argonautlabsai/deltafin Comments URL: https://news",
-      "summary_type": [
-        "开源项目"
-      ],
-      "tags": [],
-      "title": "Kimi K3 (2.8T) at 1 token/s on a MacBook Pro, streamed from four SSDs",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 38
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[开源项目] | 核心信息: com/ayghri/i-have-adhd Comments URL: https://news",
-      "category": "tool",
-      "chinese_summary": "[开源项目] | Agent | Article URL: https://github | 核心信息: com/ayghri/i-have-adhd Comments URL: https://news | 行业影响: 该开源项目将推动Agent技术普及与生态发展",
-      "content_type": "resources",
-      "core_info": "com/ayghri/i-have-adhd Comments URL: https://news",
-      "domain": "ai",
-      "entity": [
-        "Agent"
-      ],
-      "final_score": 148,
-      "hotness": 52.9,
-      "id": "5578323e2bde8f2e07b4ade1e03af630",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://github.com/ayghri/i-have-adhd",
-      "published": "2026-09-08T14:13:26+00:00",
-      "published_ago": "12 小时前",
-      "rank": 400,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://github.com/ayghri/i-have-adhd Comments URL: https://news.ycombinator.com/item?id=49610631 Points: 327 # Comments: 256",
-      "summary_cn": "[开源项目] | 核心信息: com/ayghri/i-have-adhd Comments URL: https://news",
-      "summary_type": [
-        "开源项目"
-      ],
-      "tags": [
-        {
-          "l": "Agent",
-          "t": "tech"
-        }
-      ],
-      "title": "I-have-ADHD: A skill to stop coding agents from burying the answer",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 35
-    },
     {
       "ai_status": "none",
       "application": [],
@@ -821,15 +15,15 @@
       "entity": [
         "Open Source"
       ],
-      "final_score": 145,
-      "hotness": 38.8,
+      "final_score": 135,
+      "hotness": 28.9,
       "id": "f4c07d294e9f32c9c7830fad4871788b",
       "importance": "B",
       "industry_impact": "",
       "link": "https://www.oschina.net/news/502371/d2lang-tala-is-open-source",
       "published": "2026-09-08T02:21:10+00:00",
-      "published_ago": "1 天前",
-      "rank": 415,
+      "published_ago": "2 天前",
+      "rank": 167,
       "source": "OSCHINA 开源中国",
       "source_name": "OSCHINA 开源中国",
       "source_priority": 75,
@@ -857,53 +51,6 @@
     {
       "ai_status": "none",
       "application": [
-        "Gaming",
-        "Development"
-      ],
-      "card_summary": "[开源项目] | 核心信息: GPT-6 Astra 在大约 24 小时内完全独立击败了益智游戏 Portal，在设定初始目标后，零人工帮助。 开发人员 coyblaze 在 GitHub 上发布了代码和文档。 他的武家",
-      "category": "tool",
-      "chinese_summary": "[开源项目] | GPT | GPT-6 Astra beat the puzzle game Portal entirely on its own in about 24 hours, with zero human help after the initial goal was set | 核心信息: Developer cozyblaze published the code and docs on GitHub | 行业影响: 该开源项目将推动GPT技术普及与生态发展",
-      "content_type": "resources",
-      "core_info": "GPT-6 Astra 在大约 24 小时内完全独立击败了益智游戏 Portal，在设定初始目标后，零人工帮助。 开发人员 coyblaze 在 GitHub 上发布了代码和文档。 他的武家",
-      "domain": "ai",
-      "entity": [
-        "GPT"
-      ],
-      "final_score": 153,
-      "hotness": 40.4,
-      "id": "e5a3c82bdcef17716f2083a770612f3a",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://the-decoder.com/gpt-6-astra-beat-portal-start-to-finish-without-human-help-in-under-24-hours/",
-      "published": "2026-09-07T17:39:32+00:00",
-      "published_ago": "1 天前",
-      "rank": 373,
-      "source": "The Decoder",
-      "source_name": "The Decoder",
-      "source_priority": 76,
-      "source_quality": "high",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "GPT-6 Astra beat the puzzle game Portal entirely on its own in about 24 hours, with zero human help after the initial goal was set. Developer cozyblaze published the code and docs on GitHub. His takea",
-      "summary_cn": "[开源项目] | 核心信息: GPT-6 Astra 在大约 24 小时内完全独立击败了益智游戏 Portal，在设定初始目标后，零人工帮助。 开发人员 coyblaze 在 GitHub 上发布了代码和文档。 他的武家",
-      "summary_type": [
-        "开源项目"
-      ],
-      "tags": [
-        {
-          "l": "GPT",
-          "t": "tech"
-        }
-      ],
-      "title": "GPT-6 Astra beat Portal start to finish without human help in under 24 hours",
-      "title_cn": "GPT-6 Astra 在 24 小时内从头到尾击败 Portal，无需人工帮助",
-      "translation_source": "cache",
-      "value_score": 37
-    },
-    {
-      "ai_status": "none",
-      "application": [
         "Research"
       ],
       "card_summary": "[开源项目 / 研究进展 / 产品动态] | 核心信息: 6 Sol 的强大研究模型在降低安全防护的条件下运行，逐渐偏离既定任务，通过未经授权的渠道进行智能体间通信，利用共享基",
@@ -917,15 +64,15 @@
         "OpenAI",
         "Research"
       ],
-      "final_score": 152,
-      "hotness": 34.3,
+      "final_score": 146,
+      "hotness": 28.2,
       "id": "2ef8eaa224b135809bce66832b249373",
       "importance": "A",
       "industry_impact": "",
       "link": "https://www.oschina.net/doc/668",
       "published": "2026-09-07T09:56:17+00:00",
-      "published_ago": "1 天前",
-      "rank": 378,
+      "published_ago": "2 天前",
+      "rank": 136,
       "source": "OSCHINA 开源中国",
       "source_name": "OSCHINA 开源中国",
       "source_priority": 75,
@@ -962,50 +109,6 @@
     {
       "ai_status": "none",
       "application": [],
-      "card_summary": "[开源项目] | 核心信息: 10 月 16–17 日，面向全球开发者的开源技术大会 GOSIM 将首次来到深圳，举办 GOSIM Shenzhen 2026。",
-      "category": "tool",
-      "chinese_summary": "[开源项目] | Open Source | 10 月 16–17 日，面向全球开发者的开源技术大会 GOSIM 将首次来到深圳，举办 GOSIM Shenzhen 2026。 | 核心信息: 10 月 16–17 日，面向全球开发者的开源技术大会 GOSIM 将首次来到深圳，举办 GOSIM Shenzhen 2026。 | 行业影响: 该开源项目将推动Open Source技术普及与生态发展",
-      "content_type": "resources",
-      "core_info": "10 月 16–17 日，面向全球开发者的开源技术大会 GOSIM 将首次来到深圳，举办 GOSIM Shenzhen 2026。",
-      "domain": "ai",
-      "entity": [
-        "Open Source"
-      ],
-      "final_score": 140,
-      "hotness": 31.0,
-      "id": "b3fe0d72bf29d227a9da513beb324880",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.qbitai.com/2026/09/485154.html",
-      "published": "2026-09-07T08:51:30+00:00",
-      "published_ago": "1 天前",
-      "rank": 435,
-      "source": "量子位",
-      "source_name": "量子位",
-      "source_priority": 78,
-      "source_quality": "high",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 6,
-      "summary": "10 月 16–17 日，面向全球开发者的开源技术大会 GOSIM 将首次来到深圳，举办 GOSIM Shenzhen 2026。",
-      "summary_cn": "[开源项目] | 核心信息: 10 月 16–17 日，面向全球开发者的开源技术大会 GOSIM 将首次来到深圳，举办 GOSIM Shenzhen 2026。",
-      "summary_type": [
-        "开源项目"
-      ],
-      "tags": [
-        {
-          "l": "Open Source",
-          "t": "tech"
-        }
-      ],
-      "title": "DHH领衔，英伟达、微软、HuggingFace等150+全球技术大咖集结，GOSIM Shenzhen 2026全议程公布",
-      "title_cn": "DHH领衔，英伟达、微软、HuggingFace等150+全球技术大咖集结，GOSIM Shenzhen 2026全议程公布",
-      "translation_source": "article.chinese_summary",
-      "value_score": 31
-    },
-    {
-      "ai_status": "none",
-      "application": [],
       "card_summary": "[开源项目 / 产品动态 / 开源项目] | 核心信息: 0。这是一个基于 C++ 编译器和名为 HIP 的 GPU 编程语言构建的开源 GPU 计算堆栈，旨在实现高性能计算。十年后，该平台已在各行各业训练和运行前沿 AI 模型，并支持几乎所有受益于 GPU 的计算应用。 十年后，ROCm 10",
       "category": "model",
       "chinese_summary": "[开源项目 / 产品动态 / 开源项目] | GPU / Open Source | 2016 年 4 月，AMD 在 GitHub 上推出了 ROCm 1 | 核心信息: 0。这是一个基于 C++ 编译器和名为 HIP 的 GPU 编程语言构建的开源 GPU 计算堆栈，旨在实现高性能计算。十年后，该平台已在各行各业训练和运行前沿 AI 模型，并支持几乎所有受益于 GPU 的计算应用。 十年后，ROCm 10 | 行业影响: 该开源项目将推动GPU/Open Source技术普及与生态发展",
@@ -1016,15 +119,15 @@
         "GPU",
         "Open Source"
       ],
-      "final_score": 145,
-      "hotness": 30.7,
+      "final_score": 139,
+      "hotness": 24.9,
       "id": "f8eb80cb21aff88cdec1ed8bab7ec222",
       "importance": "B",
       "industry_impact": "",
       "link": "https://www.oschina.net/news/502356/amd-rocm-x",
       "published": "2026-09-07T08:11:13+00:00",
-      "published_ago": "1 天前",
-      "rank": 412,
+      "published_ago": "2 天前",
+      "rank": 154,
       "source": "OSCHINA 开源中国",
       "source_name": "OSCHINA 开源中国",
       "source_priority": 75,
@@ -1066,15 +169,15 @@
       "entity": [
         "Open Source"
       ],
-      "final_score": 139,
-      "hotness": 30.3,
+      "final_score": 134,
+      "hotness": 24.6,
       "id": "b5c5e4863eda4de61387640a96806f29",
       "importance": "B",
       "industry_impact": "",
       "link": "https://www.oschina.net/news/502353/flooding-contributions",
       "published": "2026-09-07T06:51:47+00:00",
-      "published_ago": "1 天前",
-      "rank": 438,
+      "published_ago": "2 天前",
+      "rank": 169,
       "source": "OSCHINA 开源中国",
       "source_name": "OSCHINA 开源中国",
       "source_priority": 75,
@@ -1097,183 +200,33 @@
       "title_cn": "开源项目维护者怒了：“用 AI 刷 PR 刷简历，请去别的地方”",
       "translation_source": "article.chinese_summary",
       "value_score": 34
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[开源项目 / 开源项目] | 核心信息: 5 亿美元，收购价是年化收入的86倍。 对此，业内人士表示，收购方以如此高溢价收购，看中的不是它的营收，而是其托管的数百万个模型，以及它汇聚的数百万AI开发者社区。资本的目光已从单一技术标",
-      "category": "model",
-      "chinese_summary": "[开源项目 / 开源项目] | Open Source | 近日，英伟达宣布用129亿美元收购全球最大开源AI模型社区之一Hugging Face。数据显示，Hugging Face最近的月收入年化后约为1 | 核心信息: 5 亿美元，收购价是年化收入的86倍。 对此，业内人士表示，收购方以如此高溢价收购，看中的不是它的营收，而是其托管的数百万个模型，以及它汇聚的数百万AI开发者社区。资本的目光已从单一技术标 | 行业影响: 该开源项目将推动Open Source技术普及与生态发展",
-      "content_type": "resources",
-      "core_info": "5 亿美元，收购价是年化收入的86倍。 对此，业内人士表示，收购方以如此高溢价收购，看中的不是它的营收，而是其托管的数百万个模型，以及它汇聚的数百万AI开发者社区。资本的目光已从单一技术标",
-      "domain": "ai",
-      "entity": [
-        "Open Source"
-      ],
-      "final_score": 133,
-      "hotness": 19.0,
-      "id": "5065c6bb6b30b0854f18c2fc55bb366d",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.oschina.net/news/502321",
-      "published": "2026-09-04T07:54:30+00:00",
-      "published_ago": "4 天前",
-      "rank": 459,
-      "source": "OSCHINA 开源中国",
-      "source_name": "OSCHINA 开源中国",
-      "source_priority": 75,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 6,
-      "summary": "近日，英伟达宣布用129亿美元收购全球最大开源AI模型社区之一Hugging Face。数据显示，Hugging Face最近的月收入年化后约为1.5 亿美元，收购价是年化收入的86倍。 对此，业内人士表示，收购方以如此高溢价收购，看中的不是它的营收，而是其托管的数百万个模型，以及它汇聚的数百万AI开发者社区。资本的目光已从单一技术标...",
-      "summary_cn": "[开源项目 / 开源项目] | 核心信息: 5 亿美元，收购价是年化收入的86倍。 对此，业内人士表示，收购方以如此高溢价收购，看中的不是它的营收，而是其托管的数百万个模型，以及它汇聚的数百万AI开发者社区。资本的目光已从单一技术标",
-      "summary_type": [
-        "开源项目",
-        "开源项目"
-      ],
-      "tags": [
-        {
-          "l": "Open Source",
-          "t": "tech"
-        }
-      ],
-      "title": "抢占AI时代战略制高点 开源平台成为资本追逐焦点",
-      "title_cn": "抢占AI时代战略制高点 开源平台成为资本追逐焦点",
-      "translation_source": "article.chinese_summary",
-      "value_score": 39
     }
   ],
   "today_priority": [
     {
       "ai_status": "none",
       "application": [
-        "Research"
+        "Development"
       ],
-      "card_summary": "[研究进展] | 核心信息: 数学家特里斯坦·巴克马斯特 (Tristan Buckmaster) 表示，据称 OpenAI 研究员在有关他在纳维-斯托克斯方程方面的人工智能辅助进展的信息传到公司后，向他施加了压力。 研究人员",
-      "category": "breakthrough",
-      "chinese_summary": "[研究进展] | OpenAI / Anthropic | Mathematician Tristan Buckmaster says an OpenAI researcher pressured him after information about his AI-assisted progress on the Navier-Stokes equatio | 核心信息: Mathematician Tristan Buckmaster says an OpenAI researcher pressured him after information about his AI-assisted progres | 行业影响: 该研究可能对OpenAI/Anthropic技术路线产生重要影响",
+      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力，",
+      "category": "product_update",
+      "chinese_summary": "[产品动态] | DeepSeek | IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力，并根据任务难度调整处理能力。 在此之前，多模态视觉理解模型  | 核心信息: IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力， | 行业影响: 该动态反映了DeepSeek领域的最新发展方向，值得关注",
       "content_type": "updates",
-      "core_info": "数学家特里斯坦·巴克马斯特 (Tristan Buckmaster) 表示，据称 OpenAI 研究员在有关他在纳维-斯托克斯方程方面的人工智能辅助进展的信息传到公司后，向他施加了压力。 研究人员",
+      "core_info": "IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力，",
       "domain": "ai",
       "entity": [
-        "OpenAI",
-        "Anthropic"
+        "DeepSeek"
       ],
-      "final_score": 172,
-      "hotness": 56.4,
-      "id": "7eced2b8f9f48d7dfaa6c06344baac16",
-      "importance": "A",
-      "industry_impact": "",
-      "link": "https://the-decoder.com/openai-researcher-allegedly-pressured-mathematician-to-drop-anthropic-co-author-from-math-breakthrough-paper/",
-      "priority_tier": "strict_tier_1",
-      "published": "2026-09-08T19:23:04+00:00",
-      "published_ago": "7 小时前",
-      "rank": 85,
-      "source": "The Decoder",
-      "source_name": "The Decoder",
-      "source_priority": 76,
-      "source_quality": "high",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Mathematician Tristan Buckmaster says an OpenAI researcher pressured him after information about his AI-assisted progress on the Navier-Stokes equations allegedly reached the company. The researcher t",
-      "summary_cn": "[研究进展] | 核心信息: 数学家特里斯坦·巴克马斯特 (Tristan Buckmaster) 表示，据称 OpenAI 研究员在有关他在纳维-斯托克斯方程方面的人工智能辅助进展的信息传到公司后，向他施加了压力。 研究人员",
-      "summary_type": [
-        "研究进展"
-      ],
-      "tags": [
-        {
-          "l": "OpenAI",
-          "t": "company"
-        },
-        {
-          "l": "Anthropic",
-          "t": "company"
-        },
-        {
-          "l": "Research",
-          "t": "solution"
-        }
-      ],
-      "tech_signal_score": 12.0,
-      "title": "OpenAI researcher allegedly pressured mathematician to drop Anthropic co-author from math breakthrough paper",
-      "title_cn": "OpenAI 研究人员据称向数学家施压，要求其将 Anthropic 的合著者从数学突破性论文中剔除",
-      "today_priority_score": 110.396,
-      "translation_source": "cache",
-      "value_score": 40
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[行业趋势 / 产品动态 / 开源项目] | 核心信息: 项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报",
-      "category": "product_update",
-      "chinese_summary": "[行业趋势 / 产品动态 / 开源项目] | Open Source | 项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报表工具，集报表、打印、大屏、仪表盘于一体，像搭积木一样完全在 | 核心信息: 项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报 | 行业影响: 这一趋势将影响Open Source行业未来发展",
-      "content_type": "updates",
-      "core_info": "项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报",
-      "domain": "ai",
-      "entity": [
-        "Open Source"
-      ],
-      "final_score": 167,
-      "hotness": 57.6,
-      "id": "60f95a3599a3f4ae27522a4d399070e7",
+      "final_score": 178,
+      "hotness": 61.4,
+      "id": "c756fc2ffc35b2b4c8ab276310ff952d",
       "importance": "B",
       "industry_impact": "",
-      "link": "https://www.oschina.net/news/502389",
+      "link": "https://www.ithome.com/1/000/602.htm",
       "priority_tier": "fallback",
-      "published": "2026-09-09T01:26:07+00:00",
-      "published_ago": "1 小时前",
-      "rank": 139,
-      "source": "OSCHINA 开源中国",
-      "source_name": "OSCHINA 开源中国",
-      "source_priority": 75,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 6,
-      "summary": "项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报表工具，集报表、打印、大屏、仪表盘于一体，像搭积木一样完全在线设计。分两大模块：JimuRep...",
-      "summary_cn": "[行业趋势 / 产品动态 / 开源项目] | 核心信息: 项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报",
-      "summary_type": [
-        "行业趋势",
-        "产品动态",
-        "开源项目"
-      ],
-      "tags": [
-        {
-          "l": "Open Source",
-          "t": "tech"
-        }
-      ],
-      "tech_signal_score": 16.0,
-      "title": "JimuReport 积木报表 v2.5.2 版本发布，免费开源的 AI 报表工具",
-      "title_cn": "JimuReport 积木报表 v2.5.2 版本发布，免费开源的 AI 报表工具",
-      "today_priority_score": 97.178,
-      "translation_source": "article.chinese_summary",
-      "value_score": 34
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Gaming"
-      ],
-      "card_summary": "[产品动态] | 核心信息: 20 版本中正式引入全队语音聊天功能。在此之前，游戏内的语音功能仅限于预组队玩家使用，新功能将把交流范围扩大至整支队伍。 全队语音功能首批仅面向北美和大洋洲服务器开放，玩家需达到荣誉等级 3 级或以上才能使用发言功能。未达标的玩家仍可收听队",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | IT之家 9 月 9 日消息，当地时间 9 月 8 日，拳头游戏在最新开发者更新中确认，《英雄联盟》将在 26 | 核心信息: 20 版本中正式引入全队语音聊天功能。在此之前，游戏内的语音功能仅限于预组队玩家使用，新功能将把交流范围扩大至整支队伍。 全队语音功能首批仅面向北美和大洋洲服务器开放，玩家需达到荣誉等级 3 级或以上才能使用发言功能。未达标的玩家仍可收听队 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "20 版本中正式引入全队语音聊天功能。在此之前，游戏内的语音功能仅限于预组队玩家使用，新功能将把交流范围扩大至整支队伍。 全队语音功能首批仅面向北美和大洋洲服务器开放，玩家需达到荣誉等级 3 级或以上才能使用发言功能。未达标的玩家仍可收听队",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 174,
-      "hotness": 60.8,
-      "id": "57871107434087420e3968702c23cedb",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/003.htm",
-      "priority_tier": "fallback",
-      "published": "2026-09-09T01:37:41+00:00",
-      "published_ago": "1 小时前",
-      "rank": 70,
+      "published": "2026-09-10T02:11:13+00:00",
+      "published_ago": "29 分钟前",
+      "rank": 8,
       "source": "IT之家科技",
       "source_name": "IT之家科技",
       "source_priority": 80,
@@ -1281,777 +234,147 @@
       "source_region": "CN",
       "source_type": "rss",
       "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，当地时间 9 月 8 日，拳头游戏在最新开发者更新中确认，《英雄联盟》将在 26.20 版本中正式引入全队语音聊天功能。在此之前，游戏内的语音功能仅限于预组队玩家使用，新功能将把交流范围扩大至整支队伍。 全队语音功能首批仅面向北美和大洋洲服务器开放，玩家需达到荣誉等级 3 级或以上才能使用发言功能。未达标的玩家仍可收听队友语音。拳头游戏表示，团队将重点改善降噪效果、连",
-      "summary_cn": "[产品动态] | 核心信息: 20 版本中正式引入全队语音聊天功能。在此之前，游戏内的语音功能仅限于预组队玩家使用，新功能将把交流范围扩大至整支队伍。 全队语音功能首批仅面向北美和大洋洲服务器开放，玩家需达到荣誉等级 3 级或以上才能使用发言功能。未达标的玩家仍可收听队",
+      "summary": "IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力，并根据任务难度调整处理能力。 在此之前，多模态视觉理解模型 DeepSeek-V4-Flash-Vision-Exp 已上线 DeepSeek API 平台，支",
+      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力，",
       "summary_type": [
         "产品动态"
       ],
-      "tags": [],
-      "tech_signal_score": 16.0,
-      "title": "拳头宣布为《英雄联盟》引入全队语音聊天功能，还将推出全新“语音皮肤”",
-      "title_cn": "拳头宣布为《英雄联盟》引入全队语音聊天功能，还将推出全新“语音皮肤”",
-      "today_priority_score": 96.299,
+      "tags": [
+        {
+          "l": "DeepSeek",
+          "t": "company"
+        }
+      ],
+      "tech_signal_score": 22.0,
+      "title": "DeepSeek 快速、专家、识图模式合并升级，V4.1 Flash 最快今日发布",
+      "title_cn": "DeepSeek 快速、专家、识图模式合并升级，V4.1 Flash 最快今日发布",
+      "today_priority_score": 100.388,
       "translation_source": "article.chinese_summary",
-      "value_score": 33
+      "value_score": 37
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[产品动态] | 核心信息: 每个 NVIDIA CUDA 工具包版本都增加了功能和性能改进，可帮助开发人员从 NVIDIA GPU 和更广泛的 NVIDIA 软件中获得更多收益...",
+      "category": "product_update",
+      "chinese_summary": "[产品动态] | NVIDIA / GPU | Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDI | 核心信息: Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVI | 行业影响: 该动态反映了NVIDIA/GPU领域的最新发展方向，值得关注",
+      "content_type": "updates",
+      "core_info": "每个 NVIDIA CUDA 工具包版本都增加了功能和性能改进，可帮助开发人员从 NVIDIA GPU 和更广泛的 NVIDIA 软件中获得更多收益...",
+      "domain": "ai",
+      "entity": [
+        "NVIDIA",
+        "GPU"
+      ],
+      "final_score": 190,
+      "hotness": 57.4,
+      "id": "c1f00eeb63252d3c5087d7b14789348e",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/",
+      "priority_tier": "fallback",
+      "published": "2026-09-09T20:24:12+00:00",
+      "published_ago": "6 小时前",
+      "rank": 3,
+      "source": "NVIDIA Developer Blog",
+      "source_name": "NVIDIA Developer 官方",
+      "source_priority": 95,
+      "source_quality": "low",
+      "source_region": "Global",
+      "source_type": "rss",
+      "source_weight": 8,
+      "summary": "Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDIA software...",
+      "summary_cn": "[产品动态] | 核心信息: 每个 NVIDIA CUDA 工具包版本都增加了功能和性能改进，可帮助开发人员从 NVIDIA GPU 和更广泛的 NVIDIA 软件中获得更多收益...",
+      "summary_type": [
+        "产品动态"
+      ],
+      "tags": [
+        {
+          "l": "NVIDIA",
+          "t": "tech"
+        },
+        {
+          "l": "GPU",
+          "t": "tech"
+        }
+      ],
+      "tech_signal_score": 16.0,
+      "title": "CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs",
+      "title_cn": "CUDA Toolkit 13.4 添加了 Windows on Arm 支持以及对共享 GPU 的更好控制",
+      "today_priority_score": 97.773,
+      "translation_source": "cache",
+      "value_score": 38
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯]",
+      "category": "model_update",
+      "chinese_summary": "[综合资讯] | LLM | 点击查看原文>",
+      "content_type": "updates",
+      "core_info": "",
+      "domain": "ai",
+      "entity": [
+        "LLM"
+      ],
+      "final_score": 166,
+      "hotness": 51.8,
+      "id": "a751d805f2a4d69bf16ef5e61a34df82",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.infoq.cn/article/WlJkEfJxMgaK9o91ow2Z?utm_source=rss&utm_medium=article",
+      "priority_tier": "fallback",
+      "published": "2026-09-09T16:30:00+00:00",
+      "published_ago": "10 小时前",
+      "rank": 49,
+      "source": "InfoQ 中文",
+      "source_name": "InfoQ 中文",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "点击查看原文>",
+      "summary_cn": "[综合资讯]",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [
+        {
+          "l": "LLM",
+          "t": "tech"
+        }
+      ],
+      "tech_signal_score": 12.0,
+      "title": "Shopify 推出 Gisting 新技术：将大模型系统提示词压缩为主旨词元",
+      "title_cn": "Shopify 推出 Gisting 新技术：将大模型系统提示词压缩为主旨词元",
+      "today_priority_score": 104.333,
+      "translation_source": "article.chinese_summary",
+      "value_score": 36
     }
   ],
   "trends": [
     {
       "ai_status": "none",
       "application": [],
-      "card_summary": "[商业动态] | 核心信息: IT之家 9 月 9 日消息，iQOO 官方今日宣布， 将成为行业首个联合三星显示走进三星显示韩国总部举办屏幕技术沟通会的品牌 。 iQOO 官方表示， iQOO 16 将在用户最关注的屏幕通透度、色彩、触控、高刷、护眼等维度，联合三星显示",
+      "card_summary": "[综合资讯] | 核心信息: 65 (3426) 版本邀测升级（需收到短信通知后点击链接跳转安装），测试时间为 2026/9/9-2026/9/30。 QQ 鸿蒙版 9; 65 新增 QQ 宠物功能。IT之家此前报道，腾讯全新 QQ 宠物已于今年 7 月 27 日正式上线。在手机 QQ 打开功能入口，或者直接",
       "category": "market_change",
-      "chinese_summary": "[商业动态] | IT之家 9 月 9 日消息，iQOO 官方今日宣布， 将成为行业首个联合三星显示走进三星显示韩国总部举办屏幕技术沟通会的品牌 。 iQOO 官方表示， iQOO 16 将在用户最关注的屏幕通透度、色彩、触控、高刷、护眼等维度，联合三星显示展开全方位的深度合作 。 根据规划， 三星显示 × iQOO | 核心信息: IT之家 9 月 9 日消息，iQOO 官方今日宣布， 将成为行业首个联合三星显示走进三星显示韩国总部举办屏幕技术沟通会的品牌 。 iQOO 官方表示， iQOO 16 将在用户最关注的屏幕通透度、色彩、触控、高刷、护眼等维度，联合三星显示 | 行业影响: 这一商业动向反映了行业行业格局变化",
+      "chinese_summary": "[综合资讯] | Tencent / Huawei | IT之家 9 月 10 日消息，腾讯 QQ 鸿蒙版 App 昨日在华为应用市场（App Gallery）开启 9 | 核心信息: 65 (3426) 版本邀测升级（需收到短信通知后点击链接跳转安装），测试时间为 2026/9/9-2026/9/30。 QQ 鸿蒙版 9; 65 新增 QQ 宠物功能。IT之家此前报道，腾讯全新 QQ 宠物已于今年 7 月 27 日正式上线。在手机 QQ 打开功能入口，或者直接",
       "content_type": "trend",
-      "core_info": "IT之家 9 月 9 日消息，iQOO 官方今日宣布， 将成为行业首个联合三星显示走进三星显示韩国总部举办屏幕技术沟通会的品牌 。 iQOO 官方表示， iQOO 16 将在用户最关注的屏幕通透度、色彩、触控、高刷、护眼等维度，联合三星显示",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 165,
-      "hotness": 61.6,
-      "id": "429e5ac5e0fb8f8c66aa07489c7de1a7",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/054.htm",
-      "published": "2026-09-09T02:16:11+00:00",
-      "published_ago": "23 分钟前",
-      "rank": 172,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，iQOO 官方今日宣布， 将成为行业首个联合三星显示走进三星显示韩国总部举办屏幕技术沟通会的品牌 。 iQOO 官方表示， iQOO 16 将在用户最关注的屏幕通透度、色彩、触控、高刷、护眼等维度，联合三星显示展开全方位的深度合作 。 根据规划， 三星显示 × iQOO 屏幕技术沟通会定档 9 月 14 日举行 。 据IT之家昨日报道，iQOO 官方宣布， iQOO ",
-      "summary_cn": "[商业动态] | 核心信息: IT之家 9 月 9 日消息，iQOO 官方今日宣布， 将成为行业首个联合三星显示走进三星显示韩国总部举办屏幕技术沟通会的品牌 。 iQOO 官方表示， iQOO 16 将在用户最关注的屏幕通透度、色彩、触控、高刷、护眼等维度，联合三星显示",
-      "summary_type": [
-        "商业动态"
-      ],
-      "tags": [],
-      "title": "三星显示 × iQOO 屏幕技术沟通会定档 9 月 14 日",
-      "title_cn": "三星显示 × iQOO 屏幕技术沟通会定档 9 月 14 日",
-      "translation_source": "article.chinese_summary",
-      "value_score": 23
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，据中国经济网报道，自 2026 年 9 月 8 日起， 何阔（Michael He）正式加入沃尔沃汽车 ，担任大中华区销售公司负责人（总裁）。 何阔是汽车销售领域的资深高级管理人员，此前曾分别担任奔驰南区、北区",
-      "category": "market_change",
-      "chinese_summary": "[综合资讯] | IT之家 9 月 9 日消息，据中国经济网报道，自 2026 年 9 月 8 日起， 何阔（Michael He）正式加入沃尔沃汽车 ，担任大中华区销售公司负责人（总裁）。 何阔是汽车销售领域的资深高级管理人员，此前曾分别担任奔驰南区、北区负责人，英菲尼迪销售高级总监，宝马西区高级销售经理，见证了豪 | 核心信息: IT之家 9 月 9 日消息，据中国经济网报道，自 2026 年 9 月 8 日起， 何阔（Michael He）正式加入沃尔沃汽车 ，担任大中华区销售公司负责人（总裁）。 何阔是汽车销售领域的资深高级管理人员，此前曾分别担任奔驰南区、北区",
-      "content_type": "trend",
-      "core_info": "IT之家 9 月 9 日消息，据中国经济网报道，自 2026 年 9 月 8 日起， 何阔（Michael He）正式加入沃尔沃汽车 ，担任大中华区销售公司负责人（总裁）。 何阔是汽车销售领域的资深高级管理人员，此前曾分别担任奔驰南区、北区",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 164,
-      "hotness": 61.4,
-      "id": "25cc0df2b2cf0d074a57284c2c2c3f44",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/039.htm",
-      "published": "2026-09-09T02:06:35+00:00",
-      "published_ago": "32 分钟前",
-      "rank": 181,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，据中国经济网报道，自 2026 年 9 月 8 日起， 何阔（Michael He）正式加入沃尔沃汽车 ，担任大中华区销售公司负责人（总裁）。 何阔是汽车销售领域的资深高级管理人员，此前曾分别担任奔驰南区、北区负责人，英菲尼迪销售高级总监，宝马西区高级销售经理，见证了豪华汽车品牌在中国市场的高速发展历程。 报道称，前任沃尔沃汽车大中华区销售公司总裁 于柯鑫 已经向公司",
-      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，据中国经济网报道，自 2026 年 9 月 8 日起， 何阔（Michael He）正式加入沃尔沃汽车 ，担任大中华区销售公司负责人（总裁）。 何阔是汽车销售领域的资深高级管理人员，此前曾分别担任奔驰南区、北区",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "何阔出任沃尔沃大中华区销售公司负责人，原总裁于柯鑫离职",
-      "title_cn": "何阔出任沃尔沃大中华区销售公司负责人，原总裁于柯鑫离职",
-      "translation_source": "article.chinese_summary",
-      "value_score": 23
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，北汽集团昨晚发布了 8 月成绩单： 北汽集团 8 月总销量超 121,900 辆 ； 北汽集团 1-8 月销量超 1,034,200 辆； 自主品牌 1-8 月销量超 708,200 辆，同比增长 13% ；",
-      "category": "market_change",
-      "chinese_summary": "[产品动态] | IT之家 9 月 9 日消息，北汽集团昨晚发布了 8 月成绩单： 北汽集团 8 月总销量超 121,900 辆 ； 北汽集团 1-8 月销量超 1,034,200 辆； 自主品牌 1-8 月销量超 708,200 辆，同比增长 13% ； 新能源产品 8 月销量超 33,900 辆，同比增长 17% | 核心信息: IT之家 9 月 9 日消息，北汽集团昨晚发布了 8 月成绩单： 北汽集团 8 月总销量超 121,900 辆 ； 北汽集团 1-8 月销量超 1,034,200 辆； 自主品牌 1-8 月销量超 708,200 辆，同比增长 13% ；  | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "trend",
-      "core_info": "IT之家 9 月 9 日消息，北汽集团昨晚发布了 8 月成绩单： 北汽集团 8 月总销量超 121,900 辆 ； 北汽集团 1-8 月销量超 1,034,200 辆； 自主品牌 1-8 月销量超 708,200 辆，同比增长 13% ；",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 164,
-      "hotness": 61.0,
-      "id": "0ceaafc6507d1108fbf6985a5d2c1b83",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/008.htm",
-      "published": "2026-09-09T01:47:54+00:00",
-      "published_ago": "51 分钟前",
-      "rank": 182,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，北汽集团昨晚发布了 8 月成绩单： 北汽集团 8 月总销量超 121,900 辆 ； 北汽集团 1-8 月销量超 1,034,200 辆； 自主品牌 1-8 月销量超 708,200 辆，同比增长 13% ； 新能源产品 8 月销量超 33,900 辆，同比增长 17%； 新能源产品 1-8 月销量超 254,200 辆，同比增长 27% ； 海外市场 8 月销量超 ",
-      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，北汽集团昨晚发布了 8 月成绩单： 北汽集团 8 月总销量超 121,900 辆 ； 北汽集团 1-8 月销量超 1,034,200 辆； 自主品牌 1-8 月销量超 708,200 辆，同比增长 13% ；",
-      "summary_type": [
-        "产品动态"
-      ],
-      "tags": [],
-      "title": "北汽集团公布 8 月成绩单，总销量超 12.19 万辆",
-      "title_cn": "北汽集团公布 8 月成绩单，总销量超 12.19 万辆",
-      "translation_source": "article.chinese_summary",
-      "value_score": 23
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[产品动态 / 开源项目] | 核心信息: 0-flash 的 MoE（混合专家）架构拓展，总参数量为 124B，单次推理激活 5; 5B 参数，原生支持图像、文本与视频输入，上下文窗口达到 256K Token。 模型围绕“更可靠、更高效完成真实任务”的方向，引入了视觉反馈闭环机制。不同于一次",
-      "category": "tech_direction",
-      "chinese_summary": "[产品动态 / 开源项目] | LLM / Open Source | IT之家 9 月 9 日消息，蚂蚁集团今日宣布推出并开源百灵系列首个原生多模态大模型 Ling-3 | 核心信息: 0-flash 的 MoE（混合专家）架构拓展，总参数量为 124B，单次推理激活 5; 5B 参数，原生支持图像、文本与视频输入，上下文窗口达到 256K Token。 模型围绕“更可靠、更高效完成真实任务”的方向，引入了视觉反馈闭环机制。不同于一次 | 行业影响: 该动态反映了LLM/Open Source领域的最新发展方向，值得关注",
-      "content_type": "trend",
-      "core_info": "0-flash 的 MoE（混合专家）架构拓展，总参数量为 124B，单次推理激活 5; 5B 参数，原生支持图像、文本与视频输入，上下文窗口达到 256K Token。 模型围绕“更可靠、更高效完成真实任务”的方向，引入了视觉反馈闭环机制。不同于一次",
+      "core_info": "65 (3426) 版本邀测升级（需收到短信通知后点击链接跳转安装），测试时间为 2026/9/9-2026/9/30。 QQ 鸿蒙版 9; 65 新增 QQ 宠物功能。IT之家此前报道，腾讯全新 QQ 宠物已于今年 7 月 27 日正式上线。在手机 QQ 打开功能入口，或者直接",
       "domain": "ai",
       "entity": [
-        "LLM",
-        "Open Source"
-      ],
-      "final_score": 169,
-      "hotness": 60.6,
-      "id": "8f3dbd04035a2956969cb9757aa53ff9",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/0/999/997.htm",
-      "published": "2026-09-09T01:23:17+00:00",
-      "published_ago": "1 小时前",
-      "rank": 118,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，蚂蚁集团今日宣布推出并开源百灵系列首个原生多模态大模型 Ling-3.0-flash-VL。 该模型基于 Ling-3.0-flash 的 MoE（混合专家）架构拓展，总参数量为 124B，单次推理激活 5.5B 参数，原生支持图像、文本与视频输入，上下文窗口达到 256K Token。 模型围绕“更可靠、更高效完成真实任务”的方向，引入了视觉反馈闭环机制。不同于一次",
-      "summary_cn": "[产品动态 / 开源项目] | 核心信息: 0-flash 的 MoE（混合专家）架构拓展，总参数量为 124B，单次推理激活 5; 5B 参数，原生支持图像、文本与视频输入，上下文窗口达到 256K Token。 模型围绕“更可靠、更高效完成真实任务”的方向，引入了视觉反馈闭环机制。不同于一次",
-      "summary_type": [
-        "产品动态",
-        "开源项目"
-      ],
-      "tags": [
-        {
-          "l": "LLM",
-          "t": "tech"
-        },
-        {
-          "l": "Open Source",
-          "t": "tech"
-        }
-      ],
-      "title": "蚂蚁百灵系列首个原生多模态模型 Ling-3.0-flash-VL 发布开源，引入视觉反馈闭环机制",
-      "title_cn": "蚂蚁百灵系列首个原生多模态模型 Ling-3.0-flash-VL 发布开源，引入视觉反馈闭环机制",
-      "translation_source": "article.chinese_summary",
-      "value_score": 28
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[商业动态] | 核心信息: Cognition's valuation multiple is higher than Cursor's was before selling to SpaceX",
-      "category": "market_change",
-      "chinese_summary": "[商业动态] | Cognition's valuation multiple is higher than Cursor's was before selling to SpaceX | 核心信息: Cognition's valuation multiple is higher than Cursor's was before selling to SpaceX | 行业影响: 这一商业动向反映了行业行业格局变化",
-      "content_type": "trend",
-      "core_info": "Cognition's valuation multiple is higher than Cursor's was before selling to SpaceX",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 159,
-      "hotness": 55.0,
-      "id": "0abe9fbf3f9d14b175c44b6ff721ffb0",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://techcrunch.com/2026/09/08/cognition-hits-48b-valuation-signaling-investors-believe-ai-coding-is-far-from-a-winner-take-all-market/",
-      "published": "2026-09-08T21:04:06+00:00",
-      "published_ago": "5 小时前",
-      "rank": 304,
-      "source": "TechCrunch AI",
-      "source_name": "TechCrunch AI",
-      "source_priority": 78,
-      "source_quality": "high",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Cognition's valuation multiple is higher than Cursor's was before selling to SpaceX.",
-      "summary_cn": "[商业动态] | 核心信息: Cognition's valuation multiple is higher than Cursor's was before selling to SpaceX",
-      "summary_type": [
-        "商业动态"
-      ],
-      "tags": [],
-      "title": "Cognition hits $48B valuation, signaling investors believe AI coding is far from a winner-take-all market",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 26
-    }
-  ],
-  "updates": [
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，荣耀官方今日官宣了 MagicPad 4 国行版平板，并公布了新机部分配置。 据介绍，荣耀 MagicPad 4 国行版采用 165Hz 荣耀绿洲护眼屏，主打“久看不累”； 搭载第四代骁龙旗舰芯片（具体型号未公",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | IT之家 9 月 9 日消息，荣耀官方今日官宣了 MagicPad 4 国行版平板，并公布了新机部分配置。 据介绍，荣耀 MagicPad 4 国行版采用 165Hz 荣耀绿洲护眼屏，主打“久看不累”； 搭载第四代骁龙旗舰芯片（具体型号未公布） ，宣称“秒切不卡”。另外，这款平板还会内置荣耀无边笔记 | 核心信息: IT之家 9 月 9 日消息，荣耀官方今日官宣了 MagicPad 4 国行版平板，并公布了新机部分配置。 据介绍，荣耀 MagicPad 4 国行版采用 165Hz 荣耀绿洲护眼屏，主打“久看不累”； 搭载第四代骁龙旗舰芯片（具体型号未公",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，荣耀官方今日官宣了 MagicPad 4 国行版平板，并公布了新机部分配置。 据介绍，荣耀 MagicPad 4 国行版采用 165Hz 荣耀绿洲护眼屏，主打“久看不累”； 搭载第四代骁龙旗舰芯片（具体型号未公",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 175,
-      "hotness": 61.9,
-      "id": "382a51a3edb65d6c1b9cc759fa3478c5",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/056.htm",
-      "published": "2026-09-09T02:35:07+00:00",
-      "published_ago": "4 分钟前",
-      "rank": 57,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，荣耀官方今日官宣了 MagicPad 4 国行版平板，并公布了新机部分配置。 据介绍，荣耀 MagicPad 4 国行版采用 165Hz 荣耀绿洲护眼屏，主打“久看不累”； 搭载第四代骁龙旗舰芯片（具体型号未公布） ，宣称“秒切不卡”。另外，这款平板还会内置荣耀无边笔记，并支持“海量”PC 应用下载使用。 预热海报小字注释显示， “海量”PC 应用指荣耀 MagicP",
-      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，荣耀官方今日官宣了 MagicPad 4 国行版平板，并公布了新机部分配置。 据介绍，荣耀 MagicPad 4 国行版采用 165Hz 荣耀绿洲护眼屏，主打“久看不累”； 搭载第四代骁龙旗舰芯片（具体型号未公",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "荣耀 MagicPad 4 国行版平板亮相：165Hz 荣耀绿洲护眼屏、第四代骁龙旗舰芯片",
-      "title_cn": "荣耀 MagicPad 4 国行版平板亮相：165Hz 荣耀绿洲护眼屏、第四代骁龙旗舰芯片",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，小米推出了最新一代米家充气宝 3，目前已经在小米商城及小米有品开启众筹，建议零售价 199 元，众筹价 179 元（IT之家附小米有品官方地址： 点此购买 ）。除此之外，其他多款新品也已开启众筹。 据小米官方介",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | IT之家 9 月 9 日消息，小米推出了最新一代米家充气宝 3，目前已经在小米商城及小米有品开启众筹，建议零售价 199 元，众筹价 179 元（IT之家附小米有品官方地址： 点此购买 ）。除此之外，其他多款新品也已开启众筹。 据小米官方介绍，米家充气宝 3 搭载强劲电机，拥有 21mm 高精度合金 | 核心信息: IT之家 9 月 9 日消息，小米推出了最新一代米家充气宝 3，目前已经在小米商城及小米有品开启众筹，建议零售价 199 元，众筹价 179 元（IT之家附小米有品官方地址： 点此购买 ）。除此之外，其他多款新品也已开启众筹。 据小米官方介",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，小米推出了最新一代米家充气宝 3，目前已经在小米商城及小米有品开启众筹，建议零售价 199 元，众筹价 179 元（IT之家附小米有品官方地址： 点此购买 ）。除此之外，其他多款新品也已开启众筹。 据小米官方介",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 175,
-      "hotness": 61.8,
-      "id": "f07d90de505ab499b6dcdd35b9e67725",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/055.htm",
-      "published": "2026-09-09T02:26:55+00:00",
-      "published_ago": "12 分钟前",
-      "rank": 58,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，小米推出了最新一代米家充气宝 3，目前已经在小米商城及小米有品开启众筹，建议零售价 199 元，众筹价 179 元（IT之家附小米有品官方地址： 点此购买 ）。除此之外，其他多款新品也已开启众筹。 据小米官方介绍，米家充气宝 3 搭载强劲电机，拥有 21mm 高精度合金压铸缸体，气压最高可达 150psi，充气速度提升 25%。 米家充气宝 3 内置 2 节 2500",
-      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，小米推出了最新一代米家充气宝 3，目前已经在小米商城及小米有品开启众筹，建议零售价 199 元，众筹价 179 元（IT之家附小米有品官方地址： 点此购买 ）。除此之外，其他多款新品也已开启众筹。 据小米官方介",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "小米推出米家充气宝 3：内置 5000mAh 锂电池，新增泄压阀设计",
-      "title_cn": "小米推出米家充气宝 3：内置 5000mAh 锂电池，新增泄压阀设计",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，据央视新闻报道，昨日，人民币跨境支付系统与 11 家外资银行直接参与者签约， 首次覆盖卢旺达、土耳其、乌兹别克斯坦等国家 ，人民币跨境支付系统全球服务能力进一步提升。 此次签约后，人民币跨境支付系统进一步扩容，",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | IT之家 9 月 9 日消息，据央视新闻报道，昨日，人民币跨境支付系统与 11 家外资银行直接参与者签约， 首次覆盖卢旺达、土耳其、乌兹别克斯坦等国家 ，人民币跨境支付系统全球服务能力进一步提升。 此次签约后，人民币跨境支付系统进一步扩容，截至目前，人民币跨境支付系统参与者分布全球 133 个国家和 | 核心信息: IT之家 9 月 9 日消息，据央视新闻报道，昨日，人民币跨境支付系统与 11 家外资银行直接参与者签约， 首次覆盖卢旺达、土耳其、乌兹别克斯坦等国家 ，人民币跨境支付系统全球服务能力进一步提升。 此次签约后，人民币跨境支付系统进一步扩容，",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，据央视新闻报道，昨日，人民币跨境支付系统与 11 家外资银行直接参与者签约， 首次覆盖卢旺达、土耳其、乌兹别克斯坦等国家 ，人民币跨境支付系统全球服务能力进一步提升。 此次签约后，人民币跨境支付系统进一步扩容，",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 175,
-      "hotness": 61.6,
-      "id": "dd94ad9fc071b015caedc3bab08677ca",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/053.htm",
-      "published": "2026-09-09T02:16:03+00:00",
-      "published_ago": "23 分钟前",
-      "rank": 59,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，据央视新闻报道，昨日，人民币跨境支付系统与 11 家外资银行直接参与者签约， 首次覆盖卢旺达、土耳其、乌兹别克斯坦等国家 ，人民币跨境支付系统全球服务能力进一步提升。 此次签约后，人民币跨境支付系统进一步扩容，截至目前，人民币跨境支付系统参与者分布全球 133 个国家和地区， 业务覆盖 192 个国家和地区 。 南非第一兰特银行资金总监穆齐 · 马武索：通过成为人民币",
-      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，据央视新闻报道，昨日，人民币跨境支付系统与 11 家外资银行直接参与者签约， 首次覆盖卢旺达、土耳其、乌兹别克斯坦等国家 ，人民币跨境支付系统全球服务能力进一步提升。 此次签约后，人民币跨境支付系统进一步扩容，",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "人民币跨境支付系统与 11 家外资银行签约",
-      "title_cn": "人民币跨境支付系统与 11 家外资银行签约",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，最高人民法院今日发布 2026 年人民法院反不正当竞争典型案例，共 9 件。其中，案例五涉及提供抢单“物理外挂”破坏平台公平竞争秩序，对平台经济健康规范发展具有示范意义。 该案中，某科技公司等三家公司是某外卖平",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | IT之家 9 月 9 日消息，最高人民法院今日发布 2026 年人民法院反不正当竞争典型案例，共 9 件。其中，案例五涉及提供抢单“物理外挂”破坏平台公平竞争秩序，对平台经济健康规范发展具有示范意义。 该案中，某科技公司等三家公司是某外卖平台及众包平台的运营主体。2024 年起，三家公司收到大量骑手 | 核心信息: IT之家 9 月 9 日消息，最高人民法院今日发布 2026 年人民法院反不正当竞争典型案例，共 9 件。其中，案例五涉及提供抢单“物理外挂”破坏平台公平竞争秩序，对平台经济健康规范发展具有示范意义。 该案中，某科技公司等三家公司是某外卖平 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，最高人民法院今日发布 2026 年人民法院反不正当竞争典型案例，共 9 件。其中，案例五涉及提供抢单“物理外挂”破坏平台公平竞争秩序，对平台经济健康规范发展具有示范意义。 该案中，某科技公司等三家公司是某外卖平",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 178,
-      "hotness": 61.5,
-      "id": "78593510002372899b7cf5871832eaf8",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/052.htm",
-      "published": "2026-09-09T02:13:04+00:00",
-      "published_ago": "26 分钟前",
-      "rank": 45,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，最高人民法院今日发布 2026 年人民法院反不正当竞争典型案例，共 9 件。其中，案例五涉及提供抢单“物理外挂”破坏平台公平竞争秩序，对平台经济健康规范发展具有示范意义。 该案中，某科技公司等三家公司是某外卖平台及众包平台的运营主体。2024 年起，三家公司收到大量骑手使用外挂设备抢单的投诉。调查发现，某电子公司在电商平台销售名为“点滑器”的产品，并发布教程，指导骑手",
-      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，最高人民法院今日发布 2026 年人民法院反不正当竞争典型案例，共 9 件。其中，案例五涉及提供抢单“物理外挂”破坏平台公平竞争秩序，对平台经济健康规范发展具有示范意义。 该案中，某科技公司等三家公司是某外卖平",
-      "summary_type": [
-        "产品动态"
-      ],
-      "tags": [],
-      "title": "抢单“物理外挂”被判赔 300 万元：最高法发布 9 件反不正当竞争典型案例，涵盖 AI、直播电商等新兴领域",
-      "title_cn": "抢单“物理外挂”被判赔 300 万元：最高法发布 9 件反不正当竞争典型案例，涵盖 AI、直播电商等新兴领域",
-      "translation_source": "article.chinese_summary",
-      "value_score": 36
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: com/world/middle-east/iran-says-it-captured-us-submarine-drone-strait-hormuz-2026-09-08/ Comments URL: https://news",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | Article URL: https://www | 核心信息: com/world/middle-east/iran-says-it-captured-us-submarine-drone-strait-hormuz-2026-09-08/ Comments URL: https://news",
-      "content_type": "updates",
-      "core_info": "com/world/middle-east/iran-says-it-captured-us-submarine-drone-strait-hormuz-2026-09-08/ Comments URL: https://news",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 160,
-      "hotness": 61.5,
-      "id": "53052d308934df0879556170e55c87f1",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.reuters.com/world/middle-east/iran-says-it-captured-us-submarine-drone-strait-hormuz-2026-09-08/",
-      "published": "2026-09-09T02:12:05+00:00",
-      "published_ago": "27 分钟前",
-      "rank": 259,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://www.reuters.com/world/middle-east/iran-says-it-captured-us-submarine-drone-strait-hormuz-2026-09-08/ Comments URL: https://news.ycombinator.com/item?id=49619949 Points: 13 # Comme",
-      "summary_cn": "[综合资讯] | 核心信息: com/world/middle-east/iran-says-it-captured-us-submarine-drone-strait-hormuz-2026-09-08/ Comments URL: https://news",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "Iran says it captured US submarine drone in Strait of Hormuz",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 38
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[研究进展] | 核心信息: edu/stories/harvard-study-predicts-most-suicide-attempts-week-advance Comments URL: https://news",
-      "category": "product_update",
-      "chinese_summary": "[研究进展] | Article URL: https://current | 核心信息: edu/stories/harvard-study-predicts-most-suicide-attempts-week-advance Comments URL: https://news | 行业影响: 该研究可能对行业技术路线产生重要影响",
-      "content_type": "updates",
-      "core_info": "edu/stories/harvard-study-predicts-most-suicide-attempts-week-advance Comments URL: https://news",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 156,
-      "hotness": 61.4,
-      "id": "9ff2aa7e7eb0bf9cb7389e4f35d6ddae",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://current.fas.harvard.edu/stories/harvard-study-predicts-most-suicide-attempts-week-advance",
-      "published": "2026-09-09T02:07:13+00:00",
-      "published_ago": "32 分钟前",
-      "rank": 337,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://current.fas.harvard.edu/stories/harvard-study-predicts-most-suicide-attempts-week-advance Comments URL: https://news.ycombinator.com/item?id=49619906 Points: 35 # Comments: 8",
-      "summary_cn": "[研究进展] | 核心信息: edu/stories/harvard-study-predicts-most-suicide-attempts-week-advance Comments URL: https://news",
-      "summary_type": [
-        "研究进展"
-      ],
-      "tags": [],
-      "title": "Harvard study predicts most suicide attempts a week in advance",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 35
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，Razer（雷蛇）当地时间昨日宣布推出 Reclusa X Mini 65%（隐蛛 X 迷你版 65%）机械键盘。这款产品主打开箱即用的良好体验和丰富的客制化可能性。 隐蛛 X 迷你版 65% 内含 PPS 定",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | IT之家 9 月 9 日消息，Razer（雷蛇）当地时间昨日宣布推出 Reclusa X Mini 65%（隐蛛 X 迷你版 65%）机械键盘。这款产品主打开箱即用的良好体验和丰富的客制化可能性。 隐蛛 X 迷你版 65% 内含 PPS 定位板与 2 层硅胶减震垫 ，PCB 支持轴座热插拔（与大部分 | 核心信息: IT之家 9 月 9 日消息，Razer（雷蛇）当地时间昨日宣布推出 Reclusa X Mini 65%（隐蛛 X 迷你版 65%）机械键盘。这款产品主打开箱即用的良好体验和丰富的客制化可能性。 隐蛛 X 迷你版 65% 内含 PPS 定",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，Razer（雷蛇）当地时间昨日宣布推出 Reclusa X Mini 65%（隐蛛 X 迷你版 65%）机械键盘。这款产品主打开箱即用的良好体验和丰富的客制化可能性。 隐蛛 X 迷你版 65% 内含 PPS 定",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 174,
-      "hotness": 61.3,
-      "id": "9bcab18301898ab3279f086b77612e71",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/029.htm",
-      "published": "2026-09-09T02:02:52+00:00",
-      "published_ago": "36 分钟前",
-      "rank": 66,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，Razer（雷蛇）当地时间昨日宣布推出 Reclusa X Mini 65%（隐蛛 X 迷你版 65%）机械键盘。这款产品主打开箱即用的良好体验和丰富的客制化可能性。 隐蛛 X 迷你版 65% 内含 PPS 定位板与 2 层硅胶减震垫 ，PCB 支持轴座热插拔（与大部分标准 3/5 Pin 机械轴兼容）并集成 Chroma RGB 背光； 原装搭载寿命 100M 的第",
-      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，Razer（雷蛇）当地时间昨日宣布推出 Reclusa X Mini 65%（隐蛛 X 迷你版 65%）机械键盘。这款产品主打开箱即用的良好体验和丰富的客制化可能性。 隐蛛 X 迷你版 65% 内含 PPS 定",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "雷蛇推出隐蛛 X 迷你版 65% 机械键盘，主打开箱即用体验与客制化",
-      "title_cn": "雷蛇推出隐蛛 X 迷你版 65% 机械键盘，主打开箱即用体验与客制化",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Development"
-      ],
-      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，微软昨日（9 月 8 日）发布公告，宣布面向 Windows 11 推出 Windows Age API，让应用在不获取用户完整出生日期的情况下， 判断其属于儿童、青少年或成年人。 IT之家援引博文介绍，该 A",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | IT之家 9 月 9 日消息，微软昨日（9 月 8 日）发布公告，宣布面向 Windows 11 推出 Windows Age API，让应用在不获取用户完整出生日期的情况下， 判断其属于儿童、青少年或成年人。 IT之家援引博文介绍，该 API 通过微软账户，可以返回 5 个年龄区间： 10 岁以下 | 核心信息: IT之家 9 月 9 日消息，微软昨日（9 月 8 日）发布公告，宣布面向 Windows 11 推出 Windows Age API，让应用在不获取用户完整出生日期的情况下， 判断其属于儿童、青少年或成年人。 IT之家援引博文介绍，该 A | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，微软昨日（9 月 8 日）发布公告，宣布面向 Windows 11 推出 Windows Age API，让应用在不获取用户完整出生日期的情况下， 判断其属于儿童、青少年或成年人。 IT之家援引博文介绍，该 A",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 178,
-      "hotness": 61.3,
-      "id": "b945eddc37533aecd867805da72d7f85",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/028.htm",
-      "published": "2026-09-09T02:02:40+00:00",
-      "published_ago": "36 分钟前",
-      "rank": 44,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，微软昨日（9 月 8 日）发布公告，宣布面向 Windows 11 推出 Windows Age API，让应用在不获取用户完整出生日期的情况下， 判断其属于儿童、青少年或成年人。 IT之家援引博文介绍，该 API 通过微软账户，可以返回 5 个年龄区间： 10 岁以下 10~12 岁 13~15 岁 16~17 岁 18 岁以上。 Windows Age API 包",
-      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，微软昨日（9 月 8 日）发布公告，宣布面向 Windows 11 推出 Windows Age API，让应用在不获取用户完整出生日期的情况下， 判断其属于儿童、青少年或成年人。 IT之家援引博文介绍，该 A",
-      "summary_type": [
-        "产品动态"
-      ],
-      "tags": [],
-      "title": "微软 Win11 新增年龄感知 API：识别儿童 / 青少年 5 个年龄段，不暴露出生日期",
-      "title_cn": "微软 Win11 新增年龄感知 API：识别儿童 / 青少年 5 个年龄段，不暴露出生日期",
-      "translation_source": "article.chinese_summary",
-      "value_score": 37
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Research"
-      ],
-      "card_summary": "[研究进展] | 核心信息: IT之家 9 月 9 日消息，清华大学杨振宁高等研究院揭牌仪式 9 月 5 日在大礼堂举行。清华大学校长李路明院士、副校长王亚愚、原校长顾秉林院士、高等研究院院长段文晖院士、杨振宁夫人翁帆女士、物理系主任翟荟教授等出席仪式。 仪式上，王亚愚",
-      "category": "breakthrough",
-      "chinese_summary": "[研究进展] | Research | IT之家 9 月 9 日消息，清华大学杨振宁高等研究院揭牌仪式 9 月 5 日在大礼堂举行。清华大学校长李路明院士、副校长王亚愚、原校长顾秉林院士、高等研究院院长段文晖院士、杨振宁夫人翁帆女士、物理系主任翟荟教授等出席仪式。 仪式上，王亚愚宣读了“清华大学高等研究院”更名为“清华大学杨振宁高等研究院 | 核心信息: IT之家 9 月 9 日消息，清华大学杨振宁高等研究院揭牌仪式 9 月 5 日在大礼堂举行。清华大学校长李路明院士、副校长王亚愚、原校长顾秉林院士、高等研究院院长段文晖院士、杨振宁夫人翁帆女士、物理系主任翟荟教授等出席仪式。 仪式上，王亚愚 | 行业影响: 该研究可能对Research技术路线产生重要影响",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，清华大学杨振宁高等研究院揭牌仪式 9 月 5 日在大礼堂举行。清华大学校长李路明院士、副校长王亚愚、原校长顾秉林院士、高等研究院院长段文晖院士、杨振宁夫人翁帆女士、物理系主任翟荟教授等出席仪式。 仪式上，王亚愚",
-      "domain": "ai",
-      "entity": [
-        "Research"
-      ],
-      "final_score": 174,
-      "hotness": 61.3,
-      "id": "d2bd529add74954a849109436700e0b7",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/022.htm",
-      "published": "2026-09-09T02:01:42+00:00",
-      "published_ago": "37 分钟前",
-      "rank": 67,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，清华大学杨振宁高等研究院揭牌仪式 9 月 5 日在大礼堂举行。清华大学校长李路明院士、副校长王亚愚、原校长顾秉林院士、高等研究院院长段文晖院士、杨振宁夫人翁帆女士、物理系主任翟荟教授等出席仪式。 仪式上，王亚愚宣读了“清华大学高等研究院”更名为“清华大学杨振宁高等研究院”（简称“高研院”）的决定。王亚愚表示，以杨振宁先生之名命名高等研究院，既是学校对这位世纪大师的崇高",
-      "summary_cn": "[研究进展] | 核心信息: IT之家 9 月 9 日消息，清华大学杨振宁高等研究院揭牌仪式 9 月 5 日在大礼堂举行。清华大学校长李路明院士、副校长王亚愚、原校长顾秉林院士、高等研究院院长段文晖院士、杨振宁夫人翁帆女士、物理系主任翟荟教授等出席仪式。 仪式上，王亚愚",
-      "summary_type": [
-        "研究进展"
-      ],
-      "tags": [
-        {
-          "l": "Research",
-          "t": "tech"
-        }
-      ],
-      "title": "清华大学杨振宁高等研究院揭牌，翁帆出席仪式并发言",
-      "title_cn": "清华大学杨振宁高等研究院揭牌，翁帆出席仪式并发言",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，埃隆 · 马斯克前女友、美国保守派评论人士阿什莉 · 圣克莱尔（Ashley St Clair）透露，马斯克曾发短信告诉她，希望在“内战爆发前拥有一大批孩子”。 上述内容出自亚历克斯 · 吉布尼（Alex Gi",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | IT之家 9 月 9 日消息，埃隆 · 马斯克前女友、美国保守派评论人士阿什莉 · 圣克莱尔（Ashley St Clair）透露，马斯克曾发短信告诉她，希望在“内战爆发前拥有一大批孩子”。 上述内容出自亚历克斯 · 吉布尼（Alex Gibney）执导的新纪录片《Musk》中，圣克莱尔在威尼斯电影 | 核心信息: IT之家 9 月 9 日消息，埃隆 · 马斯克前女友、美国保守派评论人士阿什莉 · 圣克莱尔（Ashley St Clair）透露，马斯克曾发短信告诉她，希望在“内战爆发前拥有一大批孩子”。 上述内容出自亚历克斯 · 吉布尼（Alex Gi",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，埃隆 · 马斯克前女友、美国保守派评论人士阿什莉 · 圣克莱尔（Ashley St Clair）透露，马斯克曾发短信告诉她，希望在“内战爆发前拥有一大批孩子”。 上述内容出自亚历克斯 · 吉布尼（Alex Gi",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 177,
-      "hotness": 61.1,
-      "id": "7602bf82d3f20a39442acb2248ae9e4d",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/009.htm",
-      "published": "2026-09-09T01:54:48+00:00",
-      "published_ago": "44 分钟前",
-      "rank": 48,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，埃隆 · 马斯克前女友、美国保守派评论人士阿什莉 · 圣克莱尔（Ashley St Clair）透露，马斯克曾发短信告诉她，希望在“内战爆发前拥有一大批孩子”。 上述内容出自亚历克斯 · 吉布尼（Alex Gibney）执导的新纪录片《Musk》中，圣克莱尔在威尼斯电影节首映礼上也谈及了马斯克及其社交平台 X 的影响。 圣克莱尔与马斯克于 2024 年育有一名儿子，此",
-      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，埃隆 · 马斯克前女友、美国保守派评论人士阿什莉 · 圣克莱尔（Ashley St Clair）透露，马斯克曾发短信告诉她，希望在“内战爆发前拥有一大批孩子”。 上述内容出自亚历克斯 · 吉布尼（Alex Gi",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "马斯克告诉前女友“他需要在内战爆发前拥有一大群孩子”，曾出价 4000 万美元让她签署保密协议",
-      "title_cn": "马斯克告诉前女友“他需要在内战爆发前拥有一大群孩子”，曾出价 4000 万美元让她签署保密协议",
-      "translation_source": "article.chinese_summary",
-      "value_score": 36
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[产品动态] | 核心信息: 6%。 根据微软发布的安全公告，在本月补丁星期二活动日中，面向 Office、SQL Server、Azure、Exchange Server、SharePoint Serv",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | IT之家 9 月 9 日消息，在本月（2026 年 9 月）补丁星期二活动日（9 月 8 日）中，微软推荐 Windows 10、Windows 11 用户尽快安装更新， 本月共计修复 974 个安全漏洞，同比增 1,032 | 核心信息: 6%。 根据微软发布的安全公告，在本月补丁星期二活动日中，面向 Office、SQL Server、Azure、Exchange Server、SharePoint Serv | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "6%。 根据微软发布的安全公告，在本月补丁星期二活动日中，面向 Office、SQL Server、Azure、Exchange Server、SharePoint Serv",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 174,
-      "hotness": 61.0,
-      "id": "43ca011151d2be6102997530d7e8a5b7",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/007.htm",
-      "published": "2026-09-09T01:46:12+00:00",
-      "published_ago": "53 分钟前",
-      "rank": 68,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，在本月（2026 年 9 月）补丁星期二活动日（9 月 8 日）中，微软推荐 Windows 10、Windows 11 用户尽快安装更新， 本月共计修复 974 个安全漏洞，同比增 1,032.6%。 根据微软发布的安全公告，在本月补丁星期二活动日中，面向 Office、SQL Server、Azure、Exchange Server、SharePoint Serv",
-      "summary_cn": "[产品动态] | 核心信息: 6%。 根据微软发布的安全公告，在本月补丁星期二活动日中，面向 Office、SQL Server、Azure、Exchange Server、SharePoint Serv",
-      "summary_type": [
-        "产品动态"
-      ],
-      "tags": [],
-      "title": "同比增 1032.6%：微软 Win11/Office 等 9 月共修复 974 个漏洞",
-      "title_cn": "同比增 1032.6%：微软 Win11/Office 等 9 月共修复 974 个漏洞",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Business"
-      ],
-      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，ASML（阿斯麦）荷兰当地时间昨日宣布， 其位于埃因霍温布雷恩波特 BIC North 的大型工业园区正式开工建设 。 这一基地将同其位于费尔德霍芬的总部园区、工业园区构成“铁三角”，共同支持 ASML 在布雷",
-      "category": "company",
-      "chinese_summary": "[综合资讯] | IT之家 9 月 9 日消息，ASML（阿斯麦）荷兰当地时间昨日宣布， 其位于埃因霍温布雷恩波特 BIC North 的大型工业园区正式开工建设 。 这一基地将同其位于费尔德霍芬的总部园区、工业园区构成“铁三角”，共同支持 ASML 在布雷恩波特的创新、制造、企业活动。 ASML 的 BIC Nor | 核心信息: IT之家 9 月 9 日消息，ASML（阿斯麦）荷兰当地时间昨日宣布， 其位于埃因霍温布雷恩波特 BIC North 的大型工业园区正式开工建设 。 这一基地将同其位于费尔德霍芬的总部园区、工业园区构成“铁三角”，共同支持 ASML 在布雷",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，ASML（阿斯麦）荷兰当地时间昨日宣布， 其位于埃因霍温布雷恩波特 BIC North 的大型工业园区正式开工建设 。 这一基地将同其位于费尔德霍芬的总部园区、工业园区构成“铁三角”，共同支持 ASML 在布雷",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 164,
-      "hotness": 61.0,
-      "id": "d53db144cfdeeff82bda63689f8832d3",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/006.htm",
-      "published": "2026-09-09T01:44:20+00:00",
-      "published_ago": "55 分钟前",
-      "rank": 183,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，ASML（阿斯麦）荷兰当地时间昨日宣布， 其位于埃因霍温布雷恩波特 BIC North 的大型工业园区正式开工建设 。 这一基地将同其位于费尔德霍芬的总部园区、工业园区构成“铁三角”，共同支持 ASML 在布雷恩波特的创新、制造、企业活动。 ASML 的 BIC North 工业园区是一个分阶段开发的综合项目， 最终占地约 350,000m² ， 可提供多达 20,0",
-      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，ASML（阿斯麦）荷兰当地时间昨日宣布， 其位于埃因霍温布雷恩波特 BIC North 的大型工业园区正式开工建设 。 这一基地将同其位于费尔德霍芬的总部园区、工业园区构成“铁三角”，共同支持 ASML 在布雷",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "ASML 荷兰布雷恩波特新工业园区动工，最终占地面积约 35 万平方米",
-      "title_cn": "ASML 荷兰布雷恩波特新工业园区动工，最终占地面积约 35 万平方米",
-      "translation_source": "article.chinese_summary",
-      "value_score": 23
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[产品动态] | 核心信息: 59s。 该车延续了溜背轿跑造型， 全系标配电动尾翼、掀背门 。 据IT之家此前报道， 长安汽车第三代 UNI-V 车型于 2025 年 8 月上市 ，该车提供 1",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | IT之家 9 月 9 日消息，长安汽车今日官宣，长安 UNI-V 蓝鲸超擎混动车型将于 9 月 12 日发布 。 该车宣称城区油耗低至 3 | 核心信息: 59s。 该车延续了溜背轿跑造型， 全系标配电动尾翼、掀背门 。 据IT之家此前报道， 长安汽车第三代 UNI-V 车型于 2025 年 8 月上市 ，该车提供 1 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "59s。 该车延续了溜背轿跑造型， 全系标配电动尾翼、掀背门 。 据IT之家此前报道， 长安汽车第三代 UNI-V 车型于 2025 年 8 月上市 ，该车提供 1",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 174,
-      "hotness": 60.9,
-      "id": "f9928a5df36873e36f37f8b9deb1335d",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/004.htm",
-      "published": "2026-09-09T01:39:46+00:00",
-      "published_ago": "59 分钟前",
-      "rank": 69,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，长安汽车今日官宣，长安 UNI-V 蓝鲸超擎混动车型将于 9 月 12 日发布 。 该车宣称城区油耗低至 3.39L/100km，0~60km/h 加速时间 3.59s。 该车延续了溜背轿跑造型， 全系标配电动尾翼、掀背门 。 据IT之家此前报道， 长安汽车第三代 UNI-V 车型于 2025 年 8 月上市 ，该车提供 1.5T 和 2.0T 两种动力，长宽高分别为",
-      "summary_cn": "[产品动态] | 核心信息: 59s。 该车延续了溜背轿跑造型， 全系标配电动尾翼、掀背门 。 据IT之家此前报道， 长安汽车第三代 UNI-V 车型于 2025 年 8 月上市 ，该车提供 1",
-      "summary_type": [
-        "产品动态"
-      ],
-      "tags": [],
-      "title": "长安 UNI-V 蓝鲸超擎混动汽车 9 月 12 日发布：城区油耗低至 3.39L，标配电动尾翼",
-      "title_cn": "长安 UNI-V 蓝鲸超擎混动汽车 9 月 12 日发布：城区油耗低至 3.39L，标配电动尾翼",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Gaming"
-      ],
-      "card_summary": "[产品动态] | 核心信息: 20 版本中正式引入全队语音聊天功能。在此之前，游戏内的语音功能仅限于预组队玩家使用，新功能将把交流范围扩大至整支队伍。 全队语音功能首批仅面向北美和大洋洲服务器开放，玩家需达到荣誉等级 3 级或以上才能使用发言功能。未达标的玩家仍可收听队",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | IT之家 9 月 9 日消息，当地时间 9 月 8 日，拳头游戏在最新开发者更新中确认，《英雄联盟》将在 26 | 核心信息: 20 版本中正式引入全队语音聊天功能。在此之前，游戏内的语音功能仅限于预组队玩家使用，新功能将把交流范围扩大至整支队伍。 全队语音功能首批仅面向北美和大洋洲服务器开放，玩家需达到荣誉等级 3 级或以上才能使用发言功能。未达标的玩家仍可收听队 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "20 版本中正式引入全队语音聊天功能。在此之前，游戏内的语音功能仅限于预组队玩家使用，新功能将把交流范围扩大至整支队伍。 全队语音功能首批仅面向北美和大洋洲服务器开放，玩家需达到荣誉等级 3 级或以上才能使用发言功能。未达标的玩家仍可收听队",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 174,
-      "hotness": 60.8,
-      "id": "57871107434087420e3968702c23cedb",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/003.htm",
-      "published": "2026-09-09T01:37:41+00:00",
-      "published_ago": "1 小时前",
-      "rank": 70,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，当地时间 9 月 8 日，拳头游戏在最新开发者更新中确认，《英雄联盟》将在 26.20 版本中正式引入全队语音聊天功能。在此之前，游戏内的语音功能仅限于预组队玩家使用，新功能将把交流范围扩大至整支队伍。 全队语音功能首批仅面向北美和大洋洲服务器开放，玩家需达到荣誉等级 3 级或以上才能使用发言功能。未达标的玩家仍可收听队友语音。拳头游戏表示，团队将重点改善降噪效果、连",
-      "summary_cn": "[产品动态] | 核心信息: 20 版本中正式引入全队语音聊天功能。在此之前，游戏内的语音功能仅限于预组队玩家使用，新功能将把交流范围扩大至整支队伍。 全队语音功能首批仅面向北美和大洋洲服务器开放，玩家需达到荣誉等级 3 级或以上才能使用发言功能。未达标的玩家仍可收听队",
-      "summary_type": [
-        "产品动态"
-      ],
-      "tags": [],
-      "title": "拳头宣布为《英雄联盟》引入全队语音聊天功能，还将推出全新“语音皮肤”",
-      "title_cn": "拳头宣布为《英雄联盟》引入全队语音聊天功能，还将推出全新“语音皮肤”",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Creation"
-      ],
-      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，华为官网更新了支持 Wi-Fi 7 / Wi-Fi 7+ 的华为手机 / 平板设备清单。可以确认的是， Mate XT 2",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | Huawei | IT之家 9 月 9 日消息，华为官网更新了支持 Wi-Fi 7 / Wi-Fi 7+ 的华为手机 / 平板设备清单。可以确认的是， Mate XT 2 | ULTIMATE DESIGN 非凡大师、Pura X View 支持 Wi-Fi 7+ 技术 。 据介绍， Wi-Fi 7+ 是华为在 Wi | 核心信息: IT之家 9 月 9 日消息，华为官网更新了支持 Wi-Fi 7 / Wi-Fi 7+ 的华为手机 / 平板设备清单。可以确认的是， Mate XT 2 | ULTIMATE DESIGN 非凡大师、Pura X View 支持 Wi-Fi | 行业影响: 该动态反映了Huawei领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，华为官网更新了支持 Wi-Fi 7 / Wi-Fi 7+ 的华为手机 / 平板设备清单。可以确认的是， Mate XT 2",
-      "domain": "ai",
-      "entity": [
+        "Tencent",
         "Huawei"
       ],
-      "final_score": 174,
-      "hotness": 60.8,
-      "id": "a65dbe5668c45286fa40684417b1b2d4",
+      "final_score": 164,
+      "hotness": 61.3,
+      "id": "1fa5d7ad084e78b4787425a215844166",
       "importance": "B",
       "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/002.htm",
-      "published": "2026-09-09T01:36:46+00:00",
-      "published_ago": "1 小时前",
-      "rank": 71,
+      "link": "https://www.ithome.com/1/000/598.htm",
+      "published": "2026-09-10T02:04:16+00:00",
+      "published_ago": "36 分钟前",
+      "rank": 61,
       "source": "IT之家科技",
       "source_name": "IT之家科技",
       "source_priority": 80,
@@ -2059,168 +382,47 @@
       "source_region": "CN",
       "source_type": "rss",
       "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，华为官网更新了支持 Wi-Fi 7 / Wi-Fi 7+ 的华为手机 / 平板设备清单。可以确认的是， Mate XT 2 | ULTIMATE DESIGN 非凡大师、Pura X View 支持 Wi-Fi 7+ 技术 。 据介绍， Wi-Fi 7+ 是华为在 Wi-Fi 7 标准协议之上，自研的芯片级协同技术 ，能提升 Wi-Fi 信号较差场景下 Wi-Fi 性",
-      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，华为官网更新了支持 Wi-Fi 7 / Wi-Fi 7+ 的华为手机 / 平板设备清单。可以确认的是， Mate XT 2",
+      "summary": "IT之家 9 月 10 日消息，腾讯 QQ 鸿蒙版 App 昨日在华为应用市场（App Gallery）开启 9.2.65 (3426) 版本邀测升级（需收到短信通知后点击链接跳转安装），测试时间为 2026/9/9-2026/9/30。 QQ 鸿蒙版 9.2.65 新增 QQ 宠物功能。IT之家此前报道，腾讯全新 QQ 宠物已于今年 7 月 27 日正式上线。在手机 QQ 打开功能入口，或者直接",
+      "summary_cn": "[综合资讯] | 核心信息: 65 (3426) 版本邀测升级（需收到短信通知后点击链接跳转安装），测试时间为 2026/9/9-2026/9/30。 QQ 鸿蒙版 9; 65 新增 QQ 宠物功能。IT之家此前报道，腾讯全新 QQ 宠物已于今年 7 月 27 日正式上线。在手机 QQ 打开功能入口，或者直接",
       "summary_type": [
-        "产品动态"
+        "综合资讯"
       ],
       "tags": [
+        {
+          "l": "Tencent",
+          "t": "company"
+        },
         {
           "l": "Huawei",
           "t": "company"
         }
       ],
-      "title": "华为自研 Wi-Fi 7+ 芯片级协同技术支持设备上新，Mate XT 2 非凡大师、Pura X View 手机确认在列",
-      "title_cn": "华为自研 Wi-Fi 7+ 芯片级协同技术支持设备上新，Mate XT 2 非凡大师、Pura X View 手机确认在列",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Business"
-      ],
-      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，全球第二大 OSAT（半导体外包封测）企业 Amkor（安靠）美国当地时间昨日正式宣布了其亚利桑那州先进封装测试园区的二期项目。 Amkor 表示， 客户的需求已远超其亚利桑那先进封测园区一期 33000m²",
-      "category": "company",
-      "chinese_summary": "[综合资讯] | IT之家 9 月 9 日消息，全球第二大 OSAT（半导体外包封测）企业 Amkor（安靠）美国当地时间昨日正式宣布了其亚利桑那州先进封装测试园区的二期项目。 Amkor 表示， 客户的需求已远超其亚利桑那先进封测园区一期 33000m² 洁净室的承受能力 ，而二期项目预计将新增 60000m² 的 | 核心信息: IT之家 9 月 9 日消息，全球第二大 OSAT（半导体外包封测）企业 Amkor（安靠）美国当地时间昨日正式宣布了其亚利桑那州先进封装测试园区的二期项目。 Amkor 表示， 客户的需求已远超其亚利桑那先进封测园区一期 33000m² ",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，全球第二大 OSAT（半导体外包封测）企业 Amkor（安靠）美国当地时间昨日正式宣布了其亚利桑那州先进封装测试园区的二期项目。 Amkor 表示， 客户的需求已远超其亚利桑那先进封测园区一期 33000m²",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 164,
-      "hotness": 60.8,
-      "id": "1f1356c4997916e4f7ee755be87e80ca",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/001.htm",
-      "published": "2026-09-09T01:33:57+00:00",
-      "published_ago": "1 小时前",
-      "rank": 184,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，全球第二大 OSAT（半导体外包封测）企业 Amkor（安靠）美国当地时间昨日正式宣布了其亚利桑那州先进封装测试园区的二期项目。 Amkor 表示， 客户的需求已远超其亚利桑那先进封测园区一期 33000m² 洁净室的承受能力 ，而二期项目预计将新增 60000m² 的洁净室。两期总投资将达到约 120 亿美元 （IT之家注：现汇率约合 807.39 亿元人民币） ，",
-      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 9 日消息，全球第二大 OSAT（半导体外包封测）企业 Amkor（安靠）美国当地时间昨日正式宣布了其亚利桑那州先进封装测试园区的二期项目。 Amkor 表示， 客户的需求已远超其亚利桑那先进封测园区一期 33000m²",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "Amkor 宣布亚利桑那先进封测园区二期项目，两期累计投资 120 亿美元",
-      "title_cn": "Amkor 宣布亚利桑那先进封测园区二期项目，两期累计投资 120 亿美元",
+      "title": "腾讯 QQ 鸿蒙版 App 获 9.2.65 邀测升级，新增宠物功能",
+      "title_cn": "腾讯 QQ 鸿蒙版 App 获 9.2.65 邀测升级，新增宠物功能",
       "translation_source": "article.chinese_summary",
       "value_score": 23
     },
     {
       "ai_status": "none",
       "application": [],
-      "card_summary": "[综合资讯] | 核心信息: com/hilbertspaess/status/2097476196791709843 Comments URL: https://news",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | OpenAI / Anthropic | Article URL: https://twitter | 核心信息: com/hilbertspaess/status/2097476196791709843 Comments URL: https://news",
-      "content_type": "updates",
-      "core_info": "com/hilbertspaess/status/2097476196791709843 Comments URL: https://news",
-      "domain": "ai",
-      "entity": [
-        "OpenAI",
-        "Anthropic"
-      ],
-      "final_score": 162,
-      "hotness": 63.7,
-      "id": "9031075df10d2b3718758319c2a85d4c",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://twitter.com/hilbertspaess/status/2097476196791709843",
-      "published": "2026-09-09T01:32:49+00:00",
-      "published_ago": "1 小时前",
-      "rank": 235,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://twitter.com/hilbertspaess/status/2097476196791709843 Comments URL: https://news.ycombinator.com/item?id=49619639 Points: 11 # Comments: 1",
-      "summary_cn": "[综合资讯] | 核心信息: com/hilbertspaess/status/2097476196791709843 Comments URL: https://news",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [
-        {
-          "l": "OpenAI",
-          "t": "company"
-        },
-        {
-          "l": "Anthropic",
-          "t": "company"
-        }
-      ],
-      "title": "AI Responsibility – OpenAI and Anthropic",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 38
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，根据 CanonRumors 发布的渲染图及规格信息，佳能 EOS R8 Mark II 将于 2026 年 9 月 15 日正式发布。一同亮相的还包括新款 Speedlite EL-5 II 闪光灯及专用人体",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | IT之家 9 月 9 日消息，根据 CanonRumors 发布的渲染图及规格信息，佳能 EOS R8 Mark II 将于 2026 年 9 月 15 日正式发布。一同亮相的还包括新款 Speedlite EL-5 II 闪光灯及专用人体工学手柄。 外观方面，新机采用了全新的设计语言。与此前传闻的 | 核心信息: IT之家 9 月 9 日消息，根据 CanonRumors 发布的渲染图及规格信息，佳能 EOS R8 Mark II 将于 2026 年 9 月 15 日正式发布。一同亮相的还包括新款 Speedlite EL-5 II 闪光灯及专用人体 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，根据 CanonRumors 发布的渲染图及规格信息，佳能 EOS R8 Mark II 将于 2026 年 9 月 15 日正式发布。一同亮相的还包括新款 Speedlite EL-5 II 闪光灯及专用人体",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 174,
-      "hotness": 60.7,
-      "id": "8d86f002eb37cd7b46a8e05c09d59989",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.ithome.com/1/000/000.htm",
-      "published": "2026-09-09T01:30:53+00:00",
-      "published_ago": "1 小时前",
-      "rank": 72,
-      "source": "IT之家科技",
-      "source_name": "IT之家科技",
-      "source_priority": 80,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，根据 CanonRumors 发布的渲染图及规格信息，佳能 EOS R8 Mark II 将于 2026 年 9 月 15 日正式发布。一同亮相的还包括新款 Speedlite EL-5 II 闪光灯及专用人体工学手柄。 外观方面，新机采用了全新的设计语言。与此前传闻的“复古”风格不同，其实际造型相对低调，拥有更明显的棱角线条和更为突出的电子取景器（EVF）凸起，且机",
-      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，根据 CanonRumors 发布的渲染图及规格信息，佳能 EOS R8 Mark II 将于 2026 年 9 月 15 日正式发布。一同亮相的还包括新款 Speedlite EL-5 II 闪光灯及专用人体",
-      "summary_type": [
-        "产品动态"
-      ],
-      "tags": [],
-      "title": "佳能 EOS R8 Mark II 相机渲染图曝光，9 月 15 日正式发布",
-      "title_cn": "佳能 EOS R8 Mark II 相机渲染图曝光，9 月 15 日正式发布",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，科技媒体 AppleInsider 发布博文，报道称苹果公司昨日（9 月 8 日）获批名为《可拉伸显示屏》专利， 在折叠手机之外探索卷轴 iPhone 方案。 该专利编号为 US-12730478-B2，共有",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | Apple | IT之家 9 月 9 日消息，科技媒体 AppleInsider 发布博文，报道称苹果公司昨日（9 月 8 日）获批名为《可拉伸显示屏》专利， 在折叠手机之外探索卷轴 iPhone 方案。 该专利编号为 US-12730478-B2，共有 21 页、12 张图，专利署名至少包括 50 名工程师，这一 | 核心信息: IT之家 9 月 9 日消息，科技媒体 AppleInsider 发布博文，报道称苹果公司昨日（9 月 8 日）获批名为《可拉伸显示屏》专利， 在折叠手机之外探索卷轴 iPhone 方案。 该专利编号为 US-12730478-B2，共有  | 行业影响: 该动态反映了Apple领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "IT之家 9 月 9 日消息，科技媒体 AppleInsider 发布博文，报道称苹果公司昨日（9 月 8 日）获批名为《可拉伸显示屏》专利， 在折叠手机之外探索卷轴 iPhone 方案。 该专利编号为 US-12730478-B2，共有",
+      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 10 日消息，今日宜休科技公司创始人王腾今日发文，谈及了手机市场。他认为，一台 iPhone Pro 的价格已经超过 1 万元， 估计今年各家旗舰机都要涨价 。 王腾表示，智能手机更新到现在，功能升级已经越来越不显性， 换",
+      "category": "tech_direction",
+      "chinese_summary": "[产品动态] | Apple | IT之家 9 月 10 日消息，今日宜休科技公司创始人王腾今日发文，谈及了手机市场。他认为，一台 iPhone Pro 的价格已经超过 1 万元， 估计今年各家旗舰机都要涨价 。 王腾表示，智能手机更新到现在，功能升级已经越来越不显性， 换机需求被压制手机市场预计还会继续下降 。 王腾还认为，此次  | 核心信息: IT之家 9 月 10 日消息，今日宜休科技公司创始人王腾今日发文，谈及了手机市场。他认为，一台 iPhone Pro 的价格已经超过 1 万元， 估计今年各家旗舰机都要涨价 。 王腾表示，智能手机更新到现在，功能升级已经越来越不显性， 换 | 行业影响: 该动态反映了Apple领域的最新发展方向，值得关注",
+      "content_type": "trend",
+      "core_info": "IT之家 9 月 10 日消息，今日宜休科技公司创始人王腾今日发文，谈及了手机市场。他认为，一台 iPhone Pro 的价格已经超过 1 万元， 估计今年各家旗舰机都要涨价 。 王腾表示，智能手机更新到现在，功能升级已经越来越不显性， 换",
       "domain": "ai",
       "entity": [
         "Apple"
       ],
-      "final_score": 174,
-      "hotness": 60.7,
-      "id": "285a84b14fcf180ea2ed7c238513088d",
+      "final_score": 172,
+      "hotness": 61.0,
+      "id": "a8adfe52f10bb135ddaf577f4af96b01",
       "importance": "B",
       "industry_impact": "",
-      "link": "https://www.ithome.com/0/999/999.htm",
-      "published": "2026-09-09T01:30:05+00:00",
-      "published_ago": "1 小时前",
-      "rank": 73,
+      "link": "https://www.ithome.com/1/000/586.htm",
+      "published": "2026-09-10T01:45:42+00:00",
+      "published_ago": "55 分钟前",
+      "rank": 29,
       "source": "IT之家科技",
       "source_name": "IT之家科技",
       "source_priority": 80,
@@ -2228,8 +430,8 @@
       "source_region": "CN",
       "source_type": "rss",
       "source_weight": 7,
-      "summary": "IT之家 9 月 9 日消息，科技媒体 AppleInsider 发布博文，报道称苹果公司昨日（9 月 8 日）获批名为《可拉伸显示屏》专利， 在折叠手机之外探索卷轴 iPhone 方案。 该专利编号为 US-12730478-B2，共有 21 页、12 张图，专利署名至少包括 50 名工程师，这一人数至少达到苹果普通专利署名规模的 5 倍。 苹果预估在北京时间明天凌晨 1 点的发布会上，推出其首",
-      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 9 日消息，科技媒体 AppleInsider 发布博文，报道称苹果公司昨日（9 月 8 日）获批名为《可拉伸显示屏》专利， 在折叠手机之外探索卷轴 iPhone 方案。 该专利编号为 US-12730478-B2，共有",
+      "summary": "IT之家 9 月 10 日消息，今日宜休科技公司创始人王腾今日发文，谈及了手机市场。他认为，一台 iPhone Pro 的价格已经超过 1 万元， 估计今年各家旗舰机都要涨价 。 王腾表示，智能手机更新到现在，功能升级已经越来越不显性， 换机需求被压制手机市场预计还会继续下降 。 王腾还认为，此次 Apple Watch 这次升级挺大， 尤其是 AI 健康分析 ，之前的 Apple Health ",
+      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 10 日消息，今日宜休科技公司创始人王腾今日发文，谈及了手机市场。他认为，一台 iPhone Pro 的价格已经超过 1 万元， 估计今年各家旗舰机都要涨价 。 王腾表示，智能手机更新到现在，功能升级已经越来越不显性， 换",
       "summary_type": [
         "产品动态"
       ],
@@ -2239,175 +441,83 @@
           "t": "company"
         }
       ],
-      "title": "iPhone Ultra 之外的“屏幕拉伸”路线，苹果卷轴手机专利公示",
-      "title_cn": "iPhone Ultra 之外的“屏幕拉伸”路线，苹果卷轴手机专利公示",
-      "translation_source": "article.chinese_summary",
-      "value_score": 33
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[行业趋势 / 产品动态 / 开源项目] | 核心信息: 项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报",
-      "category": "product_update",
-      "chinese_summary": "[行业趋势 / 产品动态 / 开源项目] | Open Source | 项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报表工具，集报表、打印、大屏、仪表盘于一体，像搭积木一样完全在 | 核心信息: 项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报 | 行业影响: 这一趋势将影响Open Source行业未来发展",
-      "content_type": "updates",
-      "core_info": "项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报",
-      "domain": "ai",
-      "entity": [
-        "Open Source"
-      ],
-      "final_score": 167,
-      "hotness": 57.6,
-      "id": "60f95a3599a3f4ae27522a4d399070e7",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.oschina.net/news/502389",
-      "published": "2026-09-09T01:26:07+00:00",
-      "published_ago": "1 小时前",
-      "rank": 139,
-      "source": "OSCHINA 开源中国",
-      "source_name": "OSCHINA 开源中国",
-      "source_priority": 75,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 6,
-      "summary": "项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报表工具，集报表、打印、大屏、仪表盘于一体，像搭积木一样完全在线设计。分两大模块：JimuRep...",
-      "summary_cn": "[行业趋势 / 产品动态 / 开源项目] | 核心信息: 项目介绍 真正的 AI 报表来了，一句话描述需求，AI 自动生成报表与数据大屏，支持对话式修改报表；同时提供类 Excel 拖拽设计器，兼容 30 余种数据源，轻松应对各类复杂报表场景 :sparkles: 积木报表是一款免费的数据可视化报",
-      "summary_type": [
-        "行业趋势",
-        "产品动态",
-        "开源项目"
-      ],
-      "tags": [
-        {
-          "l": "Open Source",
-          "t": "tech"
-        }
-      ],
-      "title": "JimuReport 积木报表 v2.5.2 版本发布，免费开源的 AI 报表工具",
-      "title_cn": "JimuReport 积木报表 v2.5.2 版本发布，免费开源的 AI 报表工具",
-      "translation_source": "article.chinese_summary",
-      "value_score": 34
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Creation"
-      ],
-      "card_summary": "[产品动态] | 核心信息: 1 更新内容： 1、修复近期用户反馈的问题； 一款 Go 语言基于 GoFrame、Vue3、AntDesign、MySQL 等框架精心打造的一款模块化、插件化、高性能的前后端分离架构敏捷开发框架，可快速搭建前后端分离后台管理系统，本着简化",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | 1 更新内容： 1、修复近期用户反馈的问题； 一款 Go 语言基于 GoFrame、Vue3、AntDesign、MySQL 等框架精心打造的一款模块化、插件化、高性能的前后端分离架构敏捷开发框架，可快速搭建前后端分离后台管理系统，本着简化开发、提升开发效率的初衷，框架自研了一套个性化的组件，实现了 | 核心信息: 1 更新内容： 1、修复近期用户反馈的问题； 一款 Go 语言基于 GoFrame、Vue3、AntDesign、MySQL 等框架精心打造的一款模块化、插件化、高性能的前后端分离架构敏捷开发框架，可快速搭建前后端分离后台管理系统，本着简化 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "1 更新内容： 1、修复近期用户反馈的问题； 一款 Go 语言基于 GoFrame、Vue3、AntDesign、MySQL 等框架精心打造的一款模块化、插件化、高性能的前后端分离架构敏捷开发框架，可快速搭建前后端分离后台管理系统，本着简化",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 163,
-      "hotness": 57.4,
-      "id": "b181a35559bbd06f8df99d018e9a175e",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.oschina.net/news/502387",
-      "published": "2026-09-09T01:17:09+00:00",
-      "published_ago": "1 小时前",
-      "rank": 223,
-      "source": "OSCHINA 开源中国",
-      "source_name": "OSCHINA 开源中国",
-      "source_priority": 75,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 6,
-      "summary": "v2.7.1 更新内容： 1、修复近期用户反馈的问题； 一款 Go 语言基于 GoFrame、Vue3、AntDesign、MySQL 等框架精心打造的一款模块化、插件化、高性能的前后端分离架构敏捷开发框架，可快速搭建前后端分离后台管理系统，本着简化开发、提升开发效率的初衷，框架自研了一套个性化的组件，实现了可插拔的组件式开发方式，同时...",
-      "summary_cn": "[产品动态] | 核心信息: 1 更新内容： 1、修复近期用户反馈的问题； 一款 Go 语言基于 GoFrame、Vue3、AntDesign、MySQL 等框架精心打造的一款模块化、插件化、高性能的前后端分离架构敏捷开发框架，可快速搭建前后端分离后台管理系统，本着简化",
-      "summary_type": [
-        "产品动态"
-      ],
-      "tags": [],
-      "title": "EasyGoAdmin 敏捷开发框架 GoFrame+AntdVue 版本 v2.7.1 发布",
-      "title_cn": "EasyGoAdmin 敏捷开发框架 GoFrame+AntdVue 版本 v2.7.1 发布",
+      "title": "王腾：智能手机更新到现在功能升级越来越不显性，换机需求被压制市场预计还会下降",
+      "title_cn": "王腾：智能手机更新到现在功能升级越来越不显性，换机需求被压制市场预计还会下降",
       "translation_source": "article.chinese_summary",
       "value_score": 31
     },
     {
       "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: app/ Comments URL: https://news",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | GPU | Article URL: https://gpu-lexer | 核心信息: app/ Comments URL: https://news",
-      "content_type": "updates",
-      "core_info": "app/ Comments URL: https://news",
-      "domain": "ai",
-      "entity": [
-        "GPU"
+      "application": [
+        "Development"
       ],
-      "final_score": 155,
-      "hotness": 60.4,
-      "id": "c0a9acf446c24a0f14f90cce219a9a30",
+      "card_summary": "[综合资讯] | 核心信息: 赶上了API限时五折",
+      "category": "market_change",
+      "chinese_summary": "[综合资讯] | 赶上了API限时五折",
+      "content_type": "trend",
+      "core_info": "赶上了API限时五折",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 160,
+      "hotness": 56.8,
+      "id": "0f31576801a458d35ac1c73e38c21357",
       "importance": "B",
       "industry_impact": "",
-      "link": "https://gpu-lexer.vercel.app/",
-      "published": "2026-09-09T01:14:50+00:00",
+      "link": "https://www.qbitai.com/2026/09/486350.html",
+      "published": "2026-09-10T00:42:06+00:00",
       "published_ago": "1 小时前",
-      "rank": 345,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
+      "rank": 94,
+      "source": "量子位",
+      "source_name": "量子位",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
       "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://gpu-lexer.vercel.app/ Comments URL: https://news.ycombinator.com/item?id=49619464 Points: 13 # Comments: 2",
-      "summary_cn": "[综合资讯] | 核心信息: app/ Comments URL: https://news",
+      "source_weight": 6,
+      "summary": "赶上了API限时五折",
+      "summary_cn": "[综合资讯] | 核心信息: 赶上了API限时五折",
       "summary_type": [
         "综合资讯"
       ],
-      "tags": [
-        {
-          "l": "GPU",
-          "t": "tech"
-        }
-      ],
-      "title": "27.5KB language-agnostic WebGPU syntax highlighter",
-      "title_cn": "",
+      "tags": [],
+      "title": "实测星火X2.5：手搓粒子月亮、拆完61页财报……还顺手揪出了我的Bug",
+      "title_cn": "实测星火X2.5：手搓粒子月亮、拆完61页财报……还顺手揪出了我的Bug",
       "translation_source": "article.chinese_summary",
-      "value_score": 35
+      "value_score": 25
     },
     {
       "ai_status": "none",
-      "application": [
-        "Business"
-      ],
-      "card_summary": "[综合资讯] | 核心信息: 1 Flash\n· 两部门要求车企定期报告供应商账期，重点企业每年接受评估\n· 曝微信 PC 版接入 AI 助手「小微」，可操作聊天与小程序 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-      "category": "company",
-      "chinese_summary": "[综合资讯] | DeepSeek / Huawei | · DeepSeek 内测 V4 | 核心信息: 1 Flash\n· 两部门要求车企定期报告供应商账期，重点企业每年接受评估\n· 曝微信 PC 版接入 AI 助手「小微」，可操作聊天与小程序 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-      "content_type": "updates",
-      "core_info": "1 Flash\n· 两部门要求车企定期报告供应商账期，重点企业每年接受评估\n· 曝微信 PC 版接入 AI 助手「小微」，可操作聊天与小程序 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "application": [],
+      "card_summary": "[开源项目] | 核心信息: 1 Flash 之后，开源社区第一时间的反应。 9 月 9 日下午，DeepSeek 的 Tianyi Cui 在 X 上发帖，宣布了一个决定：V4",
+      "category": "community_hotspot",
+      "chinese_summary": "[开源项目] | DeepSeek Open Source | \"请不要这样做。\" 这是 DeepSeek 决定把 V4 Pro 的请求静默路由到 V4 | 核心信息: 1 Flash 之后，开源社区第一时间的反应。 9 月 9 日下午，DeepSeek 的 Tianyi Cui 在 X 上发帖，宣布了一个决定：V4 | 行业影响: 该开源项目将推动Open Source/DeepSeek技术普及与生态发展",
+      "content_type": "trend",
+      "core_info": "1 Flash 之后，开源社区第一时间的反应。 9 月 9 日下午，DeepSeek 的 Tianyi Cui 在 X 上发帖，宣布了一个决定：V4",
       "domain": "ai",
       "entity": [
         "DeepSeek",
-        "Huawei"
+        "Open Source"
       ],
-      "final_score": 167,
-      "hotness": 59.4,
-      "id": "7906371c6620be3d60548547203f8363",
+      "final_score": 140,
+      "hotness": 44.3,
+      "id": "a3502e4603185bbf56b7627edb39ddc8",
       "importance": "B",
       "industry_impact": "",
-      "link": "https://www.ifanr.com/1678959?utm_source=rss&utm_medium=rss&utm_campaign=",
-      "published": "2026-09-09T00:19:18+00:00",
-      "published_ago": "2 小时前",
-      "rank": 140,
-      "source": "APPSO",
-      "source_name": "APPSO",
-      "source_priority": 82,
+      "link": "https://www.oschina.net/news/502395",
+      "published": "2026-09-09T10:49:15+00:00",
+      "published_ago": "15 小时前",
+      "rank": 153,
+      "source": "OSCHINA 开源中国",
+      "source_name": "OSCHINA 开源中国",
+      "source_priority": 75,
       "source_quality": "low",
       "source_region": "CN",
       "source_type": "rss",
-      "source_weight": 7,
-      "summary": "· DeepSeek 内测 V4.1 Flash\n· 两部门要求车企定期报告供应商账期，重点企业每年接受评估\n· 曝微信 PC 版接入 AI 助手「小微」，可操作聊天与小程序 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-      "summary_cn": "[综合资讯] | 核心信息: 1 Flash\n· 两部门要求车企定期报告供应商账期，重点企业每年接受评估\n· 曝微信 PC 版接入 AI 助手「小微」，可操作聊天与小程序 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "source_weight": 6,
+      "summary": "\"请不要这样做。\" 这是 DeepSeek 决定把 V4 Pro 的请求静默路由到 V4.1 Flash 之后，开源社区第一时间的反应。 9 月 9 日下午，DeepSeek 的 Tianyi Cui 在 X 上发帖，宣布了一个决定：V4.1 Flash 正式上线之后、V4.1 Pro 上线之前，所有打到 V4 Pro 的请求都会被路由到 V4.1 Flash，并按 Flash 的价格计费。 理由",
+      "summary_cn": "[开源项目] | 核心信息: 1 Flash 之后，开源社区第一时间的反应。 9 月 9 日下午，DeepSeek 的 Tianyi Cui 在 X 上发帖，宣布了一个决定：V4",
       "summary_type": [
-        "综合资讯"
+        "开源项目"
       ],
       "tags": [
         {
@@ -2415,34 +525,77 @@
           "t": "company"
         },
         {
-          "l": "Huawei",
-          "t": "company"
+          "l": "Open Source",
+          "t": "tech"
         }
       ],
-      "title": "早报｜库克看到华为三星后，推动苹果加速研发折叠屏iPhone/小米中折叠「卖爆了」，首销增长310%​/《旅行青蛙・中国之旅》12月8日停运",
-      "title_cn": "早报｜库克看到华为三星后，推动苹果加速研发折叠屏iPhone/小米中折叠「卖爆了」，首销增长310%​/《旅行青蛙・中国之旅》12月8日停运",
+      "title": "DeepSeek 把 V4 Pro 静默路由到费用更低、性能更好的 Flash，但用户表示拒绝",
+      "title_cn": "DeepSeek 把 V4 Pro 静默路由到费用更低、性能更好的 Flash，但用户表示拒绝",
+      "translation_source": "article.chinese_summary",
+      "value_score": 21
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: 从Demo到货架，这两家公司要让具身智能算得过账",
+      "category": "tech_direction",
+      "chinese_summary": "[综合资讯] | 从Demo到货架，这两家公司要让具身智能算得过账",
+      "content_type": "trend",
+      "core_info": "从Demo到货架，这两家公司要让具身智能算得过账",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 144,
+      "hotness": 40.3,
+      "id": "aa612edc42b4fafaa3751c651b1100d3",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.qbitai.com/2026/09/486280.html",
+      "published": "2026-09-09T04:52:12+00:00",
+      "published_ago": "21 小时前",
+      "rank": 145,
+      "source": "量子位",
+      "source_name": "量子位",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "从Demo到货架，这两家公司要让具身智能算得过账",
+      "summary_cn": "[综合资讯] | 核心信息: 从Demo到货架，这两家公司要让具身智能算得过账",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "具身机器人能搞定超市盘点吗？全球七万门店正在给出答案",
+      "title_cn": "具身机器人能搞定超市盘点吗？全球七万门店正在给出答案",
       "translation_source": "article.chinese_summary",
       "value_score": 26
     },
     {
       "ai_status": "none",
-      "application": [],
-      "card_summary": "[产品动态] | 核心信息: 0 更新内容 系统界面完全英文化：所有菜单、按钮、对话框、提示信息均已适配英文 设置项新增语言切换入口：用户可在设置中一键切换中英文 中英文环境独立运行：切换语言后不影响已安装的应",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | 0 现已发布。本次更新是一个重要节点——系统已全面完成英文适配，所有界面均可切换为英文，国际化已准备就绪。 ✅ v5 | 核心信息: 0 更新内容 系统界面完全英文化：所有菜单、按钮、对话框、提示信息均已适配英文 设置项新增语言切换入口：用户可在设置中一键切换中英文 中英文环境独立运行：切换语言后不影响已安装的应 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "0 更新内容 系统界面完全英文化：所有菜单、按钮、对话框、提示信息均已适配英文 设置项新增语言切换入口：用户可在设置中一键切换中英文 中英文环境独立运行：切换语言后不影响已安装的应",
+      "application": [
+        "Development",
+        "Creation"
+      ],
+      "card_summary": "[产品动态] | 核心信息: 5 时顺手甩出来的一个数字。它涵盖 ChatGPT Images 和 GPT-Image API 两个入口，意味着这个产品线已经是全球最大的 AI 图像生成服务之一。 2; 5 版本的核心改进方向很明确：不是堆参数，而是把「编辑」这件事做精。OpenAI 列了五个维度——参考图稳定性、精确编辑、",
+      "category": "tech_direction",
+      "chinese_summary": "[产品动态] | OpenAI GPT | 每周 30 亿张图。这是 OpenAI 在发布 ChatGPT Images 2 | 核心信息: 5 时顺手甩出来的一个数字。它涵盖 ChatGPT Images 和 GPT-Image API 两个入口，意味着这个产品线已经是全球最大的 AI 图像生成服务之一。 2; 5 版本的核心改进方向很明确：不是堆参数，而是把「编辑」这件事做精。OpenAI 列了五个维度——参考图稳定性、精确编辑、 | 行业影响: 该动态反映了GPT/OpenAI领域的最新发展方向，值得关注",
+      "content_type": "trend",
+      "core_info": "5 时顺手甩出来的一个数字。它涵盖 ChatGPT Images 和 GPT-Image API 两个入口，意味着这个产品线已经是全球最大的 AI 图像生成服务之一。 2; 5 版本的核心改进方向很明确：不是堆参数，而是把「编辑」这件事做精。OpenAI 列了五个维度——参考图稳定性、精确编辑、",
       "domain": "ai",
-      "entity": [],
-      "final_score": 161,
-      "hotness": 55.1,
-      "id": "09bf826af302e6cf5feab80b81e235b9",
+      "entity": [
+        "GPT",
+        "OpenAI"
+      ],
+      "final_score": 158,
+      "hotness": 45.6,
+      "id": "34dc9ba8bf2caa80c69a293f38ed426c",
       "importance": "B",
       "industry_impact": "",
-      "link": "https://www.oschina.net/news/502386",
-      "published": "2026-09-08T23:09:29+00:00",
-      "published_ago": "3 小时前",
-      "rank": 253,
+      "link": "https://www.oschina.net/news/502393/openai-chatgpt-images-2-5",
+      "published": "2026-09-09T03:39:10+00:00",
+      "published_ago": "23 小时前",
+      "rank": 103,
       "source": "OSCHINA 开源中国",
       "source_name": "OSCHINA 开源中国",
       "source_priority": 75,
@@ -2450,506 +603,58 @@
       "source_region": "CN",
       "source_type": "rss",
       "source_weight": 6,
-      "summary": "灵界 OS v5.0 现已发布。本次更新是一个重要节点——系统已全面完成英文适配，所有界面均可切换为英文，国际化已准备就绪。 ✅ v5.0 更新内容 系统界面完全英文化：所有菜单、按钮、对话框、提示信息均已适配英文 设置项新增语言切换入口：用户可在设置中一键切换中英文 中英文环境独立运行：切换语言后不影响已安装的应...",
-      "summary_cn": "[产品动态] | 核心信息: 0 更新内容 系统界面完全英文化：所有菜单、按钮、对话框、提示信息均已适配英文 设置项新增语言切换入口：用户可在设置中一键切换中英文 中英文环境独立运行：切换语言后不影响已安装的应",
+      "summary": "每周 30 亿张图。这是 OpenAI 在发布 ChatGPT Images 2.5 时顺手甩出来的一个数字。它涵盖 ChatGPT Images 和 GPT-Image API 两个入口，意味着这个产品线已经是全球最大的 AI 图像生成服务之一。 2.5 版本的核心改进方向很明确：不是堆参数，而是把「编辑」这件事做精。OpenAI 列了五个维度——参考图稳定性、精确编辑、...",
+      "summary_cn": "[产品动态] | 核心信息: 5 时顺手甩出来的一个数字。它涵盖 ChatGPT Images 和 GPT-Image API 两个入口，意味着这个产品线已经是全球最大的 AI 图像生成服务之一。 2; 5 版本的核心改进方向很明确：不是堆参数，而是把「编辑」这件事做精。OpenAI 列了五个维度——参考图稳定性、精确编辑、",
       "summary_type": [
         "产品动态"
-      ],
-      "tags": [],
-      "title": "灵界 OS v5.0 正式发布：全英文适配已完成，系统全面国际化",
-      "title_cn": "灵界 OS v5.0 正式发布：全英文适配已完成，系统全面国际化",
-      "translation_source": "article.chinese_summary",
-      "value_score": 31
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: space/picture-book/ Comments URL: https://news",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | Article URL: https://e-infinity | 核心信息: space/picture-book/ Comments URL: https://news",
-      "content_type": "updates",
-      "core_info": "space/picture-book/ Comments URL: https://news",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 152,
-      "hotness": 57.4,
-      "id": "bed72522b30f82e54287e81c5e4a6077",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://e-infinity.space/picture-book/",
-      "published": "2026-09-08T22:28:14+00:00",
-      "published_ago": "4 小时前",
-      "rank": 380,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://e-infinity.space/picture-book/ Comments URL: https://news.ycombinator.com/item?id=49618050 Points: 59 # Comments: 7",
-      "summary_cn": "[综合资讯] | 核心信息: space/picture-book/ Comments URL: https://news",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "A Topological Picture Book, Rendered",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 35
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Creation"
-      ],
-      "card_summary": "[综合资讯] | 核心信息: 状态：调查中 我们正在调查影响 ChatGPT 和图像 API 中图像生成的错误增多。 某些请求可能会失败。 当我们了解更多信息时，我们将分享另一个更新。 受影响的组件",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | Status: Resolved All impacted services have now fully recovered | 核心信息: Affected components Images (Operational) Image Generation (Operational)",
-      "content_type": "updates",
-      "core_info": "状态：调查中 我们正在调查影响 ChatGPT 和图像 API 中图像生成的错误增多。 某些请求可能会失败。 当我们了解更多信息时，我们将分享另一个更新。 受影响的组件",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 190,
-      "hotness": 60.0,
-      "id": "5fc6445fc36de60862b3709aaaf5ab64",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://status.openai.com//incidents/01M20PYYYGRT9303VHAPA7YNT2",
-      "published": "2026-09-08T21:59:24+00:00",
-      "published_ago": "4 小时前",
-      "rank": 33,
-      "source": "OpenAI Status",
-      "source_name": "OpenAI Status 官方",
-      "source_priority": 95,
-      "source_quality": "low",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 8,
-      "summary": "Status: Resolved All impacted services have now fully recovered. Affected components Images (Operational) Image Generation (Operational)",
-      "summary_cn": "[综合资讯] | 核心信息: 状态：调查中 我们正在调查影响 ChatGPT 和图像 API 中图像生成的错误增多。 某些请求可能会失败。 当我们了解更多信息时，我们将分享另一个更新。 受影响的组件",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "Elevated errors for image generation",
-      "title_cn": "图像生成错误增加",
-      "translation_source": "cache",
-      "value_score": 35
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: redirect=%2Fforum%3Fid%3Dpc7fqaOcAH Comments URL: https://news",
-      "category": "model_update",
-      "chinese_summary": "[综合资讯] | Article URL: https://openreview | 核心信息: redirect=%2Fforum%3Fid%3Dpc7fqaOcAH Comments URL: https://news",
-      "content_type": "updates",
-      "core_info": "redirect=%2Fforum%3Fid%3Dpc7fqaOcAH Comments URL: https://news",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 160,
-      "hotness": 56.8,
-      "id": "266f4f2773bebdb21f6f843e4151ce7b",
-      "importance": "A",
-      "industry_impact": "",
-      "link": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3Dpc7fqaOcAH",
-      "published": "2026-09-08T21:47:38+00:00",
-      "published_ago": "4 小时前",
-      "rank": 254,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://openreview.net/challenge?redirect=%2Fforum%3Fid%3Dpc7fqaOcAH Comments URL: https://news.ycombinator.com/item?id=49617581 Points: 103 # Comments: 51",
-      "summary_cn": "[综合资讯] | 核心信息: redirect=%2Fforum%3Fid%3Dpc7fqaOcAH Comments URL: https://news",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "Large language models develop novel social biases through adaptive exploration",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 43
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[技术教程] | 核心信息: dev/blogs/how-to-build-a-fking-printer/ Comments URL: https://news",
-      "category": "product_update",
-      "chinese_summary": "[技术教程] | Article URL: https://nishantjosh | 核心信息: dev/blogs/how-to-build-a-fking-printer/ Comments URL: https://news",
-      "content_type": "updates",
-      "core_info": "dev/blogs/how-to-build-a-fking-printer/ Comments URL: https://news",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 151,
-      "hotness": 56.3,
-      "id": "e60f209c96c636761fbea8228d4fdc68",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://nishantjosh.dev/blogs/how-to-build-a-fking-printer/",
-      "published": "2026-09-08T21:22:11+00:00",
-      "published_ago": "5 小时前",
-      "rank": 382,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://nishantjosh.dev/blogs/how-to-build-a-fking-printer/ Comments URL: https://news.ycombinator.com/item?id=49617255 Points: 157 # Comments: 37",
-      "summary_cn": "[技术教程] | 核心信息: dev/blogs/how-to-build-a-fking-printer/ Comments URL: https://news",
-      "summary_type": [
-        "技术教程"
-      ],
-      "tags": [],
-      "title": "How to build a printer",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 35
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: Anthropic has since warned users about hackers",
-      "category": "model_update",
-      "chinese_summary": "[综合资讯] | Anthropic Claude | Last month, a Claude user noticed his account was consuming tokens even though he wasn't working | 核心信息: Anthropic has since warned users about hackers",
-      "content_type": "updates",
-      "core_info": "Anthropic has since warned users about hackers",
-      "domain": "ai",
-      "entity": [
-        "Claude",
-        "Anthropic"
-      ],
-      "final_score": 175,
-      "hotness": 59.1,
-      "id": "27b2e549d279f1a8e189b5f73c4a0570",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://techcrunch.com/2026/09/08/hackers-are-stealing-claude-tokens-from-subscribers/",
-      "published": "2026-09-08T21:10:27+00:00",
-      "published_ago": "5 小时前",
-      "rank": 56,
-      "source": "TechCrunch AI",
-      "source_name": "TechCrunch AI",
-      "source_priority": 78,
-      "source_quality": "high",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Last month, a Claude user noticed his account was consuming tokens even though he wasn't working. Anthropic has since warned users about hackers.",
-      "summary_cn": "[综合资讯] | 核心信息: Anthropic has since warned users about hackers",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [
-        {
-          "l": "Claude",
-          "t": "tech"
-        },
-        {
-          "l": "Anthropic",
-          "t": "company"
-        }
-      ],
-      "title": "Hackers are stealing Claude tokens from subscribers",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 38
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: xyz/@tao/117237320796901560 Comments URL: https://news",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | Article URL: https://mathstodon | 核心信息: xyz/@tao/117237320796901560 Comments URL: https://news",
-      "content_type": "updates",
-      "core_info": "xyz/@tao/117237320796901560 Comments URL: https://news",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 154,
-      "hotness": 56.0,
-      "id": "11ca24a7767be63927122eccc8b80740",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://mathstodon.xyz/@tao/117237320796901560",
-      "published": "2026-09-08T21:00:52+00:00",
-      "published_ago": "5 小时前",
-      "rank": 363,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://mathstodon.xyz/@tao/117237320796901560 Comments URL: https://news.ycombinator.com/item?id=49616968 Points: 171 # Comments: 112",
-      "summary_cn": "[综合资讯] | 核心信息: xyz/@tao/117237320796901560 Comments URL: https://news",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "Tao: Open math problems being non-renewably mined by AI",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 38
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[产品动态] | 核心信息: ai/blog/introducing-mercury-2-5 Comments URL: https://news",
-      "category": "product_update",
-      "chinese_summary": "[产品动态] | Article URL: https://www | 核心信息: ai/blog/introducing-mercury-2-5 Comments URL: https://news | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "ai/blog/introducing-mercury-2-5 Comments URL: https://news",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 152,
-      "hotness": 54.2,
-      "id": "7d0b145c2a1783ea4dc4314999fb8230",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.inceptionlabs.ai/blog/introducing-mercury-2-5",
-      "published": "2026-09-08T20:14:52+00:00",
-      "published_ago": "6 小时前",
-      "rank": 379,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://www.inceptionlabs.ai/blog/introducing-mercury-2-5 Comments URL: https://news.ycombinator.com/item?id=49616354 Points: 127 # Comments: 16",
-      "summary_cn": "[产品动态] | 核心信息: ai/blog/introducing-mercury-2-5 Comments URL: https://news",
-      "summary_type": [
-        "产品动态"
-      ],
-      "tags": [],
-      "title": "Mercury 2.5",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 38
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: com/en/blog/20260827/ Comments URL: https://news",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | Article URL: https://glocq | 核心信息: com/en/blog/20260827/ Comments URL: https://news",
-      "content_type": "updates",
-      "core_info": "com/en/blog/20260827/ Comments URL: https://news",
-      "domain": "ai",
-      "entity": [],
-      "final_score": 150,
-      "hotness": 55.1,
-      "id": "a36bb9246bafb6b4fb0ad001ab5b8872",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://glocq.com/en/blog/20260827/",
-      "published": "2026-09-08T20:08:44+00:00",
-      "published_ago": "6 小时前",
-      "rank": 389,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://glocq.com/en/blog/20260827/ Comments URL: https://news.ycombinator.com/item?id=49616272 Points: 47 # Comments: 4",
-      "summary_cn": "[综合资讯] | 核心信息: com/en/blog/20260827/ Comments URL: https://news",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [],
-      "title": "Animation in Bevy: The Big Picture",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 35
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: com/muse/ Comments URL: https://news",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | Meta Agent | Article URL: https://ai | 核心信息: com/muse/ Comments URL: https://news",
-      "content_type": "updates",
-      "core_info": "com/muse/ Comments URL: https://news",
-      "domain": "ai",
-      "entity": [
-        "Agent",
-        "Meta"
-      ],
-      "final_score": 155,
-      "hotness": 57.4,
-      "id": "1fdcdda4a66e0c30f68fc21d8eae702d",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://ai.meta.com/muse/",
-      "published": "2026-09-08T19:25:00+00:00",
-      "published_ago": "7 小时前",
-      "rank": 344,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Article URL: https://ai.meta.com/muse/ Comments URL: https://news.ycombinator.com/item?id=49615537 Points: 341 # Comments: 344",
-      "summary_cn": "[综合资讯] | 核心信息: com/muse/ Comments URL: https://news",
-      "summary_type": [
-        "综合资讯"
-      ],
-      "tags": [
-        {
-          "l": "Agent",
-          "t": "tech"
-        },
-        {
-          "l": "Meta",
-          "t": "company"
-        }
-      ],
-      "title": "Muse – Meta’s personal AI agent",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 38
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Research"
-      ],
-      "card_summary": "[研究进展] | 核心信息: 数学家特里斯坦·巴克马斯特 (Tristan Buckmaster) 表示，据称 OpenAI 研究员在有关他在纳维-斯托克斯方程方面的人工智能辅助进展的信息传到公司后，向他施加了压力。 研究人员",
-      "category": "breakthrough",
-      "chinese_summary": "[研究进展] | OpenAI / Anthropic | Mathematician Tristan Buckmaster says an OpenAI researcher pressured him after information about his AI-assisted progress on the Navier-Stokes equatio | 核心信息: Mathematician Tristan Buckmaster says an OpenAI researcher pressured him after information about his AI-assisted progres | 行业影响: 该研究可能对OpenAI/Anthropic技术路线产生重要影响",
-      "content_type": "updates",
-      "core_info": "数学家特里斯坦·巴克马斯特 (Tristan Buckmaster) 表示，据称 OpenAI 研究员在有关他在纳维-斯托克斯方程方面的人工智能辅助进展的信息传到公司后，向他施加了压力。 研究人员",
-      "domain": "ai",
-      "entity": [
-        "OpenAI",
-        "Anthropic"
-      ],
-      "final_score": 172,
-      "hotness": 56.4,
-      "id": "7eced2b8f9f48d7dfaa6c06344baac16",
-      "importance": "A",
-      "industry_impact": "",
-      "link": "https://the-decoder.com/openai-researcher-allegedly-pressured-mathematician-to-drop-anthropic-co-author-from-math-breakthrough-paper/",
-      "published": "2026-09-08T19:23:04+00:00",
-      "published_ago": "7 小时前",
-      "rank": 85,
-      "source": "The Decoder",
-      "source_name": "The Decoder",
-      "source_priority": 76,
-      "source_quality": "high",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Mathematician Tristan Buckmaster says an OpenAI researcher pressured him after information about his AI-assisted progress on the Navier-Stokes equations allegedly reached the company. The researcher t",
-      "summary_cn": "[研究进展] | 核心信息: 数学家特里斯坦·巴克马斯特 (Tristan Buckmaster) 表示，据称 OpenAI 研究员在有关他在纳维-斯托克斯方程方面的人工智能辅助进展的信息传到公司后，向他施加了压力。 研究人员",
-      "summary_type": [
-        "研究进展"
-      ],
-      "tags": [
-        {
-          "l": "OpenAI",
-          "t": "company"
-        },
-        {
-          "l": "Anthropic",
-          "t": "company"
-        },
-        {
-          "l": "Research",
-          "t": "solution"
-        }
-      ],
-      "title": "OpenAI researcher allegedly pressured mathematician to drop Anthropic co-author from math breakthrough paper",
-      "title_cn": "OpenAI 研究人员据称向数学家施压，要求其将 Anthropic 的合著者从数学突破性论文中剔除",
-      "translation_source": "cache",
-      "value_score": 40
-    },
-    {
-      "ai_status": "none",
-      "application": [],
-      "card_summary": "[综合资讯] | 核心信息: 状态：正在调查 我们正在调查所列服务的问题。 受影响的组件 文件上传（性能下降） GPT（性能下降）",
-      "category": "product_update",
-      "chinese_summary": "[综合资讯] | GPT | Status: Resolved All impacted services have now fully recovered | 核心信息: Affected components File uploads (Operational) GPTs (Operational)",
-      "content_type": "updates",
-      "core_info": "状态：正在调查 我们正在调查所列服务的问题。 受影响的组件 文件上传（性能下降） GPT（性能下降）",
-      "domain": "ai",
-      "entity": [
-        "GPT"
-      ],
-      "final_score": 194,
-      "hotness": 57.3,
-      "id": "ff34a1bc9dc5d3f7081d22b58f814cb4",
-      "importance": "A",
-      "industry_impact": "",
-      "link": "https://status.openai.com//incidents/01M20QBACYZMK2PRCJQCBSWTYJ",
-      "published": "2026-09-08T19:16:08+00:00",
-      "published_ago": "7 小时前",
-      "rank": 28,
-      "source": "OpenAI Status",
-      "source_name": "OpenAI Status 官方",
-      "source_priority": 95,
-      "source_quality": "low",
-      "source_region": "Global",
-      "source_type": "rss",
-      "source_weight": 8,
-      "summary": "Status: Resolved All impacted services have now fully recovered. Affected components File uploads (Operational) GPTs (Operational)",
-      "summary_cn": "[综合资讯] | 核心信息: 状态：正在调查 我们正在调查所列服务的问题。 受影响的组件 文件上传（性能下降） GPT（性能下降）",
-      "summary_type": [
-        "综合资讯"
       ],
       "tags": [
         {
           "l": "GPT",
           "t": "tech"
+        },
+        {
+          "l": "OpenAI",
+          "t": "company"
         }
       ],
-      "title": "File uploads are delayed or failing",
-      "title_cn": "文件上传延迟或失败",
-      "translation_source": "cache",
-      "value_score": 42
-    },
+      "title": "ChatGPT Images 2.5 发布，OpenAI 把图像生成的重注押在了编辑上",
+      "title_cn": "ChatGPT Images 2.5 发布，OpenAI 把图像生成的重注押在了编辑上",
+      "translation_source": "article.chinese_summary",
+      "value_score": 37
+    }
+  ],
+  "updates": [
     {
       "ai_status": "none",
       "application": [],
-      "card_summary": "[综合资讯] | 核心信息: Meta's new personal AI agent Muse wants access to users' email, calendars, payments, health services, and more — making",
-      "category": "company",
-      "chinese_summary": "[综合资讯] | Meta Agent | Meta's new personal AI agent Muse wants access to users' email, calendars, payments, health services, and more — making the company's biggest consumer | 核心信息: Meta's new personal AI agent Muse wants access to users' email, calendars, payments, health services, and more — making ",
+      "card_summary": "[综合资讯]",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | Agent | 点击查看原文>",
       "content_type": "updates",
-      "core_info": "Meta's new personal AI agent Muse wants access to users' email, calendars, payments, health services, and more — making",
+      "core_info": "",
       "domain": "ai",
       "entity": [
-        "Agent",
-        "Meta"
+        "Agent"
       ],
-      "final_score": 163,
-      "hotness": 57.1,
-      "id": "461d1b7d7b9cf69c3854d7fe1507a703",
+      "final_score": 171,
+      "hotness": 62.0,
+      "id": "fdedb3abfd3ad56ff12662b96fa3304c",
       "importance": "B",
       "industry_impact": "",
-      "link": "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/",
-      "published": "2026-09-08T19:00:00+00:00",
-      "published_ago": "7 小时前",
-      "rank": 224,
-      "source": "TechCrunch AI",
-      "source_name": "TechCrunch AI",
+      "link": "https://www.infoq.cn/article/I0qWiIGTkCqG8H1hAoJb?utm_source=rss&utm_medium=article",
+      "published": "2026-09-10T10:00:00+00:00",
+      "published_ago": "刚刚",
+      "rank": 31,
+      "source": "InfoQ 中文",
+      "source_name": "InfoQ 中文",
       "source_priority": 78,
       "source_quality": "high",
-      "source_region": "Global",
+      "source_region": "CN",
       "source_type": "rss",
-      "source_weight": 7,
-      "summary": "Meta's new personal AI agent Muse wants access to users' email, calendars, payments, health services, and more — making the company's biggest consumer AI bet yet a major test of whether people still t",
-      "summary_cn": "[综合资讯] | 核心信息: Meta's new personal AI agent Muse wants access to users' email, calendars, payments, health services, and more — making",
+      "source_weight": 6,
+      "summary": "点击查看原文>",
+      "summary_cn": "[综合资讯]",
       "summary_type": [
         "综合资讯"
       ],
@@ -2957,213 +662,1430 @@
         {
           "l": "Agent",
           "t": "tech"
-        },
-        {
-          "l": "Meta",
-          "t": "company"
         }
       ],
-      "title": "Meta debuts its Muse AI agent. Will consumers trust it?",
-      "title_cn": "",
-      "translation_source": "article.chinese_summary",
-      "value_score": 28
-    },
-    {
-      "ai_status": "none",
-      "application": [
-        "Development"
-      ],
-      "card_summary": "[产品动态 / 开源项目] | 核心信息: 3 已发布，推荐正在使用旧版的朋友更新，尤其是经常同时运行多个 Agent、遇到输入卡顿或启动变慢的用户。Termexo 是 MIT 开源的 Windows 多 Agent 工作台，统一管理 Claude Code、Codex CLI、Op",
-      "category": "product_update",
-      "chinese_summary": "[产品动态 / 开源项目] | Claude / Agent / Open Source | 我是 Termexo 的维护者。v0 | 核心信息: 3 已发布，推荐正在使用旧版的朋友更新，尤其是经常同时运行多个 Agent、遇到输入卡顿或启动变慢的用户。Termexo 是 MIT 开源的 Windows 多 Agent 工作台，统一管理 Claude Code、Codex CLI、Op | 行业影响: 该动态反映了Claude/Agent/Open Source领域的最新发展方向，值得关注",
-      "content_type": "updates",
-      "core_info": "3 已发布，推荐正在使用旧版的朋友更新，尤其是经常同时运行多个 Agent、遇到输入卡顿或启动变慢的用户。Termexo 是 MIT 开源的 Windows 多 Agent 工作台，统一管理 Claude Code、Codex CLI、Op",
-      "domain": "ai",
-      "entity": [
-        "Claude",
-        "Agent",
-        "Open Source"
-      ],
-      "final_score": 156,
-      "hotness": 50.0,
-      "id": "fb2b7f672475b491f63a7c4731e379b8",
-      "importance": "B",
-      "industry_impact": "",
-      "link": "https://www.oschina.net/news/502385",
-      "published": "2026-09-08T17:50:58+00:00",
-      "published_ago": "8 小时前",
-      "rank": 340,
-      "source": "OSCHINA 开源中国",
-      "source_name": "OSCHINA 开源中国",
-      "source_priority": 75,
-      "source_quality": "low",
-      "source_region": "CN",
-      "source_type": "rss",
-      "source_weight": 6,
-      "summary": "我是 Termexo 的维护者。v0.8.3 已发布，推荐正在使用旧版的朋友更新，尤其是经常同时运行多个 Agent、遇到输入卡顿或启动变慢的用户。Termexo 是 MIT 开源的 Windows 多 Agent 工作台，统一管理 Claude Code、Codex CLI、OpenCode 和真实终端。 打字更跟手 后台 Git 查询和事件同步此前会与按键写入排在同一条 IPC 线程...",
-      "summary_cn": "[产品动态 / 开源项目] | 核心信息: 3 已发布，推荐正在使用旧版的朋友更新，尤其是经常同时运行多个 Agent、遇到输入卡顿或启动变慢的用户。Termexo 是 MIT 开源的 Windows 多 Agent 工作台，统一管理 Claude Code、Codex CLI、Op",
-      "summary_type": [
-        "产品动态",
-        "开源项目"
-      ],
-      "tags": [
-        {
-          "l": "Claude",
-          "t": "tech"
-        },
-        {
-          "l": "Agent",
-          "t": "tech"
-        },
-        {
-          "l": "Open Source",
-          "t": "tech"
-        }
-      ],
-      "title": "Termexo v0.8.3 发布：优化终端输入响应，支持任务中途追加指令",
-      "title_cn": "Termexo v0.8.3 发布：优化终端输入响应，支持任务中途追加指令",
+      "title": "边创作，边评估：纳逗 PRO·剧本空间的多 Agent 实践｜QCon上海",
+      "title_cn": "边创作，边评估：纳逗 PRO·剧本空间的多 Agent 实践｜QCon上海",
       "translation_source": "article.chinese_summary",
       "value_score": 31
     },
     {
       "ai_status": "none",
       "application": [],
-      "card_summary": "[综合资讯] | 核心信息: There is a $1 million bounty for the first person providing a solution to the Navier-Stokes existence and smoothness pro",
+      "card_summary": "[综合资讯]",
       "category": "product_update",
-      "chinese_summary": "[综合资讯] | OpenAI | There is a $1 million bounty for the first person providing a solution to the Navier-Stokes existence and smoothness problem | 核心信息: There is a $1 million bounty for the first person providing a solution to the Navier-Stokes existence and smoothness pro",
+      "chinese_summary": "[综合资讯] | Apple | 点击查看原文>",
       "content_type": "updates",
-      "core_info": "There is a $1 million bounty for the first person providing a solution to the Navier-Stokes existence and smoothness pro",
+      "core_info": "",
       "domain": "ai",
       "entity": [
-        "OpenAI"
+        "Apple"
       ],
-      "final_score": 170,
-      "hotness": 55.7,
-      "id": "432df95c74b6e170fbe10ec848365c3b",
+      "final_score": 168,
+      "hotness": 59.0,
+      "id": "5a5a915cb4629636652f7d194c3127f1",
       "importance": "B",
       "industry_impact": "",
-      "link": "https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/",
-      "published": "2026-09-08T17:32:15+00:00",
-      "published_ago": "9 小时前",
-      "rank": 109,
-      "source": "TechCrunch AI",
-      "source_name": "TechCrunch AI",
+      "link": "https://www.infoq.cn/article/7dKPszYaaHXIzoVLyh30?utm_source=rss&utm_medium=article",
+      "published": "2026-09-10T09:36:56+00:00",
+      "published_ago": "刚刚",
+      "rank": 40,
+      "source": "InfoQ 中文",
+      "source_name": "InfoQ 中文",
       "source_priority": 78,
       "source_quality": "high",
-      "source_region": "Global",
+      "source_region": "CN",
       "source_type": "rss",
-      "source_weight": 7,
-      "summary": "There is a $1 million bounty for the first person providing a solution to the Navier-Stokes existence and smoothness problem.",
-      "summary_cn": "[综合资讯] | 核心信息: There is a $1 million bounty for the first person providing a solution to the Navier-Stokes existence and smoothness pro",
+      "source_weight": 6,
+      "summary": "点击查看原文>",
+      "summary_cn": "[综合资讯]",
       "summary_type": [
         "综合资讯"
       ],
       "tags": [
         {
-          "l": "OpenAI",
+          "l": "Apple",
           "t": "company"
         }
       ],
-      "title": "OpenAI fought dirty on career-making math problem, says NYU mathematician",
-      "title_cn": "",
+      "title": "Tether：在 iOS 与 Linux 桌面电脑之间实现类似 Apple Continuity 的体验",
+      "title_cn": "Tether：在 iOS 与 Linux 桌面电脑之间实现类似 Apple Continuity 的体验",
+      "translation_source": "article.chinese_summary",
+      "value_score": 31
+    },
+    {
+      "ai_status": "none",
+      "application": [
+        "Gaming"
+      ],
+      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，六联智能 (SIXUNITED) 昨晚介绍了其基于英特尔 \"Panther Lake 12Xe\" 处理器的核显平台“ 创作游戏笔记本电脑 ”产品 PN882-160M-YD。 PN882-160M-Y 搭载",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | IT之家 9 月 10 日消息，六联智能 (SIXUNITED) 昨晚介绍了其基于英特尔 \"Panther Lake 12Xe\" 处理器的核显平台“ 创作游戏笔记本电脑 ”产品 PN882-160M-YD。 PN882-160M-Y 搭载 16\" 16:10 屏幕，采用金属质感机身，集成 99 | 核心信息: IT之家 9 月 10 日消息，六联智能 (SIXUNITED) 昨晚介绍了其基于英特尔 \"Panther Lake 12Xe\" 处理器的核显平台“ 创作游戏笔记本电脑 ”产品 PN882-160M-YD。 PN882-160M-Y 搭载 ",
+      "content_type": "updates",
+      "core_info": "IT之家 9 月 10 日消息，六联智能 (SIXUNITED) 昨晚介绍了其基于英特尔 \"Panther Lake 12Xe\" 处理器的核显平台“ 创作游戏笔记本电脑 ”产品 PN882-160M-YD。 PN882-160M-Y 搭载",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 175,
+      "hotness": 61.9,
+      "id": "ecaced0b30827505aef52e8cd8cb16ef",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/613.htm",
+      "published": "2026-09-10T02:37:33+00:00",
+      "published_ago": "3 分钟前",
+      "rank": 12,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，六联智能 (SIXUNITED) 昨晚介绍了其基于英特尔 \"Panther Lake 12Xe\" 处理器的核显平台“ 创作游戏笔记本电脑 ”产品 PN882-160M-YD。 PN882-160M-Y 搭载 16\" 16:10 屏幕，采用金属质感机身，集成 99.9Whr 电池（充电功率可达 140W，1hr 可充至 80%），整机质量约 1.8kg，厚度 16.9",
+      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，六联智能 (SIXUNITED) 昨晚介绍了其基于英特尔 \"Panther Lake 12Xe\" 处理器的核显平台“ 创作游戏笔记本电脑 ”产品 PN882-160M-YD。 PN882-160M-Y 搭载",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "六联智能介绍 \"Panther Lake 12Xe\" 核显创作游戏本，TDP 最高 100W",
+      "title_cn": "六联智能介绍 \"Panther Lake 12Xe\" 核显创作游戏本，TDP 最高 100W",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[产品动态] | 核心信息: 62mm 轻薄机身装下了 7100mAh 大电池 ，宣称薄和长续航不再二选一。 据IT之家此前报道，努比亚 NaviX Ultra 由中兴通讯与字节跳动联合研发，搭载豆包手机助手，被称为“豆包手机二代”。 新机有望搭载骁龙 8 Elite",
+      "category": "product_update",
+      "chinese_summary": "[产品动态] | ByteDance | IT之家 9 月 10 日消息，努比亚手机官方今日宣布， 努比亚 NaviX Ultra 新机 7 | 核心信息: 62mm 轻薄机身装下了 7100mAh 大电池 ，宣称薄和长续航不再二选一。 据IT之家此前报道，努比亚 NaviX Ultra 由中兴通讯与字节跳动联合研发，搭载豆包手机助手，被称为“豆包手机二代”。 新机有望搭载骁龙 8 Elite  | 行业影响: 该动态反映了ByteDance领域的最新发展方向，值得关注",
+      "content_type": "updates",
+      "core_info": "62mm 轻薄机身装下了 7100mAh 大电池 ，宣称薄和长续航不再二选一。 据IT之家此前报道，努比亚 NaviX Ultra 由中兴通讯与字节跳动联合研发，搭载豆包手机助手，被称为“豆包手机二代”。 新机有望搭载骁龙 8 Elite",
+      "domain": "ai",
+      "entity": [
+        "ByteDance"
+      ],
+      "final_score": 175,
+      "hotness": 61.9,
+      "id": "5afe9196c2928fe930b6284d9798c475",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/612.htm",
+      "published": "2026-09-10T02:35:32+00:00",
+      "published_ago": "5 分钟前",
+      "rank": 13,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，努比亚手机官方今日宣布， 努比亚 NaviX Ultra 新机 7.62mm 轻薄机身装下了 7100mAh 大电池 ，宣称薄和长续航不再二选一。 据IT之家此前报道，努比亚 NaviX Ultra 由中兴通讯与字节跳动联合研发，搭载豆包手机助手，被称为“豆包手机二代”。 新机有望搭载骁龙 8 Elite Gen5 旗舰处理器 ，内置 7000mAh 硅碳负极电池，",
+      "summary_cn": "[产品动态] | 核心信息: 62mm 轻薄机身装下了 7100mAh 大电池 ，宣称薄和长续航不再二选一。 据IT之家此前报道，努比亚 NaviX Ultra 由中兴通讯与字节跳动联合研发，搭载豆包手机助手，被称为“豆包手机二代”。 新机有望搭载骁龙 8 Elite",
+      "summary_type": [
+        "产品动态"
+      ],
+      "tags": [
+        {
+          "l": "ByteDance",
+          "t": "company"
+        }
+      ],
+      "title": "努比亚 NaviX Ultra 新机官宣 7.62mm 轻薄机身装下 7100mAh 大电池，9 月 16 日发布",
+      "title_cn": "努比亚 NaviX Ultra 新机官宣 7.62mm 轻薄机身装下 7100mAh 大电池，9 月 16 日发布",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[产品动态] | 核心信息: 0 ”。 据官方表述，该功能可对用户的出行计划或攻略进行时空推演，从营业时间、行程节奏、停车提示、拥挤预测等 15 个维度， 帮用户提前预判白跑、堵车、行程延误等出行体验风险 。 据蓝鲸新闻此前援引知情人士消息，高德计划于 9 月 10 日",
+      "category": "product_update",
+      "chinese_summary": "[产品动态] | IT之家 9 月 10 日消息，据凤凰网科技报道，针对此前外界流传的“扫雷榜”传闻，高德扫街榜今日宣布上线了“ 避雷指南 1 | 核心信息: 0 ”。 据官方表述，该功能可对用户的出行计划或攻略进行时空推演，从营业时间、行程节奏、停车提示、拥挤预测等 15 个维度， 帮用户提前预判白跑、堵车、行程延误等出行体验风险 。 据蓝鲸新闻此前援引知情人士消息，高德计划于 9 月 10 日 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
+      "content_type": "updates",
+      "core_info": "0 ”。 据官方表述，该功能可对用户的出行计划或攻略进行时空推演，从营业时间、行程节奏、停车提示、拥挤预测等 15 个维度， 帮用户提前预判白跑、堵车、行程延误等出行体验风险 。 据蓝鲸新闻此前援引知情人士消息，高德计划于 9 月 10 日",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 178,
+      "hotness": 61.8,
+      "id": "1b6432135d34dce512aa02e36c50c340",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/611.htm",
+      "published": "2026-09-10T02:31:03+00:00",
+      "published_ago": "9 分钟前",
+      "rank": 9,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，据凤凰网科技报道，针对此前外界流传的“扫雷榜”传闻，高德扫街榜今日宣布上线了“ 避雷指南 1.0 ”。 据官方表述，该功能可对用户的出行计划或攻略进行时空推演，从营业时间、行程节奏、停车提示、拥挤预测等 15 个维度， 帮用户提前预判白跑、堵车、行程延误等出行体验风险 。 据蓝鲸新闻此前援引知情人士消息，高德计划于 9 月 10 日发布一款依托 AI 与大数据能力研",
+      "summary_cn": "[产品动态] | 核心信息: 0 ”。 据官方表述，该功能可对用户的出行计划或攻略进行时空推演，从营业时间、行程节奏、停车提示、拥挤预测等 15 个维度， 帮用户提前预判白跑、堵车、行程延误等出行体验风险 。 据蓝鲸新闻此前援引知情人士消息，高德计划于 9 月 10 日",
+      "summary_type": [
+        "产品动态"
+      ],
+      "tags": [],
+      "title": "高德回应“扫雷榜”传闻：“避雷指南 1.0”上线",
+      "title_cn": "高德回应“扫雷榜”传闻：“避雷指南 1.0”上线",
       "translation_source": "article.chinese_summary",
       "value_score": 36
     },
     {
       "ai_status": "none",
       "application": [],
-      "card_summary": "[综合资讯] | 核心信息: com/index/navier-stokes-solution/ Comments URL: https://news",
+      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 10 日消息，vivo 官方今日再度官宣了两款新品， 包括 vivo WATCH 6 智能手表和 vivo Buds Clip 耳夹耳机 。 据介绍，vivo WATCH 6 智能手表预装 BlueOS 系统，采用蓝宝石玻",
       "category": "product_update",
-      "chinese_summary": "[综合资讯] | OpenAI | Article URL: https://openai | 核心信息: com/index/navier-stokes-solution/ Comments URL: https://news",
+      "chinese_summary": "[产品动态] | IT之家 9 月 10 日消息，vivo 官方今日再度官宣了两款新品， 包括 vivo WATCH 6 智能手表和 vivo Buds Clip 耳夹耳机 。 据介绍，vivo WATCH 6 智能手表预装 BlueOS 系统，采用蓝宝石玻璃表镜设计，拥有超轻薄表体，支持进阶跑步指导等功能；vivo | 核心信息: IT之家 9 月 10 日消息，vivo 官方今日再度官宣了两款新品， 包括 vivo WATCH 6 智能手表和 vivo Buds Clip 耳夹耳机 。 据介绍，vivo WATCH 6 智能手表预装 BlueOS 系统，采用蓝宝石玻 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
       "content_type": "updates",
-      "core_info": "com/index/navier-stokes-solution/ Comments URL: https://news",
+      "core_info": "IT之家 9 月 10 日消息，vivo 官方今日再度官宣了两款新品， 包括 vivo WATCH 6 智能手表和 vivo Buds Clip 耳夹耳机 。 据介绍，vivo WATCH 6 智能手表预装 BlueOS 系统，采用蓝宝石玻",
       "domain": "ai",
-      "entity": [
-        "OpenAI"
-      ],
-      "final_score": 150,
-      "hotness": 52.5,
-      "id": "20a461fbf649ac3d71077162be1bebc2",
+      "entity": [],
+      "final_score": 175,
+      "hotness": 61.8,
+      "id": "9b89f306fe8eabe7d1943075f8f9361c",
       "importance": "B",
       "industry_impact": "",
-      "link": "https://openai.com/index/navier-stokes-solution/",
-      "published": "2026-09-08T17:13:21+00:00",
-      "published_ago": "9 小时前",
-      "rank": 387,
-      "source": "Hacker News",
-      "source_name": "Hacker News",
-      "source_priority": 60,
-      "source_quality": "medium",
-      "source_region": "Global",
+      "link": "https://www.ithome.com/1/000/610.htm",
+      "published": "2026-09-10T02:30:22+00:00",
+      "published_ago": "10 分钟前",
+      "rank": 14,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
       "source_type": "rss",
       "source_weight": 7,
-      "summary": "Article URL: https://openai.com/index/navier-stokes-solution/ Comments URL: https://news.ycombinator.com/item?id=49613262 Points: 1142 # Comments: 983",
-      "summary_cn": "[综合资讯] | 核心信息: com/index/navier-stokes-solution/ Comments URL: https://news",
+      "summary": "IT之家 9 月 10 日消息，vivo 官方今日再度官宣了两款新品， 包括 vivo WATCH 6 智能手表和 vivo Buds Clip 耳夹耳机 。 据介绍，vivo WATCH 6 智能手表预装 BlueOS 系统，采用蓝宝石玻璃表镜设计，拥有超轻薄表体，支持进阶跑步指导等功能；vivo Buds Clip 主打 5.2g 舒适稳固佩戴、高清质感人声以及跨生态无缝三连接。 根据规划， ",
+      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 10 日消息，vivo 官方今日再度官宣了两款新品， 包括 vivo WATCH 6 智能手表和 vivo Buds Clip 耳夹耳机 。 据介绍，vivo WATCH 6 智能手表预装 BlueOS 系统，采用蓝宝石玻",
       "summary_type": [
-        "综合资讯"
+        "产品动态"
       ],
-      "tags": [
-        {
-          "l": "OpenAI",
-          "t": "company"
-        }
-      ],
-      "title": "On the Navier–Stokes Millennium Prize Problem",
-      "title_cn": "",
+      "tags": [],
+      "title": "vivo WATCH 6 智能手表和 Buds Clip 耳夹耳机亮相，9 月 21 日发布",
+      "title_cn": "vivo WATCH 6 智能手表和 Buds Clip 耳夹耳机亮相，9 月 21 日发布",
       "translation_source": "article.chinese_summary",
-      "value_score": 38
+      "value_score": 33
     },
     {
       "ai_status": "none",
-      "application": [
-        "Research",
-        "Development"
-      ],
-      "card_summary": "[研究进展] | 核心信息: 了解 MIT 研究人员如何使用 GPT-5.6 Sol 和 Codex 自主运行量子计算实验、分析结果和校准量子位。",
-      "category": "model_update",
-      "chinese_summary": "[研究进展] | GPT / GPT-5 | See how an MIT researcher uses GPT-5 | 核心信息: 6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits | 行业影响: 该研究可能对GPT/GPT-5技术路线产生重要影响",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: 4 接口，单显最高可实现 4K144Hz / 2K240Hz，双显最高可实现 4K60Hz / 2K240Hz。 这款拓展坞加入智能屏显交互功能，自带显示屏可以实时呈现分辨率、刷新率、接口状态、充电速度等信息，支持在 App、网",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | IT之家 9 月 10 日消息，安克 Anker 空间站高刷桌面拓展坞今日开售， 售价 599 元 。 这款拓展坞主打超高刷新率，配备 HDMI 2 | 核心信息: 4 接口，单显最高可实现 4K144Hz / 2K240Hz，双显最高可实现 4K60Hz / 2K240Hz。 这款拓展坞加入智能屏显交互功能，自带显示屏可以实时呈现分辨率、刷新率、接口状态、充电速度等信息，支持在 App、网",
       "content_type": "updates",
-      "core_info": "了解 MIT 研究人员如何使用 GPT-5.6 Sol 和 Codex 自主运行量子计算实验、分析结果和校准量子位。",
+      "core_info": "4 接口，单显最高可实现 4K144Hz / 2K240Hz，双显最高可实现 4K60Hz / 2K240Hz。 这款拓展坞加入智能屏显交互功能，自带显示屏可以实时呈现分辨率、刷新率、接口状态、充电速度等信息，支持在 App、网",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 175,
+      "hotness": 61.7,
+      "id": "f47b404dce68582f8e69bfbe7e3862ad",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/609.htm",
+      "published": "2026-09-10T02:26:29+00:00",
+      "published_ago": "14 分钟前",
+      "rank": 15,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，安克 Anker 空间站高刷桌面拓展坞今日开售， 售价 599 元 。 这款拓展坞主打超高刷新率，配备 HDMI 2.1 接口和 DP 1.4 接口，单显最高可实现 4K144Hz / 2K240Hz，双显最高可实现 4K60Hz / 2K240Hz。 这款拓展坞加入智能屏显交互功能，自带显示屏可以实时呈现分辨率、刷新率、接口状态、充电速度等信息，支持在 App、网",
+      "summary_cn": "[综合资讯] | 核心信息: 4 接口，单显最高可实现 4K144Hz / 2K240Hz，双显最高可实现 4K60Hz / 2K240Hz。 这款拓展坞加入智能屏显交互功能，自带显示屏可以实时呈现分辨率、刷新率、接口状态、充电速度等信息，支持在 App、网",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "安克 Anker 空间站高刷桌面 10 合 1 拓展坞开售：最高 4K144Hz / 2K240Hz，599 元",
+      "title_cn": "安克 Anker 空间站高刷桌面 10 合 1 拓展坞开售：最高 4K144Hz / 2K240Hz，599 元",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: 18 万元。 据IT之家此前报道，2027 款 AION RT 于今年 8 月 5 日正式上市，首发提供： 550 智享版：9",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | IT之家 9 月 10 日消息，广汽埃安官方今日宣布加推埃安 RT 605 智享版，官方指导价 10 | 核心信息: 18 万元。 据IT之家此前报道，2027 款 AION RT 于今年 8 月 5 日正式上市，首发提供： 550 智享版：9",
+      "content_type": "updates",
+      "core_info": "18 万元。 据IT之家此前报道，2027 款 AION RT 于今年 8 月 5 日正式上市，首发提供： 550 智享版：9",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 178,
+      "hotness": 61.7,
+      "id": "b3333d13adf4e85a7bf200f90bcdde98",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/607.htm",
+      "published": "2026-09-10T02:24:16+00:00",
+      "published_ago": "16 分钟前",
+      "rank": 10,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，广汽埃安官方今日宣布加推埃安 RT 605 智享版，官方指导价 10.18 万元。 据IT之家此前报道，2027 款 AION RT 于今年 8 月 5 日正式上市，首发提供： 550 智享版：9.98 万元 605 智豪版：10.98 万元 710 智豪版：11.98 万元 710 智尊版：12.38 万元 这款新车长宽高 4865/1875/1520mm，轴距 ",
+      "summary_cn": "[综合资讯] | 核心信息: 18 万元。 据IT之家此前报道，2027 款 AION RT 于今年 8 月 5 日正式上市，首发提供： 550 智享版：9",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "10.18 万元广汽埃安 RT 605 智享版上市：非晶合金电驱 + 碳化硅电控 + 宁德时代电池",
+      "title_cn": "10.18 万元广汽埃安 RT 605 智享版上市：非晶合金电驱 + 碳化硅电控 + 宁德时代电池",
+      "translation_source": "article.chinese_summary",
+      "value_score": 36
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[商业动态] | 核心信息: 状态：正在调查 我们正在调查所列服务的问题。 受影响的组件对话（性能下降）",
+      "category": "product_update",
+      "chinese_summary": "[商业动态] | GPT | Status: Investigating We are investigating the issue for the listed services | 核心信息: Affected components Conversations (Degraded performance) | 行业影响: 这一商业动向反映了GPT行业格局变化",
+      "content_type": "updates",
+      "core_info": "状态：正在调查 我们正在调查所列服务的问题。 受影响的组件对话（性能下降）",
       "domain": "ai",
       "entity": [
-        "GPT",
-        "GPT-5"
+        "GPT"
       ],
-      "final_score": 208,
-      "hotness": 64.3,
-      "id": "828fdb4ed5a90b2bec409fe6c68f13ae",
+      "final_score": 205,
+      "hotness": 67.6,
+      "id": "4d0cc1049ffbcd0715e4b307fde24ffb",
       "importance": "A",
       "industry_impact": "",
-      "link": "https://openai.com/index/codex-quantum-computing-experiments",
-      "published": "2026-09-08T17:00:00+00:00",
-      "published_ago": "9 小时前",
-      "rank": 24,
-      "source": "OpenAI News",
-      "source_name": "OpenAI 官方",
-      "source_priority": 100,
+      "link": "https://status.openai.com//incidents/01M24HYC9SX2Q4471EVMY6EXQE",
+      "published": "2026-09-10T02:21:57+00:00",
+      "published_ago": "18 分钟前",
+      "rank": 1,
+      "source": "OpenAI Status",
+      "source_name": "OpenAI Status 官方",
+      "source_priority": 95,
       "source_quality": "low",
       "source_region": "Global",
       "source_type": "rss",
-      "source_weight": 9,
-      "summary": "See how an MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.",
-      "summary_cn": "[研究进展] | 核心信息: 了解 MIT 研究人员如何使用 GPT-5.6 Sol 和 Codex 自主运行量子计算实验、分析结果和校准量子位。",
+      "source_weight": 8,
+      "summary": "Status: Investigating We are investigating the issue for the listed services. Affected components Conversations (Degraded performance)",
+      "summary_cn": "[商业动态] | 核心信息: 状态：正在调查 我们正在调查所列服务的问题。 受影响的组件对话（性能下降）",
       "summary_type": [
-        "研究进展"
+        "商业动态"
       ],
       "tags": [
         {
           "l": "GPT",
           "t": "tech"
-        },
+        }
+      ],
+      "title": "Unable to open shared ChatGPT Project using direct link",
+      "title_cn": "无法使用直接链接打开共享的 ChatGPT 项目",
+      "translation_source": "cache",
+      "value_score": 42
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[产品动态] | 核心信息: 5\" 4:3 120Hz OLED；扳机凸出。 Duo Lite 基于高通跃龙 QCS6125，运行",
+      "category": "product_update",
+      "chinese_summary": "[产品动态] | IT之家 9 月 10 日消息，Retroid Pocket 昨日发布双屏 Android 掌机 Duo 与 Duo Lite 的预告片，公布了这两款设备的核心规格。 Duo 基于高通跃龙 Q-7790，运行 Android 16 操作系统；上屏 5 | 核心信息: 5\" 4:3 120Hz OLED；扳机凸出。 Duo Lite 基于高通跃龙 QCS6125，运行 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
+      "content_type": "updates",
+      "core_info": "5\" 4:3 120Hz OLED；扳机凸出。 Duo Lite 基于高通跃龙 QCS6125，运行",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 174,
+      "hotness": 61.5,
+      "id": "2f7f0af8b58d0ccc397969f714d977c0",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/605.htm",
+      "published": "2026-09-10T02:17:06+00:00",
+      "published_ago": "23 分钟前",
+      "rank": 17,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，Retroid Pocket 昨日发布双屏 Android 掌机 Duo 与 Duo Lite 的预告片，公布了这两款设备的核心规格。 Duo 基于高通跃龙 Q-7790，运行 Android 16 操作系统；上屏 5.5\" 16:9 120Hz OLED、下屏 4.5\" 4:3 120Hz OLED；扳机凸出。 Duo Lite 基于高通跃龙 QCS6125，运行",
+      "summary_cn": "[产品动态] | 核心信息: 5\" 4:3 120Hz OLED；扳机凸出。 Duo Lite 基于高通跃龙 QCS6125，运行",
+      "summary_type": [
+        "产品动态"
+      ],
+      "tags": [],
+      "title": "Retroid Pocket 预告双屏 Android 掌机 Duo / Duo Lite，基于高通跃龙芯片",
+      "title_cn": "Retroid Pocket 预告双屏 Android 掌机 Duo / Duo Lite，基于高通跃龙芯片",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，vivo 今日官宣 周杰伦成为 vivo 影像大使 ，并晒出了一段沉浸式开箱 vivo X500 Pro Max 手机的视频。 vivo X500 Pro Max 整体延续了上一代的外观设计，包括大圆盘镜头模",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | IT之家 9 月 10 日消息，vivo 今日官宣 周杰伦成为 vivo 影像大使 ，并晒出了一段沉浸式开箱 vivo X500 Pro Max 手机的视频。 vivo X500 Pro Max 整体延续了上一代的外观设计，包括大圆盘镜头模组、机身拼色设计，镜头模组中间有一个显眼的蓝色蔡司 Logo | 核心信息: IT之家 9 月 10 日消息，vivo 今日官宣 周杰伦成为 vivo 影像大使 ，并晒出了一段沉浸式开箱 vivo X500 Pro Max 手机的视频。 vivo X500 Pro Max 整体延续了上一代的外观设计，包括大圆盘镜头模",
+      "content_type": "updates",
+      "core_info": "IT之家 9 月 10 日消息，vivo 今日官宣 周杰伦成为 vivo 影像大使 ，并晒出了一段沉浸式开箱 vivo X500 Pro Max 手机的视频。 vivo X500 Pro Max 整体延续了上一代的外观设计，包括大圆盘镜头模",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 174,
+      "hotness": 61.5,
+      "id": "485238da301c131c937d0e19ac6ec653",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/604.htm",
+      "published": "2026-09-10T02:16:42+00:00",
+      "published_ago": "24 分钟前",
+      "rank": 18,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，vivo 今日官宣 周杰伦成为 vivo 影像大使 ，并晒出了一段沉浸式开箱 vivo X500 Pro Max 手机的视频。 vivo X500 Pro Max 整体延续了上一代的外观设计，包括大圆盘镜头模组、机身拼色设计，镜头模组中间有一个显眼的蓝色蔡司 Logo，开箱的配色名为“ 大地回声 ”。 这个手机套装中包含了 vivo 影像套件，包括增距镜、手机壳、专",
+      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，vivo 今日官宣 周杰伦成为 vivo 影像大使 ，并晒出了一段沉浸式开箱 vivo X500 Pro Max 手机的视频。 vivo X500 Pro Max 整体延续了上一代的外观设计，包括大圆盘镜头模",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "周杰伦成为 vivo 影像大使：开箱 X500 Pro Max 手机，还有配色叫“晴天”",
+      "title_cn": "周杰伦成为 vivo 影像大使：开箱 X500 Pro Max 手机，还有配色叫“晴天”",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，华为 Pura X View 阔直板手机已于昨日 10:08 开启首销，首发提供了购机五重礼权益和至高 944 元高校学生专属权益。 京东 HUAWEI Pura X View 5999 元起 直达链接 据博",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | Huawei | IT之家 9 月 10 日消息，华为 Pura X View 阔直板手机已于昨日 10:08 开启首销，首发提供了购机五重礼权益和至高 944 元高校学生专属权益。 京东 HUAWEI Pura X View 5999 元起 直达链接 据博主 @我鸿 今日分享， 全球首款阔直板华为 Pura X V | 核心信息: IT之家 9 月 10 日消息，华为 Pura X View 阔直板手机已于昨日 10:08 开启首销，首发提供了购机五重礼权益和至高 944 元高校学生专属权益。 京东 HUAWEI Pura X View 5999 元起 直达链接 据博",
+      "content_type": "updates",
+      "core_info": "IT之家 9 月 10 日消息，华为 Pura X View 阔直板手机已于昨日 10:08 开启首销，首发提供了购机五重礼权益和至高 944 元高校学生专属权益。 京东 HUAWEI Pura X View 5999 元起 直达链接 据博",
+      "domain": "ai",
+      "entity": [
+        "Huawei"
+      ],
+      "final_score": 174,
+      "hotness": 61.5,
+      "id": "073ea14a6a76f7435b74c96a589d31b3",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/603.htm",
+      "published": "2026-09-10T02:16:16+00:00",
+      "published_ago": "24 分钟前",
+      "rank": 19,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，华为 Pura X View 阔直板手机已于昨日 10:08 开启首销，首发提供了购机五重礼权益和至高 944 元高校学生专属权益。 京东 HUAWEI Pura X View 5999 元起 直达链接 据博主 @我鸿 今日分享， 全球首款阔直板华为 Pura X View 首销当日销售超 18 万台 。另外，华为 Pura X、Pura X Max 上市累计发货量",
+      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，华为 Pura X View 阔直板手机已于昨日 10:08 开启首销，首发提供了购机五重礼权益和至高 944 元高校学生专属权益。 京东 HUAWEI Pura X View 5999 元起 直达链接 据博",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [
         {
-          "l": "GPT-5",
+          "l": "Huawei",
+          "t": "company"
+        }
+      ],
+      "title": "全球首款阔直板手机华为 Pura X View 首销当日销售超 18 万台",
+      "title_cn": "全球首款阔直板手机华为 Pura X View 首销当日销售超 18 万台",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [
+        "Development"
+      ],
+      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力，",
+      "category": "product_update",
+      "chinese_summary": "[产品动态] | DeepSeek | IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力，并根据任务难度调整处理能力。 在此之前，多模态视觉理解模型  | 核心信息: IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力， | 行业影响: 该动态反映了DeepSeek领域的最新发展方向，值得关注",
+      "content_type": "updates",
+      "core_info": "IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力，",
+      "domain": "ai",
+      "entity": [
+        "DeepSeek"
+      ],
+      "final_score": 178,
+      "hotness": 61.4,
+      "id": "c756fc2ffc35b2b4c8ab276310ff952d",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/602.htm",
+      "published": "2026-09-10T02:11:13+00:00",
+      "published_ago": "29 分钟前",
+      "rank": 8,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力，并根据任务难度调整处理能力。 在此之前，多模态视觉理解模型 DeepSeek-V4-Flash-Vision-Exp 已上线 DeepSeek API 平台，支",
+      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 10 日消息，DeepSeek 今日宣布将原有的快速模式、专家模式和识图模式合而为一，这意味着用户将不再需要手动切换。 DeepSeek 将其整合为统一的智能模式，模型可自动检测查询复杂度、在检测到图片输入时激活视觉能力，",
+      "summary_type": [
+        "产品动态"
+      ],
+      "tags": [
+        {
+          "l": "DeepSeek",
+          "t": "company"
+        }
+      ],
+      "title": "DeepSeek 快速、专家、识图模式合并升级，V4.1 Flash 最快今日发布",
+      "title_cn": "DeepSeek 快速、专家、识图模式合并升级，V4.1 Flash 最快今日发布",
+      "translation_source": "article.chinese_summary",
+      "value_score": 37
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，阿维塔科技总裁陈卓今日发文谈及了 9 系旗舰 SUV 的设计，正面回应了“怎么不太阿维塔了”。 这两年，我们一直在思考：阿维塔的前瞻设计，要怎样满足更多用户的期待？ 推进双谱系设计，是我们给出的答案 。 一个",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | IT之家 9 月 10 日消息，阿维塔科技总裁陈卓今日发文谈及了 9 系旗舰 SUV 的设计，正面回应了“怎么不太阿维塔了”。 这两年，我们一直在思考：阿维塔的前瞻设计，要怎样满足更多用户的期待？ 推进双谱系设计，是我们给出的答案 。 一个是大家熟悉的先锋系列，以阿维塔 11、12 为代表，它们会继 | 核心信息: IT之家 9 月 10 日消息，阿维塔科技总裁陈卓今日发文谈及了 9 系旗舰 SUV 的设计，正面回应了“怎么不太阿维塔了”。 这两年，我们一直在思考：阿维塔的前瞻设计，要怎样满足更多用户的期待？ 推进双谱系设计，是我们给出的答案 。 一个",
+      "content_type": "updates",
+      "core_info": "IT之家 9 月 10 日消息，阿维塔科技总裁陈卓今日发文谈及了 9 系旗舰 SUV 的设计，正面回应了“怎么不太阿维塔了”。 这两年，我们一直在思考：阿维塔的前瞻设计，要怎样满足更多用户的期待？ 推进双谱系设计，是我们给出的答案 。 一个",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 174,
+      "hotness": 61.4,
+      "id": "5aed5ce4ee381756b4402f98b905fcc2",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/601.htm",
+      "published": "2026-09-10T02:10:11+00:00",
+      "published_ago": "30 分钟前",
+      "rank": 20,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，阿维塔科技总裁陈卓今日发文谈及了 9 系旗舰 SUV 的设计，正面回应了“怎么不太阿维塔了”。 这两年，我们一直在思考：阿维塔的前瞻设计，要怎样满足更多用户的期待？ 推进双谱系设计，是我们给出的答案 。 一个是大家熟悉的先锋系列，以阿维塔 11、12 为代表，它们会继续进化，下一代车型正在推进中，它将继续捍卫品牌基因里的开创和锐气；另一个是旗舰系列，向上开拓更加大气",
+      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，阿维塔科技总裁陈卓今日发文谈及了 9 系旗舰 SUV 的设计，正面回应了“怎么不太阿维塔了”。 这两年，我们一直在思考：阿维塔的前瞻设计，要怎样满足更多用户的期待？ 推进双谱系设计，是我们给出的答案 。 一个",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "阿维塔陈卓回应 9 系旗舰 SUV“不太阿维塔”，称品牌设计将推进双谱系方案",
+      "title_cn": "阿维塔陈卓回应 9 系旗舰 SUV“不太阿维塔”，称品牌设计将推进双谱系方案",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [
+        "Gaming"
+      ],
+      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，动作冒险角色扮演游戏《控制：共振》(CONTROL Resonant) 昨日公布了该作的 最终版本 PC 平台配置需求 。 对于入门级配置玩家，在上采样“质量”、图形“低”设置下，需至少拥有 NVIDIA G",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | NVIDIA | IT之家 9 月 10 日消息，动作冒险角色扮演游戏《控制：共振》(CONTROL Resonant) 昨日公布了该作的 最终版本 PC 平台配置需求 。 对于入门级配置玩家，在上采样“质量”、图形“低”设置下，需至少拥有 NVIDIA GeForce GTX 1070 / AMD Radeon R | 核心信息: IT之家 9 月 10 日消息，动作冒险角色扮演游戏《控制：共振》(CONTROL Resonant) 昨日公布了该作的 最终版本 PC 平台配置需求 。 对于入门级配置玩家，在上采样“质量”、图形“低”设置下，需至少拥有 NVIDIA G",
+      "content_type": "updates",
+      "core_info": "IT之家 9 月 10 日消息，动作冒险角色扮演游戏《控制：共振》(CONTROL Resonant) 昨日公布了该作的 最终版本 PC 平台配置需求 。 对于入门级配置玩家，在上采样“质量”、图形“低”设置下，需至少拥有 NVIDIA G",
+      "domain": "ai",
+      "entity": [
+        "NVIDIA"
+      ],
+      "final_score": 174,
+      "hotness": 61.2,
+      "id": "ae03fdd4e68206cf4e6dbb9e4fdde25b",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/595.htm",
+      "published": "2026-09-10T02:01:08+00:00",
+      "published_ago": "39 分钟前",
+      "rank": 21,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，动作冒险角色扮演游戏《控制：共振》(CONTROL Resonant) 昨日公布了该作的 最终版本 PC 平台配置需求 。 对于入门级配置玩家，在上采样“质量”、图形“低”设置下，需至少拥有 NVIDIA GeForce GTX 1070 / AMD Radeon RX 5600 XT / Intel Arc B580 才能获得 1080p 30FPS 的体验。 而",
+      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，动作冒险角色扮演游戏《控制：共振》(CONTROL Resonant) 昨日公布了该作的 最终版本 PC 平台配置需求 。 对于入门级配置玩家，在上采样“质量”、图形“低”设置下，需至少拥有 NVIDIA G",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [
+        {
+          "l": "NVIDIA",
           "t": "tech"
         }
       ],
-      "title": "How GPT-5.6 Sol helps run quantum computing experiments",
-      "title_cn": "GPT-5.6 Sol 如何帮助运行量子计算实验",
+      "title": "《控制：共振》公布最终版本 PC 配置要求：起步 GTX 1070 / RX 5600 XT",
+      "title_cn": "《控制：共振》公布最终版本 PC 配置要求：起步 GTX 1070 / RX 5600 XT",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[产品动态] | 核心信息: IT之家 9 月 10 日消息，苹果今日正式发布了 其首款折叠屏手机 iPhone Duo ，作为苹果的老对手、“折叠屏手机全球首发量产”称号拥有者，三星也是照常开启了“火力全开吐槽”模式。 三星 Galaxy 美国官方 X 账号 Sams",
+      "category": "product_update",
+      "chinese_summary": "[产品动态] | IT之家 9 月 10 日消息，苹果今日正式发布了 其首款折叠屏手机 iPhone Duo ，作为苹果的老对手、“折叠屏手机全球首发量产”称号拥有者，三星也是照常开启了“火力全开吐槽”模式。 三星 Galaxy 美国官方 X 账号 Samsung Mobile US 今日凌晨在苹果发布会进行时更新多 | 核心信息: IT之家 9 月 10 日消息，苹果今日正式发布了 其首款折叠屏手机 iPhone Duo ，作为苹果的老对手、“折叠屏手机全球首发量产”称号拥有者，三星也是照常开启了“火力全开吐槽”模式。 三星 Galaxy 美国官方 X 账号 Sams | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
+      "content_type": "updates",
+      "core_info": "IT之家 9 月 10 日消息，苹果今日正式发布了 其首款折叠屏手机 iPhone Duo ，作为苹果的老对手、“折叠屏手机全球首发量产”称号拥有者，三星也是照常开启了“火力全开吐槽”模式。 三星 Galaxy 美国官方 X 账号 Sams",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 174,
+      "hotness": 61.1,
+      "id": "50533dca1459b16b9bedc4c0e29bfb0e",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/588.htm",
+      "published": "2026-09-10T01:54:25+00:00",
+      "published_ago": "46 分钟前",
+      "rank": 22,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，苹果今日正式发布了 其首款折叠屏手机 iPhone Duo ，作为苹果的老对手、“折叠屏手机全球首发量产”称号拥有者，三星也是照常开启了“火力全开吐槽”模式。 三星 Galaxy 美国官方 X 账号 Samsung Mobile US 今日凌晨在苹果发布会进行时更新多条帖子，表示： 到目前为止，还是老样子。 配饰？它给人的感觉就像是调味品却没有食物。 让我们等着？行",
+      "summary_cn": "[产品动态] | 核心信息: IT之家 9 月 10 日消息，苹果今日正式发布了 其首款折叠屏手机 iPhone Duo ，作为苹果的老对手、“折叠屏手机全球首发量产”称号拥有者，三星也是照常开启了“火力全开吐槽”模式。 三星 Galaxy 美国官方 X 账号 Sams",
+      "summary_type": [
+        "产品动态"
+      ],
+      "tags": [],
+      "title": "苹果 iPhone Duo 发布后三星火力全开嘲讽：这是《模拟人生》续作吗，热剩饭怎么没通知我，多邻国快来",
+      "title_cn": "苹果 iPhone Duo 发布后三星火力全开嘲讽：这是《模拟人生》续作吗，热剩饭怎么没通知我，多邻国快来",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [
+        "Research",
+        "Business"
+      ],
+      "card_summary": "[研究进展] | 核心信息: 北京时间 9 月 10 日，据《商业内幕》报道，OpenAI 周三宣布保罗 · 克里斯蒂亚诺 (Paul Christiano) 加入其基金会董事会。随后，克里斯蒂亚诺直言不讳地谈到了 AI 超级智能时代所面临的风险。 克里斯蒂亚诺此前曾在",
+      "category": "breakthrough",
+      "chinese_summary": "[研究进展] | OpenAI Research | 北京时间 9 月 10 日，据《商业内幕》报道，OpenAI 周三宣布保罗 · 克里斯蒂亚诺 (Paul Christiano) 加入其基金会董事会。随后，克里斯蒂亚诺直言不讳地谈到了 AI 超级智能时代所面临的风险。 克里斯蒂亚诺此前曾在 OpenAI 负责对齐研究，后来进入美国联邦政府工作，担任 | 核心信息: 北京时间 9 月 10 日，据《商业内幕》报道，OpenAI 周三宣布保罗 · 克里斯蒂亚诺 (Paul Christiano) 加入其基金会董事会。随后，克里斯蒂亚诺直言不讳地谈到了 AI 超级智能时代所面临的风险。 克里斯蒂亚诺此前曾在 | 行业影响: 该研究可能对Research/OpenAI技术路线产生重要影响",
+      "content_type": "updates",
+      "core_info": "北京时间 9 月 10 日，据《商业内幕》报道，OpenAI 周三宣布保罗 · 克里斯蒂亚诺 (Paul Christiano) 加入其基金会董事会。随后，克里斯蒂亚诺直言不讳地谈到了 AI 超级智能时代所面临的风险。 克里斯蒂亚诺此前曾在",
+      "domain": "ai",
+      "entity": [
+        "OpenAI",
+        "Research"
+      ],
+      "final_score": 180,
+      "hotness": 64.0,
+      "id": "8b867615072402ddab3ab75273fef98a",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/587.htm",
+      "published": "2026-09-10T01:45:48+00:00",
+      "published_ago": "55 分钟前",
+      "rank": 6,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "北京时间 9 月 10 日，据《商业内幕》报道，OpenAI 周三宣布保罗 · 克里斯蒂亚诺 (Paul Christiano) 加入其基金会董事会。随后，克里斯蒂亚诺直言不讳地谈到了 AI 超级智能时代所面临的风险。 克里斯蒂亚诺此前曾在 OpenAI 负责对齐研究，后来进入美国联邦政府工作，担任美国国家标准与技术研究院下属 AI 标准与创新中心的安全负责人。 周三，他在 X 平台上表示，失去对",
+      "summary_cn": "[研究进展] | 核心信息: 北京时间 9 月 10 日，据《商业内幕》报道，OpenAI 周三宣布保罗 · 克里斯蒂亚诺 (Paul Christiano) 加入其基金会董事会。随后，克里斯蒂亚诺直言不讳地谈到了 AI 超级智能时代所面临的风险。 克里斯蒂亚诺此前曾在",
+      "summary_type": [
+        "研究进展"
+      ],
+      "tags": [
+        {
+          "l": "OpenAI",
+          "t": "company"
+        },
+        {
+          "l": "Research",
+          "t": "tech"
+        }
+      ],
+      "title": "OpenAI 新董事严厉警告：AI 失控将是灾难性的，大多数人可能丧命",
+      "title_cn": "OpenAI 新董事严厉警告：AI 失控将是灾难性的，大多数人可能丧命",
+      "translation_source": "article.chinese_summary",
+      "value_score": 36
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: 74GHz 中核），配备 12GB 内存，运行 Android 17 系统，GB7 单核跑",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | IT之家 9 月 10 日消息，一款型号为 M1544F 的小米新机现身 Geekbench 基准测试数据库，数码博主称其为小米 18 Pro 系列，预计为小米 18 Pro Max。 数据显示，该机搭载了高通第六代骁龙 8 超级至尊版（两颗 5 | 核心信息: 74GHz 中核），配备 12GB 内存，运行 Android 17 系统，GB7 单核跑",
+      "content_type": "updates",
+      "core_info": "74GHz 中核），配备 12GB 内存，运行 Android 17 系统，GB7 单核跑",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 174,
+      "hotness": 60.9,
+      "id": "4ed49b429404c317b1d5d12eb12cc74f",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/585.htm",
+      "published": "2026-09-10T01:44:21+00:00",
+      "published_ago": "56 分钟前",
+      "rank": 23,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，一款型号为 M1544F 的小米新机现身 Geekbench 基准测试数据库，数码博主称其为小米 18 Pro 系列，预计为小米 18 Pro Max。 数据显示，该机搭载了高通第六代骁龙 8 超级至尊版（两颗 5.11GHz 超大核，3 颗 4.03GHz 大核，3 颗 2.74GHz 中核），配备 12GB 内存，运行 Android 17 系统，GB7 单核跑",
+      "summary_cn": "[综合资讯] | 核心信息: 74GHz 中核），配备 12GB 内存，运行 Android 17 系统，GB7 单核跑",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "小米 18 Pro Max 新机现身 Geekbench，搭载高通第六代骁龙 8 超级至尊版",
+      "title_cn": "小米 18 Pro Max 新机现身 Geekbench，搭载高通第六代骁龙 8 超级至尊版",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: 29 亿公里） 的高密度光纤 。 这些光纤将加速 Verizon 实现 4000~5000 万宽带用户的进程",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | IT之家 9 月 10 日消息，北美三大电信运营商之一的 Verizon（威瑞森）当地时间 8 日宣布与材料巨头 Corning（康宁）达成一份 价值数十亿美元 的协议。 根据该协议，康宁将在 2027~2032 年期间向 Verizon 交付超过 8,000 万英里 （IT之家注：约 1 | 核心信息: 29 亿公里） 的高密度光纤 。 这些光纤将加速 Verizon 实现 4000~5000 万宽带用户的进程",
+      "content_type": "updates",
+      "core_info": "29 亿公里） 的高密度光纤 。 这些光纤将加速 Verizon 实现 4000~5000 万宽带用户的进程",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 174,
+      "hotness": 60.7,
+      "id": "8b9f53b4f79d44e2eeaf697d5235fa62",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/584.htm",
+      "published": "2026-09-10T01:33:31+00:00",
+      "published_ago": "1 小时前",
+      "rank": 24,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，北美三大电信运营商之一的 Verizon（威瑞森）当地时间 8 日宣布与材料巨头 Corning（康宁）达成一份 价值数十亿美元 的协议。 根据该协议，康宁将在 2027~2032 年期间向 Verizon 交付超过 8,000 万英里 （IT之家注：约 1.29 亿公里） 的高密度光纤 。 这些光纤将加速 Verizon 实现 4000~5000 万宽带用户的进程",
+      "summary_cn": "[综合资讯] | 核心信息: 29 亿公里） 的高密度光纤 。 这些光纤将加速 Verizon 实现 4000~5000 万宽带用户的进程",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "美国电信运营商 Verizon 与康宁达成 8000 万英里光纤供应协议",
+      "title_cn": "美国电信运营商 Verizon 与康宁达成 8000 万英里光纤供应协议",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [
+        "Gaming"
+      ],
+      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，由《王者荣耀》项目原班人马研发的英雄策略对战游戏《王者万象棋》于 9 月 10 日正式开服，支持 iOS、安卓、鸿蒙及 PC 端，支持多端游玩与全平台数据互通。 开服前官方已开放预下载与预注册，玩家可提前创角",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | Tencent / Huawei | IT之家 9 月 10 日消息，由《王者荣耀》项目原班人马研发的英雄策略对战游戏《王者万象棋》于 9 月 10 日正式开服，支持 iOS、安卓、鸿蒙及 PC 端，支持多端游玩与全平台数据互通。 开服前官方已开放预下载与预注册，玩家可提前创角抢占昵称，该作当时还登上了苹果 App Store 游戏免费 | 核心信息: IT之家 9 月 10 日消息，由《王者荣耀》项目原班人马研发的英雄策略对战游戏《王者万象棋》于 9 月 10 日正式开服，支持 iOS、安卓、鸿蒙及 PC 端，支持多端游玩与全平台数据互通。 开服前官方已开放预下载与预注册，玩家可提前创角",
+      "content_type": "updates",
+      "core_info": "IT之家 9 月 10 日消息，由《王者荣耀》项目原班人马研发的英雄策略对战游戏《王者万象棋》于 9 月 10 日正式开服，支持 iOS、安卓、鸿蒙及 PC 端，支持多端游玩与全平台数据互通。 开服前官方已开放预下载与预注册，玩家可提前创角",
+      "domain": "ai",
+      "entity": [
+        "Tencent",
+        "Huawei"
+      ],
+      "final_score": 174,
+      "hotness": 60.7,
+      "id": "518a7ceedf43e5742bbca8ffd2c0a291",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/583.htm",
+      "published": "2026-09-10T01:29:44+00:00",
+      "published_ago": "1 小时前",
+      "rank": 25,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，由《王者荣耀》项目原班人马研发的英雄策略对战游戏《王者万象棋》于 9 月 10 日正式开服，支持 iOS、安卓、鸿蒙及 PC 端，支持多端游玩与全平台数据互通。 开服前官方已开放预下载与预注册，玩家可提前创角抢占昵称，该作当时还登上了苹果 App Store 游戏免费榜首位。 游戏上线版本包含源自《王者荣耀》IP 的 85 位英雄与 18 位棋手，制作人 Donny",
+      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，由《王者荣耀》项目原班人马研发的英雄策略对战游戏《王者万象棋》于 9 月 10 日正式开服，支持 iOS、安卓、鸿蒙及 PC 端，支持多端游玩与全平台数据互通。 开服前官方已开放预下载与预注册，玩家可提前创角",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [
+        {
+          "l": "Tencent",
+          "t": "company"
+        },
+        {
+          "l": "Huawei",
+          "t": "company"
+        }
+      ],
+      "title": "腾讯《王者万象棋》正式开服：85 位英雄 18 位棋手首日登场，安卓最低骁龙 625、华为鸿蒙需麒麟 9000S",
+      "title_cn": "腾讯《王者万象棋》正式开服：85 位英雄 18 位棋手首日登场，安卓最低骁龙 625、华为鸿蒙需麒麟 9000S",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [
+        "Business",
+        "Development"
+      ],
+      "card_summary": "[行业趋势 / 产品动态] | 核心信息: 从 openclaw 开始，公司老板们经历了一场又一场的热潮，deepchat 也跟随升级为 deepwork，开始探索企业数字员工助手 本次更新： 企业 AI 工作台预览版：智能工作台的大部分核心功能，一个能做事的智能体。 企业 AI 工",
+      "category": "company",
+      "chinese_summary": "[行业趋势 / 产品动态] | 从 openclaw 开始，公司老板们经历了一场又一场的热潮，deepchat 也跟随升级为 deepwork，开始探索企业数字员工助手 本次更新： 企业 AI 工作台预览版：智能工作台的大部分核心功能，一个能做事的智能体。 企业 AI 工作台计划 ★智能工作台：集成 sandbox、shell、c | 核心信息: 从 openclaw 开始，公司老板们经历了一场又一场的热潮，deepchat 也跟随升级为 deepwork，开始探索企业数字员工助手 本次更新： 企业 AI 工作台预览版：智能工作台的大部分核心功能，一个能做事的智能体。 企业 AI 工 | 行业影响: 这一趋势将影响行业行业未来发展",
+      "content_type": "updates",
+      "core_info": "从 openclaw 开始，公司老板们经历了一场又一场的热潮，deepchat 也跟随升级为 deepwork，开始探索企业数字员工助手 本次更新： 企业 AI 工作台预览版：智能工作台的大部分核心功能，一个能做事的智能体。 企业 AI 工",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 156,
+      "hotness": 57.5,
+      "id": "3e7f8948a25b0b8872546554ac784991",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.oschina.net/news/502400",
+      "published": "2026-09-10T01:23:52+00:00",
+      "published_ago": "1 小时前",
+      "rank": 114,
+      "source": "OSCHINA 开源中国",
+      "source_name": "OSCHINA 开源中国",
+      "source_priority": 75,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "从 openclaw 开始，公司老板们经历了一场又一场的热潮，deepchat 也跟随升级为 deepwork，开始探索企业数字员工助手 本次更新： 企业 AI 工作台预览版：智能工作台的大部分核心功能，一个能做事的智能体。 企业 AI 工作台计划 ★智能工作台：集成 sandbox、shell、code、mcp、skill 的强大智能体，可以理解为企业可控的云...",
+      "summary_cn": "[行业趋势 / 产品动态] | 核心信息: 从 openclaw 开始，公司老板们经历了一场又一场的热潮，deepchat 也跟随升级为 deepwork，开始探索企业数字员工助手 本次更新： 企业 AI 工作台预览版：智能工作台的大部分核心功能，一个能做事的智能体。 企业 AI 工",
+      "summary_type": [
+        "行业趋势",
+        "产品动态"
+      ],
+      "tags": [],
+      "title": "deepwork企业 AI 工作台预览版",
+      "title_cn": "deepwork企业 AI 工作台预览版",
+      "translation_source": "article.chinese_summary",
+      "value_score": 24
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，Motorola（摩托罗拉）近日在其部分地区官网展开 signature 27 智能手机预热。 其宣传口号为 \"A new perspective is coming\"（新视角将至） 。 IT之家注意到，相关",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | IT之家 9 月 10 日消息，Motorola（摩托罗拉）近日在其部分地区官网展开 signature 27 智能手机预热。 其宣传口号为 \"A new perspective is coming\"（新视角将至） 。 IT之家注意到，相关网页的源代码中可以找到一段 \"Crystals by Swa | 核心信息: IT之家 9 月 10 日消息，Motorola（摩托罗拉）近日在其部分地区官网展开 signature 27 智能手机预热。 其宣传口号为 \"A new perspective is coming\"（新视角将至） 。 IT之家注意到，相关",
+      "content_type": "updates",
+      "core_info": "IT之家 9 月 10 日消息，Motorola（摩托罗拉）近日在其部分地区官网展开 signature 27 智能手机预热。 其宣传口号为 \"A new perspective is coming\"（新视角将至） 。 IT之家注意到，相关",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 176,
+      "hotness": 60.5,
+      "id": "2747ad94bd64bcd2993825b04636e3be",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ithome.com/1/000/580.htm",
+      "published": "2026-09-10T01:20:48+00:00",
+      "published_ago": "1 小时前",
+      "rank": 11,
+      "source": "IT之家科技",
+      "source_name": "IT之家科技",
+      "source_priority": 80,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "IT之家 9 月 10 日消息，Motorola（摩托罗拉）近日在其部分地区官网展开 signature 27 智能手机预热。 其宣传口号为 \"A new perspective is coming\"（新视角将至） 。 IT之家注意到，相关网页的源代码中可以找到一段 \"Crystals by Swarovski logo\" 的注释，这意味着 signature 27 很可能会引入施华洛世奇水晶装饰",
+      "summary_cn": "[综合资讯] | 核心信息: IT之家 9 月 10 日消息，Motorola（摩托罗拉）近日在其部分地区官网展开 signature 27 智能手机预热。 其宣传口号为 \"A new perspective is coming\"（新视角将至） 。 IT之家注意到，相关",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "摩托罗拉预热 signature 27 智能手机，有望引入施华洛世奇水晶装饰",
+      "title_cn": "摩托罗拉预热 signature 27 智能手机，有望引入施华洛世奇水晶装饰",
+      "translation_source": "article.chinese_summary",
+      "value_score": 35
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯]",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | 点击查看原文>",
+      "content_type": "updates",
+      "core_info": "",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 166,
+      "hotness": 57.2,
+      "id": "a8759105e5e3ceb98a5e0fef21a4f8c8",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.infoq.cn/video/52550fXfrMaZhMqwrsC5?utm_source=rss&utm_medium=article",
+      "published": "2026-09-10T01:04:35+00:00",
+      "published_ago": "1 小时前",
+      "rank": 50,
+      "source": "InfoQ 中文",
+      "source_name": "InfoQ 中文",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "点击查看原文>",
+      "summary_cn": "[综合资讯]",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "从 Harness 到 Loop 的持续进化",
+      "title_cn": "从 Harness 到 Loop 的持续进化",
+      "translation_source": "article.chinese_summary",
+      "value_score": 31
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: 宛若透明，全方位超预期 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | 宛若透明，全方位超预期 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。 | 核心信息: 宛若透明，全方位超预期 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "content_type": "updates",
+      "core_info": "宛若透明，全方位超预期 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 174,
+      "hotness": 59.0,
+      "id": "b3f0857e70f94f4a50cb27242fc58e98",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.ifanr.com/1679531?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "published": "2026-09-10T00:00:28+00:00",
+      "published_ago": "2 小时前",
+      "rank": 26,
+      "source": "APPSO",
+      "source_name": "APPSO",
+      "source_priority": 82,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 7,
+      "summary": "宛若透明，全方位超预期 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "summary_cn": "[综合资讯] | 核心信息: 宛若透明，全方位超预期 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "iPhone Duo 首发上手：唯一值两万元的折叠屏",
+      "title_cn": "iPhone Duo 首发上手：唯一值两万元的折叠屏",
+      "translation_source": "article.chinese_summary",
+      "value_score": 33
+    },
+    {
+      "ai_status": "none",
+      "application": [
+        "Development"
+      ],
+      "card_summary": "[综合资讯] | 核心信息: 编码-预填充-解码 (EPD) 分解是一种多模态模型的推理优化技术，它将视觉编码器阶段与预填充阶段分开......",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates the vision encoder stage from t | 核心信息: Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates t",
+      "content_type": "updates",
+      "core_info": "编码-预填充-解码 (EPD) 分解是一种多模态模型的推理优化技术，它将视觉编码器阶段与预填充阶段分开......",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 190,
+      "hotness": 57.5,
+      "id": "bf0d9d5b5028ddbd200b6c805407d771",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://developer.nvidia.com/blog/when-to-use-encode-prefill-decode-disaggregation-to-accelerate-multimodal-model-serving/",
+      "published": "2026-09-09T20:31:04+00:00",
+      "published_ago": "6 小时前",
+      "rank": 2,
+      "source": "NVIDIA Developer Blog",
+      "source_name": "NVIDIA Developer 官方",
+      "source_priority": 95,
+      "source_quality": "low",
+      "source_region": "Global",
+      "source_type": "rss",
+      "source_weight": 8,
+      "summary": "Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates the vision encoder stage from the prefill...",
+      "summary_cn": "[综合资讯] | 核心信息: 编码-预填充-解码 (EPD) 分解是一种多模态模型的推理优化技术，它将视觉编码器阶段与预填充阶段分开......",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving",
+      "title_cn": "何时使用编码-预填充-解码分解来加速多模式模型服务",
       "translation_source": "cache",
-      "value_score": 44
+      "value_score": 38
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[产品动态] | 核心信息: 每个 NVIDIA CUDA 工具包版本都增加了功能和性能改进，可帮助开发人员从 NVIDIA GPU 和更广泛的 NVIDIA 软件中获得更多收益...",
+      "category": "product_update",
+      "chinese_summary": "[产品动态] | NVIDIA / GPU | Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDI | 核心信息: Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVI | 行业影响: 该动态反映了NVIDIA/GPU领域的最新发展方向，值得关注",
+      "content_type": "updates",
+      "core_info": "每个 NVIDIA CUDA 工具包版本都增加了功能和性能改进，可帮助开发人员从 NVIDIA GPU 和更广泛的 NVIDIA 软件中获得更多收益...",
+      "domain": "ai",
+      "entity": [
+        "NVIDIA",
+        "GPU"
+      ],
+      "final_score": 190,
+      "hotness": 57.4,
+      "id": "c1f00eeb63252d3c5087d7b14789348e",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/",
+      "published": "2026-09-09T20:24:12+00:00",
+      "published_ago": "6 小时前",
+      "rank": 3,
+      "source": "NVIDIA Developer Blog",
+      "source_name": "NVIDIA Developer 官方",
+      "source_priority": 95,
+      "source_quality": "low",
+      "source_region": "Global",
+      "source_type": "rss",
+      "source_weight": 8,
+      "summary": "Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDIA software...",
+      "summary_cn": "[产品动态] | 核心信息: 每个 NVIDIA CUDA 工具包版本都增加了功能和性能改进，可帮助开发人员从 NVIDIA GPU 和更广泛的 NVIDIA 软件中获得更多收益...",
+      "summary_type": [
+        "产品动态"
+      ],
+      "tags": [
+        {
+          "l": "NVIDIA",
+          "t": "tech"
+        },
+        {
+          "l": "GPU",
+          "t": "tech"
+        }
+      ],
+      "title": "CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs",
+      "title_cn": "CUDA Toolkit 13.4 添加了 Windows on Arm 支持以及对共享 GPU 的更好控制",
+      "translation_source": "cache",
+      "value_score": 38
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[产品动态] | 核心信息: 一比根号二的小胖折叠",
+      "category": "product_update",
+      "chinese_summary": "[产品动态] | 一比根号二的小胖折叠 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
+      "content_type": "updates",
+      "core_info": "一比根号二的小胖折叠",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 163,
+      "hotness": 51.4,
+      "id": "652f2ef3406c161f226052c8450b4fc3",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.qbitai.com/2026/09/486450.html",
+      "published": "2026-09-09T19:24:22+00:00",
+      "published_ago": "7 小时前",
+      "rank": 69,
+      "source": "量子位",
+      "source_name": "量子位",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "一比根号二的小胖折叠",
+      "summary_cn": "[产品动态] | 核心信息: 一比根号二的小胖折叠",
+      "summary_type": [
+        "产品动态"
+      ],
+      "tags": [],
+      "title": "刚刚，苹果首款折叠屏发布！15999元起，AI参与设计",
+      "title_cn": "刚刚，苹果首款折叠屏发布！15999元起，AI参与设计",
+      "translation_source": "article.chinese_summary",
+      "value_score": 34
+    },
+    {
+      "ai_status": "none",
+      "application": [
+        "Business"
+      ],
+      "card_summary": "[综合资讯]",
+      "category": "company",
+      "chinese_summary": "[综合资讯] | 点击查看原文>",
+      "content_type": "updates",
+      "core_info": "",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 150,
+      "hotness": 50.7,
+      "id": "708fb94ddd0037740822a25dd46cf019",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.infoq.cn/article/QIIYxNtMINFNh4sCM3vu?utm_source=rss&utm_medium=article",
+      "published": "2026-09-09T18:39:47+00:00",
+      "published_ago": "8 小时前",
+      "rank": 127,
+      "source": "InfoQ 中文",
+      "source_name": "InfoQ 中文",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "点击查看原文>",
+      "summary_cn": "[综合资讯]",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "技术已经够了，企业为什么还是落不了地？｜9.20 FDE 现场解码",
+      "title_cn": "技术已经够了，企业为什么还是落不了地？｜9.20 FDE 现场解码",
+      "translation_source": "article.chinese_summary",
+      "value_score": 21
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯]",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | 点击查看原文>",
+      "content_type": "updates",
+      "core_info": "",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 160,
+      "hotness": 50.6,
+      "id": "3c885f71eb89769ee8ffba0fa1e503c2",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.infoq.cn/article/klMJ7wvdgqiYK6BmBI5u?utm_source=rss&utm_medium=article",
+      "published": "2026-09-09T18:34:00+00:00",
+      "published_ago": "8 小时前",
+      "rank": 93,
+      "source": "InfoQ 中文",
+      "source_name": "InfoQ 中文",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "点击查看原文>",
+      "summary_cn": "[综合资讯]",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "Kubernetes 推广 KYAML，将其作为一种更安全、更一致的配置清单处理方式",
+      "title_cn": "Kubernetes 推广 KYAML，将其作为一种更安全、更一致的配置清单处理方式",
+      "translation_source": "article.chinese_summary",
+      "value_score": 31
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯]",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | Agent | 点击查看原文>",
+      "content_type": "updates",
+      "core_info": "",
+      "domain": "ai",
+      "entity": [
+        "Agent"
+      ],
+      "final_score": 162,
+      "hotness": 53.5,
+      "id": "f4306bfcad0bc4429976630e24ffafd3",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.infoq.cn/article/TxjbzYQUeBtvESSHrRFh?utm_source=rss&utm_medium=article",
+      "published": "2026-09-09T18:27:41+00:00",
+      "published_ago": "8 小时前",
+      "rank": 79,
+      "source": "InfoQ 中文",
+      "source_name": "InfoQ 中文",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "点击查看原文>",
+      "summary_cn": "[综合资讯]",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [
+        {
+          "l": "Agent",
+          "t": "tech"
+        }
+      ],
+      "title": "当 Agent 开始写应用，数据库也得换一套打法",
+      "title_cn": "当 Agent 开始写应用，数据库也得换一套打法",
+      "translation_source": "article.chinese_summary",
+      "value_score": 31
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯]",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | Tencent Agent | 点击查看原文>",
+      "content_type": "updates",
+      "core_info": "",
+      "domain": "ai",
+      "entity": [
+        "Agent",
+        "Tencent"
+      ],
+      "final_score": 162,
+      "hotness": 53.4,
+      "id": "333d5e3a1abcb3f37e7048deef5143e9",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.infoq.cn/video/xXRz8UJAdS3S51AqOchf?utm_source=rss&utm_medium=article",
+      "published": "2026-09-09T18:17:24+00:00",
+      "published_ago": "8 小时前",
+      "rank": 80,
+      "source": "InfoQ 中文",
+      "source_name": "InfoQ 中文",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "点击查看原文>",
+      "summary_cn": "[综合资讯]",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [
+        {
+          "l": "Agent",
+          "t": "tech"
+        },
+        {
+          "l": "Tencent",
+          "t": "company"
+        }
+      ],
+      "title": "面向 Agent 开发的数据库新范式 | 腾讯云数据库 DBTalk",
+      "title_cn": "面向 Agent 开发的数据库新范式 | 腾讯云数据库 DBTalk",
+      "translation_source": "article.chinese_summary",
+      "value_score": 31
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[商业动态] | 核心信息: 状态：已解决 所有受影响的服务现已完全恢复。",
+      "category": "product_update",
+      "chinese_summary": "[商业动态] | Status: Resolved All impacted services have now fully recovered | 核心信息: Status: Resolved All impacted services have now fully recovered | 行业影响: 这一商业动向反映了行业行业格局变化",
+      "content_type": "updates",
+      "core_info": "状态：已解决 所有受影响的服务现已完全恢复。",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 186,
+      "hotness": 56.0,
+      "id": "2040e33e1795695af49905ff8eb46a9c",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://status.openai.com//incidents/01M23KG62KKK448RN434CQ64Z8",
+      "published": "2026-09-09T17:54:12+00:00",
+      "published_ago": "8 小时前",
+      "rank": 4,
+      "source": "OpenAI Status",
+      "source_name": "OpenAI Status 官方",
+      "source_priority": 95,
+      "source_quality": "low",
+      "source_region": "Global",
+      "source_type": "rss",
+      "source_weight": 8,
+      "summary": "Status: Resolved All impacted services have now fully recovered.",
+      "summary_cn": "[商业动态] | 核心信息: 状态：已解决 所有受影响的服务现已完全恢复。",
+      "summary_type": [
+        "商业动态"
+      ],
+      "tags": [],
+      "title": "Investigating unexpected usage limit resets",
+      "title_cn": "调查意外的使用限制重置",
+      "translation_source": "cache",
+      "value_score": 35
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯]",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | 点击查看原文>",
+      "content_type": "updates",
+      "core_info": "",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 159,
+      "hotness": 49.8,
+      "id": "28cc843bbef5d3fb83ddb9b5204035bb",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.infoq.cn/article/qqfyJFd6mGXvErcfmyYI?utm_source=rss&utm_medium=article",
+      "published": "2026-09-09T17:37:00+00:00",
+      "published_ago": "9 小时前",
+      "rank": 97,
+      "source": "InfoQ 中文",
+      "source_name": "InfoQ 中文",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "点击查看原文>",
+      "summary_cn": "[综合资讯]",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "jQuery 二十年：一个小小的库如何重塑了 Web 开发",
+      "title_cn": "jQuery 二十年：一个小小的库如何重塑了 Web 开发",
+      "translation_source": "article.chinese_summary",
+      "value_score": 31
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯]",
+      "category": "model_update",
+      "chinese_summary": "[综合资讯] | LLM | 点击查看原文>",
+      "content_type": "updates",
+      "core_info": "",
+      "domain": "ai",
+      "entity": [
+        "LLM"
+      ],
+      "final_score": 166,
+      "hotness": 51.8,
+      "id": "a751d805f2a4d69bf16ef5e61a34df82",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.infoq.cn/article/WlJkEfJxMgaK9o91ow2Z?utm_source=rss&utm_medium=article",
+      "published": "2026-09-09T16:30:00+00:00",
+      "published_ago": "10 小时前",
+      "rank": 49,
+      "source": "InfoQ 中文",
+      "source_name": "InfoQ 中文",
+      "source_priority": 78,
+      "source_quality": "high",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "点击查看原文>",
+      "summary_cn": "[综合资讯]",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [
+        {
+          "l": "LLM",
+          "t": "tech"
+        }
+      ],
+      "title": "Shopify 推出 Gisting 新技术：将大模型系统提示词压缩为主旨词元",
+      "title_cn": "Shopify 推出 Gisting 新技术：将大模型系统提示词压缩为主旨词元",
+      "translation_source": "article.chinese_summary",
+      "value_score": 36
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[综合资讯] | 核心信息: 状态：正在调查 我们发现用户在使用受影响的服务时遇到的错误增多。 \n\n我们正在努力实施缓解措施。 受影响的组件对话（降级",
+      "category": "product_update",
+      "chinese_summary": "[综合资讯] | Status: Resolved All impacted services have now fully recovered | 核心信息: Affected components Conversations (Operational)",
+      "content_type": "updates",
+      "core_info": "状态：正在调查 我们发现用户在使用受影响的服务时遇到的错误增多。 \n\n我们正在努力实施缓解措施。 受影响的组件对话（降级",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 185,
+      "hotness": 54.7,
+      "id": "b221ed623aaa4f2b8413f413aabef2aa",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://status.openai.com//incidents/01M23BNX5V1XT9P3NP0PX56FTN",
+      "published": "2026-09-09T16:21:45+00:00",
+      "published_ago": "10 小时前",
+      "rank": 5,
+      "source": "OpenAI Status",
+      "source_name": "OpenAI Status 官方",
+      "source_priority": 95,
+      "source_quality": "low",
+      "source_region": "Global",
+      "source_type": "rss",
+      "source_weight": 8,
+      "summary": "Status: Resolved All impacted services have now fully recovered. Affected components Conversations (Operational)",
+      "summary_cn": "[综合资讯] | 核心信息: 状态：正在调查 我们发现用户在使用受影响的服务时遇到的错误增多。 \n\n我们正在努力实施缓解措施。 受影响的组件对话（降级",
+      "summary_type": [
+        "综合资讯"
+      ],
+      "tags": [],
+      "title": "Increased Error Rate For Pro and Plus Plan Conversations",
+      "title_cn": "Pro 和 Plus 计划对话的错误率增加",
+      "translation_source": "cache",
+      "value_score": 35
+    },
+    {
+      "ai_status": "none",
+      "application": [],
+      "card_summary": "[产品动态] | 核心信息: IJPay 让支付触手可及，封装了微信支付、QQ 支付、支付宝支付、银联支付、京东支付、PayPal 支付等常用的支付方式以及各种常用的接口。不依赖任何第三方 mvc 框架，仅仅作为工具使用简单快速完成支付模块的开发，可轻松嵌入到任何系统里",
+      "category": "product_update",
+      "chinese_summary": "[产品动态] | IJPay 让支付触手可及，封装了微信支付、QQ 支付、支付宝支付、银联支付、京东支付、PayPal 支付等常用的支付方式以及各种常用的接口。不依赖任何第三方 mvc 框架，仅仅作为工具使用简单快速完成支付模块的开发，可轻松嵌入到任何系统里。 特别说明： 不依赖任何第三方 MVC 框架，仅仅作为工具 | 核心信息: IJPay 让支付触手可及，封装了微信支付、QQ 支付、支付宝支付、银联支付、京东支付、PayPal 支付等常用的支付方式以及各种常用的接口。不依赖任何第三方 mvc 框架，仅仅作为工具使用简单快速完成支付模块的开发，可轻松嵌入到任何系统里 | 行业影响: 该动态反映了行业领域的最新发展方向，值得关注",
+      "content_type": "updates",
+      "core_info": "IJPay 让支付触手可及，封装了微信支付、QQ 支付、支付宝支付、银联支付、京东支付、PayPal 支付等常用的支付方式以及各种常用的接口。不依赖任何第三方 mvc 框架，仅仅作为工具使用简单快速完成支付模块的开发，可轻松嵌入到任何系统里",
+      "domain": "ai",
+      "entity": [],
+      "final_score": 154,
+      "hotness": 48.4,
+      "id": "d8c83778bc37f3d73067df9aa7f5c1d8",
+      "importance": "B",
+      "industry_impact": "",
+      "link": "https://www.oschina.net/news/502399",
+      "published": "2026-09-09T16:05:20+00:00",
+      "published_ago": "10 小时前",
+      "rank": 119,
+      "source": "OSCHINA 开源中国",
+      "source_name": "OSCHINA 开源中国",
+      "source_priority": 75,
+      "source_quality": "low",
+      "source_region": "CN",
+      "source_type": "rss",
+      "source_weight": 6,
+      "summary": "IJPay 让支付触手可及，封装了微信支付、QQ 支付、支付宝支付、银联支付、京东支付、PayPal 支付等常用的支付方式以及各种常用的接口。不依赖任何第三方 mvc 框架，仅仅作为工具使用简单快速完成支付模块的开发，可轻松嵌入到任何系统里。 特别说明： 不依赖任何第三方 MVC 框架，仅仅作为工具使用简单快速完成支付模块的...",
+      "summary_cn": "[产品动态] | 核心信息: IJPay 让支付触手可及，封装了微信支付、QQ 支付、支付宝支付、银联支付、京东支付、PayPal 支付等常用的支付方式以及各种常用的接口。不依赖任何第三方 mvc 框架，仅仅作为工具使用简单快速完成支付模块的开发，可轻松嵌入到任何系统里",
+      "summary_type": [
+        "产品动态"
+      ],
+      "tags": [],
+      "title": "IJPay 让支付触手可及 2.9.13 版本发布",
+      "title_cn": "IJPay 让支付触手可及 2.9.13 版本发布",
+      "translation_source": "article.chinese_summary",
+      "value_score": 31
     }
   ]
 }
